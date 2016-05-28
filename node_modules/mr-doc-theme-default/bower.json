@@ -1,0 +1,17 @@
+{
+  "name": "doxx-theme-default",
+  "version": "1.0.0",
+  "homepage": "https://github.com/iwatakeshi/doxx-theme-default",
+  "authors": [
+    "iwatakeshi <iwatakeshi@gmail.com>"
+  ],
+  "description": "The default theme for Doxx.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

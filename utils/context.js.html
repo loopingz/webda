@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Webda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/cayman.css">
+    <link rel="stylesheet" href="../css/prism.css">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Webda</h1>
+      <h2 class="project-tagline">Expose API with Lambda</h2><a href="https://github.com/loopingz/webda" target="_blank" class="btn">View on GitHub</a><a href="https://npmjs.com/package/webda" target="_blank" class="btn">View on npm</a>
+    </section>
+    <section data-spy="scroll" data-target=".scrollspy" class="main-content">
+      <div class="row">
+        <div class="col-md-3 col-xs-3 bs-docs-sidebar">
+          <ul id="sidebar" class="nav nav-stacked fixed">
+            <li><a href="../index.html">Main</a></li>
+            <li><a href="../core.js.html">core.js</a></li>
+            <li><a href="../handlers/lambda.js.html">handlers/lambda.js</a></li>
+            <li><a href="../policies/ownerpolicy.js.html">policies/ownerpolicy.js</a></li>
+            <li><a href="../policies/policy.js.html">policies/policy.js</a></li>
+            <li><a href="../routehelpers/file.js.html">routehelpers/file.js</a></li>
+            <li><a href="../routehelpers/inline.js.html">routehelpers/inline.js</a></li>
+            <li><a href="../routehelpers/lambda.js.html">routehelpers/lambda.js</a></li>
+            <li><a href="../routehelpers/resource.js.html">routehelpers/resource.js</a></li>
+            <li><a href="../routehelpers/string.js.html">routehelpers/string.js</a></li>
+            <li><a href="../services/binary.js.html">services/binary.js</a></li>
+            <li><a href="../services/executor.js.html">services/executor.js</a></li>
+            <li><a href="../services/filebinary.js.html">services/filebinary.js</a></li>
+            <li><a href="../services/mailer.js.html">services/mailer.js</a></li>
+            <li><a href="../services/passport.js.html">services/passport.js</a></li>
+            <li><a href="../services/s3binary.js.html">services/s3binary.js</a></li>
+            <li><a href="../services/service.js.html">services/service.js</a></li>
+            <li><a href="../stores/dynamodb.js.html">stores/dynamodb.js</a></li>
+            <li><a href="../stores/file.js.html">stores/file.js</a></li>
+            <li><a href="../stores/mongodb.js.html">stores/mongodb.js</a></li>
+            <li><a href="../stores/store.js.html">stores/store.js</a></li>
+            <li class="active"><a href="../utils/context.js.html">utils/context.js
+                <ul class="nav nav-stacked">
+                  <li><a href="#write"><i class="alert alert-info"></i><span>write</span></a>
+                  </li>
+                  <li><a href="#setHeader"><i class="alert alert-info"></i><span>setHeader</span></a>
+                  </li>
+                  <li><a href="#writeHead"><i class="alert alert-info"></i><span>writeHead</span></a>
+                  </li>
+                  <li><a href="#cookie"><i class="alert alert-info"></i><span>cookie</span></a>
+                  </li>
+                  <li><a href="#end"><i class="alert alert-info"></i><span>end</span></a>
+                  </li>
+                  <li><a href="#getService"><i class="alert alert-info"></i><span>getService</span></a>
+                  </li>
+                  <li><a href="#setExecutor"><i class="alert alert-info"></i><span>setExecutor</span></a>
+                  </li>
+                </ul></a></li>
+            <li><a href="../utils/cookie.js.html">utils/cookie.js</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <section id="write">
+            <h1>write</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>write()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>output</td>
+                <td></td>
+                <td><p>If it is an object it will be serializeb with toPublicJSON, if it is a String it will be appended to the result, if it is a buffer it will replace the result</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Write data to the client</p></div>
+          <pre><code class="language-javascript">write(output) {
+	if (typeof(output) == &quot;object&quot; &amp;&amp; !(output instanceof Buffer)) {
+		this._headers['Content-type']='application/json';
+		this._body = this._webda.toPublicJSON(output);
+		return;
+	} else if (typeof(output) == &quot;string&quot;) {
+		if (this._body == undefined) {
+			this._body = '';
+		}
+		this._body += output;
+		return;
+	} else {
+		this._body = output;
+	}
+}</code></pre>
+          <section id="setHeader">
+            <h1>setHeader</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>setHeader()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>header</td>
+                <td>String</td>
+                <td><p>name</p></td>
+              </tr>
+              <tr>
+                <td>value</td>
+                <td>String</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Set a header value</p></div>
+          <pre><code class="language-javascript">setHeader(header,value) {
+	this._headers[header]=value;
+}</code></pre>
+          <section id="writeHead">
+            <h1>writeHead</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>writeHead()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>httpCode</td>
+                <td>Number</td>
+                <td><p>to return to the client</p></td>
+              </tr>
+              <tr>
+                <td>headers</td>
+                <td>Object</td>
+                <td><p>to add to the response</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Write the http return code and some headers<br />Those headers are not flushed yet so can still be overwritten</p></div>
+          <pre><code class="language-javascript">writeHead(httpCode, headers) {
+	_extend(this._headers, headers);
+	if (httpCode !== undefined) {
+		this.statusCode = httpCode;
+	}
+}</code></pre>
+          <section id="cookie">
+            <h1>cookie</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>cookie()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>For compatibility reason</p></div>
+          <pre><code class="language-javascript">cookie(param, value) {</code></pre>
+          <section id="end">
+            <h1>end</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>end()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>Flush the request</p></div>
+          <pre><code class="language-javascript">end() {</code></pre>
+          <section id="getService">
+            <h1>getService</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getService()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>name</td>
+                <td>String</td>
+                <td><p>of the service</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get a service from webda</p></div>
+          <pre><code class="language-javascript">getService(name) {
+	return this._webda.getService(name);
+}</code></pre>
+          <section id="setExecutor">
+            <h1>setExecutor</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>setExecutor()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>executor</td>
+                <td></td>
+                <td><p>{object} Set the current executor for this context</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"></div>
+          <pre><code class="language-javascript">setExecutor(executor) {
+	this._executor = executor;
+}</code></pre>
+          <div class="footer site-footer">
+            <div class="span site-footer-owner"><a href="https://github.com/mr-doc/mr-doc-theme-cayman">Cayman</a> is maintained by <a href="https://github.com/iwatakeshi">iwatakeshi</a>.</div>
+            <div class="span site-footer-credits">This page was generated by <a href="https://github.com/mr-doc/mr-doc">Mr. Doc</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/affix.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/scrollspy.js"></script>
+    <script src="../js/prism.js"></script>
+    <script src="../js/prism-bash.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('body').scrollspy({
+          target: ".bs-docs-sidebar",
+          offset: 40
+        });
+        $('#sidebar').affix({
+          offset:{
+            bottom:60,
+            top: 60
+          }
+        }) 
+      });
+    </script>
+  </body>
+</html>

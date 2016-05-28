@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Webda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/cayman.css">
+    <link rel="stylesheet" href="css/prism.css">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Webda</h1>
+      <h2 class="project-tagline">Expose API with Lambda</h2><a href="https://github.com/loopingz/webda" target="_blank" class="btn">View on GitHub</a><a href="https://npmjs.com/package/webda" target="_blank" class="btn">View on npm</a>
+    </section>
+    <section data-spy="scroll" data-target=".scrollspy" class="main-content">
+      <div class="row">
+        <div class="col-md-3 col-xs-3 bs-docs-sidebar">
+          <ul id="sidebar" class="nav nav-stacked fixed">
+            <li><a href="index.html">Main</a></li>
+            <li class="active"><a href="core.js.html">core.js
+                <ul class="nav nav-stacked">
+                  <li><a href="#Webda"><i class="alert alert-success"></i><span>Webda</span></a>
+                  </li>
+                  <li><a href="#constructor"><i class="alert alert-success"></i><span>constructor</span></a>
+                  </li>
+                  <li><a href="#validate"><i class="alert alert-info"></i><span>validate</span></a>
+                  </li>
+                  <li><a href="#require"><i class="alert alert-info"></i><span>require</span></a>
+                  </li>
+                  <li><a href="#sandbox"><i class="alert alert-info"></i><span>sandbox</span></a>
+                  </li>
+                  <li><a href="#getSession"><i class="alert alert-info"></i><span>getSession</span></a>
+                  </li>
+                  <li><a href="#getNewSession"><i class="alert alert-info"></i><span>getNewSession</span></a>
+                  </li>
+                  <li><a href="#getService"><i class="alert alert-info"></i><span>getService</span></a>
+                  </li>
+                  <li><a href="#getExecutor"><i class="alert alert-info"></i><span>getExecutor</span></a>
+                  </li>
+                  <li><a href="#getSecret"><i class="alert alert-info"></i><span>getSecret</span></a>
+                  </li>
+                  <li><a href="#flushHeaders"><i class="alert alert-info"></i><span>flushHeaders</span></a>
+                  </li>
+                  <li><a href="#flush"><i class="alert alert-info"></i><span>flush</span></a>
+                  </li>
+                  <li><a href="#newContext"><i class="alert alert-info"></i><span>newContext</span></a>
+                  </li>
+                  <li><a href="#toPublicJSON"><i class="alert alert-info"></i><span>toPublicJSON</span></a>
+                  </li>
+                </ul></a></li>
+            <li><a href="handlers/lambda.js.html">handlers/lambda.js</a></li>
+            <li><a href="policies/ownerpolicy.js.html">policies/ownerpolicy.js</a></li>
+            <li><a href="policies/policy.js.html">policies/policy.js</a></li>
+            <li><a href="routehelpers/file.js.html">routehelpers/file.js</a></li>
+            <li><a href="routehelpers/inline.js.html">routehelpers/inline.js</a></li>
+            <li><a href="routehelpers/lambda.js.html">routehelpers/lambda.js</a></li>
+            <li><a href="routehelpers/resource.js.html">routehelpers/resource.js</a></li>
+            <li><a href="routehelpers/string.js.html">routehelpers/string.js</a></li>
+            <li><a href="services/binary.js.html">services/binary.js</a></li>
+            <li><a href="services/executor.js.html">services/executor.js</a></li>
+            <li><a href="services/filebinary.js.html">services/filebinary.js</a></li>
+            <li><a href="services/mailer.js.html">services/mailer.js</a></li>
+            <li><a href="services/passport.js.html">services/passport.js</a></li>
+            <li><a href="services/s3binary.js.html">services/s3binary.js</a></li>
+            <li><a href="services/service.js.html">services/service.js</a></li>
+            <li><a href="stores/dynamodb.js.html">stores/dynamodb.js</a></li>
+            <li><a href="stores/file.js.html">stores/file.js</a></li>
+            <li><a href="stores/mongodb.js.html">stores/mongodb.js</a></li>
+            <li><a href="stores/store.js.html">stores/store.js</a></li>
+            <li><a href="utils/context.js.html">utils/context.js</a></li>
+            <li><a href="utils/cookie.js.html">utils/cookie.js</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <section id="Webda">
+            <h1>Webda</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">class</div><span>&nbsp;</span><span>new Webda()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>This is the main class of the framework, it handles the routing, the services initialization and resolution</p></div>
+          <pre><code class="language-javascript">class Webda {</code></pre>
+          <section id="constructor">
+            <h1>constructor</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">constructor</div><span>&nbsp;</span><span>Webda.prototype.constructor()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"></div>
+          <pre><code class="language-javascript">constructor (config) {</code></pre>
+          <section id="validate">
+            <h1>validate</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>validate()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>object</td>
+                <td></td>
+                <td><p>to validate</p></td>
+              </tr>
+              <tr>
+                <td>schema</td>
+                <td></td>
+                <td><p>path to use</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Validate the object with schema</p></div>
+          <pre><code class="language-javascript">validate(object, schema) {
+	if (!this._ajvSchemas[schema]) {
+		this._ajv.addSchema(require(schema), schema)
+		this._ajvSchemas[schema]=true;
+	}
+	return this._ajv.validate(schema, object);
+}</code></pre>
+          <section id="require">
+            <h1>require</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>require()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>executor</td>
+                <td>Object</td>
+                <td><p>The executor to give to the file</p></td>
+              </tr>
+              <tr>
+                <td>path</td>
+                <td>String</td>
+                <td><p>The path of the file to executre</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Execute a file in sandbox mode</p></div>
+          <pre><code class="language-javascript">require(executor, path) {
+	var code = fs.readFileSync(require.resolve(path));
+	this.sandbox(executore, code);
+}</code></pre>
+          <section id="sandbox">
+            <h1>sandbox</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>sandbox()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>executor</td>
+                <td>Object</td>
+                <td><p>The executor to expose as executor</p></td>
+              </tr>
+              <tr>
+                <td>code</td>
+                <td>String</td>
+                <td><p>to execute</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"></div>
+          <pre><code class="language-javascript">sandbox(executor, code) {
+	var sandbox = {
+		// Should be custom console
+		console : console,
+		webda: executor._webda,
+		executor: executor,
+		module  : {},
+		require : function(mod) {
+			// We need to add more control here
+	      	if (mod === 'net') {
+	        	throw Error('not allowed');
+	      	}
+	      	// if the module is okay to load, load it:
+	      	return require.apply(this, arguments);
+	    }
+	};
+	vm.runInNewContext(code, sandbox);
+	return sandbox.module.exports(executor);
+}</code></pre>
+          <section id="getSession">
+            <h1>getSession</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getSession()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>Get the current session object</p></div>
+          <pre><code class="language-javascript">getSession() {
+	if (this._currentExecutor) {
+		return this._currentExecutor.session;	
+	}
+}</code></pre>
+          <section id="getNewSession">
+            <h1>getNewSession</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getNewSession()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>Get a new session object initiate with the data object<br />Can be used to create short term encrypted data, the keys of the session should be refresh frequently</p></div>
+          <pre><code class="language-javascript">getNewSession(data) {
+	const SecureCookie = require(&quot;./utils/cookie.js&quot;);
+	return new SecureCookie({secret: 'WebdaSecret'}, data);
+}</code></pre>
+          <section id="getService">
+            <h1>getService</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getService()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>name</td>
+                <td>String</td>
+                <td><p>The service name to retrieve</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Check for a service name and return the wanted singleton or undefined if none found</p></div>
+          <pre><code class="language-javascript">getService(name) {
+	if (!this._config || !name) {
+		return;
+	}
+	name = name.toLowerCase();
+	if (this._config[this._vhost] !== undefined) {
+		if (this._config[this._vhost].global !== undefined &amp;&amp; this._config[this._vhost].global._services !== undefined
+				&amp;&amp; this._config[this._vhost].global._services[name]) {
+			return this._config[this._vhost].global._services[name];
+		}
+	}
+}</code></pre>
+          <section id="getExecutor">
+            <h1>getExecutor</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getExecutor()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>vhost</td>
+                <td>String</td>
+                <td><p>The host for the request</p></td>
+              </tr>
+              <tr>
+                <td>method</td>
+                <td>String</td>
+                <td><p>The http method</p></td>
+              </tr>
+              <tr>
+                <td>url</td>
+                <td>String</td>
+                <td><p>The url path</p></td>
+              </tr>
+              <tr>
+                <td>protocol</td>
+                <td>String</td>
+                <td><p>http or https</p></td>
+              </tr>
+              <tr>
+                <td>port</td>
+                <td>String</td>
+                <td><p>Port can be usefull for auto redirection</p></td>
+              </tr>
+              <tr>
+                <td>headers</td>
+                <td>Object</td>
+                <td><p>The headers of the request</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get the executor corresponding to a request<br />It can be usefull in unit test so you can test the all stack</p></div>
+          <pre><code class="language-javascript">getExecutor(ctx, vhost, method, url, protocol, port, headers) {
+	// Check vhost
+	var wildcard = false;
+	var originalVhost = vhost;
+    if (this._config[vhost] === undefined) {
+       if (this._config['*'] === undefined) {
+    	   return null;
+       }
+       wildcard = true;
+       vhost = this._config['*'];
+    }
+    this.setHost(vhost);
+    // Init vhost if needed
+    this.initHosts(vhost, this._config[vhost]);
+    // Check mapping
+    var route = this.getRouteFromUrl(ctx, this._config[vhost], method, url);
+    if (route === undefined) {
+    	return;
+    }
+    route._http = {&quot;host&quot;:vhost, &quot;vhost&quot;: originalVhost, &quot;method&quot;:method, &quot;url&quot;:url, &quot;protocol&quot;: protocol, &quot;port&quot;: port, &quot;headers&quot;: headers, &quot;wildcard&quot;: wildcard, &quot;root&quot;: protocol + &quot;://&quot; + vhost};
+    return this.getServiceWithRoute(ctx, route);
+}</code></pre>
+          <section id="getSecret">
+            <h1>getSecret</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getSecret()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>This should return a &quot;turning&quot; secret with cache and a service to modify it every x mins<br />WARNING The security is lower without this &quot;turning&quot; secret, you can still set the global.secret parameter</p><p>Dont rely on this method, it will probably disapear to avoid secret leak </p></div>
+          <pre><code class="language-javascript">getSecret() {
+	// For now a static config file but should have a rolling service secret
+	return this._config[this._vhost].global.secret;
+}</code></pre>
+          <section id="flushHeaders">
+            <h1>flushHeaders</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>flushHeaders()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>Flush the headers to the response, no more header modification is possible after that</p></div>
+          <pre><code class="language-javascript">flushHeaders(executor) {
+	console.log(&quot;Abstract implementation of Webda&quot;);
+}</code></pre>
+          <section id="flush">
+            <h1>flush</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>flush()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Flush the entire response to the client</p></div>
+          <pre><code class="language-javascript">flush(executor) {
+	console.log(&quot;Abstract implementation of Webda&quot;);
+}</code></pre>
+          <section id="newContext">
+            <h1>newContext</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>newContext()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>body</td>
+                <td>Object</td>
+                <td><ul>
+<li>The request body</li>
+</ul>
+</td>
+              </tr>
+              <tr>
+                <td>session</td>
+                <td>Object</td>
+                <td><ul>
+<li>The request session</li>
+</ul>
+</td>
+              </tr>
+              <tr>
+                <td>stream</td>
+                <td>Object</td>
+                <td><ul>
+<li>The request output stream if any</li>
+</ul>
+</td>
+              </tr>
+              <tr>
+                <td>files</td>
+                <td>Object</td>
+                <td><ul>
+<li>The files input stream</li>
+</ul>
+</td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Object</td>
+                <td><p>A new context object to pass along</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Create a new context for a request</p></div>
+          <pre><code class="language-javascript">newContext(body, session, stream, files) {
+	return new Context(this, body, session, stream, files);
+}</code></pre>
+          <section id="toPublicJSON">
+            <h1>toPublicJSON</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>toPublicJSON()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>object</td>
+                <td>Object</td>
+                <td><ul>
+<li>The object to export</li>
+</ul>
+</td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>String</td>
+                <td><p>The export of the strip object ( removed all attribute with _ )</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Convert an object to JSON using the Webda json filter</p></div>
+          <pre><code class="language-javascript">toPublicJSON(object) {
+	return JSON.stringify(object, this.jsonFilter);
+}</code></pre>
+          <div class="footer site-footer">
+            <div class="span site-footer-owner"><a href="https://github.com/mr-doc/mr-doc-theme-cayman">Cayman</a> is maintained by <a href="https://github.com/iwatakeshi">iwatakeshi</a>.</div>
+            <div class="span site-footer-credits">This page was generated by <a href="https://github.com/mr-doc/mr-doc">Mr. Doc</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/affix.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/scrollspy.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/prism-bash.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('body').scrollspy({
+          target: ".bs-docs-sidebar",
+          offset: 40
+        });
+        $('#sidebar').affix({
+          offset:{
+            bottom:60,
+            top: 60
+          }
+        }) 
+      });
+    </script>
+  </body>
+</html>

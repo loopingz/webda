@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Webda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/cayman.css">
+    <link rel="stylesheet" href="../css/prism.css">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Webda</h1>
+      <h2 class="project-tagline">Expose API with Lambda</h2><a href="https://github.com/loopingz/webda" target="_blank" class="btn">View on GitHub</a><a href="https://npmjs.com/package/webda" target="_blank" class="btn">View on npm</a>
+    </section>
+    <section data-spy="scroll" data-target=".scrollspy" class="main-content">
+      <div class="row">
+        <div class="col-md-3 col-xs-3 bs-docs-sidebar">
+          <ul id="sidebar" class="nav nav-stacked fixed">
+            <li><a href="../index.html">Main</a></li>
+            <li><a href="../core.js.html">core.js</a></li>
+            <li><a href="../handlers/lambda.js.html">handlers/lambda.js</a></li>
+            <li><a href="../policies/ownerpolicy.js.html">policies/ownerpolicy.js</a></li>
+            <li><a href="../policies/policy.js.html">policies/policy.js</a></li>
+            <li><a href="../routehelpers/file.js.html">routehelpers/file.js</a></li>
+            <li><a href="../routehelpers/inline.js.html">routehelpers/inline.js</a></li>
+            <li><a href="../routehelpers/lambda.js.html">routehelpers/lambda.js</a></li>
+            <li><a href="../routehelpers/resource.js.html">routehelpers/resource.js</a></li>
+            <li><a href="../routehelpers/string.js.html">routehelpers/string.js</a></li>
+            <li><a href="../services/binary.js.html">services/binary.js</a></li>
+            <li><a href="../services/executor.js.html">services/executor.js</a></li>
+            <li><a href="../services/filebinary.js.html">services/filebinary.js</a></li>
+            <li><a href="../services/mailer.js.html">services/mailer.js</a></li>
+            <li><a href="../services/passport.js.html">services/passport.js</a></li>
+            <li><a href="../services/s3binary.js.html">services/s3binary.js</a></li>
+            <li><a href="../services/service.js.html">services/service.js</a></li>
+            <li><a href="../stores/dynamodb.js.html">stores/dynamodb.js</a></li>
+            <li><a href="../stores/file.js.html">stores/file.js</a></li>
+            <li><a href="../stores/mongodb.js.html">stores/mongodb.js</a></li>
+            <li class="active"><a href="../stores/store.js.html">stores/store.js
+                <ul class="nav nav-stacked">
+                  <li><a href="#Store"><i class="alert alert-success"></i><span>Store</span></a>
+                  </li>
+                  <li><a href="#save"><i class="alert alert-info"></i><span>save</span></a>
+                  </li>
+                  <li><a href="#update"><i class="alert alert-info"></i><span>update</span></a>
+                  </li>
+                  <li><a href="#delete"><i class="alert alert-info"></i><span>delete</span></a>
+                  </li>
+                  <li><a href="#exists"><i class="alert alert-info"></i><span>exists</span></a>
+                  </li>
+                  <li><a href="#get"><i class="alert alert-info"></i><span>get</span></a>
+                  </li>
+                </ul></a></li>
+            <li><a href="../utils/context.js.html">utils/context.js</a></li>
+            <li><a href="../utils/cookie.js.html">utils/cookie.js</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <section id="Store">
+            <h1>Store</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">class</div><span>&nbsp;</span><span>new Store()</span><span>&nbsp;</span><span>&nbsp;</span><span class="label label-default">extends</span><span>&nbsp;</span><span>Executor</span>
+            </p>
+          </section>
+          <div class="description"><p>This class handle NoSQL storage and mapping (duplication) between NoSQL object<br />TODO Create the mapping documentation</p><p>It use basic CRUD, and can expose those 4 to through HTTP</p><p>It emits events :<br />  Store.Save: Before saving the object<br />  Store.Saved: After saving the object<br />  Store.Update: Before updating the object<br />  Store.Updated: After updating the object<br />  Store.Delete: Before deleting the object<br />  Store.Deleted: After deleting the object<br />  Store.Get: When getting the object</p><p>Mapping:</p><p>Parameters</p><p> map: { ... }<br /> expose: { // Enable the HTTP exposure<br />     url: &#39;&#39;, // The url to expose to by default it is service name in lowercase ( users for example )<br />     restrict: {<br />           create: true, // Don&#39;t expose the POST /users<br />        update: true, // Don&#39;t expose the PUT /users/{uuid}<br />        delete: true, // Don&#39;t expose the DELETE /users/{uuid}<br />        get: true // Don&#39;t expose the GET /users/{uuid}<br />     }<br />  }</p></div>
+          <pre><code class="language-javascript">class Store extends Executor {</code></pre>
+          <section id="save">
+            <h1>save</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Store.prototype.save()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Object</td>
+                <td>Object</td>
+                <td><p>to save</p></td>
+              </tr>
+              <tr>
+                <td>Uuid</td>
+                <td>String</td>
+                <td><p>to use, if not specified take the object.uuid or generate one if not found</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Promise</td>
+                <td><p>with saved object</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Save an object</p></div>
+          <pre><code class="language-javascript">save(object, uid) {</code></pre>
+          <section id="update">
+            <h1>update</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>update()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Object</td>
+                <td>Object</td>
+                <td><p>to save</p></td>
+              </tr>
+              <tr>
+                <td>Uuid</td>
+                <td>String</td>
+                <td><p>to use, if not specified take the object.uuid or generate one if not found</p></td>
+              </tr>
+              <tr>
+                <td>reverseMap</td>
+                <td>Boolean</td>
+                <td><p>internal use only, for disable map resolution</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Promise</td>
+                <td><p>with saved object</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Update an object</p></div>
+          <pre><code class="language-javascript">update(object, uid, reverseMap) {</code></pre>
+          <section id="delete">
+            <h1>delete</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>delete()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>uuid</td>
+                <td>String</td>
+                <td><p>to delete</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Promise</td>
+                <td><p>the deletion promise</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Delete an object</p></div>
+          <pre><code class="language-javascript">delete(uid) {</code></pre>
+          <section id="exists">
+            <h1>exists</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>exists()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>Check if an object exists</p></div>
+          <pre><code class="language-javascript">exists(uid) {</code></pre>
+          <section id="get">
+            <h1>get</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>get()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>uuid</td>
+                <td>String</td>
+                <td><p>to delete</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Promise</td>
+                <td><p>the object retrieved ( can be undefined if not found )</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get an object</p></div>
+          <pre><code class="language-javascript">get(uid) {</code></pre>
+          <div class="footer site-footer">
+            <div class="span site-footer-owner"><a href="https://github.com/mr-doc/mr-doc-theme-cayman">Cayman</a> is maintained by <a href="https://github.com/iwatakeshi">iwatakeshi</a>.</div>
+            <div class="span site-footer-credits">This page was generated by <a href="https://github.com/mr-doc/mr-doc">Mr. Doc</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/affix.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/scrollspy.js"></script>
+    <script src="../js/prism.js"></script>
+    <script src="../js/prism-bash.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('body').scrollspy({
+          target: ".bs-docs-sidebar",
+          offset: 40
+        });
+        $('#sidebar').affix({
+          offset:{
+            bottom:60,
+            top: 60
+          }
+        }) 
+      });
+    </script>
+  </body>
+</html>
