@@ -28,23 +28,35 @@
                   </li>
                   <li><a href="#validate"><i class="alert alert-info"></i><span>validate</span></a>
                   </li>
+                  <li><a href="#validationLastErrors"><i class="alert alert-info"></i><span>validationLastErrors</span></a>
+                  </li>
                   <li><a href="#require"><i class="alert alert-info"></i><span>require</span></a>
                   </li>
                   <li><a href="#sandbox"><i class="alert alert-info"></i><span>sandbox</span></a>
                   </li>
                   <li><a href="#getSession"><i class="alert alert-info"></i><span>getSession</span></a>
                   </li>
+                  <li><a href="#getLocales"><i class="alert alert-info"></i><span>getLocales</span></a>
+                  </li>
                   <li><a href="#getNewSession"><i class="alert alert-info"></i><span>getNewSession</span></a>
                   </li>
                   <li><a href="#getService"><i class="alert alert-info"></i><span>getService</span></a>
+                  </li>
+                  <li><a href="#getModel"><i class="alert alert-info"></i><span>getModel</span></a>
                   </li>
                   <li><a href="#getExecutor"><i class="alert alert-info"></i><span>getExecutor</span></a>
                   </li>
                   <li><a href="#getSecret"><i class="alert alert-info"></i><span>getSecret</span></a>
                   </li>
+                  <li><a href="#getSalt"><i class="alert alert-info"></i><span>getSalt</span></a>
+                  </li>
                   <li><a href="#flushHeaders"><i class="alert alert-info"></i><span>flushHeaders</span></a>
                   </li>
                   <li><a href="#flush"><i class="alert alert-info"></i><span>flush</span></a>
+                  </li>
+                  <li><a href="#isDebug"><i class="alert alert-info"></i><span>isDebug</span></a>
+                  </li>
+                  <li><a href="#getGlobalParams"><i class="alert alert-info"></i><span>getGlobalParams</span></a>
                   </li>
                   <li><a href="#newContext"><i class="alert alert-info"></i><span>newContext</span></a>
                   </li>
@@ -52,14 +64,20 @@
                   </li>
                 </ul></a></li>
             <li><a href="handlers/lambda.js.html">handlers/lambda.js</a></li>
+            <li><a href="policies/aclpolicy.js.html">policies/aclpolicy.js</a></li>
+            <li><a href="policies/aggregatepolicy.js.html">policies/aggregatepolicy.js</a></li>
             <li><a href="policies/ownerpolicy.js.html">policies/ownerpolicy.js</a></li>
             <li><a href="policies/policy.js.html">policies/policy.js</a></li>
+            <li><a href="policies/rolepolicy.js.html">policies/rolepolicy.js</a></li>
             <li><a href="routehelpers/file.js.html">routehelpers/file.js</a></li>
             <li><a href="routehelpers/inline.js.html">routehelpers/inline.js</a></li>
             <li><a href="routehelpers/lambda.js.html">routehelpers/lambda.js</a></li>
             <li><a href="routehelpers/resource.js.html">routehelpers/resource.js</a></li>
             <li><a href="routehelpers/string.js.html">routehelpers/string.js</a></li>
+            <li><a href="server.js.html">server.js</a></li>
             <li><a href="services/binary.js.html">services/binary.js</a></li>
+            <li><a href="services/cacher.js.html">services/cacher.js</a></li>
+            <li><a href="services/configuration.js.html">services/configuration.js</a></li>
             <li><a href="services/executor.js.html">services/executor.js</a></li>
             <li><a href="services/filebinary.js.html">services/filebinary.js</a></li>
             <li><a href="services/mailer.js.html">services/mailer.js</a></li>
@@ -67,11 +85,15 @@
             <li><a href="services/s3binary.js.html">services/s3binary.js</a></li>
             <li><a href="services/service.js.html">services/service.js</a></li>
             <li><a href="stores/dynamodb.js.html">stores/dynamodb.js</a></li>
+            <li><a href="stores/extender.js.html">stores/extender.js</a></li>
             <li><a href="stores/file.js.html">stores/file.js</a></li>
+            <li><a href="stores/memory.js.html">stores/memory.js</a></li>
             <li><a href="stores/mongodb.js.html">stores/mongodb.js</a></li>
             <li><a href="stores/store.js.html">stores/store.js</a></li>
             <li><a href="utils/context.js.html">utils/context.js</a></li>
             <li><a href="utils/cookie.js.html">utils/cookie.js</a></li>
+            <li><a href="utils/lambdacaller.js.html">utils/lambdacaller.js</a></li>
+            <li><a href="utils/tokens.js.html">utils/tokens.js</a></li>
           </ul>
         </div>
         <div class="col-md-9">
@@ -150,6 +172,17 @@
 		this._ajvSchemas[schema]=true;
 	}
 	return this._ajv.validate(schema, object);
+}</code></pre>
+          <section id="validationLastErrors">
+            <h1>validationLastErrors</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>validationLastErrors()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Get last errors from AJV schema validator ( called through validate method )</p></div>
+          <pre><code class="language-javascript">validationLastErrors() {
+	return this._ajv.errors;
 }</code></pre>
           <section id="require">
             <h1>require</h1>
@@ -256,6 +289,36 @@
 		return this._currentExecutor.session;	
 	}
 }</code></pre>
+          <section id="getLocales">
+            <h1>getLocales</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getLocales()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td></td>
+                <td><p>The configured locales or &quot;en-GB&quot; if none are defined</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>To define the locales just add a locales: [&#39;en-GB&#39;, &#39;fr-FR&#39;] in your host global configuration</p></div>
+          <pre><code class="language-javascript">getLocales() {
+	if (!this._config || !this._config[this._vhost] || !this._config[this._vhost].global || !this._config[this._vhost].global.locales) {
+		return [&quot;en-GB&quot;];
+	}
+	return this._config[this._vhost].global.locales;
+}</code></pre>
           <section id="getNewSession">
             <h1>getNewSession</h1>
             <h5 class="subheader"></h5>
@@ -314,6 +377,43 @@
 			return this._config[this._vhost].global._services[name];
 		}
 	}
+}</code></pre>
+          <section id="getModel">
+            <h1>getModel</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getModel()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>name</td>
+                <td>String</td>
+                <td><p>The model name to retrieve</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Check for a model name and return the wanted class or throw exception if none found</p></div>
+          <pre><code class="language-javascript">getModel(name) {
+	if (!this._config || !name) {
+		return;
+	}
+	name = name.toLowerCase();
+	if (this._config[this._vhost] !== undefined) {
+		if (this._config[this._vhost].global !== undefined &amp;&amp; this._config[this._vhost].global._models !== undefined
+				&amp;&amp; this._config[this._vhost].global._models[name]) {
+			return this._config[this._vhost].global._models[name];
+		}
+	}
+	throw Error(&quot;Undefined model &quot; + name);
 }</code></pre>
           <section id="getExecutor">
             <h1>getExecutor</h1>
@@ -409,6 +509,29 @@
 	// For now a static config file but should have a rolling service secret
 	return this._config[this._vhost].global.secret;
 }</code></pre>
+          <section id="getSalt">
+            <h1>getSalt</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getSalt()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>Return a salt to use when doing digest</p></div>
+          <pre><code class="language-javascript">getSalt() {
+	// For now a static config file but should have a rolling service secret
+	return this._config[this._vhost].global.salt;
+}</code></pre>
           <section id="flushHeaders">
             <h1>flushHeaders</h1>
             <h5 class="subheader"></h5>
@@ -429,7 +552,7 @@
           </table>
           <div class="description"><p>Flush the headers to the response, no more header modification is possible after that</p></div>
           <pre><code class="language-javascript">flushHeaders(executor) {
-	console.log(&quot;Abstract implementation of Webda&quot;);
+
 }</code></pre>
           <section id="flush">
             <h1>flush</h1>
@@ -440,7 +563,56 @@
           </section>
           <div class="description"><p>Flush the entire response to the client</p></div>
           <pre><code class="language-javascript">flush(executor) {
-	console.log(&quot;Abstract implementation of Webda&quot;);
+
+}</code></pre>
+          <section id="isDebug">
+            <h1>isDebug</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>isDebug()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Return if Webda is in debug mode</p></div>
+          <pre><code class="language-javascript">isDebug() {
+	return false;
+}</code></pre>
+          <section id="getGlobalParams">
+            <h1>getGlobalParams</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getGlobalParams()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>vhost</td>
+                <td>String</td>
+                <td><p>The domain to retrieve or default if not specified</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Return the global parameters of a domain</p></div>
+          <pre><code class="language-javascript">getGlobalParams(vhost) {
+	if (this._config[vhost] === undefined) {
+       if (this._config['*'] === undefined) {
+    	   return {};
+       }
+       vhost = this._config['*'];
+    }
+    if (this._config[vhost] === undefined || 
+    		this._config[vhost].global === undefined ||
+    		this._config[vhost].global.params === undefined) {
+    	return {};
+    }
+    return this._config[vhost].global.params;
 }</code></pre>
           <section id="newContext">
             <h1>newContext</h1>
@@ -491,6 +663,14 @@
 </td>
               </tr>
               <tr>
+                <td>headers</td>
+                <td>Object</td>
+                <td><ul>
+<li>The request headers if any</li>
+</ul>
+</td>
+              </tr>
+              <tr>
                 <td>return</td>
                 <td>Object</td>
                 <td><p>A new context object to pass along</p></td>
@@ -498,8 +678,8 @@
             </tbody>
           </table>
           <div class="description"><p>Create a new context for a request</p></div>
-          <pre><code class="language-javascript">newContext(body, session, stream, files) {
-	return new Context(this, body, session, stream, files);
+          <pre><code class="language-javascript">newContext(body, session, stream, files, headers) {
+	return new Context(this, body, session, stream, files, headers);
 }</code></pre>
           <section id="toPublicJSON">
             <h1>toPublicJSON</h1>

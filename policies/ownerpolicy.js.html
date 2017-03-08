@@ -22,6 +22,8 @@
             <li><a href="../index.html">Main</a></li>
             <li><a href="../core.js.html">core.js</a></li>
             <li><a href="../handlers/lambda.js.html">handlers/lambda.js</a></li>
+            <li><a href="../policies/aclpolicy.js.html">policies/aclpolicy.js</a></li>
+            <li><a href="../policies/aggregatepolicy.js.html">policies/aggregatepolicy.js</a></li>
             <li class="active"><a href="../policies/ownerpolicy.js.html">policies/ownerpolicy.js
                 <ul class="nav nav-stacked">
                   <li><a href="#canCreate"><i class="alert alert-info"></i><span>canCreate</span></a>
@@ -34,12 +36,16 @@
                   </li>
                 </ul></a></li>
             <li><a href="../policies/policy.js.html">policies/policy.js</a></li>
+            <li><a href="../policies/rolepolicy.js.html">policies/rolepolicy.js</a></li>
             <li><a href="../routehelpers/file.js.html">routehelpers/file.js</a></li>
             <li><a href="../routehelpers/inline.js.html">routehelpers/inline.js</a></li>
             <li><a href="../routehelpers/lambda.js.html">routehelpers/lambda.js</a></li>
             <li><a href="../routehelpers/resource.js.html">routehelpers/resource.js</a></li>
             <li><a href="../routehelpers/string.js.html">routehelpers/string.js</a></li>
+            <li><a href="../server.js.html">server.js</a></li>
             <li><a href="../services/binary.js.html">services/binary.js</a></li>
+            <li><a href="../services/cacher.js.html">services/cacher.js</a></li>
+            <li><a href="../services/configuration.js.html">services/configuration.js</a></li>
             <li><a href="../services/executor.js.html">services/executor.js</a></li>
             <li><a href="../services/filebinary.js.html">services/filebinary.js</a></li>
             <li><a href="../services/mailer.js.html">services/mailer.js</a></li>
@@ -47,11 +53,15 @@
             <li><a href="../services/s3binary.js.html">services/s3binary.js</a></li>
             <li><a href="../services/service.js.html">services/service.js</a></li>
             <li><a href="../stores/dynamodb.js.html">stores/dynamodb.js</a></li>
+            <li><a href="../stores/extender.js.html">stores/extender.js</a></li>
             <li><a href="../stores/file.js.html">stores/file.js</a></li>
+            <li><a href="../stores/memory.js.html">stores/memory.js</a></li>
             <li><a href="../stores/mongodb.js.html">stores/mongodb.js</a></li>
             <li><a href="../stores/store.js.html">stores/store.js</a></li>
             <li><a href="../utils/context.js.html">utils/context.js</a></li>
             <li><a href="../utils/cookie.js.html">utils/cookie.js</a></li>
+            <li><a href="../utils/lambdacaller.js.html">utils/lambdacaller.js</a></li>
+            <li><a href="../utils/tokens.js.html">utils/tokens.js</a></li>
           </ul>
         </div>
         <div class="col-md-9">
@@ -63,12 +73,12 @@
             </p>
           </section>
           <div class="description"><p>Return false if can&#39;t create</p></div>
-          <pre><code class="language-javascript">canCreate(ctx, object) {
-	object.user = ctx.session.getUserId();
-	if (!object.user) {
+          <pre><code class="language-javascript">canCreate(ctx) {
+	this.user = ctx.session.getUserId();
+	if (!this.user) {
 		throw 403;
 	}
-	return true;
+	return Promise.resolve(this);
 }</code></pre>
           <section id="canUpdate">
             <h1>canUpdate</h1>
@@ -78,12 +88,12 @@
             </p>
           </section>
           <div class="description"><p>Return false if can&#39;t update</p></div>
-          <pre><code class="language-javascript">canUpdate(ctx, object) {
+          <pre><code class="language-javascript">canUpdate(ctx) {
 	// Allow to modify itself by default
-	if (ctx.session.getUserId() !== object.user &amp;&amp; ctx.session.getUserId() !== object.uuid) {
+	if (ctx.session.getUserId() !== this.user &amp;&amp; ctx.session.getUserId() !== this.uuid) {
 		throw 403;
 	}
-	return true;
+	return Promise.resolve(this);
 }</code></pre>
           <section id="canGet">
             <h1>canGet</h1>
@@ -93,17 +103,17 @@
             </p>
           </section>
           <div class="description"><p>Return false if can&#39;t get</p></div>
-          <pre><code class="language-javascript">canGet(ctx, object) {
-	if (object.public) {
-		return true;
+          <pre><code class="language-javascript">canGet(ctx) {
+	if (this.public) {
+		return Promise.resolve(this);
 	}
-	if (ctx.session.getUserId() !== object.user &amp;&amp; ctx.session.getUserId() !== object.uuid) {
+	if (ctx.session.getUserId() !== this.user &amp;&amp; ctx.session.getUserId() !== this.uuid) {
 		throw 403;
 	}
-	if (!object.user &amp;&amp; ctx.session.getUserId() !== object.uuid) {
+	if (!this.user &amp;&amp; ctx.session.getUserId() !== this.uuid) {
 		throw 403;
 	}
-	return true;
+	return Promise.resolve(this);
 }</code></pre>
           <section id="canDelete">
             <h1>canDelete</h1>
@@ -113,11 +123,11 @@
             </p>
           </section>
           <div class="description"><p>Return false if can&#39;t delete</p></div>
-          <pre><code class="language-javascript">canDelete(ctx, object) {
-	if (ctx.session.getUserId() !== object.user &amp;&amp; ctx.session.getUserId() !== object.uuid) {
+          <pre><code class="language-javascript">canDelete(ctx) {
+	if (ctx.session.getUserId() !== this.user &amp;&amp; ctx.session.getUserId() !== this.uuid) {
 		throw 403;
 	}
-	return true;
+	return Promise.resolve(this);
 }
 }
 

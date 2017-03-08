@@ -22,14 +22,20 @@
             <li><a href="../index.html">Main</a></li>
             <li><a href="../core.js.html">core.js</a></li>
             <li><a href="../handlers/lambda.js.html">handlers/lambda.js</a></li>
+            <li><a href="../policies/aclpolicy.js.html">policies/aclpolicy.js</a></li>
+            <li><a href="../policies/aggregatepolicy.js.html">policies/aggregatepolicy.js</a></li>
             <li><a href="../policies/ownerpolicy.js.html">policies/ownerpolicy.js</a></li>
             <li><a href="../policies/policy.js.html">policies/policy.js</a></li>
+            <li><a href="../policies/rolepolicy.js.html">policies/rolepolicy.js</a></li>
             <li><a href="../routehelpers/file.js.html">routehelpers/file.js</a></li>
             <li><a href="../routehelpers/inline.js.html">routehelpers/inline.js</a></li>
             <li><a href="../routehelpers/lambda.js.html">routehelpers/lambda.js</a></li>
             <li><a href="../routehelpers/resource.js.html">routehelpers/resource.js</a></li>
             <li><a href="../routehelpers/string.js.html">routehelpers/string.js</a></li>
+            <li><a href="../server.js.html">server.js</a></li>
             <li><a href="../services/binary.js.html">services/binary.js</a></li>
+            <li><a href="../services/cacher.js.html">services/cacher.js</a></li>
+            <li><a href="../services/configuration.js.html">services/configuration.js</a></li>
             <li><a href="../services/executor.js.html">services/executor.js</a></li>
             <li><a href="../services/filebinary.js.html">services/filebinary.js</a></li>
             <li><a href="../services/mailer.js.html">services/mailer.js</a></li>
@@ -49,17 +55,23 @@
                   </li>
                   <li><a href="#uninstall"><i class="alert alert-info"></i><span>uninstall</span></a>
                   </li>
+                  <li><a href="#emit"><i class="alert alert-info"></i><span>emit</span></a>
+                  </li>
                   <li><a href="#getModda"><i class="alert alert-info"></i><span>getModda</span></a>
                   </li>
                   <li><a href="#__clean"><i class="alert alert-info"></i><span>__clean</span></a>
                   </li>
                 </ul></a></li>
             <li><a href="../stores/dynamodb.js.html">stores/dynamodb.js</a></li>
+            <li><a href="../stores/extender.js.html">stores/extender.js</a></li>
             <li><a href="../stores/file.js.html">stores/file.js</a></li>
+            <li><a href="../stores/memory.js.html">stores/memory.js</a></li>
             <li><a href="../stores/mongodb.js.html">stores/mongodb.js</a></li>
             <li><a href="../stores/store.js.html">stores/store.js</a></li>
             <li><a href="../utils/context.js.html">utils/context.js</a></li>
             <li><a href="../utils/cookie.js.html">utils/cookie.js</a></li>
+            <li><a href="../utils/lambdacaller.js.html">utils/lambdacaller.js</a></li>
+            <li><a href="../utils/tokens.js.html">utils/tokens.js</a></li>
           </ul>
         </div>
         <div class="col-md-9">
@@ -183,10 +195,15 @@
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td>config</td>
+                <td></td>
+                <td><p>for the host so you can add your own route here</p></td>
+              </tr>
             </tbody>
           </table>
           <div class="description"><p>Will be called after all the Services are created</p></div>
-          <pre><code class="language-javascript">init() {}</code></pre>
+          <pre><code class="language-javascript">init(config) {}</code></pre>
           <section id="install">
             <h1>install</h1>
             <h5 class="subheader"></h5>
@@ -227,6 +244,26 @@
           </table>
           <div class="description"><p>For future use, while undeploying this should be call so the service can create what it needs if necessary</p></div>
           <pre><code class="language-javascript">uninstall(params) {}</code></pre>
+          <section id="emit">
+            <h1>emit</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Service.prototype.emit()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Emit the event with data and wait for Promise to finish if listener returned a Promise</p></div>
+          <pre><code class="language-javascript">emit(event, data) {
+	var result;
+	var promises = [];
+	var listeners = this.listeners(event);
+	for (var i in listeners) {
+		result = listeners[i](data);
+		if (result instanceof Promise) {
+			promises.push(result);
+		}
+	}
+	return Promise.all(promises);
+}</code></pre>
           <section id="getModda">
             <h1>getModda</h1>
             <h5 class="subheader"></h5>

@@ -22,15 +22,21 @@
             <li><a href="../index.html">Main</a></li>
             <li><a href="../core.js.html">core.js</a></li>
             <li><a href="../handlers/lambda.js.html">handlers/lambda.js</a></li>
+            <li><a href="../policies/aclpolicy.js.html">policies/aclpolicy.js</a></li>
+            <li><a href="../policies/aggregatepolicy.js.html">policies/aggregatepolicy.js</a></li>
             <li><a href="../policies/ownerpolicy.js.html">policies/ownerpolicy.js</a></li>
             <li><a href="../policies/policy.js.html">policies/policy.js</a></li>
+            <li><a href="../policies/rolepolicy.js.html">policies/rolepolicy.js</a></li>
             <li><a href="../routehelpers/file.js.html">routehelpers/file.js</a></li>
             <li><a href="../routehelpers/inline.js.html">routehelpers/inline.js</a></li>
             <li><a href="../routehelpers/lambda.js.html">routehelpers/lambda.js</a></li>
             <li><a href="../routehelpers/resource.js.html">routehelpers/resource.js</a></li>
             <li><a href="../routehelpers/string.js.html">routehelpers/string.js</a></li>
+            <li><a href="../server.js.html">server.js</a></li>
             <li class="active"><a href="../services/binary.js.html">services/binary.js
                 <ul class="nav nav-stacked">
+                  <li><a href="#BinaryMap"><i class="alert alert-success"></i><span>BinaryMap</span></a>
+                  </li>
                   <li><a href="#Binary"><i class="alert alert-success"></i><span>Binary</span></a>
                   </li>
                   <li><a href="#store"><i class="alert alert-info"></i><span>store</span></a>
@@ -43,7 +49,11 @@
                   </li>
                   <li><a href="#get"><i class="alert alert-info"></i><span>get</span></a>
                   </li>
+                  <li><a href="#downloadTo"><i class="alert alert-info"></i><span>downloadTo</span></a>
+                  </li>
                 </ul></a></li>
+            <li><a href="../services/cacher.js.html">services/cacher.js</a></li>
+            <li><a href="../services/configuration.js.html">services/configuration.js</a></li>
             <li><a href="../services/executor.js.html">services/executor.js</a></li>
             <li><a href="../services/filebinary.js.html">services/filebinary.js</a></li>
             <li><a href="../services/mailer.js.html">services/mailer.js</a></li>
@@ -51,14 +61,44 @@
             <li><a href="../services/s3binary.js.html">services/s3binary.js</a></li>
             <li><a href="../services/service.js.html">services/service.js</a></li>
             <li><a href="../stores/dynamodb.js.html">stores/dynamodb.js</a></li>
+            <li><a href="../stores/extender.js.html">stores/extender.js</a></li>
             <li><a href="../stores/file.js.html">stores/file.js</a></li>
+            <li><a href="../stores/memory.js.html">stores/memory.js</a></li>
             <li><a href="../stores/mongodb.js.html">stores/mongodb.js</a></li>
             <li><a href="../stores/store.js.html">stores/store.js</a></li>
             <li><a href="../utils/context.js.html">utils/context.js</a></li>
             <li><a href="../utils/cookie.js.html">utils/cookie.js</a></li>
+            <li><a href="../utils/lambdacaller.js.html">utils/lambdacaller.js</a></li>
+            <li><a href="../utils/tokens.js.html">utils/tokens.js</a></li>
           </ul>
         </div>
         <div class="col-md-9">
+          <section id="BinaryMap">
+            <h1>BinaryMap</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">class</div><span>&nbsp;</span><span>new BinaryMap()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="description"><p>This is a map used to retrieve binary</p></div>
+          <pre><code class="language-javascript">class BinaryMap {
+	constructor(obj) {
+		for (var i in obj) {
+			this[i] = obj[i];
+		}
+	}
+}</code></pre>
           <section id="Binary">
             <h1>Binary</h1>
             <h5 class="subheader"></h5>
@@ -256,7 +296,56 @@
           </table>
           <div class="description"><p>Get a binary </p></div>
           <pre><code class="language-javascript">get(info) {
-	this.emit('binaryGet', {'object': info, 'service': this});
+	return this.emit('Binary.Get', {'object': info, 'service': this}).then( () =&gt; {
+		return this._get(info);	
+	});
+}</code></pre>
+          <section id="downloadTo">
+            <h1>downloadTo</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Binary.prototype.downloadTo()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>info</td>
+                <td>Object</td>
+                <td><p>The reference stored in your target object</p></td>
+              </tr>
+              <tr>
+                <td>filepath</td>
+                <td>String</td>
+                <td><p>to save the binary to</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Download a binary to a file</p></div>
+          <pre><code class="language-javascript">downloadTo(info, filename) {
+	var readStream = this.get(info);
+	var writeStream = fs.createWriteStream(filename);
+	return new Promise((resolve, reject) =&gt; {
+		writeStream.on('finish', (src) =&gt; {
+			return resolve();
+		});
+		writeStream.on('error', (src) =&gt; {
+			try {
+				fs.unlinkSync(filename);
+			} catch(err) {
+				console.log(err);
+			}
+			return reject();
+		});
+		readStream.pipe(writeStream);
+	});
 }</code></pre>
           <div class="footer site-footer">
             <div class="span site-footer-owner"><a href="https://github.com/mr-doc/mr-doc-theme-cayman">Cayman</a> is maintained by <a href="https://github.com/iwatakeshi">iwatakeshi</a>.</div>

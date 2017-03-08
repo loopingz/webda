@@ -22,14 +22,20 @@
             <li><a href="../index.html">Main</a></li>
             <li><a href="../core.js.html">core.js</a></li>
             <li><a href="../handlers/lambda.js.html">handlers/lambda.js</a></li>
+            <li><a href="../policies/aclpolicy.js.html">policies/aclpolicy.js</a></li>
+            <li><a href="../policies/aggregatepolicy.js.html">policies/aggregatepolicy.js</a></li>
             <li><a href="../policies/ownerpolicy.js.html">policies/ownerpolicy.js</a></li>
             <li><a href="../policies/policy.js.html">policies/policy.js</a></li>
+            <li><a href="../policies/rolepolicy.js.html">policies/rolepolicy.js</a></li>
             <li><a href="../routehelpers/file.js.html">routehelpers/file.js</a></li>
             <li><a href="../routehelpers/inline.js.html">routehelpers/inline.js</a></li>
             <li><a href="../routehelpers/lambda.js.html">routehelpers/lambda.js</a></li>
             <li><a href="../routehelpers/resource.js.html">routehelpers/resource.js</a></li>
             <li><a href="../routehelpers/string.js.html">routehelpers/string.js</a></li>
+            <li><a href="../server.js.html">server.js</a></li>
             <li><a href="../services/binary.js.html">services/binary.js</a></li>
+            <li><a href="../services/cacher.js.html">services/cacher.js</a></li>
+            <li><a href="../services/configuration.js.html">services/configuration.js</a></li>
             <li><a href="../services/executor.js.html">services/executor.js</a></li>
             <li><a href="../services/filebinary.js.html">services/filebinary.js</a></li>
             <li><a href="../services/mailer.js.html">services/mailer.js</a></li>
@@ -37,7 +43,9 @@
             <li><a href="../services/s3binary.js.html">services/s3binary.js</a></li>
             <li><a href="../services/service.js.html">services/service.js</a></li>
             <li><a href="../stores/dynamodb.js.html">stores/dynamodb.js</a></li>
+            <li><a href="../stores/extender.js.html">stores/extender.js</a></li>
             <li><a href="../stores/file.js.html">stores/file.js</a></li>
+            <li><a href="../stores/memory.js.html">stores/memory.js</a></li>
             <li><a href="../stores/mongodb.js.html">stores/mongodb.js</a></li>
             <li><a href="../stores/store.js.html">stores/store.js</a></li>
             <li class="active"><a href="../utils/context.js.html">utils/context.js
@@ -54,10 +62,14 @@
                   </li>
                   <li><a href="#getService"><i class="alert alert-info"></i><span>getService</span></a>
                   </li>
+                  <li><a href="#getLocale"><i class="alert alert-info"></i><span>getLocale</span></a>
+                  </li>
                   <li><a href="#setExecutor"><i class="alert alert-info"></i><span>setExecutor</span></a>
                   </li>
                 </ul></a></li>
             <li><a href="../utils/cookie.js.html">utils/cookie.js</a></li>
+            <li><a href="../utils/lambdacaller.js.html">utils/lambdacaller.js</a></li>
+            <li><a href="../utils/tokens.js.html">utils/tokens.js</a></li>
           </ul>
         </div>
         <div class="col-md-9">
@@ -82,13 +94,24 @@
                 <td></td>
                 <td><p>If it is an object it will be serializeb with toPublicJSON, if it is a String it will be appended to the result, if it is a buffer it will replace the result</p></td>
               </tr>
+              <tr>
+                <td>...args</td>
+                <td></td>
+                <td><p>any arguments to pass to the toPublicJSON method</p></td>
+              </tr>
             </tbody>
           </table>
           <div class="description"><p>Write data to the client</p></div>
           <pre><code class="language-javascript">write(output) {
 	if (typeof(output) == &quot;object&quot; &amp;&amp; !(output instanceof Buffer)) {
 		this._headers['Content-type']='application/json';
-		this._body = this._webda.toPublicJSON(output);
+		CoreModel.__ctx = this;
+		if (output instanceof CoreModel) {
+			this._body = JSON.stringify(output);
+		} else {
+			this._body = this._webda.toPublicJSON(output);
+		}
+		CoreModel.__ctx = undefined;
 		return;
 	} else if (typeof(output) == &quot;string&quot;) {
 		if (this._body == undefined) {
@@ -233,6 +256,22 @@
           <div class="description"><p>Get a service from webda</p></div>
           <pre><code class="language-javascript">getService(name) {
 	return this._webda.getService(name);
+}</code></pre>
+          <section id="getLocale">
+            <h1>getLocale</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getLocale()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the request locale if found</p></div>
+          <pre><code class="language-javascript">getLocale() {
+	var locales = this._webda.getLocales();
+	acceptLanguage.languages(locales);
+	if (this.headers['Accept-Language']) {
+		return acceptLanguage.get(this.headers['Accept-Language']);
+	}
+	return locales[0];
 }</code></pre>
           <section id="setExecutor">
             <h1>setExecutor</h1>
