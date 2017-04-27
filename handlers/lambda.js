@@ -119,7 +119,7 @@ class LambdaServer extends Webda {
 
     return Promise.resolve(executor.execute(ctx)).then(() => {
       if (!ctx._ended) {
-        ctx.end();
+        return ctx.end();
       }
       this.handleLambdaReturn(ctx, callback);
     }).catch((err) => {
