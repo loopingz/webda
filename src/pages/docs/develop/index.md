@@ -1,6 +1,6 @@
 ---
 title: "Develop"
-description: "Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Quem num gosta di mé, boa gente num é."
+description: "Webda provides you several services or you can create your own service"
 layout: "guide"
 icon: "code-file"
 weight: 2

@@ -1,6 +1,6 @@
 ---
 title: "Home"
-description: "Something nice and compelling about the project. Make it short and sweet."
+description: "Serverless for developers ! Focus only on your code, deploy everywhere."
 ---
 
 {namespace pageIndex}
@@ -30,8 +30,8 @@ description: "Something nice and compelling about the project. Make it short and
 			<h1 class="header-title">{$site.title}</h1>
 			<h2 class="header-subtitle">{$site.index.description}</h2>
 			<div class="header-cta">
-				<a href="#" class="btn btn-accent">Quick Start</a>
-				<a href="#" class="btn btn-default">Why ?</a>
+				<a href="/docs/create" class="btn btn-accent">Quick Start</a>
+				<a href="#why" class="btn btn-default">Why ?</a>
 			</div>
 		</div>
 	</header>
@@ -42,11 +42,12 @@ description: "Something nice and compelling about the project. Make it short and
  */
 {template .why}
 	<article class="about">
+	    <a name="why"></a>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-2">
 					<h3 class="about-title">Why Webda ?</h3>
-					<p class="about-description">Webda was born when AWS API Gateway was really hard to configure and Lambda was just released.</p>
+					<p class="about-description">Webda was born when AWS API Gateway was really hard to configure and Lambda was just released. The AWS ecosystem was not as advanced as now, so why not switching completely to AWS ecosystem. As much as i like AWS, i like even more my freedom, so Webda is here to help you leverage Serverless technologies while being able to package it as a docker and deploy on another system or just run it locally for your tests</p>
 				</div>
 			</div>
 		</div>
@@ -78,7 +79,7 @@ description: "Something nice and compelling about the project. Make it short and
 					<div class="feature-graphic">
 						<span class="icon-16-calendar"></span>
 					</div>
-					<h3 class="feature-title">Heading</h3>
+					<h3 class="feature-title">Multi-</h3>
 					<p class="feature-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros praesent commodo.</p>
 				</section>
 			</div>
@@ -95,7 +96,7 @@ description: "Something nice and compelling about the project. Make it short and
 			<div class="row">
 				<div class="col-md-12 col-md-offset-2">
 					<h3 class="about-title">It's easier than you think</h3>
-					<p class="about-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros praesent commodo ultricies vehicula ut.</p>
+					<p class="about-description">A configuration UI aswell as predefined services and Polymer component will allow you to quick start a project.</p>
 				</div>
 			</div>
 		</div>
@@ -110,8 +111,8 @@ description: "Something nice and compelling about the project. Make it short and
 		<div class="container">
 			<section class="highlight row">
 				<div class="col-md-6 col-md-offset-2">
-					<h4 class="highlight-title">First highlight. It'll blow your mind.</h4>
-					<p class="highlight-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros praesent commodo ultricies vehicula ut.</p>
+					<h4 class="highlight-title">Start a project in minutes.</h4>
+					<p class="highlight-description">With the shell tools, init a project with one command, then use our configuration UI to add services and configure them, your API is ready to use.</p>
 				</div>
 				<div class="col-md-5 col-md-offset-1">
 					<img class="highlight-image" src="http://placehold.it/500x400/e7e8e8/64696d" alt="Placeholder">
@@ -119,8 +120,8 @@ description: "Something nice and compelling about the project. Make it short and
 			</section>
 			<section class="highlight row">
 				<div class="col-md-6 col-md-push-9">
-					<h4 class="highlight-title">It's that good. See for yourself.</h4>
-					<p class="highlight-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros praesent commodo ultricies vehicula ut.</p>
+					<h4 class="highlight-title">Keep your options open.</h4>
+					<p class="highlight-description">You can store your datas in DynamoDB or MongoDB without a change in your code, you can even store in a local folder to run some tests.</p>
 				</div>
 				<div class="col-md-5 col-md-offset-2 col-md-pull-6">
 					<img class="highlight-image" src="http://placehold.it/500x400/e7e8e8/64696d" alt="Placeholder">
@@ -128,8 +129,8 @@ description: "Something nice and compelling about the project. Make it short and
 			</section>
 			<section class="highlight row">
 				<div class="col-md-6 col-md-offset-2">
-					<h4 class="highlight-title">And lastly, this one. Checkmate.</h4>
-					<p class="highlight-description">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros praesent commodo ultricies vehicula ut.</p>
+					<h4 class="highlight-title">Deploy everywhere.</h4>
+					<p class="highlight-description">From the same project, you can deploy into a Docker container and push it to a repository, or deploy on AWS with API Gateway mapping. We also handle local serve for demo and development aswell as new services like WeDeploy</p>
 				</div>
 				<div class="col-md-5 col-md-offset-1">
 					<img class="highlight-image" src="http://placehold.it/500x400/e7e8e8/64696d" alt="Placeholder">

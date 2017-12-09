@@ -1,5 +1,5 @@
 ---
-title: "Configuration Resolution"
+title: "Lambda"
 description: "How Webda resolve service parameters."
 layout: "guide"
 weight: 2
