@@ -1,0 +1,77 @@
+$accent: #3F51B5;
+
+@import "marble";
+
+// Root
+@import "templates/root";
+
+// Landing
+@import "templates/landing";
+
+// Docs
+@import "templates/docs";
+
+// Search
+@import "templates/search";
+
+// Updates
+@import "templates/updates";
+
+// Blog
+@import "templates/blog";
+
+// Tutorial
+@import "templates/tutorial";
+
+.topbar-logo-icon > img {
+	width: 36px;
+}
+
+.topic.orange .topic-icon {
+	background: #FF9901;
+}
+
+.topic.orange.radial-out::before {
+	background: #FF9901;
+}
+
+.topic.orange {
+	color: #FF9901;
+}
+
+.topic.blue .topic-icon {
+	background: #3F51B5;
+}
+
+.topic.blue.radial-out::before {
+	background: #3F51B5;
+}
+
+.topic.blue {
+	color: #3F51B5;
+}
+
+.topic.green .topic-icon {
+	background: #7EBF6A;
+}
+
+.topic.green.radial-out::before {
+	background: #7EBF6A;
+}
+
+.topic.green {
+	color: #7EBF6A;
+}
+
+.topic.yellow .topic-icon {
+	background: #f5e411;
+}
+
+.topic.yellow.radial-out::before {
+	background: #f5e411;
+}
+
+.topic.yellow {
+	color: #f5e411;
+}
+
