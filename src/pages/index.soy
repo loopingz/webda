@@ -12,10 +12,11 @@ description: "Serverless for developers ! Focus only on your code, deploy everyw
 	{call main.render data="all"}
 		{param content kind="html"}
 			{call .header data="all" /}
+			{call .links /}
 			{call .why /}
-			{call .features /}
-			{call .how /}
 			{call .highlights /}
+			{call .how /}
+			{call .features /}
 			{call .footer /}
 		{/param}
 	{/call}
@@ -35,6 +36,24 @@ description: "Serverless for developers ! Focus only on your code, deploy everyw
 			</div>
 		</div>
 	</header>
+{/template}
+
+/**
+ *
+ */
+{template .links}
+  <div class="links">
+    <div class="container">
+      <div class="row">
+        <iframe allowtransparency="true" scrolling="no" frameborder="0" src="https://buttons.github.io/buttons.html#href=https%3A%2F%2Fgithub.com%2Floopingz%2Fwebda&amp;aria-label=Star%20loopingz%2Fwebda%20on%20GitHub&amp;data-icon=octicon-star&amp;data-text=Star" style="width: 48px; height: 20px; border: none;"></iframe>
+        <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-hashtag-button twitter-hashtag-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="http://platform.twitter.com/widgets/tweet_button.6b8337773e8a8ecc4f0b054fec8f1482.en.html#button_hashtag=webda&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwebda.io%2F&amp;size=m&amp;time=1512863033246&amp;type=hashtag" style="position: static; visibility: visible; width: 102px; height: 20px;" data-hashtag="webda"></iframe>
+        <iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 70px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1512863032927" name="I0_1512863032927" src="https://apis.google.com/u/0/se/0/_/+1/sharebutton?plusShare=true&amp;usegapi=1&amp;annotation=none&amp;action=share&amp;origin=http%3A%2F%2Fwebda.io&amp;url=http%3A%2F%2Fwebda.io%2F&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.fr.6DbRC12h_8E.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCP7xvQtW3NFVoBWbjBoBOkmXmCsbw#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1512863032927&amp;_gfid=I0_1512863032927&amp;parent=http%3A%2F%2Fwebda.io&amp;pfname=&amp;rpctoken=10334638" data-gapiattached="true" title="G+"></iframe>
+        <script src="http://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+        <span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1512863033128_0"><a id="li_ui_li_gen_1512863033128_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1512863033128_0-logo">in</span><span id="li_ui_li_gen_1512863033128_0-title"><span id="li_ui_li_gen_1512863033128_0-mark"></span><span id="li_ui_li_gen_1512863033128_0-title-text">Share</span></span></a></span></span></span>
+        <script type="IN/Share+init" data-url="http://webda.io"></script>
+      </div>
+    </div>
+  </div>
 {/template}
 
 /**
@@ -96,7 +115,7 @@ description: "Serverless for developers ! Focus only on your code, deploy everyw
 			<div class="row">
 				<div class="col-md-12 col-md-offset-2">
 					<h3 class="about-title">It's easier than you think</h3>
-					<p class="about-description">A configuration UI aswell as predefined services and Polymer component will allow you to quick start a project.</p>
+					<p class="about-description">A configuration UI as well as predefined services and Polymer component will allow you to quick start a project.</p>
 				</div>
 			</div>
 		</div>
@@ -115,6 +134,7 @@ description: "Serverless for developers ! Focus only on your code, deploy everyw
 					<p class="highlight-description">With the shell tools, init a project with one command, then use our configuration UI to add services and configure them, your API is ready to use.</p>
 				</div>
 				<div class="col-md-5 col-md-offset-1">
+				    <div style="background-color: #000; width: 500px; height: 400px;"></div>
 					<img class="highlight-image" src="http://placehold.it/500x400/e7e8e8/64696d" alt="Placeholder">
 				</div>
 			</section>
@@ -148,10 +168,11 @@ description: "Serverless for developers ! Focus only on your code, deploy everyw
 		<div class="container">
 			<div class="row">
 				<p class="footer-description col-md-6 col-md-offset-2">
-					Copyright © 2017 <a href="https://webda.io">Webda</a>
+					Copyright ? 2017 <a href="https://webda.io">Webda</a>
 				</p>
 				<p class="footer-description col-md-6">
-					Powered by <a href="http://electricjs.com">Electric.js</a>
+					Powered by <a href="http://electricjs.com">Electric.js</a><br />
+					Sponsored by <a href="https://www.loopingz.com">Loopingz</a><br />
 				</p>
 			</div>
 		</div>

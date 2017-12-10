@@ -125,20 +125,37 @@ Store.Get: When getting the object
 
 </article>
 
-<article id="3">
+<article id="4">
 
-## Security Policy
+## Models
 
-The security policy will be called on any REST API called from the Store, the internal method to access the objects are not secured with it yet, we might later on add this feature.
-The security policy could also be implemented by a Service that listen on Store event this way you can enforce the security even internally
+The store is using a Model to map your object.
+
+It allows you to implement security constraint on the object itself, add some custom actions and validation
+
+### Custom actions
+
+As we saw before the store will expose your objects via an URL
+
+You can also add any specific behavior while saving / updating / deleting
 
 ```javascript
-{
-  ...
-  "security": "OwnerPolicy" // This is the default SecurityPolicy
-  ...
+class MyModel extends CoreModel {
+  canAct(context, action) {
+    if (action === 'get') {
+      return true;
+    } else if (action === 'update') {
+      return true;
+    } else if (action === 'delete') {
+      return true;
+    } else if (action === 'create') {
+      return true;
+    }
+  }
 }
 ```
+
+
 
 If not specified the Store will pick the Owner policy as default.
 Policies are implicit service, so you can get them with a getService("OwnerPolicy"), but don't appear by default in the configuration file. That also means you can override a Policy if you want or create your own to implement your business model
@@ -153,10 +170,6 @@ DELETE: Verify the current user is the user inside the user field
 ### Void policy
 
 No verification, not recommended at all
-
-</article>
-
-<article id="4">
 
 ## Validation
 
@@ -204,6 +217,6 @@ The FileDB only requires a folder where to store the datas. It creates it if not
 
 ## Polymer
 
-You have a behovior defined for you, once added to your component you have the model property and a save/get/update/delete method for you to communicate with the API
+You have a behavior defined for you, once added to your component you have the model property and a save/get/update/delete method for you to communicate with the API
 
 </article>

@@ -1,5 +1,5 @@
 ---
-title: "Create"
+title: "Quick start"
 description: "How to startup a project."
 layout: "guide"
 icon: "flash"

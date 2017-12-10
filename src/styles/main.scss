@@ -79,3 +79,12 @@ $accent: #3F51B5;
 	background-image: url('/images/puzzle2.jpg');
 	background-size: cover;
 }
+
+.links .container {
+	text-align: center;
+}
+
+.links .row > * {
+	margin-left: 5px;
+	margin-right: 5px;
+}
