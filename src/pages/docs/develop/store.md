@@ -213,6 +213,15 @@ The FileDB only requires a folder where to store the datas. It creates it if not
 
 </article>
 
+
+<article id="7">
+
+## MemoryDB
+
+The MemoryDB only store the in a Map, so it will loose all the datas if you shutdown the server. It can be usefull for local cache or for some unit test
+
+</article>
+
 <article id="8">
 
 ## Polymer
