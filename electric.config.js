@@ -8,9 +8,7 @@ module.exports = {
 		includePaths: ['node_modules', marble.src]
 	},
 	vendorSrc: ['node_modules/marble/build/fonts/**'],
-  basePath: {
-    branch: '/webda'
-  },
+  basePath: '/webda',
   deployOptions: {
     branch: 'gh-pages'
   }
