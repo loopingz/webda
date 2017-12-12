@@ -17,9 +17,10 @@ You have the global configuration for the application, that is override by the d
 
 ![image](/images/configuration_resolution.png)
 
-The webda.config.json params attribute is the general configuration
+This is the detail configuration for each section
 
-```javascript
+```general
+// Global Configuration
 {
   "param1": "test1",
   "param2": "test2",
@@ -28,18 +29,16 @@ The webda.config.json params attribute is the general configuration
   }
 }
 ```
-A deployment can override the general configuration with its params attribute
-So with a deployment global configuration like
-
-```javascript
+```deployment-general
+// Deployment Global Configuration
 {
   "param1": "deploytest1",
   "param2": "deplyparamtest2"
 }
-```
 
-The service definition can include local configuration
-```javascript
+```
+```service
+// Service Local Configuration
 {
   "param2": "localtest2",
   "param3": {
@@ -47,11 +46,21 @@ The service definition can include local configuration
   }
 }
 ```
-
-Finally the deployment can override service configuration
-```javascript
+```deployment-service
+// Service Deployment Configuration
 {
   "param3": {
+    "subparam2": "subdeploytest2"
+  }
+}
+```
+```result
+// Service Deployment Configuration
+{
+  "param1": "deploytest1",
+  "param2": "localtest2",
+  "param3": {
+    "subparam1": "subtest1",
     "subparam2": "subdeploytest2"
   }
 }

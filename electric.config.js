@@ -7,5 +7,11 @@ module.exports = {
 	sassOptions: {
 		includePaths: ['node_modules', marble.src]
 	},
-	vendorSrc: ['node_modules/marble/build/fonts/**']
+	vendorSrc: ['node_modules/marble/build/fonts/**'],
+  basePath: {
+    branch: '/webda'
+  },
+  deployOptions: {
+    branch: 'gh-pages'
+  }
 };
