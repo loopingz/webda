@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([22],[
+webpackJsonppageComponent([11],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10106,12 +10106,23 @@ exports.default = parseFromAnchor;
 /* 85 */,
 /* 86 */,
 /* 87 */,
-/* 88 */
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KGHBa", function() { return KGHBa; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ouIQB", function() { return ouIQB; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10123,15 +10134,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from new-website.soy.
+// This file was automatically generated from binary.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace KGHBa.
+ * @fileoverview Templates in namespace ouIQB.
  * @public
  */
 
-goog.module('KGHBa.incrementaldom');
+goog.module('ouIQB.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10152,7 +10163,9 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
 /**
@@ -10163,64 +10176,114 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param177 = function() {
-    ie_open('article');
+  var param511 = function() {
+    ie_open('h6');
+      var dyn28 = opt_data.page.description;
+      if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
+    ie_close('h6');
+    ie_open('article', null, null,
+        'id', '1');
+      ie_open('h2');
+        itext('Overview');
+      ie_close('h2');
       ie_open('p');
-        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
+        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
       ie_close('p');
       ie_open('p');
-        itext('Thanks to ');
-        ie_open('a', null, null,
-            'href', 'https://electricjs.com/');
-          itext('Electric JS');
-        ie_close('a');
-        itext(', we were able to create a whole new website way faster with those cool UI effects.');
+        itext('The API exposed is');
+      ie_close('p');
+      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
+      ie_open('p');
+        itext('You can reduce the exposition by adding an expose attribute as on Store');
       ie_close('p');
       ie_open('p');
-        itext('The same day we are releasing the new website, we also have a fix release ');
-        ie_open('strong');
-          itext('v0.4.6');
-        ie_close('strong');
-      ie_close('p');
-      ie_open('p');
-        itext('This release includes :');
+        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          itext('DynamoDB incrementAttribute with 0 fix');
+          ie_open('em');
+            itext('store');
+          ie_close('em');
+          itext(' is the Store of the object you want attached to');
         ie_close('li');
         ie_open('li');
-          itext('Email storage in lower case');
+          ie_open('em');
+            itext('uid');
+          ie_close('em');
+          itext(' is the Object uuid');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('property');
+          ie_close('em');
+          itext(' is the field of the Object');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('index');
+          ie_close('em');
+          itext(' is the index of the Binary');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('hash');
+          ie_close('em');
+          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
         ie_close('li');
       ie_close('ul');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Map');
+      ie_close('h2');
       ie_open('p');
-        itext('In the next weeks, as Christmas gift we will work hard on a ');
-        ie_open('strong');
-          itext('v0.5.0');
-        ie_close('strong');
-        itext(' it should includes :');
+        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
+      ie_close('p');
+      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
+      ie_close('p');
+      ie_open('p');
+        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
+      ie_close('p');
+      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('S3Binary');
+      ie_close('h2');
+      ie_open('p');
+        itext('To configure just add the parameter bucket');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('FileBinary');
+      ie_close('h2');
+      ie_open('p');
+        itext('To configure just add the parameter folder');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('The behavior implementation can be found there :');
+      ie_close('p');
+      ie_open('p');
+        itext('Two different UI component exist also :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          itext('Better ');
-          ie_open('a', null, null,
-              'href', 'https://wedeploy.com/');
-            itext('WeDeploy');
-          ie_close('a');
-          itext(' integration');
+          itext('A simple fab button upload :');
         ie_close('li');
         ie_open('li');
-          itext('Easier queue worker deployment');
-        ie_close('li');
-        ie_open('li');
-          ie_open('a', null, null,
-              'href', 'https://aws.amazon.com/fargate/');
-            itext('AWS Fargate');
-          ie_close('a');
-          itext(' integration');
-        ie_close('li');
-        ie_open('li');
-          itext('Static website deployment integration');
+          itext('IA paper-input with Browse button :');
         ie_close('li');
       ie_close('ul');
     ie_close('article');
@@ -10233,11 +10296,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param511}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'KGHBa.render';
+  $render.soyTemplateName = 'ouIQB.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10247,25 +10310,14 @@ return exports;
 
 });
 
-class KGHBa extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(KGHBa, templates);
+class ouIQB extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ouIQB, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
 /* 100 */,
 /* 101 */,
 /* 102 */,
@@ -10310,7 +10362,26 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(KGHBa, templates);
 /* 141 */,
 /* 142 */,
 /* 143 */,
-/* 144 */
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10340,9 +10411,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _newWebsiteSoy = __webpack_require__(88);
+var _binarySoy = __webpack_require__(99);
 
-var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
+var _binarySoy2 = _interopRequireDefault(_binarySoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10352,23 +10423,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var KGHBa = function (_Component) {
-  _inherits(KGHBa, _Component);
+var ouIQB = function (_Component) {
+  _inherits(ouIQB, _Component);
 
-  function KGHBa() {
-    _classCallCheck(this, KGHBa);
+  function ouIQB() {
+    _classCallCheck(this, ouIQB);
 
-    return _possibleConstructorReturn(this, (KGHBa.__proto__ || Object.getPrototypeOf(KGHBa)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ouIQB.__proto__ || Object.getPrototypeOf(ouIQB)).apply(this, arguments));
   }
 
-  return KGHBa;
+  return ouIQB;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(KGHBa, _newWebsiteSoy2.default);
+_metalSoy2.default.register(ouIQB, _binarySoy2.default);
 
-exports.default = KGHBa;
+exports.default = ouIQB;
 
 /***/ })
-],[144]);
+],[163]);

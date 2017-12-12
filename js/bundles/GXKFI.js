@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([10],[
+webpackJsonppageComponent([18],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10110,20 +10110,12 @@ exports.default = parseFromAnchor;
 /* 89 */,
 /* 90 */,
 /* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */
+/* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "yLelu", function() { return yLelu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GXKFI", function() { return GXKFI; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10135,15 +10127,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from custom.soy.
+// This file was automatically generated from aws.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace yLelu.
+ * @fileoverview Templates in namespace GXKFI.
  * @public
  */
 
-goog.module('yLelu.incrementaldom');
+goog.module('GXKFI.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10177,45 +10169,65 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param535 = function() {
-    ie_open('h6');
-      var dyn29 = opt_data.page.description;
-      if (typeof dyn29 == 'function') dyn29(); else if (dyn29 != null) itext(dyn29);
-    ie_close('h6');
+  var param349 = function() {
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
-      ie_close('p');
-      ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+        ie_open('img', null, null,
+            'src', 'http://webda.io/images/schemas/aws_deploy.png',
+            'alt', 'image');
+        ie_close('img');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Internal service');
+        itext('Deployment Policy');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+        itext('To be able to deploy the deployment user must have at least :');
       ie_close('p');
+      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
-      ie_close('p');
-      $templateAlias2({code: 'const Service = require(\'webda/services/service\')\n\nclass MyInternalService extends Service {\n\n   init() {\n     this._gdrive = new ...;\n   }\n   \n   getDocument(uuid, token) {\n     return this._gdrive.getDocument(uuid, token);\n   }\n   \n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The GDrive API is faked here, but basically this service will allow you to get some configuration from the webda.config.json and expose some methods for others Services or Models to use inside Webda');
+        itext('This can be restrict more and should, need to update the documentation');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Service with exposed API');
+        itext('Package');
       ie_close('h2');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Lambda');
+      ie_close('h2');
+      ie_open('p');
+        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('API Gateway');
+      ie_close('h2');
+      ie_open('p');
+        itext('It map all the routes from your application, if a ');
+        ie_open('strong');
+          itext('website');
+        ie_close('strong');
+        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
+      ie_close('p');
+      ie_open('p');
+        itext('It also deploy the API as Stage named with the name of the deployment.');
+      ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10226,11 +10238,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param535}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param349}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'yLelu.render';
+  $render.soyTemplateName = 'GXKFI.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10240,14 +10252,22 @@ return exports;
 
 });
 
-class yLelu extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(yLelu, templates);
+class GXKFI extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GXKFI, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
 /* 101 */,
 /* 102 */,
 /* 103 */,
@@ -10297,21 +10317,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(yLelu, templates);
 /* 147 */,
 /* 148 */,
 /* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10341,9 +10347,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _customSoy = __webpack_require__(100);
+var _awsSoy = __webpack_require__(92);
 
-var _customSoy2 = _interopRequireDefault(_customSoy);
+var _awsSoy2 = _interopRequireDefault(_awsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10353,23 +10359,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var yLelu = function (_Component) {
-  _inherits(yLelu, _Component);
+var GXKFI = function (_Component) {
+  _inherits(GXKFI, _Component);
 
-  function yLelu() {
-    _classCallCheck(this, yLelu);
+  function GXKFI() {
+    _classCallCheck(this, GXKFI);
 
-    return _possibleConstructorReturn(this, (yLelu.__proto__ || Object.getPrototypeOf(yLelu)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (GXKFI.__proto__ || Object.getPrototypeOf(GXKFI)).apply(this, arguments));
   }
 
-  return yLelu;
+  return GXKFI;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(yLelu, _customSoy2.default);
+_metalSoy2.default.register(GXKFI, _awsSoy2.default);
 
-exports.default = yLelu;
+exports.default = GXKFI;
 
 /***/ })
-],[164]);
+],[150]);

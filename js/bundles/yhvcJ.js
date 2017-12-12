@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([7],[
+webpackJsonppageComponent([8],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10120,13 +10120,12 @@ exports.default = parseFromAnchor;
 /* 99 */,
 /* 100 */,
 /* 101 */,
-/* 102 */,
-/* 103 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FMsWA", function() { return FMsWA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "yhvcJ", function() { return yhvcJ; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10138,15 +10137,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from models.soy.
+// This file was automatically generated from mailer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace FMsWA.
+ * @fileoverview Templates in namespace yhvcJ.
  * @public
  */
 
-goog.module('FMsWA.incrementaldom');
+goog.module('yhvcJ.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10167,8 +10166,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10180,10 +10177,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param578 = function() {
+  var param569 = function() {
     ie_open('h6');
-      var dyn32 = opt_data.page.description;
-      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
+      var dyn31 = opt_data.page.description;
+      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10191,38 +10188,36 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('Model is the best way to express your business logic.');
+        itext('Web Application always needs to send an email at one point.');
       ie_close('p');
       ie_open('p');
-        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
+        itext('The mailer service is a wrapper on top of two NodeJS library : NodeMailer and EmailTemplate');
+      ie_close('p');
+      ie_open('p');
+        itext('It allows you to send email through SMTP, GMail, SES. It also provides Mustache templates to send email to the user with contextual informations and in his own language');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Security');
+        itext('NodeMailer configuration');
       ie_close('h2');
       ie_open('p');
-        itext('The model has a predefined method ');
         ie_open('em');
-          itext('canAct');
+          itext('to be completed');
         ie_close('em');
-        itext(' that will be called whenever an action is trigger on an object from an external source');
       ie_close('p');
-      ie_open('p');
-        itext('This method return a Promise that will stop the processing if it is rejected');
-      ie_close('p');
-      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Custom Actions');
+        itext('Templating');
       ie_close('h2');
       ie_open('p');
-        itext('The model can defined action that will be exposed by its Store');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
-      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10233,11 +10228,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param578}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param569}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'FMsWA.render';
+  $render.soyTemplateName = 'yhvcJ.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10247,14 +10242,15 @@ return exports;
 
 });
 
-class FMsWA extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(FMsWA, templates);
+class yhvcJ extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(yhvcJ, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 103 */,
 /* 104 */,
 /* 105 */,
 /* 106 */,
@@ -10307,7 +10303,15 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(FMsWA, templates);
 /* 153 */,
 /* 154 */,
 /* 155 */,
-/* 156 */
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10337,9 +10341,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _modelsSoy = __webpack_require__(103);
+var _mailerSoy = __webpack_require__(102);
 
-var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
+var _mailerSoy2 = _interopRequireDefault(_mailerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10349,23 +10353,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FMsWA = function (_Component) {
-  _inherits(FMsWA, _Component);
+var yhvcJ = function (_Component) {
+  _inherits(yhvcJ, _Component);
 
-  function FMsWA() {
-    _classCallCheck(this, FMsWA);
+  function yhvcJ() {
+    _classCallCheck(this, yhvcJ);
 
-    return _possibleConstructorReturn(this, (FMsWA.__proto__ || Object.getPrototypeOf(FMsWA)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (yhvcJ.__proto__ || Object.getPrototypeOf(yhvcJ)).apply(this, arguments));
   }
 
-  return FMsWA;
+  return yhvcJ;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(FMsWA, _modelsSoy2.default);
+_metalSoy2.default.register(yhvcJ, _mailerSoy2.default);
 
-exports.default = FMsWA;
+exports.default = yhvcJ;
 
 /***/ })
-],[156]);
+],[164]);

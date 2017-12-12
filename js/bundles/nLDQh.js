@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([14],[
+webpackJsonppageComponent([22],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10106,20 +10106,12 @@ exports.default = parseFromAnchor;
 /* 85 */,
 /* 86 */,
 /* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dzQew", function() { return dzQew; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nLDQh", function() { return nLDQh; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10131,15 +10123,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from local.soy.
+// This file was automatically generated from new-website.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace dzQew.
+ * @fileoverview Templates in namespace nLDQh.
  * @public
  */
 
-goog.module('dzQew.incrementaldom');
+goog.module('nLDQh.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10160,9 +10152,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -10173,30 +10163,66 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param451 = function() {
-    ie_open('h6');
-      var dyn25 = opt_data.page.description;
-      if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
-      ie_open('h2');
-        itext('Overview');
-      ie_close('h2');
-      $templateAlias2({code: 'webda serve [-d deploymentName] [--devMode]', mode: 'bash'}, null, opt_ijData);
+  var param177 = function() {
+    ie_open('article');
       ie_open('p');
-        itext('You can specify a ');
-        ie_open('em');
-          itext('deploymentName');
-        ie_close('em');
-        itext(' to serve API with the deployment configuration');
+        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
       ie_close('p');
       ie_open('p');
-        itext('You can disable CORS by adding a ');
-        ie_open('em');
-          itext('--devMode');
-        ie_close('em');
+        itext('Thanks to ');
+        ie_open('a', null, null,
+            'href', 'https://electricjs.com/');
+          itext('Electric JS');
+        ie_close('a');
+        itext(', we were able to create a whole new website way faster with those cool UI effects.');
       ie_close('p');
+      ie_open('p');
+        itext('The same day we are releasing the new website, we also have a fix release ');
+        ie_open('strong');
+          itext('v0.4.6');
+        ie_close('strong');
+      ie_close('p');
+      ie_open('p');
+        itext('This release includes :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('DynamoDB incrementAttribute with 0 fix');
+        ie_close('li');
+        ie_open('li');
+          itext('Email storage in lower case');
+        ie_close('li');
+      ie_close('ul');
+      ie_open('p');
+        itext('In the next weeks, as Christmas gift we will work hard on a ');
+        ie_open('strong');
+          itext('v0.5.0');
+        ie_close('strong');
+        itext(' it should includes :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Better ');
+          ie_open('a', null, null,
+              'href', 'https://wedeploy.com/');
+            itext('WeDeploy');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Easier queue worker deployment');
+        ie_close('li');
+        ie_open('li');
+          ie_open('a', null, null,
+              'href', 'https://aws.amazon.com/fargate/');
+            itext('AWS Fargate');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Static website deployment integration');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10207,11 +10233,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param451}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'dzQew.render';
+  $render.soyTemplateName = 'nLDQh.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10221,14 +10247,22 @@ return exports;
 
 });
 
-class dzQew extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(dzQew, templates);
+class nLDQh extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(nLDQh, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
 /* 97 */,
 /* 98 */,
 /* 99 */,
@@ -10277,15 +10311,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(dzQew, templates);
 /* 142 */,
 /* 143 */,
 /* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10315,9 +10341,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _localSoy = __webpack_require__(96);
+var _newWebsiteSoy = __webpack_require__(88);
 
-var _localSoy2 = _interopRequireDefault(_localSoy);
+var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10327,23 +10353,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var dzQew = function (_Component) {
-  _inherits(dzQew, _Component);
+var nLDQh = function (_Component) {
+  _inherits(nLDQh, _Component);
 
-  function dzQew() {
-    _classCallCheck(this, dzQew);
+  function nLDQh() {
+    _classCallCheck(this, nLDQh);
 
-    return _possibleConstructorReturn(this, (dzQew.__proto__ || Object.getPrototypeOf(dzQew)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (nLDQh.__proto__ || Object.getPrototypeOf(nLDQh)).apply(this, arguments));
   }
 
-  return dzQew;
+  return nLDQh;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(dzQew, _localSoy2.default);
+_metalSoy2.default.register(nLDQh, _newWebsiteSoy2.default);
 
-exports.default = dzQew;
+exports.default = nLDQh;
 
 /***/ })
-],[153]);
+],[145]);
