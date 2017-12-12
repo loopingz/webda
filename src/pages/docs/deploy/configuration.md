@@ -15,7 +15,7 @@ To ease up the configuration of an application we came up with the follow config
 
 You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.
 
-![image]({$site.basePath}/images/configuration_resolution.png)
+![image]({$site.basePath ?: ''}/images/configuration_resolution.png)
 
 This is the detail configuration for each section
 
@@ -118,14 +118,14 @@ Here is some screenshots of the ui
 
 #### Routes
 
-![image]({$site.basePath}/images/ui_route_create.png) ![image]({$site.basePath}/images/ui_route_config.png) 
+![image]({$site.basePath ?: ''}/images/ui_route_create.png) ![image]({$site.basePath ?: ''}/images/ui_route_config.png) 
 
 #### Services
 
-![image]({$site.basePath}/images/ui_service_create.png) ![image]({$site.basePath}/images/ui_service_config.png)
+![image]({$site.basePath ?: ''}/images/ui_service_create.png) ![image]({$site.basePath ?: ''}/images/ui_service_config.png)
 
 #### Deployments
 
-![image]({$site.basePath}/images/ui_deployment_create.png) ![image]({$site.basePath}/images/ui_deployment_config.png) ![image]({$site.basePath}/images/ui_deployment_deploy.png)
+![image]({$site.basePath ?: ''}/images/ui_deployment_create.png) ![image]({$site.basePath ?: ''}/images/ui_deployment_config.png) ![image]({$site.basePath?: ''}/images/ui_deployment_deploy.png)
 
 </article>
