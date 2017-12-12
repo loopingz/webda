@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([13],[
+webpackJsonppageComponent([9],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10115,12 +10115,16 @@ exports.default = parseFromAnchor;
 /* 94 */,
 /* 95 */,
 /* 96 */,
-/* 97 */
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "twkcq", function() { return twkcq; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DAMbc", function() { return DAMbc; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10132,15 +10136,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from wedeploy.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace twkcq.
+ * @fileoverview Templates in namespace DAMbc.
  * @public
  */
 
-goog.module('twkcq.incrementaldom');
+goog.module('DAMbc.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10172,30 +10176,105 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param455 = function() {
+  var param542 = function() {
     ie_open('h6');
-      var dyn27 = opt_data.page.description;
-      if (typeof dyn27 == 'function') dyn27(); else if (dyn27 != null) itext(dyn27);
+      var dyn30 = opt_data.page.description;
+      if (typeof dyn30 == 'function') dyn30(); else if (dyn30 != null) itext(dyn30);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Concepts');
       ie_close('h2');
       ie_open('p');
+        itext('Webda introduces some basic concepts :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          ie_open('em');
+            itext('Service');
+          ie_close('em');
+          itext(' a singleton similar to Spring Bean to implement behaviors');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('Executor');
+          ie_close('em');
+          itext(' is a service that provide some routes and expose API to the world');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('Model');
+          ie_close('em');
+          itext(' to define your business logic');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('Deployment');
+          ie_close('em');
+          itext(' an instance of the app with its own configuration');
+        ie_close('li');
+      ie_close('ul');
+      ie_open('p');
+        itext('The ');
+        ie_open('strong');
+          itext('webda.config.json');
+        ie_close('strong');
+        itext(' contains the configuration of the app, defining Services, Routes and global configuration, you can consider it as the applicationContext.xml of Spring if you prefer, with Beans=Services');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Stores');
+      ie_close('h2');
+      ie_open('p');
+        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
+      ie_close('p');
+      ie_open('p');
+        itext('We have currently File, DynamoDB and MongoDB storage');
+      ie_close('p');
+      ie_open('p');
         ie_open('a', null, null,
-            'href', 'http://wedeploy.io');
-          itext('WeDeploy');
+            'href', '/docs/develop/store');
+          itext('Learn More');
         ie_close('a');
-        itext(' allows you to run your own Docker container without having to care about scalability or reverse proxy or monitoring');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Binaries');
+      ie_close('h2');
+      ie_open('p');
+        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
       ie_close('p');
       ie_open('p');
-        itext('As Webda allows you to deploy on Docker, we just extend the deployer to automate the call to your wedeploy shell');
+        itext('The storage detect duplicates and don\'t double store them, it also provides a Polymer component that will prevent upload of known binaries by using a challenge to speed up the upload.');
       ie_close('p');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        ie_open('a', null, null,
+            'href', '/docs/develop/binary');
+          itext('Learn More');
+        ie_close('a');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Models');
+      ie_close('h2');
+      ie_open('p');
+        itext('The stores use Models to load/save/validate/secure business object.');
+      ie_close('p');
+      ie_open('p');
+        itext('The models should implement most of your business logic, while service should be technical implementation');
+      ie_close('p');
+      ie_open('p');
+        ie_open('a', null, null,
+            'href', '/docs/develop/models');
+          itext('Learn More');
+        ie_close('a');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10207,11 +10286,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param455}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param542}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'twkcq.render';
+  $render.soyTemplateName = 'DAMbc.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10221,18 +10300,14 @@ return exports;
 
 });
 
-class twkcq extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(twkcq, templates);
+class DAMbc extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(DAMbc, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
 /* 102 */,
 /* 103 */,
 /* 104 */,
@@ -10285,7 +10360,9 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(twkcq, templates);
 /* 151 */,
 /* 152 */,
 /* 153 */,
-/* 154 */
+/* 154 */,
+/* 155 */,
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10315,9 +10392,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _wedeploySoy = __webpack_require__(97);
+var _indexSoy = __webpack_require__(101);
 
-var _wedeploySoy2 = _interopRequireDefault(_wedeploySoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10327,23 +10404,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var twkcq = function (_Component) {
-  _inherits(twkcq, _Component);
+var DAMbc = function (_Component) {
+  _inherits(DAMbc, _Component);
 
-  function twkcq() {
-    _classCallCheck(this, twkcq);
+  function DAMbc() {
+    _classCallCheck(this, DAMbc);
 
-    return _possibleConstructorReturn(this, (twkcq.__proto__ || Object.getPrototypeOf(twkcq)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (DAMbc.__proto__ || Object.getPrototypeOf(DAMbc)).apply(this, arguments));
   }
 
-  return twkcq;
+  return DAMbc;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(twkcq, _wedeploySoy2.default);
+_metalSoy2.default.register(DAMbc, _indexSoy2.default);
 
-exports.default = twkcq;
+exports.default = DAMbc;
 
 /***/ })
-],[154]);
+],[156]);

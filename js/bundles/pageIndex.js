@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10226,10 +10226,6 @@ function $header(opt_data, opt_ignored, opt_ijData) {
       ie_close('h2');
       ie_open('div', null, null,
           'class', 'header-cta');
-        itext('\'\'');
-        var dyn12 = opt_data.site.basePath;
-        if (typeof dyn12 == 'function') dyn12(); else if (dyn12 != null) itext(dyn12);
-        itext('\'\'');
         ie_open('a', null, null,
             'href', opt_data.site.basePath + '/docs/create',
             'class', 'btn btn-accent');

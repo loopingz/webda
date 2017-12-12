@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([7],[
+webpackJsonppageComponent([16],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10112,21 +10112,12 @@ exports.default = parseFromAnchor;
 /* 91 */,
 /* 92 */,
 /* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LlqLA", function() { return LlqLA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Mjeub", function() { return Mjeub; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10138,15 +10129,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from models.soy.
+// This file was automatically generated from docker.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace LlqLA.
+ * @fileoverview Templates in namespace Mjeub.
  * @public
  */
 
-goog.module('LlqLA.incrementaldom');
+goog.module('Mjeub.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10180,49 +10171,33 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param566 = function() {
+  var param400 = function() {
     ie_open('h6');
-      var dyn33 = opt_data.page.description;
-      if (typeof dyn33 == 'function') dyn33(); else if (dyn33 != null) itext(dyn33);
+      var dyn23 = opt_data.page.description;
+      if (typeof dyn23 == 'function') dyn23(); else if (dyn23 != null) itext(dyn23);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
+      ie_open('p');
+        itext('You can use webda to build your Docker image for you');
+      ie_close('p');
       ie_open('h2');
-        itext('Overview');
+        itext('Dockerfile');
       ie_close('h2');
       ie_open('p');
-        itext('Model is the best way to express your business logic.');
+        itext('You can create your own Dockerfile, if no Dockerfile is present then the default one is used');
       ie_close('p');
-      ie_open('p');
-        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
-      ie_close('p');
+      $templateAlias2({code: 'FROM node:latest\nMAINTAINER docker@webda.io\n\nRUN mkdir /server/\nADD . /server/\n\nRUN cd /server && rm -rf node_modules && npm install\nCMD cd /server && node_modules/.bin/webda serve > /data/webda.log', mode: 'text'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Security');
+        itext('Configuration');
       ie_close('h2');
       ie_open('p');
-        itext('The model has a predefined method ');
-        ie_open('em');
-          itext('canAct');
-        ie_close('em');
-        itext(' that will be called whenever an action is trigger on an object from an external source');
+        itext('The configuration take only two parameters the tag of the image to create and if it needs to push the image after a succesfull build.');
       ie_close('p');
-      ie_open('p');
-        itext('This method return a Promise that will stop the processing if it is rejected');
-      ie_close('p');
-      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Custom Actions');
-      ie_close('h2');
-      ie_open('p');
-        itext('The model can defined action that will be exposed by its Store');
-      ie_close('p');
-      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
+      $templateAlias2({code: '{\n   tag: "mytag",\n   push: true\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10233,11 +10208,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param566}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param400}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'LlqLA.render';
+  $render.soyTemplateName = 'Mjeub.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10247,14 +10222,23 @@ return exports;
 
 });
 
-class LlqLA extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(LlqLA, templates);
+class Mjeub extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Mjeub, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
 /* 104 */,
 /* 105 */,
 /* 106 */,
@@ -10302,12 +10286,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(LlqLA, templates);
 /* 148 */,
 /* 149 */,
 /* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10337,9 +10316,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _modelsSoy = __webpack_require__(103);
+var _dockerSoy = __webpack_require__(94);
 
-var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
+var _dockerSoy2 = _interopRequireDefault(_dockerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10349,23 +10328,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var LlqLA = function (_Component) {
-  _inherits(LlqLA, _Component);
+var Mjeub = function (_Component) {
+  _inherits(Mjeub, _Component);
 
-  function LlqLA() {
-    _classCallCheck(this, LlqLA);
+  function Mjeub() {
+    _classCallCheck(this, Mjeub);
 
-    return _possibleConstructorReturn(this, (LlqLA.__proto__ || Object.getPrototypeOf(LlqLA)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Mjeub.__proto__ || Object.getPrototypeOf(Mjeub)).apply(this, arguments));
   }
 
-  return LlqLA;
+  return Mjeub;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(LlqLA, _modelsSoy2.default);
+_metalSoy2.default.register(Mjeub, _dockerSoy2.default);
 
-exports.default = LlqLA;
+exports.default = Mjeub;
 
 /***/ })
-],[156]);
+],[151]);

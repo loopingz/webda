@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([14],[
+webpackJsonppageComponent([8],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10114,12 +10114,18 @@ exports.default = parseFromAnchor;
 /* 93 */,
 /* 94 */,
 /* 95 */,
-/* 96 */
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JTAmn", function() { return JTAmn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VSSls", function() { return VSSls; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10131,15 +10137,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from local.soy.
+// This file was automatically generated from mailer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace JTAmn.
+ * @fileoverview Templates in namespace VSSls.
  * @public
  */
 
-goog.module('JTAmn.incrementaldom');
+goog.module('VSSls.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10160,8 +10166,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10173,28 +10177,45 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param439 = function() {
+  var param553 = function() {
     ie_open('h6');
-      var dyn26 = opt_data.page.description;
-      if (typeof dyn26 == 'function') dyn26(); else if (dyn26 != null) itext(dyn26);
+      var dyn31 = opt_data.page.description;
+      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
-      $templateAlias2({code: 'webda serve [-d deploymentName] [--devMode]', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('You can specify a ');
-        ie_open('em');
-          itext('deploymentName');
-        ie_close('em');
-        itext(' to serve API with the deployment configuration');
+        itext('Web Application always needs to send an email at one point.');
       ie_close('p');
       ie_open('p');
-        itext('You can disable CORS by adding a ');
+        itext('The mailer service is a wrapper on top of two NodeJS library : NodeMailer and EmailTemplate');
+      ie_close('p');
+      ie_open('p');
+        itext('It allows you to send email through SMTP, GMail, SES. It also provides Mustache templates to send email to the user with contextual informations and in his own language');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('NodeMailer configuration');
+      ie_close('h2');
+      ie_open('p');
         ie_open('em');
-          itext('--devMode');
+          itext('to be completed');
+        ie_close('em');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Templating');
+      ie_close('h2');
+      ie_open('p');
+        ie_open('em');
+          itext('to be completed');
         ie_close('em');
       ie_close('p');
     ie_close('article');
@@ -10207,11 +10228,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param439}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param553}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'JTAmn.render';
+  $render.soyTemplateName = 'VSSls.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10221,20 +10242,14 @@ return exports;
 
 });
 
-class JTAmn extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(JTAmn, templates);
+class VSSls extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(VSSls, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
 /* 103 */,
 /* 104 */,
 /* 105 */,
@@ -10283,7 +10298,15 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(JTAmn, templates);
 /* 148 */,
 /* 149 */,
 /* 150 */,
-/* 151 */
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10313,9 +10336,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _localSoy = __webpack_require__(96);
+var _mailerSoy = __webpack_require__(102);
 
-var _localSoy2 = _interopRequireDefault(_localSoy);
+var _mailerSoy2 = _interopRequireDefault(_mailerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10325,23 +10348,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var JTAmn = function (_Component) {
-  _inherits(JTAmn, _Component);
+var VSSls = function (_Component) {
+  _inherits(VSSls, _Component);
 
-  function JTAmn() {
-    _classCallCheck(this, JTAmn);
+  function VSSls() {
+    _classCallCheck(this, VSSls);
 
-    return _possibleConstructorReturn(this, (JTAmn.__proto__ || Object.getPrototypeOf(JTAmn)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (VSSls.__proto__ || Object.getPrototypeOf(VSSls)).apply(this, arguments));
   }
 
-  return JTAmn;
+  return VSSls;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(JTAmn, _localSoy2.default);
+_metalSoy2.default.register(VSSls, _mailerSoy2.default);
 
-exports.default = JTAmn;
+exports.default = VSSls;
 
 /***/ })
-],[151]);
+],[159]);

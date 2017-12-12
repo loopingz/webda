@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([11],[
+webpackJsonppageComponent([17],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10111,18 +10111,12 @@ exports.default = parseFromAnchor;
 /* 90 */,
 /* 91 */,
 /* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nBBfV", function() { return nBBfV; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QJjJX", function() { return QJjJX; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10134,15 +10128,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from binary.soy.
+// This file was automatically generated from configuration.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace nBBfV.
+ * @fileoverview Templates in namespace QJjJX.
  * @public
  */
 
-goog.module('nBBfV.incrementaldom');
+goog.module('QJjJX.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10176,10 +10170,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param497 = function() {
+  var param363 = function() {
     ie_open('h6');
-      var dyn29 = opt_data.page.description;
-      if (typeof dyn29 == 'function') dyn29(); else if (dyn29 != null) itext(dyn29);
+      var dyn22 = opt_data.page.description;
+      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10187,105 +10181,85 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
       ie_close('p');
       ie_open('p');
-        itext('The API exposed is');
-      ie_close('p');
-      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
-      ie_open('p');
-        itext('You can reduce the exposition by adding an expose attribute as on Store');
+        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
       ie_close('p');
       ie_open('p');
-        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
+        ie_open('img', null, null,
+            'src', '/images/configuration_resolution.png',
+            'alt', 'image');
+        ie_close('img');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          ie_open('em');
-            itext('store');
-          ie_close('em');
-          itext(' is the Store of the object you want attached to');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('uid');
-          ie_close('em');
-          itext(' is the Object uuid');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('property');
-          ie_close('em');
-          itext(' is the field of the Object');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('index');
-          ie_close('em');
-          itext(' is the index of the Binary');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('hash');
-          ie_close('em');
-          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
-        ie_close('li');
-      ie_close('ul');
+      ie_open('p');
+        itext('This is the detail configuration for each section');
+      ie_close('p');
+      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
+      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
+      ie_open('p');
+        itext('So this how webda will resolve Service final configuration');
+      ie_close('p');
+      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Map');
+        itext('Configuration UI');
       ie_close('h2');
       ie_open('p');
-        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
+        itext('Here is some screenshots of the ui');
       ie_close('p');
-      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('h4');
+        itext('Routes');
+      ie_close('h4');
       ie_open('p');
-        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
+        ie_open('img', null, null,
+            'src', '/images/ui_route_create.png',
+            'alt', 'image');
+        ie_close('img');
+        itext(' ');
+        ie_open('img', null, null,
+            'src', '/images/ui_route_config.png',
+            'alt', 'image');
+        ie_close('img');
       ie_close('p');
+      ie_open('h4');
+        itext('Services');
+      ie_close('h4');
       ie_open('p');
-        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
+        ie_open('img', null, null,
+            'src', '/images/ui_service_create.png',
+            'alt', 'image');
+        ie_close('img');
+        itext(' ');
+        ie_open('img', null, null,
+            'src', '/images/ui_service_config.png',
+            'alt', 'image');
+        ie_close('img');
       ie_close('p');
-      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('S3Binary');
-      ie_close('h2');
+      ie_open('h4');
+        itext('Deployments');
+      ie_close('h4');
       ie_open('p');
-        itext('To configure just add the parameter bucket');
+        ie_open('img', null, null,
+            'src', '/images/ui_deployment_create.png',
+            'alt', 'image');
+        ie_close('img');
+        itext(' ');
+        ie_open('img', null, null,
+            'src', '/images/ui_deployment_config.png',
+            'alt', 'image');
+        ie_close('img');
+        itext(' ');
+        ie_open('img', null, null,
+            'src', '/images/ui_deployment_deploy.png',
+            'alt', 'image');
+        ie_close('img');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('FileBinary');
-      ie_close('h2');
-      ie_open('p');
-        itext('To configure just add the parameter folder');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('Polymer');
-      ie_close('h2');
-      ie_open('p');
-        itext('The behavior implementation can be found there :');
-      ie_close('p');
-      ie_open('p');
-        itext('Two different UI component exist also :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('A simple fab button upload :');
-        ie_close('li');
-        ie_open('li');
-          itext('IA paper-input with Browse button :');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10296,11 +10270,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param497}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param363}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'nBBfV.render';
+  $render.soyTemplateName = 'QJjJX.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10310,14 +10284,20 @@ return exports;
 
 });
 
-class nBBfV extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(nBBfV, templates);
+class QJjJX extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(QJjJX, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
 /* 100 */,
 /* 101 */,
 /* 102 */,
@@ -10370,14 +10350,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(nBBfV, templates);
 /* 149 */,
 /* 150 */,
 /* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10407,9 +10380,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _binarySoy = __webpack_require__(99);
+var _configurationSoy = __webpack_require__(93);
 
-var _binarySoy2 = _interopRequireDefault(_binarySoy);
+var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10419,23 +10392,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var nBBfV = function (_Component) {
-  _inherits(nBBfV, _Component);
+var QJjJX = function (_Component) {
+  _inherits(QJjJX, _Component);
 
-  function nBBfV() {
-    _classCallCheck(this, nBBfV);
+  function QJjJX() {
+    _classCallCheck(this, QJjJX);
 
-    return _possibleConstructorReturn(this, (nBBfV.__proto__ || Object.getPrototypeOf(nBBfV)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (QJjJX.__proto__ || Object.getPrototypeOf(QJjJX)).apply(this, arguments));
   }
 
-  return nBBfV;
+  return QJjJX;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(nBBfV, _binarySoy2.default);
+_metalSoy2.default.register(QJjJX, _configurationSoy2.default);
 
-exports.default = nBBfV;
+exports.default = QJjJX;
 
 /***/ })
-],[159]);
+],[152]);

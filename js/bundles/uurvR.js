@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10111,7 +10111,7 @@ exports.default = parseFromAnchor;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vpTjb", function() { return vpTjb; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uurvR", function() { return uurvR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10127,11 +10127,11 @@ goog.loadModule(function(exports) {
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace vpTjb.
+ * @fileoverview Templates in namespace uurvR.
  * @public
  */
 
-goog.module('vpTjb.incrementaldom');
+goog.module('uurvR.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10163,7 +10163,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param179 = function() {
+  var param177 = function() {
     ie_open('article');
       ie_open('p');
         itext('After some improvments since the first version of Webda, it requires a new look for its website.');
@@ -10233,11 +10233,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param179}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'vpTjb.render';
+  $render.soyTemplateName = 'uurvR.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10247,8 +10247,8 @@ return exports;
 
 });
 
-class vpTjb extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vpTjb, templates);
+class uurvR extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(uurvR, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
@@ -10354,23 +10354,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var vpTjb = function (_Component) {
-  _inherits(vpTjb, _Component);
+var uurvR = function (_Component) {
+  _inherits(uurvR, _Component);
 
-  function vpTjb() {
-    _classCallCheck(this, vpTjb);
+  function uurvR() {
+    _classCallCheck(this, uurvR);
 
-    return _possibleConstructorReturn(this, (vpTjb.__proto__ || Object.getPrototypeOf(vpTjb)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (uurvR.__proto__ || Object.getPrototypeOf(uurvR)).apply(this, arguments));
   }
 
-  return vpTjb;
+  return uurvR;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(vpTjb, _newWebsiteSoy2.default);
+_metalSoy2.default.register(uurvR, _newWebsiteSoy2.default);
 
-exports.default = vpTjb;
+exports.default = uurvR;
 
 /***/ })
 ],[146]);

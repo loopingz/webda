@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([9],[
+webpackJsonppageComponent([18],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10110,21 +10110,12 @@ exports.default = parseFromAnchor;
 /* 89 */,
 /* 90 */,
 /* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */
+/* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "qJJjC", function() { return qJJjC; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lyTJq", function() { return lyTJq; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10136,15 +10127,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from aws.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace qJJjC.
+ * @fileoverview Templates in namespace lyTJq.
  * @public
  */
 
-goog.module('qJJjC.incrementaldom');
+goog.module('lyTJq.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10165,6 +10156,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10176,105 +10169,64 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param544 = function() {
-    ie_open('h6');
-      var dyn31 = opt_data.page.description;
-      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
-    ie_close('h6');
+  var param349 = function() {
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Concepts');
+        itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('Webda introduces some basic concepts :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          ie_open('em');
-            itext('Service');
-          ie_close('em');
-          itext(' a singleton similar to Spring Bean to implement behaviors');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('Executor');
-          ie_close('em');
-          itext(' is a service that provide some routes and expose API to the world');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('Model');
-          ie_close('em');
-          itext(' to define your business logic');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('Deployment');
-          ie_close('em');
-          itext(' an instance of the app with its own configuration');
-        ie_close('li');
-      ie_close('ul');
-      ie_open('p');
-        itext('The ');
-        ie_open('strong');
-          itext('webda.config.json');
-        ie_close('strong');
-        itext(' contains the configuration of the app, defining Services, Routes and global configuration, you can consider it as the applicationContext.xml of Spring if you prefer, with Beans=Services');
+        ie_open('img', null, null,
+            'src', 'http://webda.io/images/schemas/aws_deploy.png',
+            'alt', 'image');
+        ie_close('img');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Stores');
+        itext('Deployment Policy');
       ie_close('h2');
       ie_open('p');
-        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
+        itext('To be able to deploy the deployment user must have at least :');
       ie_close('p');
+      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('We have currently File, DynamoDB and MongoDB storage');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/store');
-          itext('Learn More');
-        ie_close('a');
+        itext('This can be restrict more and should, need to update the documentation');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Binaries');
+        itext('Package');
       ie_close('h2');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
-      ie_close('p');
-      ie_open('p');
-        itext('The storage detect duplicates and don\'t double store them, it also provides a Polymer component that will prevent upload of known binaries by using a challenge to speed up the upload.');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/binary');
-          itext('Learn More');
-        ie_close('a');
+        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '4');
       ie_open('h2');
-        itext('Models');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('The stores use Models to load/save/validate/secure business object.');
+        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('API Gateway');
+      ie_close('h2');
+      ie_open('p');
+        itext('It map all the routes from your application, if a ');
+        ie_open('strong');
+          itext('website');
+        ie_close('strong');
+        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
       ie_close('p');
       ie_open('p');
-        itext('The models should implement most of your business logic, while service should be technical implementation');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/models');
-          itext('Learn More');
-        ie_close('a');
+        itext('It also deploy the API as Stage named with the name of the deployment.');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10286,11 +10238,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param544}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param349}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'qJJjC.render';
+  $render.soyTemplateName = 'lyTJq.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10300,14 +10252,23 @@ return exports;
 
 });
 
-class qJJjC extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(qJJjC, templates);
+class lyTJq extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(lyTJq, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
 /* 102 */,
 /* 103 */,
 /* 104 */,
@@ -10360,15 +10321,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(qJJjC, templates);
 /* 151 */,
 /* 152 */,
 /* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10398,9 +10351,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(101);
+var _awsSoy = __webpack_require__(92);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _awsSoy2 = _interopRequireDefault(_awsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10410,23 +10363,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var qJJjC = function (_Component) {
-  _inherits(qJJjC, _Component);
+var lyTJq = function (_Component) {
+  _inherits(lyTJq, _Component);
 
-  function qJJjC() {
-    _classCallCheck(this, qJJjC);
+  function lyTJq() {
+    _classCallCheck(this, lyTJq);
 
-    return _possibleConstructorReturn(this, (qJJjC.__proto__ || Object.getPrototypeOf(qJJjC)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (lyTJq.__proto__ || Object.getPrototypeOf(lyTJq)).apply(this, arguments));
   }
 
-  return qJJjC;
+  return lyTJq;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(qJJjC, _indexSoy2.default);
+_metalSoy2.default.register(lyTJq, _awsSoy2.default);
 
-exports.default = qJJjC;
+exports.default = lyTJq;
 
 /***/ })
-],[162]);
+],[154]);

@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10187,7 +10187,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param236 = function() {
+  var param234 = function() {
     ie_open('div');
       ie_open('header', null, null,
           'class', 'header');
@@ -10195,20 +10195,20 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'class', 'container');
           ie_open('h1', null, null,
               'class', 'header-title');
-            var dyn18 = opt_data.page.title;
-            if (typeof dyn18 == 'function') dyn18(); else if (dyn18 != null) itext(dyn18);
+            var dyn17 = opt_data.page.title;
+            if (typeof dyn17 == 'function') dyn17(); else if (dyn17 != null) itext(dyn17);
           ie_close('h1');
           ie_open('h2', null, null,
               'class', 'header-subtitle');
-            var dyn19 = opt_data.page.description;
-            if (typeof dyn19 == 'function') dyn19(); else if (dyn19 != null) itext(dyn19);
+            var dyn18 = opt_data.page.description;
+            if (typeof dyn18 == 'function') dyn18(); else if (dyn18 != null) itext(dyn18);
           ie_close('h2');
         ie_close('div');
       ie_close('header');
       $templateAlias2({updates: opt_data.page.updates}, null, opt_ijData);
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param236}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param234}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {

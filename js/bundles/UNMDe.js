@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([18],[
+webpackJsonppageComponent([7],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10110,12 +10110,23 @@ exports.default = parseFromAnchor;
 /* 89 */,
 /* 90 */,
 /* 91 */,
-/* 92 */
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IIorh", function() { return IIorh; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNMDe", function() { return UNMDe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10127,15 +10138,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from aws.soy.
+// This file was automatically generated from models.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace IIorh.
+ * @fileoverview Templates in namespace UNMDe.
  * @public
  */
 
-goog.module('IIorh.incrementaldom');
+goog.module('UNMDe.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10169,65 +10180,49 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param351 = function() {
+  var param564 = function() {
+    ie_open('h6');
+      var dyn32 = opt_data.page.description;
+      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
+    ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', 'http://webda.io/images/schemas/aws_deploy.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('Model is the best way to express your business logic.');
+      ie_close('p');
+      ie_open('p');
+        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Deployment Policy');
+        itext('Security');
       ie_close('h2');
       ie_open('p');
-        itext('To be able to deploy the deployment user must have at least :');
+        itext('The model has a predefined method ');
+        ie_open('em');
+          itext('canAct');
+        ie_close('em');
+        itext(' that will be called whenever an action is trigger on an object from an external source');
       ie_close('p');
-      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('This can be restrict more and should, need to update the documentation');
+        itext('This method return a Promise that will stop the processing if it is rejected');
       ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Package');
+        itext('Custom Actions');
       ie_close('h2');
       ie_open('p');
-        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
+        itext('The model can defined action that will be exposed by its Store');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Lambda');
-      ie_close('h2');
-      ie_open('p');
-        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('API Gateway');
-      ie_close('h2');
-      ie_open('p');
-        itext('It map all the routes from your application, if a ');
-        ie_open('strong');
-          itext('website');
-        ie_close('strong');
-        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
-      ie_close('p');
-      ie_open('p');
-        itext('It also deploy the API as Stage named with the name of the deployment.');
-      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10238,11 +10233,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param351}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param564}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'IIorh.render';
+  $render.soyTemplateName = 'UNMDe.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10252,25 +10247,14 @@ return exports;
 
 });
 
-class IIorh extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(IIorh, templates);
+class UNMDe extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(UNMDe, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
 /* 104 */,
 /* 105 */,
 /* 106 */,
@@ -10317,7 +10301,15 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(IIorh, templates);
 /* 147 */,
 /* 148 */,
 /* 149 */,
-/* 150 */
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10347,9 +10339,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _awsSoy = __webpack_require__(92);
+var _modelsSoy = __webpack_require__(103);
 
-var _awsSoy2 = _interopRequireDefault(_awsSoy);
+var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10359,23 +10351,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var IIorh = function (_Component) {
-  _inherits(IIorh, _Component);
+var UNMDe = function (_Component) {
+  _inherits(UNMDe, _Component);
 
-  function IIorh() {
-    _classCallCheck(this, IIorh);
+  function UNMDe() {
+    _classCallCheck(this, UNMDe);
 
-    return _possibleConstructorReturn(this, (IIorh.__proto__ || Object.getPrototypeOf(IIorh)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (UNMDe.__proto__ || Object.getPrototypeOf(UNMDe)).apply(this, arguments));
   }
 
-  return IIorh;
+  return UNMDe;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(IIorh, _awsSoy2.default);
+_metalSoy2.default.register(UNMDe, _modelsSoy2.default);
 
-exports.default = IIorh;
+exports.default = UNMDe;
 
 /***/ })
-],[150]);
+],[158]);

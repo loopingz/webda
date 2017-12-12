@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([19],[
+webpackJsonppageComponent([20],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10108,13 +10108,12 @@ exports.default = parseFromAnchor;
 /* 87 */,
 /* 88 */,
 /* 89 */,
-/* 90 */,
-/* 91 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZbyDD", function() { return ZbyDD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "osaQx", function() { return osaQx; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10126,15 +10125,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from tutorials.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace ZbyDD.
+ * @fileoverview Templates in namespace osaQx.
  * @public
  */
 
-goog.module('ZbyDD.incrementaldom');
+goog.module('osaQx.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10155,6 +10154,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10166,89 +10167,158 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param340 = function() {
+  var param262 = function() {
     ie_open('h6');
-      var dyn22 = opt_data.page.description;
-      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
+      var dyn20 = opt_data.page.description;
+      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Setting up a project from scratch');
+        itext('Installation');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('In this video you will see:');
+        itext('You first need to install webda-shell.');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('How to install Webda');
-        ie_close('li');
-        ie_open('li');
-          itext('How to use the configurator to add services like Authentication and NoSQL Store');
-        ie_close('li');
-        ie_open('li');
-          itext('Expose services as REST API');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy to the cloud using the AWS deployer');
-        ie_close('li');
-      ie_close('ul');
+      $templateAlias2({code: 'npm install -g webda-shell', mode: 'shell'}, null, opt_ijData);
+      ie_open('p');
+        itext('This will install the webda shell tools, that allows you to configure and deploy your project You have the configuration UI available, where you can create a service, use a service, or create a custom API resource. You can also manually edit the webda.config.json if you prefer');
+      ie_close('p');
+      ie_open('p');
+        itext('Below is the manual step with the manual modification, I would recommand to use the configuration UI to modify the webda.config.json');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Add the mapping configuration to our project');
+        itext('Init a project');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
+        itext('Create a new project folder');
+      ie_close('p');
+      $templateAlias2({code: 'mkdir my-new-project\ncd my-new-project', mode: 'shell'}, null, opt_ijData);
+      ie_open('p');
+        itext('If you do want to use our sample project, first type');
+      ie_close('p');
+      $templateAlias2({code: 'webda init', mode: 'shell'}, null, opt_ijData);
+      ie_open('p');
+        itext('Launch your project configuration interface');
+      ie_close('p');
+      $templateAlias2({code: 'webda config', mode: 'shell'}, null, opt_ijData);
+      ie_open('p');
+        itext('You should now see the configuration website in your browser');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Use our new serverless API on a Polymer interface');
+        itext('Create a new route');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
+        itext('We will use the inline RouteHelper here, except the Lambda Route helper, the other are mainly helper for quick and easy test but you should use Service when you can as they are easier to unit test and make code cleaner.');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Registration with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Login with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Add a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Edit a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Remove a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Upload directly to S3');
-        ie_close('li');
-      ie_close('ul');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This is defining the GET /myurl API');
+      ie_close('p');
+      ie_open('p');
+        itext('There is 5 types of route : file, inline, lambda, resource, string');
+      ie_close('p');
+      ie_open('h3');
+        itext('File route');
+      ie_close('h3');
+      ie_open('p');
+        ie_open('strong');
+          itext('file');
+        ie_close('strong');
+        itext(' include the javascript file and call its main export with the context');
+      ie_close('p');
+      ie_open('p');
+        itext('webda.config.json');
+      ie_close('p');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myapi": {\n      "type": "file",\n      "file": "./test.js"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('test.js');
+      ie_close('p');
+      $templateAlias2({code: 'module.exports = (ctx) {\n  ctx.write(\'This is my custom API\')\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('h3');
+        itext('Inline route');
+      ie_close('h3');
+      ie_open('p');
+        ie_open('strong');
+          itext('inline');
+        ie_close('strong');
+        itext(' eval the content of the callback string');
+      ie_close('p');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('h3');
+        itext('Lambda route');
+      ie_close('h3');
+      ie_open('p');
+        ie_open('strong');
+          itext('lambda');
+        ie_close('strong');
+        itext(' call a Lambda function and return its result');
+      ie_close('p');
+      ie_open('h3');
+        itext('Resource route');
+      ie_close('h3');
+      ie_open('p');
+        ie_open('strong');
+          itext('resource');
+        ie_close('strong');
+        itext(' return the content of the file, guessing it\'s mime type');
+      ie_close('p');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "resource",\n      "file": "./test.jpg"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This will return the jpeg with image/jpeg mime type');
+      ie_close('p');
+      ie_open('h3');
+        itext('String route');
+      ie_close('h3');
+      ie_open('p');
+        ie_open('strong');
+          itext('string');
+        ie_close('strong');
+        itext(' return the content of result, you can specify the mime');
+      ie_close('p');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "string",\n      "result": "Hi Webda !"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This will return a "Hi Webda !"');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Create a new service');
+      ie_close('h2');
+      ie_open('p');
+        itext('We will create a new service from executor, so we can map some urls directly to the service');
+      ie_close('p');
+      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Here is the corresponding configuration');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  services: {\n     ...\n     "MyService": {\n       require: "./myservice.js",\n       sentence: "I am a GET route and i\'ve sent an welcome email to you"\n     }\n     ...\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('Run it');
+      ie_close('h2');
+      $templateAlias2({code: 'webda serve', mode: 'text'}, null, opt_ijData);
+      ie_open('p');
+        itext('You can call the http://localhost:18080/myservice, and see the nice output');
+      ie_close('p');
+      ie_open('p');
+        itext('"I am a GET route and i\'ve sent an welcome email to you"');
+      ie_close('p');
+      ie_open('p');
+        itext('And then the http://localhost:18080/myurl');
+      ie_close('p');
+      ie_open('p');
+        itext('"I am a inline route"');
+      ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10259,11 +10329,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param340}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param262}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'ZbyDD.render';
+  $render.soyTemplateName = 'osaQx.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10273,14 +10343,15 @@ return exports;
 
 });
 
-class ZbyDD extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ZbyDD, templates);
+class osaQx extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(osaQx, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 91 */,
 /* 92 */,
 /* 93 */,
 /* 94 */,
@@ -10368,9 +10439,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _tutorialsSoy = __webpack_require__(91);
+var _indexSoy = __webpack_require__(90);
 
-var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10380,23 +10451,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ZbyDD = function (_Component) {
-  _inherits(ZbyDD, _Component);
+var osaQx = function (_Component) {
+  _inherits(osaQx, _Component);
 
-  function ZbyDD() {
-    _classCallCheck(this, ZbyDD);
+  function osaQx() {
+    _classCallCheck(this, osaQx);
 
-    return _possibleConstructorReturn(this, (ZbyDD.__proto__ || Object.getPrototypeOf(ZbyDD)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (osaQx.__proto__ || Object.getPrototypeOf(osaQx)).apply(this, arguments));
   }
 
-  return ZbyDD;
+  return osaQx;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(ZbyDD, _tutorialsSoy2.default);
+_metalSoy2.default.register(osaQx, _indexSoy2.default);
 
-exports.default = ZbyDD;
+exports.default = osaQx;
 
 /***/ })
 ],[149]);

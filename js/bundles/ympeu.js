@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([10],[
+webpackJsonppageComponent([14],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2680,8 +2680,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn14 = opt_data.site.title;
-        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10114,16 +10114,12 @@ exports.default = parseFromAnchor;
 /* 93 */,
 /* 94 */,
 /* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sJmzZ", function() { return sJmzZ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ympeu", function() { return ympeu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10135,15 +10131,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from custom.soy.
+// This file was automatically generated from local.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace sJmzZ.
+ * @fileoverview Templates in namespace ympeu.
  * @public
  */
 
-goog.module('sJmzZ.incrementaldom');
+goog.module('ympeu.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10177,45 +10173,30 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param523 = function() {
+  var param437 = function() {
     ie_open('h6');
-      var dyn30 = opt_data.page.description;
-      if (typeof dyn30 == 'function') dyn30(); else if (dyn30 != null) itext(dyn30);
+      var dyn25 = opt_data.page.description;
+      if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
+      $templateAlias2({code: 'webda serve [-d deploymentName] [--devMode]', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+        itext('You can specify a ');
+        ie_open('em');
+          itext('deploymentName');
+        ie_close('em');
+        itext(' to serve API with the deployment configuration');
       ie_close('p');
       ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+        itext('You can disable CORS by adding a ');
+        ie_open('em');
+          itext('--devMode');
+        ie_close('em');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Internal service');
-      ie_close('h2');
-      ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
-      ie_close('p');
-      ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
-      ie_close('p');
-      $templateAlias2({code: 'const Service = require(\'webda/services/service\')\n\nclass MyInternalService extends Service {\n\n   init() {\n     this._gdrive = new ...;\n   }\n   \n   getDocument(uuid, token) {\n     return this._gdrive.getDocument(uuid, token);\n   }\n   \n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The GDrive API is faked here, but basically this service will allow you to get some configuration from the webda.config.json and expose some methods for others Services or Models to use inside Webda');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Service with exposed API');
-      ie_close('h2');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10226,11 +10207,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param523}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param437}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'sJmzZ.render';
+  $render.soyTemplateName = 'ympeu.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10240,14 +10221,18 @@ return exports;
 
 });
 
-class sJmzZ extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(sJmzZ, templates);
+class ympeu extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ympeu, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
 /* 101 */,
 /* 102 */,
 /* 103 */,
@@ -10302,15 +10287,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(sJmzZ, templates);
 /* 152 */,
 /* 153 */,
 /* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10340,9 +10317,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _customSoy = __webpack_require__(100);
+var _localSoy = __webpack_require__(96);
 
-var _customSoy2 = _interopRequireDefault(_customSoy);
+var _localSoy2 = _interopRequireDefault(_localSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10352,23 +10329,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var sJmzZ = function (_Component) {
-  _inherits(sJmzZ, _Component);
+var ympeu = function (_Component) {
+  _inherits(ympeu, _Component);
 
-  function sJmzZ() {
-    _classCallCheck(this, sJmzZ);
+  function ympeu() {
+    _classCallCheck(this, ympeu);
 
-    return _possibleConstructorReturn(this, (sJmzZ.__proto__ || Object.getPrototypeOf(sJmzZ)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ympeu.__proto__ || Object.getPrototypeOf(ympeu)).apply(this, arguments));
   }
 
-  return sJmzZ;
+  return ympeu;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(sJmzZ, _customSoy2.default);
+_metalSoy2.default.register(ympeu, _localSoy2.default);
 
-exports.default = sJmzZ;
+exports.default = ympeu;
 
 /***/ })
-],[163]);
+],[155]);
