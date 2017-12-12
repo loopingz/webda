@@ -9,49 +9,114 @@ weight: 2
 
 <article id="1">
 
-## Lorem ipsum dolor sit amet
+## Overview
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque varius mattis mollis. Praesent rutrum tempor libero sit amet blandit. Integer ante nisl, rutrum ut volutpat ut, rutrum id tortor. Duis placerat ut ipsum id aliquam. Nunc venenatis sem ac urna viverra, eu euismod sapien porttitor.
+To ease up the configuration of an application we came up with the follow configuration resolution schema.
 
-```css
-body {
-	overflow: hidden;
+You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.
+
+![image](/images/configuration_resolution.png)
+
+The webda.config.json params attribute is the general configuration
+
+```javascript
+{
+  "param1": "test1",
+  "param2": "test2",
+  "param3": {
+    "subparam1": "subtest1"
+  }
+}
+```
+A deployment can override the general configuration with its params attribute
+So with a deployment global configuration like
+
+```javascript
+{
+  "param1": "deploytest1",
+  "param2": "deplyparamtest2"
+}
+```
+
+The service definition can include local configuration
+```javascript
+{
+  "param2": "localtest2",
+  "param3": {
+    "subparam2": "sublocaltest2"
+  }
+}
+```
+
+Finally the deployment can override service configuration
+```javascript
+{
+  "param3": {
+    "subparam2": "subdeploytest2"
+  }
+}
+```
+
+So this how webda will resolve Service final configuration
+
+```javascript
+// Step 1 - Global configuration
+{
+  "param1": "test1",
+  "param2": "test2",
+  "param3": {
+    "subparam1": "subtest1"
+  }
+}
+// Step 2 - Deployment global configuration override
+{
+  "param1": "deploytest1",
+  "param2": "deplyparamtest2",
+  "param3": {
+    "subparam1": "subtest1"
+  }
+}
+// Step 3 - Service local configuration override
+{
+  "param1": "deploytest1",
+  "param2": "localtest2",
+  "param3": {
+    "subparam1": "subtest1",
+    "subparam2": "sublocaltest2"
+  }
+}
+// Step 4 - Service deployment configuration override
+{
+  "param1": "deploytest1",
+  "param2": "localtest2",
+  "param3": {
+    "subparam1": "subtest1",
+    "subparam2": "subdeploytest2"
+  }
 }
 ```
 
 
-Nulla a suscipit nibh. Duis tincidunt elit tellus, ut volutpat lectus pharetra at. Nulla quis nisi ante. Maecenas vulputate convallis lorem. Vestibulum at ex id sapien faucibus vehicula. Sed porta dui in velit semper blandit. Ut in commodo magna. Morbi luctus enim et lectus luctus ullamcorper. Proin tellus erat, convallis vitae metus vitae, lacinia consectetur turpis.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
 
 </article>
 
 <article id="2">
 
-## Lorem ipsum dolor sit amet
+## Configuration UI
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+Here is some screenshots of the ui
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+#### Routes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+![image](/images/ui_route_create.png) ![image](/images/ui_route_config.png) 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+#### Services
 
-</article>
+![image](/images/ui_service_create.png) ![image](/images/ui_service_config.png)
 
-<article id="3">
+#### Deployments
 
-## Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+![image](/images/ui_deployment_create.png) ![image](/images/ui_deployment_config.png) ![image](/images/ui_deployment_deploy.png)
 
 </article>
