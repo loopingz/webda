@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([19],[
+webpackJsonppageComponent([11],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10109,12 +10109,20 @@ exports.default = parseFromAnchor;
 /* 88 */,
 /* 89 */,
 /* 90 */,
-/* 91 */
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OfYSx", function() { return OfYSx; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lGeOM", function() { return lGeOM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10126,15 +10134,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from tutorials.soy.
+// This file was automatically generated from binary.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace OfYSx.
+ * @fileoverview Templates in namespace lGeOM.
  * @public
  */
 
-goog.module('OfYSx.incrementaldom');
+goog.module('lGeOM.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10155,6 +10163,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10166,87 +10176,114 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param338 = function() {
+  var param509 = function() {
     ie_open('h6');
-      var dyn21 = opt_data.page.description;
-      if (typeof dyn21 == 'function') dyn21(); else if (dyn21 != null) itext(dyn21);
+      var dyn28 = opt_data.page.description;
+      if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Setting up a project from scratch');
+        itext('Overview');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('In this video you will see:');
+        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+      ie_close('p');
+      ie_open('p');
+        itext('The API exposed is');
+      ie_close('p');
+      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
+      ie_open('p');
+        itext('You can reduce the exposition by adding an expose attribute as on Store');
+      ie_close('p');
+      ie_open('p');
+        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          itext('How to install Webda');
+          ie_open('em');
+            itext('store');
+          ie_close('em');
+          itext(' is the Store of the object you want attached to');
         ie_close('li');
         ie_open('li');
-          itext('How to use the configurator to add services like Authentication and NoSQL Store');
+          ie_open('em');
+            itext('uid');
+          ie_close('em');
+          itext(' is the Object uuid');
         ie_close('li');
         ie_open('li');
-          itext('Expose services as REST API');
+          ie_open('em');
+            itext('property');
+          ie_close('em');
+          itext(' is the field of the Object');
         ie_close('li');
         ie_open('li');
-          itext('Deploy to the cloud using the AWS deployer');
+          ie_open('em');
+            itext('index');
+          ie_close('em');
+          itext(' is the index of the Binary');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('hash');
+          ie_close('em');
+          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
         ie_close('li');
       ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Add the mapping configuration to our project');
+        itext('Map');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
+        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
       ie_close('p');
+      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
+      ie_close('p');
+      ie_open('p');
+        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
+      ie_close('p');
+      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Use our new serverless API on a Polymer interface');
+        itext('S3Binary');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
+        itext('To configure just add the parameter bucket');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('FileBinary');
+      ie_close('h2');
+      ie_open('p');
+        itext('To configure just add the parameter folder');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('The behavior implementation can be found there :');
+      ie_close('p');
+      ie_open('p');
+        itext('Two different UI component exist also :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          itext('Registration with email');
+          itext('A simple fab button upload :');
         ie_close('li');
         ie_open('li');
-          itext('Login with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Add a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Edit a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Remove a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Upload directly to S3');
+          itext('IA paper-input with Browse button :');
         ie_close('li');
       ie_close('ul');
     ie_close('article');
@@ -10259,11 +10296,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param338}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param509}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'OfYSx.render';
+  $render.soyTemplateName = 'lGeOM.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10273,22 +10310,14 @@ return exports;
 
 });
 
-class OfYSx extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(OfYSx, templates);
+class lGeOM extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(lGeOM, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
 /* 100 */,
 /* 101 */,
 /* 102 */,
@@ -10337,7 +10366,20 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(OfYSx, templates);
 /* 145 */,
 /* 146 */,
 /* 147 */,
-/* 148 */
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10367,9 +10409,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _tutorialsSoy = __webpack_require__(91);
+var _binarySoy = __webpack_require__(99);
 
-var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
+var _binarySoy2 = _interopRequireDefault(_binarySoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10379,23 +10421,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var OfYSx = function (_Component) {
-  _inherits(OfYSx, _Component);
+var lGeOM = function (_Component) {
+  _inherits(lGeOM, _Component);
 
-  function OfYSx() {
-    _classCallCheck(this, OfYSx);
+  function lGeOM() {
+    _classCallCheck(this, lGeOM);
 
-    return _possibleConstructorReturn(this, (OfYSx.__proto__ || Object.getPrototypeOf(OfYSx)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (lGeOM.__proto__ || Object.getPrototypeOf(lGeOM)).apply(this, arguments));
   }
 
-  return OfYSx;
+  return lGeOM;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(OfYSx, _tutorialsSoy2.default);
+_metalSoy2.default.register(lGeOM, _binarySoy2.default);
 
-exports.default = OfYSx;
+exports.default = lGeOM;
 
 /***/ })
-],[148]);
+],[161]);

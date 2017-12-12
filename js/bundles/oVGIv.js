@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([22],[
+webpackJsonppageComponent([6],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10106,12 +10106,28 @@ exports.default = parseFromAnchor;
 /* 85 */,
 /* 86 */,
 /* 87 */,
-/* 88 */
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uurvR", function() { return uurvR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "oVGIv", function() { return oVGIv; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10123,15 +10139,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from new-website.soy.
+// This file was automatically generated from polymer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace uurvR.
+ * @fileoverview Templates in namespace oVGIv.
  * @public
  */
 
-goog.module('uurvR.incrementaldom');
+goog.module('oVGIv.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10152,7 +10168,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
 /**
@@ -10163,66 +10179,24 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param177 = function() {
-    ie_open('article');
+  var param599 = function() {
+    ie_open('h6');
+      var dyn33 = opt_data.page.description;
+      if (typeof dyn33 == 'function') dyn33(); else if (dyn33 != null) itext(dyn33);
+    ie_close('h6');
+    ie_open('article', null, null,
+        'id', '1');
+      ie_open('h2');
+        itext('Overview');
+      ie_close('h2');
       ie_open('p');
-        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
+        itext('The Webda project have webcomponents it implements the default Store api, the Authentication service');
       ie_close('p');
       ie_open('p');
-        itext('Thanks to ');
-        ie_open('a', null, null,
-            'href', 'https://electricjs.com/');
-          itext('Electric JS');
-        ie_close('a');
-        itext(', we were able to create a whole new website way faster with those cool UI effects.');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
-      ie_open('p');
-        itext('The same day we are releasing the new website, we also have a fix release ');
-        ie_open('strong');
-          itext('v0.4.6');
-        ie_close('strong');
-      ie_close('p');
-      ie_open('p');
-        itext('This release includes :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('DynamoDB incrementAttribute with 0 fix');
-        ie_close('li');
-        ie_open('li');
-          itext('Email storage in lower case');
-        ie_close('li');
-      ie_close('ul');
-      ie_open('p');
-        itext('In the next weeks, as Christmas gift we will work hard on a ');
-        ie_open('strong');
-          itext('v0.5.0');
-        ie_close('strong');
-        itext(' it should includes :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Better ');
-          ie_open('a', null, null,
-              'href', 'https://wedeploy.com/');
-            itext('WeDeploy');
-          ie_close('a');
-          itext(' integration');
-        ie_close('li');
-        ie_open('li');
-          itext('Easier queue worker deployment');
-        ie_close('li');
-        ie_open('li');
-          ie_open('a', null, null,
-              'href', 'https://aws.amazon.com/fargate/');
-            itext('AWS Fargate');
-          ie_close('a');
-          itext(' integration');
-        ie_close('li');
-        ie_open('li');
-          itext('Static website deployment integration');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10233,11 +10207,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param599}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'uurvR.render';
+  $render.soyTemplateName = 'oVGIv.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10247,30 +10221,14 @@ return exports;
 
 });
 
-class uurvR extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(uurvR, templates);
+class oVGIv extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(oVGIv, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
 /* 105 */,
 /* 106 */,
 /* 107 */,
@@ -10312,7 +10270,23 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(uurvR, templates);
 /* 143 */,
 /* 144 */,
 /* 145 */,
-/* 146 */
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10342,9 +10316,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _newWebsiteSoy = __webpack_require__(88);
+var _polymerSoy = __webpack_require__(104);
 
-var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
+var _polymerSoy2 = _interopRequireDefault(_polymerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10354,23 +10328,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var uurvR = function (_Component) {
-  _inherits(uurvR, _Component);
+var oVGIv = function (_Component) {
+  _inherits(oVGIv, _Component);
 
-  function uurvR() {
-    _classCallCheck(this, uurvR);
+  function oVGIv() {
+    _classCallCheck(this, oVGIv);
 
-    return _possibleConstructorReturn(this, (uurvR.__proto__ || Object.getPrototypeOf(uurvR)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (oVGIv.__proto__ || Object.getPrototypeOf(oVGIv)).apply(this, arguments));
   }
 
-  return uurvR;
+  return oVGIv;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(uurvR, _newWebsiteSoy2.default);
+_metalSoy2.default.register(oVGIv, _polymerSoy2.default);
 
-exports.default = uurvR;
+exports.default = oVGIv;
 
 /***/ })
-],[146]);
+],[162]);

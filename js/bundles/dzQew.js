@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([7],[
+webpackJsonppageComponent([14],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10114,19 +10114,12 @@ exports.default = parseFromAnchor;
 /* 93 */,
 /* 94 */,
 /* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNMDe", function() { return UNMDe; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dzQew", function() { return dzQew; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10138,15 +10131,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from models.soy.
+// This file was automatically generated from local.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace UNMDe.
+ * @fileoverview Templates in namespace dzQew.
  * @public
  */
 
-goog.module('UNMDe.incrementaldom');
+goog.module('dzQew.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10180,49 +10173,30 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param564 = function() {
+  var param451 = function() {
     ie_open('h6');
-      var dyn32 = opt_data.page.description;
-      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
+      var dyn25 = opt_data.page.description;
+      if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
+      $templateAlias2({code: 'webda serve [-d deploymentName] [--devMode]', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('Model is the best way to express your business logic.');
-      ie_close('p');
-      ie_open('p');
-        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Security');
-      ie_close('h2');
-      ie_open('p');
-        itext('The model has a predefined method ');
+        itext('You can specify a ');
         ie_open('em');
-          itext('canAct');
+          itext('deploymentName');
         ie_close('em');
-        itext(' that will be called whenever an action is trigger on an object from an external source');
+        itext(' to serve API with the deployment configuration');
       ie_close('p');
       ie_open('p');
-        itext('This method return a Promise that will stop the processing if it is rejected');
+        itext('You can disable CORS by adding a ');
+        ie_open('em');
+          itext('--devMode');
+        ie_close('em');
       ie_close('p');
-      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Custom Actions');
-      ie_close('h2');
-      ie_open('p');
-        itext('The model can defined action that will be exposed by its Store');
-      ie_close('p');
-      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10233,11 +10207,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param564}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param451}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'UNMDe.render';
+  $render.soyTemplateName = 'dzQew.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10247,14 +10221,21 @@ return exports;
 
 });
 
-class UNMDe extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(UNMDe, templates);
+class dzQew extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(dzQew, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
 /* 104 */,
 /* 105 */,
 /* 106 */,
@@ -10304,12 +10285,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(UNMDe, templates);
 /* 150 */,
 /* 151 */,
 /* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10339,9 +10315,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _modelsSoy = __webpack_require__(103);
+var _localSoy = __webpack_require__(96);
 
-var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
+var _localSoy2 = _interopRequireDefault(_localSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10351,23 +10327,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var UNMDe = function (_Component) {
-  _inherits(UNMDe, _Component);
+var dzQew = function (_Component) {
+  _inherits(dzQew, _Component);
 
-  function UNMDe() {
-    _classCallCheck(this, UNMDe);
+  function dzQew() {
+    _classCallCheck(this, dzQew);
 
-    return _possibleConstructorReturn(this, (UNMDe.__proto__ || Object.getPrototypeOf(UNMDe)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (dzQew.__proto__ || Object.getPrototypeOf(dzQew)).apply(this, arguments));
   }
 
-  return UNMDe;
+  return dzQew;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(UNMDe, _modelsSoy2.default);
+_metalSoy2.default.register(dzQew, _localSoy2.default);
 
-exports.default = UNMDe;
+exports.default = dzQew;
 
 /***/ })
-],[158]);
+],[153]);

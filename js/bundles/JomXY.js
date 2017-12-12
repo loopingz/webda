@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([17],[
+webpackJsonppageComponent([19],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10109,14 +10109,12 @@ exports.default = parseFromAnchor;
 /* 88 */,
 /* 89 */,
 /* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QJjJX", function() { return QJjJX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JomXY", function() { return JomXY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10128,15 +10126,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from configuration.soy.
+// This file was automatically generated from tutorials.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace QJjJX.
+ * @fileoverview Templates in namespace JomXY.
  * @public
  */
 
-goog.module('QJjJX.incrementaldom');
+goog.module('JomXY.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10157,8 +10155,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10170,96 +10166,89 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param363 = function() {
+  var param338 = function() {
     ie_open('h6');
-      var dyn22 = opt_data.page.description;
-      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
+      var dyn21 = opt_data.page.description;
+      if (typeof dyn21 == 'function') dyn21(); else if (dyn21 != null) itext(dyn21);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Setting up a project from scratch');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
+        itext('In this video you will see:');
       ie_close('p');
-      ie_open('p');
-        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
-      ie_close('p');
-      ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/configuration_resolution.png',
-            'alt', 'image');
-        ie_close('img');
-      ie_close('p');
-      ie_open('p');
-        itext('This is the detail configuration for each section');
-      ie_close('p');
-      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
-      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
-      ie_open('p');
-        itext('So this how webda will resolve Service final configuration');
-      ie_close('p');
-      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('ul');
+        ie_open('li');
+          itext('How to install Webda');
+        ie_close('li');
+        ie_open('li');
+          itext('How to use the configurator to add services like Authentication and NoSQL Store');
+        ie_close('li');
+        ie_open('li');
+          itext('Expose services as REST API');
+        ie_close('li');
+        ie_open('li');
+          itext('Deploy to the cloud using the AWS deployer');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Configuration UI');
+        itext('Add the mapping configuration to our project');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('Here is some screenshots of the ui');
+        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
       ie_close('p');
-      ie_open('h4');
-        itext('Routes');
-      ie_close('h4');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Use our new serverless API on a Polymer interface');
+      ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/ui_route_create.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_route_config.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
       ie_close('p');
-      ie_open('h4');
-        itext('Services');
-      ie_close('h4');
-      ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/ui_service_create.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_service_config.png',
-            'alt', 'image');
-        ie_close('img');
-      ie_close('p');
-      ie_open('h4');
-        itext('Deployments');
-      ie_close('h4');
-      ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/ui_deployment_create.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_deployment_config.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_deployment_deploy.png',
-            'alt', 'image');
-        ie_close('img');
-      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Registration with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Login with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Add a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Edit a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Remove a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Upload directly to S3');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10270,11 +10259,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param363}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param338}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'QJjJX.render';
+  $render.soyTemplateName = 'JomXY.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10284,14 +10273,16 @@ return exports;
 
 });
 
-class QJjJX extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(QJjJX, templates);
+class JomXY extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(JomXY, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 92 */,
+/* 93 */,
 /* 94 */,
 /* 95 */,
 /* 96 */,
@@ -10346,11 +10337,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(QJjJX, templates);
 /* 145 */,
 /* 146 */,
 /* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10380,9 +10367,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _configurationSoy = __webpack_require__(93);
+var _tutorialsSoy = __webpack_require__(91);
 
-var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
+var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10392,23 +10379,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var QJjJX = function (_Component) {
-  _inherits(QJjJX, _Component);
+var JomXY = function (_Component) {
+  _inherits(JomXY, _Component);
 
-  function QJjJX() {
-    _classCallCheck(this, QJjJX);
+  function JomXY() {
+    _classCallCheck(this, JomXY);
 
-    return _possibleConstructorReturn(this, (QJjJX.__proto__ || Object.getPrototypeOf(QJjJX)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (JomXY.__proto__ || Object.getPrototypeOf(JomXY)).apply(this, arguments));
   }
 
-  return QJjJX;
+  return JomXY;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(QJjJX, _configurationSoy2.default);
+_metalSoy2.default.register(JomXY, _tutorialsSoy2.default);
 
-exports.default = QJjJX;
+exports.default = JomXY;
 
 /***/ })
-],[152]);
+],[148]);

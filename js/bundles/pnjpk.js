@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([14],[
+webpackJsonppageComponent([18],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10110,16 +10110,12 @@ exports.default = parseFromAnchor;
 /* 89 */,
 /* 90 */,
 /* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */
+/* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ympeu", function() { return ympeu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pnjpk", function() { return pnjpk; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10131,15 +10127,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from local.soy.
+// This file was automatically generated from aws.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace ympeu.
+ * @fileoverview Templates in namespace pnjpk.
  * @public
  */
 
-goog.module('ympeu.incrementaldom');
+goog.module('pnjpk.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10173,29 +10169,64 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param437 = function() {
-    ie_open('h6');
-      var dyn25 = opt_data.page.description;
-      if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
-    ie_close('h6');
+  var param349 = function() {
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
-      $templateAlias2({code: 'webda serve [-d deploymentName] [--devMode]', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('You can specify a ');
-        ie_open('em');
-          itext('deploymentName');
-        ie_close('em');
-        itext(' to serve API with the deployment configuration');
+        ie_open('img', null, null,
+            'src', 'http://webda.io/images/schemas/aws_deploy.png',
+            'alt', 'image');
+        ie_close('img');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Deployment Policy');
+      ie_close('h2');
+      ie_open('p');
+        itext('To be able to deploy the deployment user must have at least :');
+      ie_close('p');
+      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This can be restrict more and should, need to update the documentation');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Package');
+      ie_close('h2');
+      ie_open('p');
+        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Lambda');
+      ie_close('h2');
+      ie_open('p');
+        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('API Gateway');
+      ie_close('h2');
+      ie_open('p');
+        itext('It map all the routes from your application, if a ');
+        ie_open('strong');
+          itext('website');
+        ie_close('strong');
+        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
       ie_close('p');
       ie_open('p');
-        itext('You can disable CORS by adding a ');
-        ie_open('em');
-          itext('--devMode');
-        ie_close('em');
+        itext('It also deploy the API as Stage named with the name of the deployment.');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10207,11 +10238,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param437}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param349}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'ympeu.render';
+  $render.soyTemplateName = 'pnjpk.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10221,14 +10252,18 @@ return exports;
 
 });
 
-class ympeu extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ympeu, templates);
+class pnjpk extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pnjpk, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
 /* 97 */,
 /* 98 */,
 /* 99 */,
@@ -10317,9 +10352,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _localSoy = __webpack_require__(96);
+var _awsSoy = __webpack_require__(92);
 
-var _localSoy2 = _interopRequireDefault(_localSoy);
+var _awsSoy2 = _interopRequireDefault(_awsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10329,23 +10364,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ympeu = function (_Component) {
-  _inherits(ympeu, _Component);
+var pnjpk = function (_Component) {
+  _inherits(pnjpk, _Component);
 
-  function ympeu() {
-    _classCallCheck(this, ympeu);
+  function pnjpk() {
+    _classCallCheck(this, pnjpk);
 
-    return _possibleConstructorReturn(this, (ympeu.__proto__ || Object.getPrototypeOf(ympeu)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (pnjpk.__proto__ || Object.getPrototypeOf(pnjpk)).apply(this, arguments));
   }
 
-  return ympeu;
+  return pnjpk;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(ympeu, _localSoy2.default);
+_metalSoy2.default.register(pnjpk, _awsSoy2.default);
 
-exports.default = ympeu;
+exports.default = pnjpk;
 
 /***/ })
 ],[155]);

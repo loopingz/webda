@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([12],[
+webpackJsonppageComponent([5],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10116,12 +10116,19 @@ exports.default = parseFromAnchor;
 /* 95 */,
 /* 96 */,
 /* 97 */,
-/* 98 */
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gYzwo", function() { return gYzwo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNfto", function() { return UNfto; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10133,15 +10140,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from authentication.soy.
+// This file was automatically generated from queues.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace gYzwo.
+ * @fileoverview Templates in namespace UNfto.
  * @public
  */
 
-goog.module('gYzwo.incrementaldom');
+goog.module('UNfto.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10162,8 +10169,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10175,10 +10180,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param464 = function() {
+  var param610 = function() {
     ie_open('h6');
-      var dyn27 = opt_data.page.description;
-      if (typeof dyn27 == 'function') dyn27(); else if (dyn27 != null) itext(dyn27);
+      var dyn34 = opt_data.page.description;
+      if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10186,77 +10191,21 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('The Authentication service highly depends on ');
-        ie_open('a', null, null,
-            'href', 'http://passportjs.org/');
-          itext('PassportJS');
-        ie_close('a');
-        itext(' this is why its file is passport.js');
+        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
       ie_close('p');
       ie_open('p');
-        itext('It requires two stores : Idents and Users.');
+        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
       ie_close('p');
-      ie_open('p');
-        itext('The Idents will contains each mode of Authentication enabled by the user, you will find in the Ident also the profile returned by the OAuth provider if returned.');
-      ie_close('p');
-      ie_open('p');
-        itext('The Users will have one object per user, with the idents collection, it also contains the password if any is set.');
-      ie_close('p');
-      ie_open('p');
-        itext('Basic configuration');
-      ie_close('p');
-      $templateAlias2({code: '"successRedirect": "https://shootandprove.loopingz.com/user.html", // Redirect to this page after login\n"failureRedirect": "/login-error", // Redirect to this page after failed login\n"userStore": "", // If you want to override the userStore name by default Users\n"identStore": "", // If you want to override the identStore name by default Idents\n"providers": {\n  ... // See below\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Register event');
+        itext('Worker');
       ie_close('h2');
       ie_open('p');
-        itext('When a user register, the Authentication service send a Register event, so you can complete the user with additional informations.');
-      ie_close('p');
-      $templateAlias2({code: '// Datas is the profile coming from the OAuth or the Register form\nthis.emit("Register", {"user": user, "datas": datas, "ctx": ctx});', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Email authentication');
-      ie_close('h2');
-      ie_open('p');
-        itext('To use this feature you need to have a configured Mailer service, you can define the service name by adding the field mailer inside the email configuration.');
-      ie_close('p');
-      ie_open('p');
-        itext('The email authentication has two modes, one that register the user without waiting for the email validation, and the other one that register the user only when the registration form contains the right validation token sent by email.');
-      ie_close('p');
-      $templateAlias2({code: '...\n"providers": {\n  "email": {\n     "from": "", // Email sender\n     "subject": "", // Email subject\n     "html": "", // HTML to send by email for email validation\n     "text": "", // Text to send by email for email validation\n     "mailer": "DefinedMailer", // Defined mailer to use\n     "postValidation": false, // If true, create user without email validation\n     "skipEmailValidation": true // Don\'t even send a validation email, must be set along with postValidation=true\n  },\n}\n...', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The email authentication expose POST /auth/email if the body contains register=true then it will perform registration, if not then only login returning 404 if unknown user, 403 for bad password, 204 for successful login GET /auth/callback');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('OAuth');
-      ie_close('h2');
-      ie_open('p');
-        itext('You can setup differents types of OAuth, we integrate for now only Facebook, Amazon, Twitter, GitHub, Google.');
-      ie_close('p');
-      $templateAlias2({code: '{\n  ...\n  providers: {\n    facebook: {\n      clientID: "facebookClientId",\n      clientSecret: "facebookSecret",\n      scope: ["email","public_profile"]\n    }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This is the same for the other providers, except ');
-        ie_open('strong');
-          itext('Twitter');
-        ie_close('strong');
-        itext(' where the fields are OAuth1 : consumerKey and consumerSecret');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('Polymer');
-      ie_close('h2');
-      ie_open('p');
-        itext('You have a Polymer behavior that implement the Authentication : ...');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10268,11 +10217,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param464}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param610}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'gYzwo.render';
+  $render.soyTemplateName = 'UNfto.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10282,21 +10231,14 @@ return exports;
 
 });
 
-class gYzwo extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(gYzwo, templates);
+class UNfto extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(UNfto, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
 /* 106 */,
 /* 107 */,
 /* 108 */,
@@ -10349,10 +10291,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(gYzwo, templates);
 /* 155 */,
 /* 156 */,
 /* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10382,9 +10321,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _authenticationSoy = __webpack_require__(98);
+var _queuesSoy = __webpack_require__(105);
 
-var _authenticationSoy2 = _interopRequireDefault(_authenticationSoy);
+var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10394,23 +10333,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var gYzwo = function (_Component) {
-  _inherits(gYzwo, _Component);
+var UNfto = function (_Component) {
+  _inherits(UNfto, _Component);
 
-  function gYzwo() {
-    _classCallCheck(this, gYzwo);
+  function UNfto() {
+    _classCallCheck(this, UNfto);
 
-    return _possibleConstructorReturn(this, (gYzwo.__proto__ || Object.getPrototypeOf(gYzwo)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (UNfto.__proto__ || Object.getPrototypeOf(UNfto)).apply(this, arguments));
   }
 
-  return gYzwo;
+  return UNfto;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(gYzwo, _authenticationSoy2.default);
+_metalSoy2.default.register(UNfto, _queuesSoy2.default);
 
-exports.default = gYzwo;
+exports.default = UNfto;
 
 /***/ })
-],[161]);
+],[158]);
