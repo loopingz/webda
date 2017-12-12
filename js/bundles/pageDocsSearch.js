@@ -2671,7 +2671,7 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', '/');
+        'href', opt_data.site.basePath + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
@@ -10187,7 +10187,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param220 = function() {
+  var param222 = function() {
     $templateAlias2({section: opt_data.site.index.children['docs']}, null, opt_ijData);
     ie_open('div', null, null,
         'class', 'sidebar-offset');
@@ -10223,7 +10223,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_close('div');
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param220}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param222}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {

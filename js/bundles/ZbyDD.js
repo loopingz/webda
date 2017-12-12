@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([5],[
+webpackJsonppageComponent([19],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2671,7 +2671,7 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', '/');
+        'href', opt_data.site.basePath + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
@@ -10109,26 +10109,12 @@ exports.default = parseFromAnchor;
 /* 88 */,
 /* 89 */,
 /* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "yVxGs", function() { return yVxGs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZbyDD", function() { return ZbyDD; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10140,15 +10126,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from queues.soy.
+// This file was automatically generated from tutorials.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace yVxGs.
+ * @fileoverview Templates in namespace ZbyDD.
  * @public
  */
 
-goog.module('yVxGs.incrementaldom');
+goog.module('ZbyDD.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10180,33 +10166,89 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param596 = function() {
+  var param340 = function() {
     ie_open('h6');
-      var dyn35 = opt_data.page.description;
-      if (typeof dyn35 == 'function') dyn35(); else if (dyn35 != null) itext(dyn35);
+      var dyn22 = opt_data.page.description;
+      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Setting up a project from scratch');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
+        itext('In this video you will see:');
       ie_close('p');
-      ie_open('p');
-        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
-      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('How to install Webda');
+        ie_close('li');
+        ie_open('li');
+          itext('How to use the configurator to add services like Authentication and NoSQL Store');
+        ie_close('li');
+        ie_open('li');
+          itext('Expose services as REST API');
+        ie_close('li');
+        ie_open('li');
+          itext('Deploy to the cloud using the AWS deployer');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Worker');
+        itext('Add the mapping configuration to our project');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
       ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Use our new serverless API on a Polymer interface');
+      ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
+          'frameborder', '0',
+          'allowfullscreen', '');
+      ie_open('p');
+        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Registration with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Login with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Add a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Edit a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Remove a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Upload directly to S3');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10217,11 +10259,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param596}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param340}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'yVxGs.render';
+  $render.soyTemplateName = 'ZbyDD.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10231,14 +10273,28 @@ return exports;
 
 });
 
-class yVxGs extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(yVxGs, templates);
+class ZbyDD extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ZbyDD, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
 /* 106 */,
 /* 107 */,
 /* 108 */,
@@ -10282,22 +10338,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(yVxGs, templates);
 /* 146 */,
 /* 147 */,
 /* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10327,9 +10368,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _queuesSoy = __webpack_require__(105);
+var _tutorialsSoy = __webpack_require__(91);
 
-var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
+var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10339,23 +10380,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var yVxGs = function (_Component) {
-  _inherits(yVxGs, _Component);
+var ZbyDD = function (_Component) {
+  _inherits(ZbyDD, _Component);
 
-  function yVxGs() {
-    _classCallCheck(this, yVxGs);
+  function ZbyDD() {
+    _classCallCheck(this, ZbyDD);
 
-    return _possibleConstructorReturn(this, (yVxGs.__proto__ || Object.getPrototypeOf(yVxGs)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ZbyDD.__proto__ || Object.getPrototypeOf(ZbyDD)).apply(this, arguments));
   }
 
-  return yVxGs;
+  return ZbyDD;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(yVxGs, _queuesSoy2.default);
+_metalSoy2.default.register(ZbyDD, _tutorialsSoy2.default);
 
-exports.default = yVxGs;
+exports.default = ZbyDD;
 
 /***/ })
-],[164]);
+],[149]);

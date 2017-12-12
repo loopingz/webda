@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([14],[
+webpackJsonppageComponent([11],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2671,7 +2671,7 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', '/');
+        'href', opt_data.site.basePath + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
@@ -10114,12 +10114,15 @@ exports.default = parseFromAnchor;
 /* 93 */,
 /* 94 */,
 /* 95 */,
-/* 96 */
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cLyYf", function() { return cLyYf; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nBBfV", function() { return nBBfV; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10131,15 +10134,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from local.soy.
+// This file was automatically generated from binary.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace cLyYf.
+ * @fileoverview Templates in namespace nBBfV.
  * @public
  */
 
-goog.module('cLyYf.incrementaldom');
+goog.module('nBBfV.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10173,30 +10176,116 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param437 = function() {
+  var param497 = function() {
     ie_open('h6');
-      var dyn26 = opt_data.page.description;
-      if (typeof dyn26 == 'function') dyn26(); else if (dyn26 != null) itext(dyn26);
+      var dyn29 = opt_data.page.description;
+      if (typeof dyn29 == 'function') dyn29(); else if (dyn29 != null) itext(dyn29);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
-      $templateAlias2({code: 'webda serve [-d deploymentName] [--devMode]', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('You can specify a ');
-        ie_open('em');
-          itext('deploymentName');
-        ie_close('em');
-        itext(' to serve API with the deployment configuration');
+        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
       ie_close('p');
       ie_open('p');
-        itext('You can disable CORS by adding a ');
-        ie_open('em');
-          itext('--devMode');
-        ie_close('em');
+        itext('The API exposed is');
       ie_close('p');
+      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
+      ie_open('p');
+        itext('You can reduce the exposition by adding an expose attribute as on Store');
+      ie_close('p');
+      ie_open('p');
+        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          ie_open('em');
+            itext('store');
+          ie_close('em');
+          itext(' is the Store of the object you want attached to');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('uid');
+          ie_close('em');
+          itext(' is the Object uuid');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('property');
+          ie_close('em');
+          itext(' is the field of the Object');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('index');
+          ie_close('em');
+          itext(' is the index of the Binary');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('hash');
+          ie_close('em');
+          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
+        ie_close('li');
+      ie_close('ul');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Map');
+      ie_close('h2');
+      ie_open('p');
+        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
+      ie_close('p');
+      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
+      ie_close('p');
+      ie_open('p');
+        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
+      ie_close('p');
+      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('S3Binary');
+      ie_close('h2');
+      ie_open('p');
+        itext('To configure just add the parameter bucket');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('FileBinary');
+      ie_close('h2');
+      ie_open('p');
+        itext('To configure just add the parameter folder');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('The behavior implementation can be found there :');
+      ie_close('p');
+      ie_open('p');
+        itext('Two different UI component exist also :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('A simple fab button upload :');
+        ie_close('li');
+        ie_open('li');
+          itext('IA paper-input with Browse button :');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10207,11 +10296,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param437}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param497}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'cLyYf.render';
+  $render.soyTemplateName = 'nBBfV.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10221,17 +10310,14 @@ return exports;
 
 });
 
-class cLyYf extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(cLyYf, templates);
+class nBBfV extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(nBBfV, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 97 */,
-/* 98 */,
-/* 99 */,
 /* 100 */,
 /* 101 */,
 /* 102 */,
@@ -10284,7 +10370,14 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(cLyYf, templates);
 /* 149 */,
 /* 150 */,
 /* 151 */,
-/* 152 */
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10314,9 +10407,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _localSoy = __webpack_require__(96);
+var _binarySoy = __webpack_require__(99);
 
-var _localSoy2 = _interopRequireDefault(_localSoy);
+var _binarySoy2 = _interopRequireDefault(_binarySoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10326,23 +10419,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var cLyYf = function (_Component) {
-  _inherits(cLyYf, _Component);
+var nBBfV = function (_Component) {
+  _inherits(nBBfV, _Component);
 
-  function cLyYf() {
-    _classCallCheck(this, cLyYf);
+  function nBBfV() {
+    _classCallCheck(this, nBBfV);
 
-    return _possibleConstructorReturn(this, (cLyYf.__proto__ || Object.getPrototypeOf(cLyYf)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (nBBfV.__proto__ || Object.getPrototypeOf(nBBfV)).apply(this, arguments));
   }
 
-  return cLyYf;
+  return nBBfV;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(cLyYf, _localSoy2.default);
+_metalSoy2.default.register(nBBfV, _binarySoy2.default);
 
-exports.default = cLyYf;
+exports.default = nBBfV;
 
 /***/ })
-],[152]);
+],[159]);

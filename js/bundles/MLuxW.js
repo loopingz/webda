@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([7],[
+webpackJsonppageComponent([15],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2671,7 +2671,7 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', '/');
+        'href', opt_data.site.basePath + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
@@ -10113,20 +10113,12 @@ exports.default = parseFromAnchor;
 /* 92 */,
 /* 93 */,
 /* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AtXqK", function() { return AtXqK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MLuxW", function() { return MLuxW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10138,15 +10130,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from models.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace AtXqK.
+ * @fileoverview Templates in namespace MLuxW.
  * @public
  */
 
-goog.module('AtXqK.incrementaldom');
+goog.module('MLuxW.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10180,49 +10172,76 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param564 = function() {
+  var param423 = function() {
     ie_open('h6');
-      var dyn33 = opt_data.page.description;
-      if (typeof dyn33 == 'function') dyn33(); else if (dyn33 != null) itext(dyn33);
+      var dyn25 = opt_data.page.description;
+      if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('Model is the best way to express your business logic.');
+        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
       ie_close('p');
       ie_open('p');
-        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
+        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
       ie_close('p');
+      ie_open('p');
+        itext('But don\'t worry, with Webda it is as simple as a command');
+      ie_close('p');
+      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
+      ie_open('p');
+        itext('This command will do several step for you :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Create the policy and role for your Lambda');
+        ie_close('li');
+        ie_open('li');
+          itext('Create if needed the Dynamo table used in your application');
+        ie_close('li');
+        ie_open('li');
+          itext('Create S3 buckets used in your application');
+        ie_close('li');
+        ie_open('li');
+          itext('Deploy the code to your Lambda');
+        ie_close('li');
+        ie_open('li');
+          itext('Create the API Gateway mapping');
+        ie_close('li');
+        ie_open('li');
+          itext('Add permission for API Gateways to your Lambda');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Security');
+        itext('Docker');
       ie_close('h2');
       ie_open('p');
-        itext('The model has a predefined method ');
-        ie_open('em');
-          itext('canAct');
-        ie_close('em');
-        itext(' that will be called whenever an action is trigger on an object from an external source');
+        itext('You can also just define a Docker image to build');
       ie_close('p');
       ie_open('p');
-        itext('This method return a Promise that will stop the processing if it is rejected');
+        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
       ie_close('p');
-      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('If you specify a tag, after the build it will push the image to your repository');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Custom Actions');
+        itext('WeDeploy');
       ie_close('h2');
       ie_open('p');
-        itext('The model can defined action that will be exposed by its Store');
+        itext('This service run your Docker image and allow you to deploy with a single command');
       ie_close('p');
-      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
+      ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10233,11 +10252,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param564}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param423}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'AtXqK.render';
+  $render.soyTemplateName = 'MLuxW.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10247,14 +10266,22 @@ return exports;
 
 });
 
-class AtXqK extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(AtXqK, templates);
+class MLuxW extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(MLuxW, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
 /* 104 */,
 /* 105 */,
 /* 106 */,
@@ -10303,12 +10330,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(AtXqK, templates);
 /* 149 */,
 /* 150 */,
 /* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10338,9 +10360,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _modelsSoy = __webpack_require__(103);
+var _indexSoy = __webpack_require__(95);
 
-var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10350,23 +10372,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var AtXqK = function (_Component) {
-  _inherits(AtXqK, _Component);
+var MLuxW = function (_Component) {
+  _inherits(MLuxW, _Component);
 
-  function AtXqK() {
-    _classCallCheck(this, AtXqK);
+  function MLuxW() {
+    _classCallCheck(this, MLuxW);
 
-    return _possibleConstructorReturn(this, (AtXqK.__proto__ || Object.getPrototypeOf(AtXqK)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (MLuxW.__proto__ || Object.getPrototypeOf(MLuxW)).apply(this, arguments));
   }
 
-  return AtXqK;
+  return MLuxW;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(AtXqK, _modelsSoy2.default);
+_metalSoy2.default.register(MLuxW, _indexSoy2.default);
 
-exports.default = AtXqK;
+exports.default = MLuxW;
 
 /***/ })
-],[157]);
+],[152]);

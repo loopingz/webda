@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([19],[
+webpackJsonppageComponent([8],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2671,7 +2671,7 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', '/');
+        'href', opt_data.site.basePath + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
@@ -10109,12 +10109,23 @@ exports.default = parseFromAnchor;
 /* 88 */,
 /* 89 */,
 /* 90 */,
-/* 91 */
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IKKfM", function() { return IKKfM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cpXUN", function() { return cpXUN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10126,15 +10137,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from tutorials.soy.
+// This file was automatically generated from mailer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace IKKfM.
+ * @fileoverview Templates in namespace cpXUN.
  * @public
  */
 
-goog.module('IKKfM.incrementaldom');
+goog.module('cpXUN.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10166,89 +10177,47 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param338 = function() {
+  var param555 = function() {
     ie_open('h6');
-      var dyn22 = opt_data.page.description;
-      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
+      var dyn32 = opt_data.page.description;
+      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Setting up a project from scratch');
+        itext('Overview');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('In this video you will see:');
+        itext('Web Application always needs to send an email at one point.');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('How to install Webda');
-        ie_close('li');
-        ie_open('li');
-          itext('How to use the configurator to add services like Authentication and NoSQL Store');
-        ie_close('li');
-        ie_open('li');
-          itext('Expose services as REST API');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy to the cloud using the AWS deployer');
-        ie_close('li');
-      ie_close('ul');
+      ie_open('p');
+        itext('The mailer service is a wrapper on top of two NodeJS library : NodeMailer and EmailTemplate');
+      ie_close('p');
+      ie_open('p');
+        itext('It allows you to send email through SMTP, GMail, SES. It also provides Mustache templates to send email to the user with contextual informations and in his own language');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Add the mapping configuration to our project');
+        itext('NodeMailer configuration');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Use our new serverless API on a Polymer interface');
+        itext('Templating');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Registration with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Login with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Add a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Edit a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Remove a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Upload directly to S3');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10259,11 +10228,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param338}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param555}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'IKKfM.render';
+  $render.soyTemplateName = 'cpXUN.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10273,25 +10242,14 @@ return exports;
 
 });
 
-class IKKfM extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(IKKfM, templates);
+class cpXUN extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(cpXUN, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
 /* 103 */,
 /* 104 */,
 /* 105 */,
@@ -10338,7 +10296,16 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(IKKfM, templates);
 /* 146 */,
 /* 147 */,
 /* 148 */,
-/* 149 */
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10368,9 +10335,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _tutorialsSoy = __webpack_require__(91);
+var _mailerSoy = __webpack_require__(102);
 
-var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
+var _mailerSoy2 = _interopRequireDefault(_mailerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10380,23 +10347,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var IKKfM = function (_Component) {
-  _inherits(IKKfM, _Component);
+var cpXUN = function (_Component) {
+  _inherits(cpXUN, _Component);
 
-  function IKKfM() {
-    _classCallCheck(this, IKKfM);
+  function cpXUN() {
+    _classCallCheck(this, cpXUN);
 
-    return _possibleConstructorReturn(this, (IKKfM.__proto__ || Object.getPrototypeOf(IKKfM)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (cpXUN.__proto__ || Object.getPrototypeOf(cpXUN)).apply(this, arguments));
   }
 
-  return IKKfM;
+  return cpXUN;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(IKKfM, _tutorialsSoy2.default);
+_metalSoy2.default.register(cpXUN, _mailerSoy2.default);
 
-exports.default = IKKfM;
+exports.default = cpXUN;
 
 /***/ })
-],[149]);
+],[158]);

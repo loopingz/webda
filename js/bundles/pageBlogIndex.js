@@ -2671,7 +2671,7 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', '/');
+        'href', opt_data.site.basePath + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
@@ -10269,8 +10269,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageBlogIndex, templa
 /* 142 */,
 /* 143 */,
 /* 144 */,
-/* 145 */,
-/* 146 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10331,4 +10330,4 @@ _metalSoy2.default.register(pageBlogIndex, _indexSoy2.default);
 exports.default = pageBlogIndex;
 
 /***/ })
-],[146]);
+],[145]);

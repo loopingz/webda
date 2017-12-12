@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([17],[
+webpackJsonppageComponent([4],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2671,7 +2671,7 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', '/');
+        'href', opt_data.site.basePath + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
@@ -10111,12 +10111,25 @@ exports.default = parseFromAnchor;
 /* 90 */,
 /* 91 */,
 /* 92 */,
-/* 93 */
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nykEt", function() { return nykEt; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aFfrc", function() { return aFfrc; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10128,15 +10141,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from configuration.soy.
+// This file was automatically generated from store.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace nykEt.
+ * @fileoverview Templates in namespace aFfrc.
  * @public
  */
 
-goog.module('nykEt.incrementaldom');
+goog.module('aFfrc.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10170,10 +10183,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param363 = function() {
+  var param609 = function() {
     ie_open('h6');
-      var dyn23 = opt_data.page.description;
-      if (typeof dyn23 == 'function') dyn23(); else if (dyn23 != null) itext(dyn23);
+      var dyn36 = opt_data.page.description;
+      if (typeof dyn36 == 'function') dyn36(); else if (dyn36 != null) itext(dyn36);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10181,84 +10194,172 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
+        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
       ie_close('p');
       ie_open('p');
-        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
+        itext('We have currently File, DynamoDB and MongoDB storage');
+      ie_close('p');
+      ie_open('h2');
+        itext('Expose REST API');
+      ie_close('h2');
+      ie_open('p');
+        itext('Inside the configuration you can add a block for expose the store as a REST API');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "expose": {\n     "url": "/storeurl", // By default the URL is the store name in lower case\n     "restrict": {\n       "update": true, // Prevent the creation of an object the PUT method wont be exposed\n       "delete": false // Allow delete for the object\n     }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The above configuration will end up creating the following routes:');
       ie_close('p');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/configuration_resolution.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('POST /storeurl GET /storeurl/[uuid] DELETE /storeurl/[uuid]');
       ie_close('p');
       ie_open('p');
-        itext('This is the detail configuration for each section');
+        itext('You can see that by default, once the store exposed all the methods are available unless you restrict them.');
       ie_close('p');
-      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
-      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
+      ie_open('h2');
+        itext('Configuring Mapping');
+      ie_close('h2');
       ie_open('p');
-        itext('So this how webda will resolve Service final configuration');
+        itext('As an example we will use the Users / Idents stores used by the Authentication module.');
       ie_close('p');
-      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('A User has several Idents so in NoSQL we need to deduplicate a part of the Ident object inside an array inside the User object');
+      ie_close('p');
+      ie_open('p');
+        itext('The following is the Idents store configuration');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "map": {\n     "Users": { // Target store\n        "key": "user", // Property inside Ident Object\n        "target": "idents", // Property on the User Object\n        "fields": "type", // Fields from the Ident Object ( uuid is added by default )\n        "cascade": true // If User object is delete then delete all the linked Idents\n     }\n  }', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('So if you have a user like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "user_01"\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Then you save a new Ident object like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "ident_01",\n  "user": "user_01",\n  "type": "Google"\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Once the Ident saved, the User object will look like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "user_01",\n  "idents": [{"uuid":"ident_01","type":"Google"}]\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Then if you update the field type on your Ident object the User object will reflect the change, as well as if you delete the ident object it will be removed from the User object.');
+      ie_close('p');
+      ie_open('p');
+        itext('If cascade = true, then if you delete the User object, all attached Idents will be delete aswell.');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Configuration UI');
+        itext('Events');
       ie_close('h2');
       ie_open('p');
-        itext('Here is some screenshots of the ui');
+        itext('The Stores emit events to let you implement some auto completion of the object if needed or taking any others action even deny the action by throwing an exception');
       ie_close('p');
-      ie_open('h4');
-        itext('Routes');
-      ie_close('h4');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/ui_route_create.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_route_config.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('The store event looks like');
       ie_close('p');
-      ie_open('h4');
-        itext('Services');
-      ie_close('h4');
+      $templateAlias2({code: '{\n  \'object\': object,\n  \'store\': this\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/ui_service_create.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_service_config.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('Store.Save: Before saving the object Store.Saved: After saving the object Store.Update: Before updating the object Store.Updated: After updating the object Store.Delete: Before deleting the object Store.Deleted: After deleting the object Store.Get: When getting the object');
       ie_close('p');
-      ie_open('h4');
-        itext('Deployments');
-      ie_close('h4');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Models');
+      ie_close('h2');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/ui_deployment_create.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_deployment_config.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_deployment_deploy.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('The store is using a Model to map your object.');
+      ie_close('p');
+      ie_open('p');
+        itext('It allows you to implement security constraint on the object itself, add some custom actions and validation');
+      ie_close('p');
+      ie_open('h3');
+        itext('Custom actions');
+      ie_close('h3');
+      ie_open('p');
+        itext('As we saw before the store will expose your objects via an URL');
+      ie_close('p');
+      ie_open('p');
+        itext('You can also add any specific behavior while saving / updating / deleting');
+      ie_close('p');
+      $templateAlias2({code: 'class MyModel extends CoreModel {\n  canAct(context, action) {\n    if (action === \'get\') {\n      return true;\n    } else if (action === \'update\') {\n      return true;\n    } else if (action === \'delete\') {\n      return true;\n    } else if (action === \'create\') {\n      return true;\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('If not specified the Store will pick the Owner policy as default. Policies are implicit service, so you can get them with a getService("OwnerPolicy"), but don\'t appear by default in the configuration file. That also means you can override a Policy if you want or create your own to implement your business model');
+      ie_close('p');
+      ie_open('h3');
+        itext('Owner Policy');
+      ie_close('h3');
+      ie_open('p');
+        itext('POST: Add the current user in the user field of the object PUT: Verify the current user is the user inside the user field GET: Verify the current user is the user inside the user field, or a public=true field exists on the object DELETE: Verify the current user is the user inside the user field');
+      ie_close('p');
+      ie_open('h3');
+        itext('Void policy');
+      ie_close('h3');
+      ie_open('p');
+        itext('No verification, not recommended at all');
+      ie_close('p');
+      ie_open('h2');
+        itext('Validation');
+      ie_close('h2');
+      ie_open('p');
+        itext('To ensure that the input is correct, you can setup a JSON schema this way any update or creation will verify that the object is correct.');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "validator": "schema"\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('All the input of POST or PUT will then be validate against it.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('DynamoDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The DynamoDB stores requires at least accessKeyId, secretAccessKey and table');
+      ie_close('p');
+      ie_open('p');
+        itext('For more information on DynamoDB : ');
+        ie_open('a', null, null,
+            'href', 'https://aws.amazon.com/dynamodb/');
+          itext('AWS DynamoDB');
+        ie_close('a');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '6');
+      ie_open('h2');
+        itext('MongoDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The MongoDB configuration requires a collection and a mongo parameter where mongo is the MongoDB url');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '7');
+      ie_open('h2');
+        itext('FileDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The FileDB only requires a folder where to store the datas. It creates it if not exists');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '7');
+      ie_open('h2');
+        itext('MemoryDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The MemoryDB only store the in a Map, so it will loose all the datas if you shutdown the server. It can be usefull for local cache or for some unit test');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '8');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('You have a behavior defined for you, once added to your component you have the model property and a save/get/update/delete method for you to communicate with the API');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10270,11 +10371,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param363}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param609}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'nykEt.render';
+  $render.soyTemplateName = 'aFfrc.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10284,27 +10385,14 @@ return exports;
 
 });
 
-class nykEt extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(nykEt, templates);
+class aFfrc extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(aFfrc, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
 /* 107 */,
 /* 108 */,
 /* 109 */,
@@ -10351,7 +10439,11 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(nykEt, templates);
 /* 150 */,
 /* 151 */,
 /* 152 */,
-/* 153 */
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10381,9 +10473,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _configurationSoy = __webpack_require__(93);
+var _storeSoy = __webpack_require__(106);
 
-var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
+var _storeSoy2 = _interopRequireDefault(_storeSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10393,23 +10485,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var nykEt = function (_Component) {
-  _inherits(nykEt, _Component);
+var aFfrc = function (_Component) {
+  _inherits(aFfrc, _Component);
 
-  function nykEt() {
-    _classCallCheck(this, nykEt);
+  function aFfrc() {
+    _classCallCheck(this, aFfrc);
 
-    return _possibleConstructorReturn(this, (nykEt.__proto__ || Object.getPrototypeOf(nykEt)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (aFfrc.__proto__ || Object.getPrototypeOf(aFfrc)).apply(this, arguments));
   }
 
-  return nykEt;
+  return aFfrc;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(nykEt, _configurationSoy2.default);
+_metalSoy2.default.register(aFfrc, _storeSoy2.default);
 
-exports.default = nykEt;
+exports.default = aFfrc;
 
 /***/ })
-],[153]);
+],[157]);
