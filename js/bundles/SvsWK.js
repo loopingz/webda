@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([17],[
+webpackJsonppageComponent([15],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2675,13 +2675,13 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', '/images/webda.svg');
+            'src', opt_data.site.basePath + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn14 = opt_data.site.title;
+        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10111,12 +10111,14 @@ exports.default = parseFromAnchor;
 /* 90 */,
 /* 91 */,
 /* 92 */,
-/* 93 */
+/* 93 */,
+/* 94 */,
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jGnYM", function() { return jGnYM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SvsWK", function() { return SvsWK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10128,15 +10130,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from configuration.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace jGnYM.
+ * @fileoverview Templates in namespace SvsWK.
  * @public
  */
 
-goog.module('jGnYM.incrementaldom');
+goog.module('SvsWK.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10170,95 +10172,75 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param351 = function() {
+  var param421 = function() {
     ie_open('h6');
-      var dyn22 = opt_data.page.description;
-      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
+      var dyn25 = opt_data.page.description;
+      if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
+        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
       ie_close('p');
       ie_open('p');
-        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
+        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
       ie_close('p');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/configuration_resolution.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('But don\'t worry, with Webda it is as simple as a command');
       ie_close('p');
+      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('This is the detail configuration for each section');
+        itext('This command will do several step for you :');
       ie_close('p');
-      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
-      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
-      ie_open('p');
-        itext('So this how webda will resolve Service final configuration');
-      ie_close('p');
-      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('ul');
+        ie_open('li');
+          itext('Create the policy and role for your Lambda');
+        ie_close('li');
+        ie_open('li');
+          itext('Create if needed the Dynamo table used in your application');
+        ie_close('li');
+        ie_open('li');
+          itext('Create S3 buckets used in your application');
+        ie_close('li');
+        ie_open('li');
+          itext('Deploy the code to your Lambda');
+        ie_close('li');
+        ie_open('li');
+          itext('Create the API Gateway mapping');
+        ie_close('li');
+        ie_open('li');
+          itext('Add permission for API Gateways to your Lambda');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Configuration UI');
+        itext('Docker');
       ie_close('h2');
       ie_open('p');
-        itext('Here is some screenshots of the ui');
+        itext('You can also just define a Docker image to build');
       ie_close('p');
-      ie_open('h4');
-        itext('Routes');
-      ie_close('h4');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/ui_route_create.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_route_config.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
       ie_close('p');
-      ie_open('h4');
-        itext('Services');
-      ie_close('h4');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/ui_service_create.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_service_config.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('If you specify a tag, after the build it will push the image to your repository');
       ie_close('p');
-      ie_open('h4');
-        itext('Deployments');
-      ie_close('h4');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('WeDeploy');
+      ie_close('h2');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', '/images/ui_deployment_create.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_deployment_config.png',
-            'alt', 'image');
-        ie_close('img');
-        itext(' ');
-        ie_open('img', null, null,
-            'src', '/images/ui_deployment_deploy.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('This service run your Docker image and allow you to deploy with a single command');
+      ie_close('p');
+      ie_open('p');
+        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10270,11 +10252,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param351}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param421}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'jGnYM.render';
+  $render.soyTemplateName = 'SvsWK.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10284,16 +10266,14 @@ return exports;
 
 });
 
-class jGnYM extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jGnYM, templates);
+class SvsWK extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(SvsWK, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 94 */,
-/* 95 */,
 /* 96 */,
 /* 97 */,
 /* 98 */,
@@ -10349,9 +10329,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jGnYM, templates);
 /* 148 */,
 /* 149 */,
 /* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10381,9 +10359,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _configurationSoy = __webpack_require__(93);
+var _indexSoy = __webpack_require__(95);
 
-var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10393,23 +10371,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var jGnYM = function (_Component) {
-  _inherits(jGnYM, _Component);
+var SvsWK = function (_Component) {
+  _inherits(SvsWK, _Component);
 
-  function jGnYM() {
-    _classCallCheck(this, jGnYM);
+  function SvsWK() {
+    _classCallCheck(this, SvsWK);
 
-    return _possibleConstructorReturn(this, (jGnYM.__proto__ || Object.getPrototypeOf(jGnYM)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (SvsWK.__proto__ || Object.getPrototypeOf(SvsWK)).apply(this, arguments));
   }
 
-  return jGnYM;
+  return SvsWK;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(jGnYM, _configurationSoy2.default);
+_metalSoy2.default.register(SvsWK, _indexSoy2.default);
 
-exports.default = jGnYM;
+exports.default = SvsWK;
 
 /***/ })
-],[153]);
+],[151]);

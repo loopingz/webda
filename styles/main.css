@@ -11428,7 +11428,7 @@ li a:not([class]) {
   color: #f5e411; }
 
 .about {
-  background-image: url("/images/puzzle2.jpg");
+  background-image: url("{$site.basePath}/images/puzzle2.jpg");
   background-size: cover; }
 
 .links .container {

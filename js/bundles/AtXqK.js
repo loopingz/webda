@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([11],[
+webpackJsonppageComponent([7],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2675,13 +2675,13 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', '/images/webda.svg');
+            'src', opt_data.site.basePath + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn14 = opt_data.site.title;
+        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10117,12 +10117,16 @@ exports.default = parseFromAnchor;
 /* 96 */,
 /* 97 */,
 /* 98 */,
-/* 99 */
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RLsGI", function() { return RLsGI; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AtXqK", function() { return AtXqK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10134,15 +10138,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from binary.soy.
+// This file was automatically generated from models.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace RLsGI.
+ * @fileoverview Templates in namespace AtXqK.
  * @public
  */
 
-goog.module('RLsGI.incrementaldom');
+goog.module('AtXqK.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10176,10 +10180,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param483 = function() {
+  var param564 = function() {
     ie_open('h6');
-      var dyn28 = opt_data.page.description;
-      if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
+      var dyn33 = opt_data.page.description;
+      if (typeof dyn33 == 'function') dyn33(); else if (dyn33 != null) itext(dyn33);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10187,105 +10191,38 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+        itext('Model is the best way to express your business logic.');
       ie_close('p');
       ie_open('p');
-        itext('The API exposed is');
+        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
       ie_close('p');
-      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
-      ie_open('p');
-        itext('You can reduce the exposition by adding an expose attribute as on Store');
-      ie_close('p');
-      ie_open('p');
-        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          ie_open('em');
-            itext('store');
-          ie_close('em');
-          itext(' is the Store of the object you want attached to');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('uid');
-          ie_close('em');
-          itext(' is the Object uuid');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('property');
-          ie_close('em');
-          itext(' is the field of the Object');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('index');
-          ie_close('em');
-          itext(' is the index of the Binary');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('hash');
-          ie_close('em');
-          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Map');
+        itext('Security');
       ie_close('h2');
       ie_open('p');
-        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
+        itext('The model has a predefined method ');
+        ie_open('em');
+          itext('canAct');
+        ie_close('em');
+        itext(' that will be called whenever an action is trigger on an object from an external source');
       ie_close('p');
-      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
+        itext('This method return a Promise that will stop the processing if it is rejected');
       ie_close('p');
-      ie_open('p');
-        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
-      ie_close('p');
-      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
+      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('S3Binary');
+        itext('Custom Actions');
       ie_close('h2');
       ie_open('p');
-        itext('To configure just add the parameter bucket');
+        itext('The model can defined action that will be exposed by its Store');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('FileBinary');
-      ie_close('h2');
-      ie_open('p');
-        itext('To configure just add the parameter folder');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('Polymer');
-      ie_close('h2');
-      ie_open('p');
-        itext('The behavior implementation can be found there :');
-      ie_close('p');
-      ie_open('p');
-        itext('Two different UI component exist also :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('A simple fab button upload :');
-        ie_close('li');
-        ie_open('li');
-          itext('IA paper-input with Browse button :');
-        ie_close('li');
-      ie_close('ul');
+      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10296,11 +10233,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param483}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param564}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'RLsGI.render';
+  $render.soyTemplateName = 'AtXqK.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10310,18 +10247,14 @@ return exports;
 
 });
 
-class RLsGI extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(RLsGI, templates);
+class AtXqK extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(AtXqK, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
 /* 104 */,
 /* 105 */,
 /* 106 */,
@@ -10375,9 +10308,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(RLsGI, templates);
 /* 154 */,
 /* 155 */,
 /* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10407,9 +10338,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _binarySoy = __webpack_require__(99);
+var _modelsSoy = __webpack_require__(103);
 
-var _binarySoy2 = _interopRequireDefault(_binarySoy);
+var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10419,23 +10350,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var RLsGI = function (_Component) {
-  _inherits(RLsGI, _Component);
+var AtXqK = function (_Component) {
+  _inherits(AtXqK, _Component);
 
-  function RLsGI() {
-    _classCallCheck(this, RLsGI);
+  function AtXqK() {
+    _classCallCheck(this, AtXqK);
 
-    return _possibleConstructorReturn(this, (RLsGI.__proto__ || Object.getPrototypeOf(RLsGI)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (AtXqK.__proto__ || Object.getPrototypeOf(AtXqK)).apply(this, arguments));
   }
 
-  return RLsGI;
+  return AtXqK;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(RLsGI, _binarySoy2.default);
+_metalSoy2.default.register(AtXqK, _modelsSoy2.default);
 
-exports.default = RLsGI;
+exports.default = AtXqK;
 
 /***/ })
-],[159]);
+],[157]);

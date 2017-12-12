@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([20],[
+webpackJsonppageComponent([16],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2675,13 +2675,13 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', '/images/webda.svg');
+            'src', opt_data.site.basePath + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn14 = opt_data.site.title;
+        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10108,12 +10108,16 @@ exports.default = parseFromAnchor;
 /* 87 */,
 /* 88 */,
 /* 89 */,
-/* 90 */
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GMZuV", function() { return GMZuV; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CDatv", function() { return CDatv; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10125,15 +10129,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from docker.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace GMZuV.
+ * @fileoverview Templates in namespace CDatv.
  * @public
  */
 
-goog.module('GMZuV.incrementaldom');
+goog.module('CDatv.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10167,158 +10171,33 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param250 = function() {
+  var param400 = function() {
     ie_open('h6');
-      var dyn20 = opt_data.page.description;
-      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
+      var dyn24 = opt_data.page.description;
+      if (typeof dyn24 == 'function') dyn24(); else if (dyn24 != null) itext(dyn24);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
+      ie_open('p');
+        itext('You can use webda to build your Docker image for you');
+      ie_close('p');
       ie_open('h2');
-        itext('Installation');
+        itext('Dockerfile');
       ie_close('h2');
       ie_open('p');
-        itext('You first need to install webda-shell.');
+        itext('You can create your own Dockerfile, if no Dockerfile is present then the default one is used');
       ie_close('p');
-      $templateAlias2({code: 'npm install -g webda-shell', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will install the webda shell tools, that allows you to configure and deploy your project You have the configuration UI available, where you can create a service, use a service, or create a custom API resource. You can also manually edit the webda.config.json if you prefer');
-      ie_close('p');
-      ie_open('p');
-        itext('Below is the manual step with the manual modification, I would recommand to use the configuration UI to modify the webda.config.json');
-      ie_close('p');
+      $templateAlias2({code: 'FROM node:latest\nMAINTAINER docker@webda.io\n\nRUN mkdir /server/\nADD . /server/\n\nRUN cd /server && rm -rf node_modules && npm install\nCMD cd /server && node_modules/.bin/webda serve > /data/webda.log', mode: 'text'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Init a project');
+        itext('Configuration');
       ie_close('h2');
       ie_open('p');
-        itext('Create a new project folder');
+        itext('The configuration take only two parameters the tag of the image to create and if it needs to push the image after a succesfull build.');
       ie_close('p');
-      $templateAlias2({code: 'mkdir my-new-project\ncd my-new-project', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('If you do want to use our sample project, first type');
-      ie_close('p');
-      $templateAlias2({code: 'webda init', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('Launch your project configuration interface');
-      ie_close('p');
-      $templateAlias2({code: 'webda config', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('You should now see the configuration website in your browser');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Create a new route');
-      ie_close('h2');
-      ie_open('p');
-        itext('We will use the inline RouteHelper here, except the Lambda Route helper, the other are mainly helper for quick and easy test but you should use Service when you can as they are easier to unit test and make code cleaner.');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This is defining the GET /myurl API');
-      ie_close('p');
-      ie_open('p');
-        itext('There is 5 types of route : file, inline, lambda, resource, string');
-      ie_close('p');
-      ie_open('h3');
-        itext('File route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('file');
-        ie_close('strong');
-        itext(' include the javascript file and call its main export with the context');
-      ie_close('p');
-      ie_open('p');
-        itext('webda.config.json');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myapi": {\n      "type": "file",\n      "file": "./test.js"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('test.js');
-      ie_close('p');
-      $templateAlias2({code: 'module.exports = (ctx) {\n  ctx.write(\'This is my custom API\')\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('h3');
-        itext('Inline route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('inline');
-        ie_close('strong');
-        itext(' eval the content of the callback string');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('h3');
-        itext('Lambda route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('lambda');
-        ie_close('strong');
-        itext(' call a Lambda function and return its result');
-      ie_close('p');
-      ie_open('h3');
-        itext('Resource route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('resource');
-        ie_close('strong');
-        itext(' return the content of the file, guessing it\'s mime type');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "resource",\n      "file": "./test.jpg"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will return the jpeg with image/jpeg mime type');
-      ie_close('p');
-      ie_open('h3');
-        itext('String route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('string');
-        ie_close('strong');
-        itext(' return the content of result, you can specify the mime');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "string",\n      "result": "Hi Webda !"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will return a "Hi Webda !"');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Create a new service');
-      ie_close('h2');
-      ie_open('p');
-        itext('We will create a new service from executor, so we can map some urls directly to the service');
-      ie_close('p');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('Here is the corresponding configuration');
-      ie_close('p');
-      $templateAlias2({code: '{\n  ...\n  services: {\n     ...\n     "MyService": {\n       require: "./myservice.js",\n       sentence: "I am a GET route and i\'ve sent an welcome email to you"\n     }\n     ...\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('Run it');
-      ie_close('h2');
-      $templateAlias2({code: 'webda serve', mode: 'text'}, null, opt_ijData);
-      ie_open('p');
-        itext('You can call the http://localhost:18080/myservice, and see the nice output');
-      ie_close('p');
-      ie_open('p');
-        itext('"I am a GET route and i\'ve sent an welcome email to you"');
-      ie_close('p');
-      ie_open('p');
-        itext('And then the http://localhost:18080/myurl');
-      ie_close('p');
-      ie_open('p');
-        itext('"I am a inline route"');
-      ie_close('p');
+      $templateAlias2({code: '{\n   tag: "mytag",\n   push: true\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10329,11 +10208,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param250}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param400}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'GMZuV.render';
+  $render.soyTemplateName = 'CDatv.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10343,18 +10222,14 @@ return exports;
 
 });
 
-class GMZuV extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GMZuV, templates);
+class CDatv extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(CDatv, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
 /* 95 */,
 /* 96 */,
 /* 97 */,
@@ -10408,7 +10283,9 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GMZuV, templates);
 /* 145 */,
 /* 146 */,
 /* 147 */,
-/* 148 */
+/* 148 */,
+/* 149 */,
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10438,9 +10315,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(90);
+var _dockerSoy = __webpack_require__(94);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _dockerSoy2 = _interopRequireDefault(_dockerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10450,23 +10327,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var GMZuV = function (_Component) {
-  _inherits(GMZuV, _Component);
+var CDatv = function (_Component) {
+  _inherits(CDatv, _Component);
 
-  function GMZuV() {
-    _classCallCheck(this, GMZuV);
+  function CDatv() {
+    _classCallCheck(this, CDatv);
 
-    return _possibleConstructorReturn(this, (GMZuV.__proto__ || Object.getPrototypeOf(GMZuV)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (CDatv.__proto__ || Object.getPrototypeOf(CDatv)).apply(this, arguments));
   }
 
-  return GMZuV;
+  return CDatv;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(GMZuV, _indexSoy2.default);
+_metalSoy2.default.register(CDatv, _dockerSoy2.default);
 
-exports.default = GMZuV;
+exports.default = CDatv;
 
 /***/ })
-],[148]);
+],[150]);

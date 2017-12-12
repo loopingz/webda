@@ -2675,13 +2675,13 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', '/images/webda.svg');
+            'src', opt_data.site.basePath + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn14 = opt_data.site.title;
+        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10228,8 +10228,8 @@ function $topics(opt_data, opt_ignored, opt_ijData) {
           ie_open('p', null, null,
               'class', 'docs-home-top-description');
             itext('Start learning how to leverage the power of ');
-            var dyn14 = opt_data.site.title;
-            if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+            var dyn15 = opt_data.site.title;
+            if (typeof dyn15 == 'function') dyn15(); else if (dyn15 != null) itext(dyn15);
             itext('.');
           ie_close('p');
         ie_close('div');
@@ -10283,26 +10283,26 @@ function $topics(opt_data, opt_ignored, opt_ijData) {
               'class', 'col-md-12 col-md-offset-2 col-xs-16');
             ie_open('div', null, null,
                 'class', 'row');
-              var childIdList202 = opt_data.page.childIds;
-              var childIdListLen202 = childIdList202.length;
-              for (var childIdIndex202 = 0; childIdIndex202 < childIdListLen202; childIdIndex202++) {
-                var childIdData202 = childIdList202[childIdIndex202];
-                var topic__soy190 = opt_data.page.children[childIdData202];
-                if (! topic__soy190.hidden) {
+              var childIdList214 = opt_data.page.childIds;
+              var childIdListLen214 = childIdList214.length;
+              for (var childIdIndex214 = 0; childIdIndex214 < childIdListLen214; childIdIndex214++) {
+                var childIdData214 = childIdList214[childIdIndex214];
+                var topic__soy202 = opt_data.page.children[childIdData214];
+                if (! topic__soy202.hidden) {
                   ie_open('div', null, null,
                       'class', 'col-md-8 col-md-offset-0 col-xs-14 col-xs-offset-1');
                     ie_open('a', null, null,
-                        'class', 'topic radial-out ' + topic__soy190['class'],
-                        'href', topic__soy190.url);
+                        'class', 'topic radial-out ' + topic__soy202['class'],
+                        'href', topic__soy202.url);
                       ie_open('div', null, null,
                           'class', 'topic-icon');
                         ie_void('span', null, null,
-                            'class', 'icon-16-' + topic__soy190.icon);
+                            'class', 'icon-16-' + topic__soy202.icon);
                       ie_close('div');
                       ie_open('h3', null, null,
                           'class', 'topic-title');
-                        var dyn15 = topic__soy190.title;
-                        if (typeof dyn15 == 'function') dyn15(); else if (dyn15 != null) itext(dyn15);
+                        var dyn16 = topic__soy202.title;
+                        if (typeof dyn16 == 'function') dyn16(); else if (dyn16 != null) itext(dyn16);
                       ie_close('h3');
                     ie_close('a');
                   ie_close('div');

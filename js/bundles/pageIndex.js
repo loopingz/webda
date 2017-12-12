@@ -2675,13 +2675,13 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', '/images/webda.svg');
+            'src', opt_data.site.basePath + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn14 = opt_data.site.title;
+        if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10159,9 +10159,11 @@ var soy = goog.require('soy');
 /** @suppress {extraRequire} */
 var soydata = goog.require('soydata');
 /** @suppress {extraRequire} */
-goog.require('goog.i18n.bidi');
-/** @suppress {extraRequire} */
 goog.require('goog.asserts');
+/** @suppress {extraRequire} */
+goog.require('soy.asserts');
+/** @suppress {extraRequire} */
+goog.require('goog.i18n.bidi');
 /** @suppress {extraRequire} */
 goog.require('goog.string');
 var IncrementalDom = goog.require('incrementaldom');
@@ -10188,7 +10190,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     $header(opt_data, null, opt_ijData);
     $links(null, null, opt_ijData);
     $why(null, null, opt_ijData);
-    $highlights(null, null, opt_ijData);
+    $highlights(opt_data, null, opt_ijData);
     $how(null, null, opt_ijData);
     $footer(null, null, opt_ijData);
   };
@@ -10224,8 +10226,12 @@ function $header(opt_data, opt_ignored, opt_ijData) {
       ie_close('h2');
       ie_open('div', null, null,
           'class', 'header-cta');
+        itext('\'\'');
+        var dyn12 = opt_data.site.basePath;
+        if (typeof dyn12 == 'function') dyn12(); else if (dyn12 != null) itext(dyn12);
+        itext('\'\'');
         ie_open('a', null, null,
-            'href', '/docs/create',
+            'href', opt_data.site.basePath + '/docs/create',
             'class', 'btn btn-accent');
           itext('Quick Start');
         ie_close('a');
@@ -10463,7 +10469,9 @@ if (goog.DEBUG) {
 
 
 /**
- * @param {Object<string, *>=} opt_data
+ * @param {{
+ *    site: (?)
+ * }} opt_data
  * @param {(null|undefined)=} opt_ignored
  * @param {Object<string, *>=} opt_ijData
  * @return {void}
@@ -10491,7 +10499,7 @@ function $highlights(opt_data, opt_ignored, opt_ijData) {
             'class', 'col-md-5 col-md-offset-1');
           ie_open('img', null, null,
               'class', 'highlight-image',
-              'src', '/images/ease.jpg',
+              'src', opt_data.site.basePath + '/images/ease.jpg',
               'alt', 'Quick and easy');
           ie_close('img');
         ie_close('div');
@@ -10513,7 +10521,7 @@ function $highlights(opt_data, opt_ignored, opt_ijData) {
             'class', 'col-md-5 col-md-offset-2 col-md-pull-6');
           ie_open('img', null, null,
               'class', 'highlight-image',
-              'src', '/images/dev.jpg',
+              'src', opt_data.site.basePath + '/images/dev.jpg',
               'alt', 'Ease of Development');
           ie_close('img');
         ie_close('div');
@@ -10535,7 +10543,7 @@ function $highlights(opt_data, opt_ignored, opt_ijData) {
             'class', 'col-md-5 col-md-offset-1');
           ie_open('img', null, null,
               'class', 'highlight-image',
-              'src', '/images/deploy.jpg',
+              'src', opt_data.site.basePath + '/images/deploy.jpg',
               'alt', 'Deploy everywhere');
           ie_close('img');
         ie_close('div');
@@ -10609,8 +10617,8 @@ exports.features.params = [];
 exports.features.types = {};
 exports.how.params = [];
 exports.how.types = {};
-exports.highlights.params = [];
-exports.highlights.types = {};
+exports.highlights.params = ["site"];
+exports.highlights.types = {"site":"?"};
 exports.footer.params = [];
 exports.footer.types = {};
 templates = exports;
