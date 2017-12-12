@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([15],[
+webpackJsonppageComponent([13],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10113,12 +10113,14 @@ exports.default = parseFromAnchor;
 /* 92 */,
 /* 93 */,
 /* 94 */,
-/* 95 */
+/* 95 */,
+/* 96 */,
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "xLniM", function() { return xLniM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KtAVe", function() { return KtAVe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10130,15 +10132,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from wedeploy.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace xLniM.
+ * @fileoverview Templates in namespace KtAVe.
  * @public
  */
 
-goog.module('xLniM.incrementaldom');
+goog.module('KtAVe.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10159,8 +10161,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10172,75 +10172,30 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param409 = function() {
+  var param441 = function() {
     ie_open('h6');
-      var dyn24 = opt_data.page.description;
-      if (typeof dyn24 == 'function') dyn24(); else if (dyn24 != null) itext(dyn24);
+      var dyn26 = opt_data.page.description;
+      if (typeof dyn26 == 'function') dyn26(); else if (dyn26 != null) itext(dyn26);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Lambda');
+        itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
+        ie_open('a', null, null,
+            'href', 'http://wedeploy.io');
+          itext('WeDeploy');
+        ie_close('a');
+        itext(' allows you to run your own Docker container without having to care about scalability or reverse proxy or monitoring');
       ie_close('p');
       ie_open('p');
-        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
+        itext('As Webda allows you to deploy on Docker, we just extend the deployer to automate the call to your wedeploy shell');
       ie_close('p');
       ie_open('p');
-        itext('But don\'t worry, with Webda it is as simple as a command');
-      ie_close('p');
-      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
-      ie_open('p');
-        itext('This command will do several step for you :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Create the policy and role for your Lambda');
-        ie_close('li');
-        ie_open('li');
-          itext('Create if needed the Dynamo table used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Create S3 buckets used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy the code to your Lambda');
-        ie_close('li');
-        ie_open('li');
-          itext('Create the API Gateway mapping');
-        ie_close('li');
-        ie_open('li');
-          itext('Add permission for API Gateways to your Lambda');
-        ie_close('li');
-      ie_close('ul');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Docker');
-      ie_close('h2');
-      ie_open('p');
-        itext('You can also just define a Docker image to build');
-      ie_close('p');
-      ie_open('p');
-        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
-      ie_close('p');
-      ie_open('p');
-        itext('If you specify a tag, after the build it will push the image to your repository');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('WeDeploy');
-      ie_close('h2');
-      ie_open('p');
-        itext('This service run your Docker image and allow you to deploy with a single command');
-      ie_close('p');
-      ie_open('p');
-        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10252,11 +10207,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param409}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param441}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'xLniM.render';
+  $render.soyTemplateName = 'KtAVe.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10266,16 +10221,14 @@ return exports;
 
 });
 
-class xLniM extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(xLniM, templates);
+class KtAVe extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(KtAVe, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 96 */,
-/* 97 */,
 /* 98 */,
 /* 99 */,
 /* 100 */,
@@ -10329,11 +10282,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(xLniM, templates);
 /* 148 */,
 /* 149 */,
 /* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10363,9 +10312,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(95);
+var _wedeploySoy = __webpack_require__(97);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _wedeploySoy2 = _interopRequireDefault(_wedeploySoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10375,23 +10324,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var xLniM = function (_Component) {
-  _inherits(xLniM, _Component);
+var KtAVe = function (_Component) {
+  _inherits(KtAVe, _Component);
 
-  function xLniM() {
-    _classCallCheck(this, xLniM);
+  function KtAVe() {
+    _classCallCheck(this, KtAVe);
 
-    return _possibleConstructorReturn(this, (xLniM.__proto__ || Object.getPrototypeOf(xLniM)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (KtAVe.__proto__ || Object.getPrototypeOf(KtAVe)).apply(this, arguments));
   }
 
-  return xLniM;
+  return KtAVe;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(xLniM, _indexSoy2.default);
+_metalSoy2.default.register(KtAVe, _wedeploySoy2.default);
 
-exports.default = xLniM;
+exports.default = KtAVe;
 
 /***/ })
-],[155]);
+],[151]);

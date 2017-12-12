@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([5],[
+webpackJsonppageComponent([7],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10121,14 +10121,12 @@ exports.default = parseFromAnchor;
 /* 100 */,
 /* 101 */,
 /* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HhmTY", function() { return HhmTY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vnHgn", function() { return vnHgn; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10140,15 +10138,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from queues.soy.
+// This file was automatically generated from models.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace HhmTY.
+ * @fileoverview Templates in namespace vnHgn.
  * @public
  */
 
-goog.module('HhmTY.incrementaldom');
+goog.module('vnHgn.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10169,6 +10167,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10180,10 +10180,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param584 = function() {
+  var param552 = function() {
     ie_open('h6');
-      var dyn34 = opt_data.page.description;
-      if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
+      var dyn32 = opt_data.page.description;
+      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10191,22 +10191,38 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
+        itext('Model is the best way to express your business logic.');
       ie_close('p');
       ie_open('p');
-        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
+        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Worker');
+        itext('Security');
       ie_close('h2');
       ie_open('p');
+        itext('The model has a predefined method ');
         ie_open('em');
-          itext('to be completed');
+          itext('canAct');
         ie_close('em');
+        itext(' that will be called whenever an action is trigger on an object from an external source');
       ie_close('p');
+      ie_open('p');
+        itext('This method return a Promise that will stop the processing if it is rejected');
+      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Custom Actions');
+      ie_close('h2');
+      ie_open('p');
+        itext('The model can defined action that will be exposed by its Store');
+      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10217,11 +10233,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param584}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param552}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'HhmTY.render';
+  $render.soyTemplateName = 'vnHgn.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10231,14 +10247,16 @@ return exports;
 
 });
 
-class HhmTY extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(HhmTY, templates);
+class vnHgn extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vnHgn, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 104 */,
+/* 105 */,
 /* 106 */,
 /* 107 */,
 /* 108 */,
@@ -10291,7 +10309,13 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(HhmTY, templates);
 /* 155 */,
 /* 156 */,
 /* 157 */,
-/* 158 */
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10321,9 +10345,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _queuesSoy = __webpack_require__(105);
+var _modelsSoy = __webpack_require__(103);
 
-var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
+var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10333,23 +10357,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var HhmTY = function (_Component) {
-  _inherits(HhmTY, _Component);
+var vnHgn = function (_Component) {
+  _inherits(vnHgn, _Component);
 
-  function HhmTY() {
-    _classCallCheck(this, HhmTY);
+  function vnHgn() {
+    _classCallCheck(this, vnHgn);
 
-    return _possibleConstructorReturn(this, (HhmTY.__proto__ || Object.getPrototypeOf(HhmTY)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (vnHgn.__proto__ || Object.getPrototypeOf(vnHgn)).apply(this, arguments));
   }
 
-  return HhmTY;
+  return vnHgn;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(HhmTY, _queuesSoy2.default);
+_metalSoy2.default.register(vnHgn, _modelsSoy2.default);
 
-exports.default = HhmTY;
+exports.default = vnHgn;
 
 /***/ })
-],[158]);
+],[164]);

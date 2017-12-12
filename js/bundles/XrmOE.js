@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([11],[
+webpackJsonppageComponent([15],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10113,16 +10113,12 @@ exports.default = parseFromAnchor;
 /* 92 */,
 /* 93 */,
 /* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GViaF", function() { return GViaF; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XrmOE", function() { return XrmOE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10134,15 +10130,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from binary.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace GViaF.
+ * @fileoverview Templates in namespace XrmOE.
  * @public
  */
 
-goog.module('GViaF.incrementaldom');
+goog.module('XrmOE.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10176,116 +10172,76 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param483 = function() {
+  var param409 = function() {
     ie_open('h6');
-      var dyn28 = opt_data.page.description;
-      if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
+      var dyn24 = opt_data.page.description;
+      if (typeof dyn24 == 'function') dyn24(); else if (dyn24 != null) itext(dyn24);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
       ie_close('p');
       ie_open('p');
-        itext('The API exposed is');
-      ie_close('p');
-      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
-      ie_open('p');
-        itext('You can reduce the exposition by adding an expose attribute as on Store');
+        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
       ie_close('p');
       ie_open('p');
-        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
+        itext('But don\'t worry, with Webda it is as simple as a command');
+      ie_close('p');
+      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
+      ie_open('p');
+        itext('This command will do several step for you :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          ie_open('em');
-            itext('store');
-          ie_close('em');
-          itext(' is the Store of the object you want attached to');
+          itext('Create the policy and role for your Lambda');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('uid');
-          ie_close('em');
-          itext(' is the Object uuid');
+          itext('Create if needed the Dynamo table used in your application');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('property');
-          ie_close('em');
-          itext(' is the field of the Object');
+          itext('Create S3 buckets used in your application');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('index');
-          ie_close('em');
-          itext(' is the index of the Binary');
+          itext('Deploy the code to your Lambda');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('hash');
-          ie_close('em');
-          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
+          itext('Create the API Gateway mapping');
+        ie_close('li');
+        ie_open('li');
+          itext('Add permission for API Gateways to your Lambda');
         ie_close('li');
       ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Map');
+        itext('Docker');
       ie_close('h2');
       ie_open('p');
-        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
-      ie_close('p');
-      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
+        itext('You can also just define a Docker image to build');
       ie_close('p');
       ie_open('p');
-        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
+        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
       ie_close('p');
-      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
+      ie_open('p');
+        itext('If you specify a tag, after the build it will push the image to your repository');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('S3Binary');
+        itext('WeDeploy');
       ie_close('h2');
       ie_open('p');
-        itext('To configure just add the parameter bucket');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('FileBinary');
-      ie_close('h2');
-      ie_open('p');
-        itext('To configure just add the parameter folder');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('Polymer');
-      ie_close('h2');
-      ie_open('p');
-        itext('The behavior implementation can be found there :');
+        itext('This service run your Docker image and allow you to deploy with a single command');
       ie_close('p');
       ie_open('p');
-        itext('Two different UI component exist also :');
+        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('A simple fab button upload :');
-        ie_close('li');
-        ie_open('li');
-          itext('IA paper-input with Browse button :');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10296,11 +10252,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param483}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param409}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'GViaF.render';
+  $render.soyTemplateName = 'XrmOE.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10310,14 +10266,18 @@ return exports;
 
 });
 
-class GViaF extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GViaF, templates);
+class XrmOE extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(XrmOE, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
 /* 100 */,
 /* 101 */,
 /* 102 */,
@@ -10371,11 +10331,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GViaF, templates);
 /* 150 */,
 /* 151 */,
 /* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10405,9 +10361,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _binarySoy = __webpack_require__(99);
+var _indexSoy = __webpack_require__(95);
 
-var _binarySoy2 = _interopRequireDefault(_binarySoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10417,23 +10373,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var GViaF = function (_Component) {
-  _inherits(GViaF, _Component);
+var XrmOE = function (_Component) {
+  _inherits(XrmOE, _Component);
 
-  function GViaF() {
-    _classCallCheck(this, GViaF);
+  function XrmOE() {
+    _classCallCheck(this, XrmOE);
 
-    return _possibleConstructorReturn(this, (GViaF.__proto__ || Object.getPrototypeOf(GViaF)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (XrmOE.__proto__ || Object.getPrototypeOf(XrmOE)).apply(this, arguments));
   }
 
-  return GViaF;
+  return XrmOE;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(GViaF, _binarySoy2.default);
+_metalSoy2.default.register(XrmOE, _indexSoy2.default);
 
-exports.default = GViaF;
+exports.default = XrmOE;
 
 /***/ })
-],[157]);
+],[153]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([10],[
+webpackJsonppageComponent([24],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10104,26 +10104,12 @@ exports.default = parseFromAnchor;
 /* 83 */,
 /* 84 */,
 /* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REDdm", function() { return REDdm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jFGIx", function() { return jFGIx; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10135,15 +10121,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from custom.soy.
+// This file was automatically generated from first-release.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace REDdm.
+ * @fileoverview Templates in namespace jFGIx.
  * @public
  */
 
-goog.module('REDdm.incrementaldom');
+goog.module('jFGIx.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10164,9 +10150,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -10177,61 +10161,124 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param509 = function() {
-    ie_open('h6');
-      var dyn29 = opt_data.page.description;
-      if (typeof dyn29 == 'function') dyn29(); else if (dyn29 != null) itext(dyn29);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
+  var param150 = function() {
+    ie_open('article');
+      ie_open('p');
+        itext('With the revolution of cloud we got very used to IaaS. Whenever we want a server, we just call an API and here we are with a brand new server ready within ');
+        ie_open('em');
+          itext('minutes');
+        ie_close('em');
+        itext('!');
+      ie_close('p');
+      ie_open('p');
+        itext('But ');
+        ie_open('em');
+          itext('minutes');
+        ie_close('em');
+        itext(' were way too long for us! So, then came ');
+        ie_open('a', null, null,
+            'href', 'https://www.docker.com',
+            'target', '_blank');
+          itext('Docker');
+        ie_close('a');
+        itext(', which made it possible to have all our environments loaded within ');
+        ie_open('em');
+          itext('seconds');
+        ie_close('em');
+        itext('.');
+      ie_close('p');
+      ie_open('p');
+        itext('Of course, for all this you still needed a server to run on. Two years ago, AWS came up with ');
+        ie_open('a', null, null,
+            'href', 'https://aws.amazon.com/lambda/',
+            'target', '_blank');
+          itext('Lambda');
+        ie_close('a');
+        itext(', where all we have to do is store the function and trigger it either by other AWS services events or by an HTTP request.');
+      ie_close('p');
+      ie_open('p');
+        itext('Now, let\u2019s take the example of running lots of small services, which are called only a few thousand times per month, but as we cannot predict the time when they\'ll be used, they are just sitting there the rest of the time. Without Lambda, we will need more than one Docker container to run these services with failover. So the idea of having the failover and scaling without having to take care of any containers or servers was a no-brainer for me.');
+      ie_close('p');
       ie_open('h2');
-        itext('Overview');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+        itext('When you use Lambda and want to expose through HTTP, you discover that you can use the API Gateway of AWS. It is a nice technology but kind of complex to configure. When something goes wrong in your code, you cannot debug it as easily as when it was hosted on your machine.');
       ie_close('p');
       ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+        itext('So, this is where the idea of ');
+        ie_open('strong');
+          itext('Webda');
+        ie_close('strong');
+        itext(' comes in!');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
       ie_open('h2');
-        itext('Internal service');
+        itext('The Goal');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+        itext('The goal of Webda is to ');
+        ie_open('strong');
+          itext('have a framework that allows you to code locally and test it using a Node.JS and then deploy it automatically either to Lambda with API Gateway or by creating a Docker image with it including a NodeJS server');
+        ie_close('strong');
+        itext('.');
       ie_close('p');
       ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+        itext('This way ');
+        ie_open('strong');
+          itext('you can easily debug locally and then deploy to your AWS environment in a second');
+        ie_close('strong');
+        itext('.');
       ie_close('p');
-      $templateAlias2({code: 'const Service = require(\'webda/services/service\')\n\nclass MyInternalService extends Service {\n\n   init() {\n     this._gdrive = new ...;\n   }\n   \n   getDocument(uuid, token) {\n     return this._gdrive.getDocument(uuid, token);\n   }\n   \n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('The GDrive API is faked here, but basically this service will allow you to get some configuration from the webda.config.json and expose some methods for others Services or Models to use inside Webda');
+        itext('Let\u2019s take a look at how to get started and create a new project : checkout our ');
+        ie_open('a', null, null,
+            'href', '/docs/create/');
+          itext('Quickstart Guide');
+        ie_close('a');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
       ie_open('h2');
-        itext('Service with exposed API');
+        itext('Resources');
       ie_close('h2');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('input', null, null,
-        'type', 'hidden',
-        'value', opt_data.page.title);
-    ie_close('input');
-    ie_open('input', null, null,
-        'type', 'hidden',
-        'value', opt_data.site.title);
-    ie_close('input');
-  };
-  $templateAlias1(soy.$$assignDefaults({content: param509}, opt_data), null, opt_ijData);
-}
-exports.render = $render;
-if (goog.DEBUG) {
-  $render.soyTemplateName = 'REDdm.render';
-}
+      ie_open('p');
+        itext('Here are some more resources to help you:');
+      ie_close('p');
+      ie_open('p');
+        ie_open('strong');
+          itext('Website:');
+        ie_close('strong');
+        itext(' ');
+        ie_open('a', null, null,
+            'href', 'http://webda.io',
+            'target', '_blank');
+          itext('webda.io');
+        ie_close('a');
+        ie_open('br/');
+          ie_open('strong');
+            itext('Channel:');
+          ie_close('strong');
+          itext(' ');
+          ie_open('a', null, null,
+              'href', 'https://www.youtube.com/playlist?list=PLfn1MAL4_e7ERdqj9rWlmEkK5gMkL4bKI',
+              'target', '_blank');
+            itext('Youtube');
+          ie_close('a');
+        ie_close('p');
+      ie_close('article');
+      ie_open('input', null, null,
+          'type', 'hidden',
+          'value', opt_data.page.title);
+      ie_close('input');
+      ie_open('input', null, null,
+          'type', 'hidden',
+          'value', opt_data.site.title);
+      ie_close('input');
+    };
+    $templateAlias1(soy.$$assignDefaults({content: param150}, opt_data), null, opt_ijData);
+  }
+  exports.render = $render;
+  if (goog.DEBUG) {
+    $render.soyTemplateName = 'jFGIx.render';
+  }
 
 exports.render.params = ["page","site"];
 exports.render.types = {"page":"any","site":"any"};
@@ -10240,14 +10287,28 @@ return exports;
 
 });
 
-class REDdm extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(REDdm, templates);
+class jFGIx extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jFGIx, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
 /* 101 */,
 /* 102 */,
 /* 103 */,
@@ -10292,22 +10353,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(REDdm, templates);
 /* 142 */,
 /* 143 */,
 /* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10337,9 +10383,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _customSoy = __webpack_require__(100);
+var _firstReleaseSoy = __webpack_require__(86);
 
-var _customSoy2 = _interopRequireDefault(_customSoy);
+var _firstReleaseSoy2 = _interopRequireDefault(_firstReleaseSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10349,23 +10395,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var REDdm = function (_Component) {
-  _inherits(REDdm, _Component);
+var jFGIx = function (_Component) {
+  _inherits(jFGIx, _Component);
 
-  function REDdm() {
-    _classCallCheck(this, REDdm);
+  function jFGIx() {
+    _classCallCheck(this, jFGIx);
 
-    return _possibleConstructorReturn(this, (REDdm.__proto__ || Object.getPrototypeOf(REDdm)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (jFGIx.__proto__ || Object.getPrototypeOf(jFGIx)).apply(this, arguments));
   }
 
-  return REDdm;
+  return jFGIx;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(REDdm, _customSoy2.default);
+_metalSoy2.default.register(jFGIx, _firstReleaseSoy2.default);
 
-exports.default = REDdm;
+exports.default = jFGIx;
 
 /***/ })
-],[160]);
+],[145]);

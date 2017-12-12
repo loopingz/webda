@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([24],[
+webpackJsonppageComponent([21],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10104,12 +10104,15 @@ exports.default = parseFromAnchor;
 /* 83 */,
 /* 84 */,
 /* 85 */,
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jYbor", function() { return jYbor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KZcdH", function() { return KZcdH; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10121,15 +10124,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from first-release.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace jYbor.
+ * @fileoverview Templates in namespace KZcdH.
  * @public
  */
 
-goog.module('jYbor.incrementaldom');
+goog.module('KZcdH.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10150,7 +10153,9 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
 /**
@@ -10161,124 +10166,81 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param150 = function() {
-    ie_open('article');
-      ie_open('p');
-        itext('With the revolution of cloud we got very used to IaaS. Whenever we want a server, we just call an API and here we are with a brand new server ready within ');
-        ie_open('em');
-          itext('minutes');
-        ie_close('em');
-        itext('!');
-      ie_close('p');
-      ie_open('p');
-        itext('But ');
-        ie_open('em');
-          itext('minutes');
-        ie_close('em');
-        itext(' were way too long for us! So, then came ');
-        ie_open('a', null, null,
-            'href', 'https://www.docker.com',
-            'target', '_blank');
-          itext('Docker');
-        ie_close('a');
-        itext(', which made it possible to have all our environments loaded within ');
-        ie_open('em');
-          itext('seconds');
-        ie_close('em');
-        itext('.');
-      ie_close('p');
-      ie_open('p');
-        itext('Of course, for all this you still needed a server to run on. Two years ago, AWS came up with ');
-        ie_open('a', null, null,
-            'href', 'https://aws.amazon.com/lambda/',
-            'target', '_blank');
-          itext('Lambda');
-        ie_close('a');
-        itext(', where all we have to do is store the function and trigger it either by other AWS services events or by an HTTP request.');
-      ie_close('p');
-      ie_open('p');
-        itext('Now, let\u2019s take the example of running lots of small services, which are called only a few thousand times per month, but as we cannot predict the time when they\'ll be used, they are just sitting there the rest of the time. Without Lambda, we will need more than one Docker container to run these services with failover. So the idea of having the failover and scaling without having to take care of any containers or servers was a no-brainer for me.');
-      ie_close('p');
+  var param234 = function() {
+    ie_open('h6');
+      var dyn19 = opt_data.page.description;
+      if (typeof dyn19 == 'function') dyn19(); else if (dyn19 != null) itext(dyn19);
+    ie_close('h6');
+    ie_open('article', null, null,
+        'id', '1');
       ie_open('h2');
-        itext('Lambda');
+        itext('Lorem ipsum dolor sit amet');
+      ie_close('h2');
+      $templateAlias2({code: 'var hello = function() {\n    console.log(\'Hello, World!\');\n};', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+      ie_close('p');
+      ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+      ie_close('p');
+      ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+      ie_close('p');
+      ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Lorem ipsum dolor sit amet');
       ie_close('h2');
       ie_open('p');
-        itext('When you use Lambda and want to expose through HTTP, you discover that you can use the API Gateway of AWS. It is a nice technology but kind of complex to configure. When something goes wrong in your code, you cannot debug it as easily as when it was hosted on your machine.');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
       ie_close('p');
       ie_open('p');
-        itext('So, this is where the idea of ');
-        ie_open('strong');
-          itext('Webda');
-        ie_close('strong');
-        itext(' comes in!');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
       ie_close('p');
+      ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+      ie_close('p');
+      ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
       ie_open('h2');
-        itext('The Goal');
+        itext('Lorem ipsum dolor sit amet');
       ie_close('h2');
       ie_open('p');
-        itext('The goal of Webda is to ');
-        ie_open('strong');
-          itext('have a framework that allows you to code locally and test it using a Node.JS and then deploy it automatically either to Lambda with API Gateway or by creating a Docker image with it including a NodeJS server');
-        ie_close('strong');
-        itext('.');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
       ie_close('p');
       ie_open('p');
-        itext('This way ');
-        ie_open('strong');
-          itext('you can easily debug locally and then deploy to your AWS environment in a second');
-        ie_close('strong');
-        itext('.');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
       ie_close('p');
       ie_open('p');
-        itext('Let\u2019s take a look at how to get started and create a new project : checkout our ');
-        ie_open('a', null, null,
-            'href', '/docs/create/');
-          itext('Quickstart Guide');
-        ie_close('a');
-      ie_close('p');
-      ie_open('h2');
-        itext('Resources');
-      ie_close('h2');
-      ie_open('p');
-        itext('Here are some more resources to help you:');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
       ie_close('p');
       ie_open('p');
-        ie_open('strong');
-          itext('Website:');
-        ie_close('strong');
-        itext(' ');
-        ie_open('a', null, null,
-            'href', 'http://webda.io',
-            'target', '_blank');
-          itext('webda.io');
-        ie_close('a');
-        ie_open('br/');
-          ie_open('strong');
-            itext('Channel:');
-          ie_close('strong');
-          itext(' ');
-          ie_open('a', null, null,
-              'href', 'https://www.youtube.com/playlist?list=PLfn1MAL4_e7ERdqj9rWlmEkK5gMkL4bKI',
-              'target', '_blank');
-            itext('Youtube');
-          ie_close('a');
-        ie_close('p');
-      ie_close('article');
-      ie_open('input', null, null,
-          'type', 'hidden',
-          'value', opt_data.page.title);
-      ie_close('input');
-      ie_open('input', null, null,
-          'type', 'hidden',
-          'value', opt_data.site.title);
-      ie_close('input');
-    };
-    $templateAlias1(soy.$$assignDefaults({content: param150}, opt_data), null, opt_ijData);
-  }
-  exports.render = $render;
-  if (goog.DEBUG) {
-    $render.soyTemplateName = 'jYbor.render';
-  }
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('input', null, null,
+        'type', 'hidden',
+        'value', opt_data.page.title);
+    ie_close('input');
+    ie_open('input', null, null,
+        'type', 'hidden',
+        'value', opt_data.site.title);
+    ie_close('input');
+  };
+  $templateAlias1(soy.$$assignDefaults({content: param234}, opt_data), null, opt_ijData);
+}
+exports.render = $render;
+if (goog.DEBUG) {
+  $render.soyTemplateName = 'KZcdH.render';
+}
 
 exports.render.params = ["page","site"];
 exports.render.types = {"page":"any","site":"any"};
@@ -10287,17 +10249,14 @@ return exports;
 
 });
 
-class jYbor extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jYbor, templates);
+class KZcdH extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(KZcdH, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 87 */,
-/* 88 */,
-/* 89 */,
 /* 90 */,
 /* 91 */,
 /* 92 */,
@@ -10353,7 +10312,9 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jYbor, templates);
 /* 142 */,
 /* 143 */,
 /* 144 */,
-/* 145 */
+/* 145 */,
+/* 146 */,
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10383,9 +10344,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _firstReleaseSoy = __webpack_require__(86);
+var _indexSoy = __webpack_require__(89);
 
-var _firstReleaseSoy2 = _interopRequireDefault(_firstReleaseSoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10395,23 +10356,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var jYbor = function (_Component) {
-  _inherits(jYbor, _Component);
+var KZcdH = function (_Component) {
+  _inherits(KZcdH, _Component);
 
-  function jYbor() {
-    _classCallCheck(this, jYbor);
+  function KZcdH() {
+    _classCallCheck(this, KZcdH);
 
-    return _possibleConstructorReturn(this, (jYbor.__proto__ || Object.getPrototypeOf(jYbor)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (KZcdH.__proto__ || Object.getPrototypeOf(KZcdH)).apply(this, arguments));
   }
 
-  return jYbor;
+  return KZcdH;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(jYbor, _firstReleaseSoy2.default);
+_metalSoy2.default.register(KZcdH, _indexSoy2.default);
 
-exports.default = jYbor;
+exports.default = KZcdH;
 
 /***/ })
-],[145]);
+],[147]);
