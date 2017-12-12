@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([22],[
+webpackJsonppageComponent([17],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10106,12 +10106,17 @@ exports.default = parseFromAnchor;
 /* 85 */,
 /* 86 */,
 /* 87 */,
-/* 88 */
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmSqZ", function() { return EmSqZ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jGnYM", function() { return jGnYM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10123,15 +10128,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from new-website.soy.
+// This file was automatically generated from configuration.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace EmSqZ.
+ * @fileoverview Templates in namespace jGnYM.
  * @public
  */
 
-goog.module('EmSqZ.incrementaldom');
+goog.module('jGnYM.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10152,7 +10157,9 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
 /**
@@ -10163,66 +10170,96 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param165 = function() {
-    ie_open('article');
+  var param351 = function() {
+    ie_open('h6');
+      var dyn22 = opt_data.page.description;
+      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
+    ie_close('h6');
+    ie_open('article', null, null,
+        'id', '1');
+      ie_open('h2');
+        itext('Overview');
+      ie_close('h2');
       ie_open('p');
-        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
+        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
       ie_close('p');
       ie_open('p');
-        itext('Thanks to ');
-        ie_open('a', null, null,
-            'href', 'https://electricjs.com/');
-          itext('Electric JS');
-        ie_close('a');
-        itext(', we were able to create a whole new website way faster with those cool UI effects.');
+        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
       ie_close('p');
       ie_open('p');
-        itext('The same day we are releasing the new website, we also have a fix release ');
-        ie_open('strong');
-          itext('v0.4.6');
-        ie_close('strong');
+        ie_open('img', null, null,
+            'src', '/images/configuration_resolution.png',
+            'alt', 'image');
+        ie_close('img');
       ie_close('p');
       ie_open('p');
-        itext('This release includes :');
+        itext('This is the detail configuration for each section');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('DynamoDB incrementAttribute with 0 fix');
-        ie_close('li');
-        ie_open('li');
-          itext('Email storage in lower case');
-        ie_close('li');
-      ie_close('ul');
+      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
+      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
       ie_open('p');
-        itext('In the next weeks, as Christmas gift we will work hard on a ');
-        ie_open('strong');
-          itext('v0.5.0');
-        ie_close('strong');
-        itext(' it should includes :');
+        itext('So this how webda will resolve Service final configuration');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Better ');
-          ie_open('a', null, null,
-              'href', 'https://wedeploy.com/');
-            itext('WeDeploy');
-          ie_close('a');
-          itext(' integration');
-        ie_close('li');
-        ie_open('li');
-          itext('Easier queue worker deployment');
-        ie_close('li');
-        ie_open('li');
-          ie_open('a', null, null,
-              'href', 'https://aws.amazon.com/fargate/');
-            itext('AWS Fargate');
-          ie_close('a');
-          itext(' integration');
-        ie_close('li');
-        ie_open('li');
-          itext('Static website deployment integration');
-        ie_close('li');
-      ie_close('ul');
+      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Configuration UI');
+      ie_close('h2');
+      ie_open('p');
+        itext('Here is some screenshots of the ui');
+      ie_close('p');
+      ie_open('h4');
+        itext('Routes');
+      ie_close('h4');
+      ie_open('p');
+        ie_open('img', null, null,
+            'src', '/images/ui_route_create.png',
+            'alt', 'image');
+        ie_close('img');
+        itext(' ');
+        ie_open('img', null, null,
+            'src', '/images/ui_route_config.png',
+            'alt', 'image');
+        ie_close('img');
+      ie_close('p');
+      ie_open('h4');
+        itext('Services');
+      ie_close('h4');
+      ie_open('p');
+        ie_open('img', null, null,
+            'src', '/images/ui_service_create.png',
+            'alt', 'image');
+        ie_close('img');
+        itext(' ');
+        ie_open('img', null, null,
+            'src', '/images/ui_service_config.png',
+            'alt', 'image');
+        ie_close('img');
+      ie_close('p');
+      ie_open('h4');
+        itext('Deployments');
+      ie_close('h4');
+      ie_open('p');
+        ie_open('img', null, null,
+            'src', '/images/ui_deployment_create.png',
+            'alt', 'image');
+        ie_close('img');
+        itext(' ');
+        ie_open('img', null, null,
+            'src', '/images/ui_deployment_config.png',
+            'alt', 'image');
+        ie_close('img');
+        itext(' ');
+        ie_open('img', null, null,
+            'src', '/images/ui_deployment_deploy.png',
+            'alt', 'image');
+        ie_close('img');
+      ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10233,11 +10270,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param165}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param351}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'EmSqZ.render';
+  $render.soyTemplateName = 'jGnYM.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10247,19 +10284,14 @@ return exports;
 
 });
 
-class EmSqZ extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(EmSqZ, templates);
+class jGnYM extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jGnYM, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
 /* 94 */,
 /* 95 */,
 /* 96 */,
@@ -10310,7 +10342,16 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(EmSqZ, templates);
 /* 141 */,
 /* 142 */,
 /* 143 */,
-/* 144 */
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10340,9 +10381,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _newWebsiteSoy = __webpack_require__(88);
+var _configurationSoy = __webpack_require__(93);
 
-var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
+var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10352,23 +10393,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var EmSqZ = function (_Component) {
-  _inherits(EmSqZ, _Component);
+var jGnYM = function (_Component) {
+  _inherits(jGnYM, _Component);
 
-  function EmSqZ() {
-    _classCallCheck(this, EmSqZ);
+  function jGnYM() {
+    _classCallCheck(this, jGnYM);
 
-    return _possibleConstructorReturn(this, (EmSqZ.__proto__ || Object.getPrototypeOf(EmSqZ)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (jGnYM.__proto__ || Object.getPrototypeOf(jGnYM)).apply(this, arguments));
   }
 
-  return EmSqZ;
+  return jGnYM;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(EmSqZ, _newWebsiteSoy2.default);
+_metalSoy2.default.register(jGnYM, _configurationSoy2.default);
 
-exports.default = EmSqZ;
+exports.default = jGnYM;
 
 /***/ })
-],[144]);
+],[153]);
