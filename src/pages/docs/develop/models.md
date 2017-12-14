@@ -63,3 +63,39 @@ class CoreModel {
 ```
 
 </article>
+
+
+<article id="4">
+
+## Store Events
+
+The model can defined behavior on store event without defining a listener
+The _onAction and _onActioned are not defined as the action by itself is already inside the object
+
+```javascript
+class CoreModel {
+    _onSave() {
+      // Will be called beforeSave
+    }
+    _onSave() {
+      // Will be called afterSave
+    }
+    _onUpdate() {
+      // Will be called beforeUpdate
+    }
+    _onUpdated() {
+      // Will be called afterUpdate
+    }
+    _onDelete() {
+      // Will be called afterDelete
+    }
+    _onDeleted() {
+      // Will be called afterDelete
+    }
+    _onGet() {
+      // Will be called when an object is retrieved
+    }
+}
+```
+
+</article>
