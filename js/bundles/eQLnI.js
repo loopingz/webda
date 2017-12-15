@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([5],[
+webpackJsonppageComponent([19],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2468,7 +2468,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/gh-pages-electric/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -10110,22 +10110,12 @@ exports.default = parseFromAnchor;
 /* 88 */,
 /* 89 */,
 /* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "qCllU", function() { return qCllU; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eQLnI", function() { return eQLnI; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10137,15 +10127,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from tutorials.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace qCllU.
+ * @fileoverview Templates in namespace eQLnI.
  * @public
  */
 
-goog.module('qCllU.incrementaldom');
+goog.module('eQLnI.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10177,106 +10167,89 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param558 = function() {
+  var param338 = function() {
     ie_open('h6');
-      var dyn38 = opt_data.page.description;
-      if (typeof dyn38 == 'function') dyn38(); else if (dyn38 != null) itext(dyn38);
+      var dyn21 = opt_data.page.description;
+      if (typeof dyn21 == 'function') dyn21(); else if (dyn21 != null) itext(dyn21);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Concepts');
+        itext('Setting up a project from scratch');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('Webda introduces some basic concepts :');
+        itext('In this video you will see:');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          ie_open('em');
-            itext('Service');
-          ie_close('em');
-          itext(' a singleton similar to Spring Bean to implement behaviors');
+          itext('How to install Webda');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('Executor');
-          ie_close('em');
-          itext(' is a service that provide some routes and expose API to the world');
+          itext('How to use the configurator to add services like Authentication and NoSQL Store');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('Model');
-          ie_close('em');
-          itext(' to define your business logic');
+          itext('Expose services as REST API');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('Deployment');
-          ie_close('em');
-          itext(' an instance of the app with its own configuration');
+          itext('Deploy to the cloud using the AWS deployer');
         ie_close('li');
       ie_close('ul');
-      ie_open('p');
-        itext('The ');
-        ie_open('strong');
-          itext('webda.config.json');
-        ie_close('strong');
-        itext(' contains the configuration of the app, defining Services, Routes and global configuration, you can consider it as the applicationContext.xml of Spring if you prefer, with Beans=Services');
-      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Stores');
+        itext('Add the mapping configuration to our project');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
-      ie_close('p');
-      ie_open('p');
-        itext('We have currently File, DynamoDB and MongoDB storage');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/store');
-          itext('Learn More');
-        ie_close('a');
+        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Binaries');
+        itext('Use our new serverless API on a Polymer interface');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
       ie_close('p');
-      ie_open('p');
-        itext('The storage detect duplicates and don\'t double store them, it also provides a Polymer component that will prevent upload of known binaries by using a challenge to speed up the upload.');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/binary');
-          itext('Learn More');
-        ie_close('a');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Models');
-      ie_close('h2');
-      ie_open('p');
-        itext('The stores use Models to load/save/validate/secure business object.');
-      ie_close('p');
-      ie_open('p');
-        itext('The models should implement most of your business logic, while service should be technical implementation');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/models');
-          itext('Learn More');
-        ie_close('a');
-      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Registration with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Login with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Add a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Edit a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Remove a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Upload directly to S3');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10287,11 +10260,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param558}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param338}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'qCllU.render';
+  $render.soyTemplateName = 'eQLnI.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10301,14 +10274,24 @@ return exports;
 
 });
 
-class qCllU extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(qCllU, templates);
+class eQLnI extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(eQLnI, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
 /* 102 */,
 /* 103 */,
 /* 104 */,
@@ -10323,21 +10306,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(qCllU, templates);
 /* 113 */,
 /* 114 */,
 /* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10367,9 +10336,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(101);
+var _tutorialsSoy = __webpack_require__(91);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10379,23 +10348,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var qCllU = function (_Component) {
-  _inherits(qCllU, _Component);
+var eQLnI = function (_Component) {
+  _inherits(eQLnI, _Component);
 
-  function qCllU() {
-    _classCallCheck(this, qCllU);
+  function eQLnI() {
+    _classCallCheck(this, eQLnI);
 
-    return _possibleConstructorReturn(this, (qCllU.__proto__ || Object.getPrototypeOf(qCllU)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (eQLnI.__proto__ || Object.getPrototypeOf(eQLnI)).apply(this, arguments));
   }
 
-  return qCllU;
+  return eQLnI;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(qCllU, _indexSoy2.default);
+_metalSoy2.default.register(eQLnI, _tutorialsSoy2.default);
 
-exports.default = qCllU;
+exports.default = eQLnI;
 
 /***/ })
-],[130]);
+],[116]);

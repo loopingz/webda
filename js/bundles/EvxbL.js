@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([8],[
+webpackJsonppageComponent([11],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2468,7 +2468,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/gh-pages-electric/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -10119,12 +10119,15 @@ exports.default = parseFromAnchor;
 /* 97 */,
 /* 98 */,
 /* 99 */,
-/* 100 */
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aeloC", function() { return aeloC; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EvxbL", function() { return EvxbL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10136,15 +10139,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from custom.soy.
+// This file was automatically generated from models.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace aeloC.
+ * @fileoverview Templates in namespace EvxbL.
  * @public
  */
 
-goog.module('aeloC.incrementaldom');
+goog.module('EvxbL.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10178,10 +10181,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param537 = function() {
+  var param580 = function() {
     ie_open('h6');
-      var dyn37 = opt_data.page.description;
-      if (typeof dyn37 == 'function') dyn37(); else if (dyn37 != null) itext(dyn37);
+      var dyn40 = opt_data.page.description;
+      if (typeof dyn40 == 'function') dyn40(); else if (dyn40 != null) itext(dyn40);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10189,34 +10192,48 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+        itext('Model is the best way to express your business logic.');
       ie_close('p');
       ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Internal service');
+        itext('Security');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+        itext('The model has a predefined method ');
+        ie_open('em');
+          itext('canAct');
+        ie_close('em');
+        itext(' that will be called whenever an action is trigger on an object from an external source');
       ie_close('p');
       ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+        itext('This method return a Promise that will stop the processing if it is rejected');
       ie_close('p');
-      $templateAlias2({code: 'const Service = require(\'webda/services/service\')\n\nclass MyInternalService extends Service {\n\n   init() {\n     this._gdrive = new ...;\n   }\n   \n   getDocument(uuid, token) {\n     return this._gdrive.getDocument(uuid, token);\n   }\n   \n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The GDrive API is faked here, but basically this service will allow you to get some configuration from the webda.config.json and expose some methods for others Services or Models to use inside Webda');
-      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Service with exposed API');
+        itext('Custom Actions');
       ie_close('h2');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The model can defined action that will be exposed by its Store');
+      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Store Events');
+      ie_close('h2');
+      ie_open('p');
+        itext('The model can defined behavior on store event without defining a listener The _onAction and _onActioned are not defined as the action by itself is already inside the object');
+      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n    _onSave() {\n      // Will be called beforeSave\n    }\n    _onSave() {\n      // Will be called afterSave\n    }\n    _onUpdate() {\n      // Will be called beforeUpdate\n    }\n    _onUpdated() {\n      // Will be called afterUpdate\n    }\n    _onDelete() {\n      // Will be called afterDelete\n    }\n    _onDeleted() {\n      // Will be called afterDelete\n    }\n    _onGet() {\n      // Will be called when an object is retrieved\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10227,11 +10244,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param537}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param580}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'aeloC.render';
+  $render.soyTemplateName = 'EvxbL.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10241,17 +10258,14 @@ return exports;
 
 });
 
-class aeloC extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(aeloC, templates);
+class EvxbL extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(EvxbL, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 101 */,
-/* 102 */,
-/* 103 */,
 /* 104 */,
 /* 105 */,
 /* 106 */,
@@ -10272,10 +10286,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(aeloC, templates);
 /* 121 */,
 /* 122 */,
 /* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10305,9 +10316,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _customSoy = __webpack_require__(100);
+var _modelsSoy = __webpack_require__(103);
 
-var _customSoy2 = _interopRequireDefault(_customSoy);
+var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10317,23 +10328,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var aeloC = function (_Component) {
-  _inherits(aeloC, _Component);
+var EvxbL = function (_Component) {
+  _inherits(EvxbL, _Component);
 
-  function aeloC() {
-    _classCallCheck(this, aeloC);
+  function EvxbL() {
+    _classCallCheck(this, EvxbL);
 
-    return _possibleConstructorReturn(this, (aeloC.__proto__ || Object.getPrototypeOf(aeloC)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (EvxbL.__proto__ || Object.getPrototypeOf(EvxbL)).apply(this, arguments));
   }
 
-  return aeloC;
+  return EvxbL;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(aeloC, _customSoy2.default);
+_metalSoy2.default.register(EvxbL, _modelsSoy2.default);
 
-exports.default = aeloC;
+exports.default = EvxbL;
 
 /***/ })
-],[127]);
+],[124]);

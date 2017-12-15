@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([6],[
+webpackJsonppageComponent([5],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2468,7 +2468,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/gh-pages-electric/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -10122,7 +10122,7 @@ exports.default = parseFromAnchor;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "kDImy", function() { return kDImy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rGMVX", function() { return rGMVX; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10138,11 +10138,11 @@ goog.loadModule(function(exports) {
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace kDImy.
+ * @fileoverview Templates in namespace rGMVX.
  * @public
  */
 
-goog.module('kDImy.incrementaldom');
+goog.module('rGMVX.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10273,7 +10273,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'kDImy.render';
+  $render.soyTemplateName = 'rGMVX.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10283,8 +10283,8 @@ return exports;
 
 });
 
-class kDImy extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(kDImy, templates);
+class rGMVX extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(rGMVX, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
@@ -10321,7 +10321,8 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(kDImy, templates);
 /* 126 */,
 /* 127 */,
 /* 128 */,
-/* 129 */
+/* 129 */,
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10363,23 +10364,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var kDImy = function (_Component) {
-  _inherits(kDImy, _Component);
+var rGMVX = function (_Component) {
+  _inherits(rGMVX, _Component);
 
-  function kDImy() {
-    _classCallCheck(this, kDImy);
+  function rGMVX() {
+    _classCallCheck(this, rGMVX);
 
-    return _possibleConstructorReturn(this, (kDImy.__proto__ || Object.getPrototypeOf(kDImy)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (rGMVX.__proto__ || Object.getPrototypeOf(rGMVX)).apply(this, arguments));
   }
 
-  return kDImy;
+  return rGMVX;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(kDImy, _authenticationSoy2.default);
+_metalSoy2.default.register(rGMVX, _authenticationSoy2.default);
 
-exports.default = kDImy;
+exports.default = rGMVX;
 
 /***/ })
-],[129]);
+],[130]);
