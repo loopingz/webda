@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([19],[
+webpackJsonppageComponent([24],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10107,14 +10107,12 @@ exports.default = parseFromAnchor;
 /* 85 */,
 /* 86 */,
 /* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vvlXD", function() { return vvlXD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlUDh", function() { return GlUDh; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10126,15 +10124,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from new-website.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace vvlXD.
+ * @fileoverview Templates in namespace GlUDh.
  * @public
  */
 
-goog.module('vvlXD.incrementaldom');
+goog.module('GlUDh.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10155,9 +10153,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -10168,158 +10164,66 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param262 = function() {
-    ie_open('h6');
-      var dyn20 = opt_data.page.description;
-      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
-      ie_open('h2');
-        itext('Installation');
-      ie_close('h2');
+  var param177 = function() {
+    ie_open('article');
       ie_open('p');
-        itext('You first need to install webda-shell.');
-      ie_close('p');
-      $templateAlias2({code: 'npm install -g webda-shell', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will install the webda shell tools, that allows you to configure and deploy your project You have the configuration UI available, where you can create a service, use a service, or create a custom API resource. You can also manually edit the webda.config.json if you prefer');
+        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
       ie_close('p');
       ie_open('p');
-        itext('Below is the manual step with the manual modification, I would recommand to use the configuration UI to modify the webda.config.json');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Init a project');
-      ie_close('h2');
-      ie_open('p');
-        itext('Create a new project folder');
-      ie_close('p');
-      $templateAlias2({code: 'mkdir my-new-project\ncd my-new-project', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('If you do want to use our sample project, first type');
-      ie_close('p');
-      $templateAlias2({code: 'webda init', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('Launch your project configuration interface');
-      ie_close('p');
-      $templateAlias2({code: 'webda config', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('You should now see the configuration website in your browser');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Create a new route');
-      ie_close('h2');
-      ie_open('p');
-        itext('We will use the inline RouteHelper here, except the Lambda Route helper, the other are mainly helper for quick and easy test but you should use Service when you can as they are easier to unit test and make code cleaner.');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This is defining the GET /myurl API');
+        itext('Thanks to ');
+        ie_open('a', null, null,
+            'href', 'https://electricjs.com/');
+          itext('Electric JS');
+        ie_close('a');
+        itext(', we were able to create a whole new website way faster with those cool UI effects.');
       ie_close('p');
       ie_open('p');
-        itext('There is 5 types of route : file, inline, lambda, resource, string');
-      ie_close('p');
-      ie_open('h3');
-        itext('File route');
-      ie_close('h3');
-      ie_open('p');
+        itext('The same day we are releasing the new website, we also have a fix release ');
         ie_open('strong');
-          itext('file');
+          itext('v0.4.6');
         ie_close('strong');
-        itext(' include the javascript file and call its main export with the context');
       ie_close('p');
       ie_open('p');
-        itext('webda.config.json');
+        itext('This release includes :');
       ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myapi": {\n      "type": "file",\n      "file": "./test.js"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('ul');
+        ie_open('li');
+          itext('DynamoDB incrementAttribute with 0 fix');
+        ie_close('li');
+        ie_open('li');
+          itext('Email storage in lower case');
+        ie_close('li');
+      ie_close('ul');
       ie_open('p');
-        itext('test.js');
-      ie_close('p');
-      $templateAlias2({code: 'module.exports = (ctx) {\n  ctx.write(\'This is my custom API\')\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('h3');
-        itext('Inline route');
-      ie_close('h3');
-      ie_open('p');
+        itext('In the next weeks, as Christmas gift we will work hard on a ');
         ie_open('strong');
-          itext('inline');
+          itext('v0.5.0');
         ie_close('strong');
-        itext(' eval the content of the callback string');
+        itext(' it should includes :');
       ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('h3');
-        itext('Lambda route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('lambda');
-        ie_close('strong');
-        itext(' call a Lambda function and return its result');
-      ie_close('p');
-      ie_open('h3');
-        itext('Resource route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('resource');
-        ie_close('strong');
-        itext(' return the content of the file, guessing it\'s mime type');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "resource",\n      "file": "./test.jpg"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will return the jpeg with image/jpeg mime type');
-      ie_close('p');
-      ie_open('h3');
-        itext('String route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('string');
-        ie_close('strong');
-        itext(' return the content of result, you can specify the mime');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "string",\n      "result": "Hi Webda !"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will return a "Hi Webda !"');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Create a new service');
-      ie_close('h2');
-      ie_open('p');
-        itext('We will create a new service from executor, so we can map some urls directly to the service');
-      ie_close('p');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('Here is the corresponding configuration');
-      ie_close('p');
-      $templateAlias2({code: '{\n  ...\n  services: {\n     ...\n     "MyService": {\n       require: "./myservice.js",\n       sentence: "I am a GET route and i\'ve sent an welcome email to you"\n     }\n     ...\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('Run it');
-      ie_close('h2');
-      $templateAlias2({code: 'webda serve', mode: 'text'}, null, opt_ijData);
-      ie_open('p');
-        itext('You can call the http://localhost:18080/myservice, and see the nice output');
-      ie_close('p');
-      ie_open('p');
-        itext('"I am a GET route and i\'ve sent an welcome email to you"');
-      ie_close('p');
-      ie_open('p');
-        itext('And then the http://localhost:18080/myurl');
-      ie_close('p');
-      ie_open('p');
-        itext('"I am a inline route"');
-      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Better ');
+          ie_open('a', null, null,
+              'href', 'https://wedeploy.com/');
+            itext('WeDeploy');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Easier queue worker deployment');
+        ie_close('li');
+        ie_open('li');
+          ie_open('a', null, null,
+              'href', 'https://aws.amazon.com/fargate/');
+            itext('AWS Fargate');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Static website deployment integration');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10330,11 +10234,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param262}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'vvlXD.render';
+  $render.soyTemplateName = 'GlUDh.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10344,14 +10248,16 @@ return exports;
 
 });
 
-class vvlXD extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vvlXD, templates);
+class GlUDh extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GlUDh, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 89 */,
+/* 90 */,
 /* 91 */,
 /* 92 */,
 /* 93 */,
@@ -10372,12 +10278,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vvlXD, templates);
 /* 108 */,
 /* 109 */,
 /* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10407,9 +10308,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(90);
+var _newWebsiteSoy = __webpack_require__(88);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10419,23 +10320,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var vvlXD = function (_Component) {
-  _inherits(vvlXD, _Component);
+var GlUDh = function (_Component) {
+  _inherits(GlUDh, _Component);
 
-  function vvlXD() {
-    _classCallCheck(this, vvlXD);
+  function GlUDh() {
+    _classCallCheck(this, GlUDh);
 
-    return _possibleConstructorReturn(this, (vvlXD.__proto__ || Object.getPrototypeOf(vvlXD)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (GlUDh.__proto__ || Object.getPrototypeOf(GlUDh)).apply(this, arguments));
   }
 
-  return vvlXD;
+  return GlUDh;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(vvlXD, _indexSoy2.default);
+_metalSoy2.default.register(GlUDh, _newWebsiteSoy2.default);
 
-exports.default = vvlXD;
+exports.default = GlUDh;
 
 /***/ })
-],[116]);
+],[111]);

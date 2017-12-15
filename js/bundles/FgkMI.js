@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([16],[
+webpackJsonppageComponent([10],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10114,12 +10114,17 @@ exports.default = parseFromAnchor;
 /* 92 */,
 /* 93 */,
 /* 94 */,
-/* 95 */
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Miqhq", function() { return Miqhq; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FgkMI", function() { return FgkMI; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10131,15 +10136,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from custom.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace Miqhq.
+ * @fileoverview Templates in namespace FgkMI.
  * @public
  */
 
-goog.module('Miqhq.incrementaldom');
+goog.module('FgkMI.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10173,76 +10178,45 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param437 = function() {
+  var param537 = function() {
     ie_open('h6');
-      var dyn32 = opt_data.page.description;
-      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
+      var dyn37 = opt_data.page.description;
+      if (typeof dyn37 == 'function') dyn37(); else if (dyn37 != null) itext(dyn37);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Lambda');
+        itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
+        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
       ie_close('p');
       ie_open('p');
-        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
+        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
       ie_close('p');
-      ie_open('p');
-        itext('But don\'t worry, with Webda it is as simple as a command');
-      ie_close('p');
-      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
-      ie_open('p');
-        itext('This command will do several step for you :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Create the policy and role for your Lambda');
-        ie_close('li');
-        ie_open('li');
-          itext('Create if needed the Dynamo table used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Create S3 buckets used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy the code to your Lambda');
-        ie_close('li');
-        ie_open('li');
-          itext('Create the API Gateway mapping');
-        ie_close('li');
-        ie_open('li');
-          itext('Add permission for API Gateways to your Lambda');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Docker');
+        itext('Internal service');
       ie_close('h2');
       ie_open('p');
-        itext('You can also just define a Docker image to build');
+        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
       ie_close('p');
       ie_open('p');
-        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
+        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
       ie_close('p');
+      $templateAlias2({code: 'const Service = require(\'webda/services/service\')\n\nclass MyInternalService extends Service {\n\n   init() {\n     this._gdrive = new ...;\n   }\n   \n   getDocument(uuid, token) {\n     return this._gdrive.getDocument(uuid, token);\n   }\n   \n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('If you specify a tag, after the build it will push the image to your repository');
+        itext('The GDrive API is faked here, but basically this service will allow you to get some configuration from the webda.config.json and expose some methods for others Services or Models to use inside Webda');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('WeDeploy');
+        itext('Service with exposed API');
       ie_close('h2');
-      ie_open('p');
-        itext('This service run your Docker image and allow you to deploy with a single command');
-      ie_close('p');
-      ie_open('p');
-        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
-      ie_close('p');
+      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10253,11 +10227,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param437}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param537}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'Miqhq.render';
+  $render.soyTemplateName = 'FgkMI.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10267,19 +10241,14 @@ return exports;
 
 });
 
-class Miqhq extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Miqhq, templates);
+class FgkMI extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(FgkMI, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
 /* 101 */,
 /* 102 */,
 /* 103 */,
@@ -10298,7 +10267,13 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Miqhq, templates);
 /* 116 */,
 /* 117 */,
 /* 118 */,
-/* 119 */
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10328,9 +10303,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(95);
+var _customSoy = __webpack_require__(100);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _customSoy2 = _interopRequireDefault(_customSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10340,23 +10315,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Miqhq = function (_Component) {
-  _inherits(Miqhq, _Component);
+var FgkMI = function (_Component) {
+  _inherits(FgkMI, _Component);
 
-  function Miqhq() {
-    _classCallCheck(this, Miqhq);
+  function FgkMI() {
+    _classCallCheck(this, FgkMI);
 
-    return _possibleConstructorReturn(this, (Miqhq.__proto__ || Object.getPrototypeOf(Miqhq)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (FgkMI.__proto__ || Object.getPrototypeOf(FgkMI)).apply(this, arguments));
   }
 
-  return Miqhq;
+  return FgkMI;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(Miqhq, _indexSoy2.default);
+_metalSoy2.default.register(FgkMI, _customSoy2.default);
 
-exports.default = Miqhq;
+exports.default = FgkMI;
 
 /***/ })
-],[119]);
+],[125]);

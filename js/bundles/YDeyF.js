@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([13],[
+webpackJsonppageComponent([6],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10115,12 +10115,20 @@ exports.default = parseFromAnchor;
 /* 93 */,
 /* 94 */,
 /* 95 */,
-/* 96 */
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lZbPv", function() { return lZbPv; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "YDeyF", function() { return YDeyF; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10132,15 +10140,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from local.soy.
+// This file was automatically generated from polymer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace lZbPv.
+ * @fileoverview Templates in namespace YDeyF.
  * @public
  */
 
-goog.module('lZbPv.incrementaldom');
+goog.module('YDeyF.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10161,8 +10169,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10174,28 +10180,22 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param453 = function() {
+  var param606 = function() {
     ie_open('h6');
-      var dyn33 = opt_data.page.description;
-      if (typeof dyn33 == 'function') dyn33(); else if (dyn33 != null) itext(dyn33);
+      var dyn41 = opt_data.page.description;
+      if (typeof dyn41 == 'function') dyn41(); else if (dyn41 != null) itext(dyn41);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
-      $templateAlias2({code: 'webda serve [-d deploymentName] [--devMode]', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('You can specify a ');
-        ie_open('em');
-          itext('deploymentName');
-        ie_close('em');
-        itext(' to serve API with the deployment configuration');
+        itext('The Webda project have webcomponents it implements the default Store api, the Authentication service');
       ie_close('p');
       ie_open('p');
-        itext('You can disable CORS by adding a ');
         ie_open('em');
-          itext('--devMode');
+          itext('to be completed');
         ie_close('em');
       ie_close('p');
     ie_close('article');
@@ -10208,11 +10208,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param453}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param606}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'lZbPv.render';
+  $render.soyTemplateName = 'YDeyF.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10222,22 +10222,14 @@ return exports;
 
 });
 
-class lZbPv extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(lZbPv, templates);
+class YDeyF extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(YDeyF, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
 /* 105 */,
 /* 106 */,
 /* 107 */,
@@ -10255,7 +10247,14 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(lZbPv, templates);
 /* 119 */,
 /* 120 */,
 /* 121 */,
-/* 122 */
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10285,9 +10284,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _localSoy = __webpack_require__(96);
+var _polymerSoy = __webpack_require__(104);
 
-var _localSoy2 = _interopRequireDefault(_localSoy);
+var _polymerSoy2 = _interopRequireDefault(_polymerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10297,23 +10296,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var lZbPv = function (_Component) {
-  _inherits(lZbPv, _Component);
+var YDeyF = function (_Component) {
+  _inherits(YDeyF, _Component);
 
-  function lZbPv() {
-    _classCallCheck(this, lZbPv);
+  function YDeyF() {
+    _classCallCheck(this, YDeyF);
 
-    return _possibleConstructorReturn(this, (lZbPv.__proto__ || Object.getPrototypeOf(lZbPv)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (YDeyF.__proto__ || Object.getPrototypeOf(YDeyF)).apply(this, arguments));
   }
 
-  return lZbPv;
+  return YDeyF;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(lZbPv, _localSoy2.default);
+_metalSoy2.default.register(YDeyF, _polymerSoy2.default);
 
-exports.default = lZbPv;
+exports.default = YDeyF;
 
 /***/ })
-],[122]);
+],[129]);

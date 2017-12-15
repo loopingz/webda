@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([12],[
+webpackJsonppageComponent([13],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10114,18 +10114,12 @@ exports.default = parseFromAnchor;
 /* 92 */,
 /* 93 */,
 /* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MvtnF", function() { return MvtnF; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pFdlY", function() { return pFdlY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10141,11 +10135,11 @@ goog.loadModule(function(exports) {
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace MvtnF.
+ * @fileoverview Templates in namespace pFdlY.
  * @public
  */
 
-goog.module('MvtnF.incrementaldom');
+goog.module('pFdlY.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10166,6 +10160,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10177,105 +10173,75 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param558 = function() {
+  var param437 = function() {
     ie_open('h6');
-      var dyn38 = opt_data.page.description;
-      if (typeof dyn38 == 'function') dyn38(); else if (dyn38 != null) itext(dyn38);
+      var dyn32 = opt_data.page.description;
+      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Concepts');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('Webda introduces some basic concepts :');
+        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
+      ie_close('p');
+      ie_open('p');
+        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
+      ie_close('p');
+      ie_open('p');
+        itext('But don\'t worry, with Webda it is as simple as a command');
+      ie_close('p');
+      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
+      ie_open('p');
+        itext('This command will do several step for you :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          ie_open('em');
-            itext('Service');
-          ie_close('em');
-          itext(' a singleton similar to Spring Bean to implement behaviors');
+          itext('Create the policy and role for your Lambda');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('Executor');
-          ie_close('em');
-          itext(' is a service that provide some routes and expose API to the world');
+          itext('Create if needed the Dynamo table used in your application');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('Model');
-          ie_close('em');
-          itext(' to define your business logic');
+          itext('Create S3 buckets used in your application');
         ie_close('li');
         ie_open('li');
-          ie_open('em');
-            itext('Deployment');
-          ie_close('em');
-          itext(' an instance of the app with its own configuration');
+          itext('Deploy the code to your Lambda');
+        ie_close('li');
+        ie_open('li');
+          itext('Create the API Gateway mapping');
+        ie_close('li');
+        ie_open('li');
+          itext('Add permission for API Gateways to your Lambda');
         ie_close('li');
       ie_close('ul');
-      ie_open('p');
-        itext('The ');
-        ie_open('strong');
-          itext('webda.config.json');
-        ie_close('strong');
-        itext(' contains the configuration of the app, defining Services, Routes and global configuration, you can consider it as the applicationContext.xml of Spring if you prefer, with Beans=Services');
-      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Stores');
+        itext('Docker');
       ie_close('h2');
       ie_open('p');
-        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
+        itext('You can also just define a Docker image to build');
       ie_close('p');
       ie_open('p');
-        itext('We have currently File, DynamoDB and MongoDB storage');
+        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
       ie_close('p');
       ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/store');
-          itext('Learn More');
-        ie_close('a');
+        itext('If you specify a tag, after the build it will push the image to your repository');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Binaries');
+        itext('WeDeploy');
       ie_close('h2');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+        itext('This service run your Docker image and allow you to deploy with a single command');
       ie_close('p');
       ie_open('p');
-        itext('The storage detect duplicates and don\'t double store them, it also provides a Polymer component that will prevent upload of known binaries by using a challenge to speed up the upload.');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/binary');
-          itext('Learn More');
-        ie_close('a');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Models');
-      ie_close('h2');
-      ie_open('p');
-        itext('The stores use Models to load/save/validate/secure business object.');
-      ie_close('p');
-      ie_open('p');
-        itext('The models should implement most of your business logic, while service should be technical implementation');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/models');
-          itext('Learn More');
-        ie_close('a');
+        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10287,11 +10253,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param558}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param437}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'MvtnF.render';
+  $render.soyTemplateName = 'pFdlY.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10301,14 +10267,20 @@ return exports;
 
 });
 
-class MvtnF extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(MvtnF, templates);
+class pFdlY extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pFdlY, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
 /* 102 */,
 /* 103 */,
 /* 104 */,
@@ -10329,8 +10301,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(MvtnF, templates);
 /* 119 */,
 /* 120 */,
 /* 121 */,
-/* 122 */,
-/* 123 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10360,7 +10331,7 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(101);
+var _indexSoy = __webpack_require__(95);
 
 var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
@@ -10372,23 +10343,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var MvtnF = function (_Component) {
-  _inherits(MvtnF, _Component);
+var pFdlY = function (_Component) {
+  _inherits(pFdlY, _Component);
 
-  function MvtnF() {
-    _classCallCheck(this, MvtnF);
+  function pFdlY() {
+    _classCallCheck(this, pFdlY);
 
-    return _possibleConstructorReturn(this, (MvtnF.__proto__ || Object.getPrototypeOf(MvtnF)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (pFdlY.__proto__ || Object.getPrototypeOf(pFdlY)).apply(this, arguments));
   }
 
-  return MvtnF;
+  return pFdlY;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(MvtnF, _indexSoy2.default);
+_metalSoy2.default.register(pFdlY, _indexSoy2.default);
 
-exports.default = MvtnF;
+exports.default = pFdlY;
 
 /***/ })
-],[123]);
+],[122]);

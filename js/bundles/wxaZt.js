@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([14],[
+webpackJsonppageComponent([4],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10111,12 +10111,25 @@ exports.default = parseFromAnchor;
 /* 89 */,
 /* 90 */,
 /* 91 */,
-/* 92 */
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZGsos", function() { return ZGsos; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wxaZt", function() { return wxaZt; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10128,15 +10141,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from aws.soy.
+// This file was automatically generated from queues.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace ZGsos.
+ * @fileoverview Templates in namespace wxaZt.
  * @public
  */
 
-goog.module('ZGsos.incrementaldom');
+goog.module('wxaZt.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10157,8 +10170,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10170,64 +10181,32 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param349 = function() {
+  var param617 = function() {
+    ie_open('h6');
+      var dyn42 = opt_data.page.description;
+      if (typeof dyn42 == 'function') dyn42(); else if (dyn42 != null) itext(dyn42);
+    ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', 'http://webda.io/images/schemas/aws_deploy.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
+      ie_close('p');
+      ie_open('p');
+        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Deployment Policy');
+        itext('Worker');
       ie_close('h2');
       ie_open('p');
-        itext('To be able to deploy the deployment user must have at least :');
-      ie_close('p');
-      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This can be restrict more and should, need to update the documentation');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Package');
-      ie_close('h2');
-      ie_open('p');
-        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Lambda');
-      ie_close('h2');
-      ie_open('p');
-        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('API Gateway');
-      ie_close('h2');
-      ie_open('p');
-        itext('It map all the routes from your application, if a ');
-        ie_open('strong');
-          itext('website');
-        ie_close('strong');
-        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
-      ie_close('p');
-      ie_open('p');
-        itext('It also deploy the API as Stage named with the name of the deployment.');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10239,11 +10218,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param349}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param617}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'ZGsos.render';
+  $render.soyTemplateName = 'wxaZt.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10253,27 +10232,14 @@ return exports;
 
 });
 
-class ZGsos extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ZGsos, templates);
+class wxaZt extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(wxaZt, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
 /* 106 */,
 /* 107 */,
 /* 108 */,
@@ -10289,7 +10255,17 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ZGsos, templates);
 /* 118 */,
 /* 119 */,
 /* 120 */,
-/* 121 */
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10319,9 +10295,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _awsSoy = __webpack_require__(92);
+var _queuesSoy = __webpack_require__(105);
 
-var _awsSoy2 = _interopRequireDefault(_awsSoy);
+var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10331,23 +10307,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ZGsos = function (_Component) {
-  _inherits(ZGsos, _Component);
+var wxaZt = function (_Component) {
+  _inherits(wxaZt, _Component);
 
-  function ZGsos() {
-    _classCallCheck(this, ZGsos);
+  function wxaZt() {
+    _classCallCheck(this, wxaZt);
 
-    return _possibleConstructorReturn(this, (ZGsos.__proto__ || Object.getPrototypeOf(ZGsos)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (wxaZt.__proto__ || Object.getPrototypeOf(wxaZt)).apply(this, arguments));
   }
 
-  return ZGsos;
+  return wxaZt;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(ZGsos, _awsSoy2.default);
+_metalSoy2.default.register(wxaZt, _queuesSoy2.default);
 
-exports.default = ZGsos;
+exports.default = wxaZt;
 
 /***/ })
-],[121]);
+],[131]);

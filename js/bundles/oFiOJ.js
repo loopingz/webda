@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([21],[
+webpackJsonppageComponent([14],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10108,12 +10108,16 @@ exports.default = parseFromAnchor;
 /* 86 */,
 /* 87 */,
 /* 88 */,
-/* 89 */
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "eFglF", function() { return eFglF; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "oFiOJ", function() { return oFiOJ; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10125,15 +10129,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from configuration.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace eFglF.
+ * @fileoverview Templates in namespace oFiOJ.
  * @public
  */
 
-goog.module('eFglF.incrementaldom');
+goog.module('oFiOJ.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10167,64 +10171,88 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param246 = function() {
+  var $$temp;
+  var param363 = function() {
     ie_open('h6');
-      var dyn19 = opt_data.page.description;
-      if (typeof dyn19 == 'function') dyn19(); else if (dyn19 != null) itext(dyn19);
+      var dyn22 = opt_data.page.description;
+      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
+        itext('Overview');
       ie_close('h2');
-      $templateAlias2({code: 'var hello = function() {\n    console.log(\'Hello, World!\');\n};', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
       ie_close('p');
       ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
       ie_close('p');
       ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        itext('![image](');
+        var dyn23 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn23 == 'function') dyn23(); else if (dyn23 != null) itext(dyn23);
+        itext('/images/configuration_resolution.png)');
       ie_close('p');
       ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        itext('This is the detail configuration for each section');
       ie_close('p');
+      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
+      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
+      ie_open('p');
+        itext('So this how webda will resolve Service final configuration');
+      ie_close('p');
+      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
+        itext('Configuration UI');
       ie_close('h2');
       ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        itext('Here is some screenshots of the ui');
       ie_close('p');
+      ie_open('h4');
+        itext('Routes');
+      ie_close('h4');
       ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        itext('![image](');
+        var dyn24 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn24 == 'function') dyn24(); else if (dyn24 != null) itext(dyn24);
+        itext('/images/ui_route_create.png) ![image](');
+        var dyn25 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
+        itext('/images/ui_route_config.png)');
       ie_close('p');
+      ie_open('h4');
+        itext('Services');
+      ie_close('h4');
       ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        itext('![image](');
+        var dyn26 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn26 == 'function') dyn26(); else if (dyn26 != null) itext(dyn26);
+        itext('/images/ui_service_create.png) ![image](');
+        var dyn27 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn27 == 'function') dyn27(); else if (dyn27 != null) itext(dyn27);
+        itext('/images/ui_service_config.png)');
       ie_close('p');
+      ie_open('h4');
+        itext('Deployments');
+      ie_close('h4');
       ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-      ie_close('h2');
-      ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-      ie_close('p');
-      ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-      ie_close('p');
-      ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-      ie_close('p');
-      ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        itext('![image](');
+        var dyn28 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
+        itext('/images/ui_deployment_create.png) ![image](');
+        var dyn29 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn29 == 'function') dyn29(); else if (dyn29 != null) itext(dyn29);
+        itext('/images/ui_deployment_config.png) ![image](');
+        var dyn30 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn30 == 'function') dyn30(); else if (dyn30 != null) itext(dyn30);
+        itext('/images/ui_deployment_deploy.png)');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10236,11 +10264,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param246}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param363}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'eFglF.render';
+  $render.soyTemplateName = 'oFiOJ.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10250,18 +10278,14 @@ return exports;
 
 });
 
-class eFglF extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(eFglF, templates);
+class oFiOJ extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(oFiOJ, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
 /* 94 */,
 /* 95 */,
 /* 96 */,
@@ -10282,7 +10306,14 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(eFglF, templates);
 /* 111 */,
 /* 112 */,
 /* 113 */,
-/* 114 */
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10312,9 +10343,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(89);
+var _configurationSoy = __webpack_require__(93);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10324,23 +10355,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var eFglF = function (_Component) {
-  _inherits(eFglF, _Component);
+var oFiOJ = function (_Component) {
+  _inherits(oFiOJ, _Component);
 
-  function eFglF() {
-    _classCallCheck(this, eFglF);
+  function oFiOJ() {
+    _classCallCheck(this, oFiOJ);
 
-    return _possibleConstructorReturn(this, (eFglF.__proto__ || Object.getPrototypeOf(eFglF)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (oFiOJ.__proto__ || Object.getPrototypeOf(oFiOJ)).apply(this, arguments));
   }
 
-  return eFglF;
+  return oFiOJ;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(eFglF, _indexSoy2.default);
+_metalSoy2.default.register(oFiOJ, _configurationSoy2.default);
 
-exports.default = eFglF;
+exports.default = oFiOJ;
 
 /***/ })
-],[114]);
+],[121]);

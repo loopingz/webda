@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([9],[
+webpackJsonppageComponent([12],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10117,12 +10117,20 @@ exports.default = parseFromAnchor;
 /* 95 */,
 /* 96 */,
 /* 97 */,
-/* 98 */
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XgoaZ", function() { return XgoaZ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Bkmig", function() { return Bkmig; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10134,15 +10142,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from authentication.soy.
+// This file was automatically generated from store.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace XgoaZ.
+ * @fileoverview Templates in namespace Bkmig.
  * @public
  */
 
-goog.module('XgoaZ.incrementaldom');
+goog.module('Bkmig.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10176,10 +10184,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param480 = function() {
+  var param628 = function() {
     ie_open('h6');
-      var dyn35 = opt_data.page.description;
-      if (typeof dyn35 == 'function') dyn35(); else if (dyn35 != null) itext(dyn35);
+      var dyn43 = opt_data.page.description;
+      if (typeof dyn43 == 'function') dyn43(); else if (dyn43 != null) itext(dyn43);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10187,77 +10195,172 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('The Authentication service highly depends on ');
-        ie_open('a', null, null,
-            'href', 'http://passportjs.org/');
-          itext('PassportJS');
-        ie_close('a');
-        itext(' this is why its file is passport.js');
+        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
       ie_close('p');
       ie_open('p');
-        itext('It requires two stores : Idents and Users.');
+        itext('We have currently File, DynamoDB and MongoDB storage');
+      ie_close('p');
+      ie_open('h2');
+        itext('Expose REST API');
+      ie_close('h2');
+      ie_open('p');
+        itext('Inside the configuration you can add a block for expose the store as a REST API');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "expose": {\n     "url": "/storeurl", // By default the URL is the store name in lower case\n     "restrict": {\n       "update": true, // Prevent the creation of an object the PUT method wont be exposed\n       "delete": false // Allow delete for the object\n     }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The above configuration will end up creating the following routes:');
       ie_close('p');
       ie_open('p');
-        itext('The Idents will contains each mode of Authentication enabled by the user, you will find in the Ident also the profile returned by the OAuth provider if returned.');
+        itext('POST /storeurl GET /storeurl/[uuid] DELETE /storeurl/[uuid]');
       ie_close('p');
       ie_open('p');
-        itext('The Users will have one object per user, with the idents collection, it also contains the password if any is set.');
+        itext('You can see that by default, once the store exposed all the methods are available unless you restrict them.');
+      ie_close('p');
+      ie_open('h2');
+        itext('Configuring Mapping');
+      ie_close('h2');
+      ie_open('p');
+        itext('As an example we will use the Users / Idents stores used by the Authentication module.');
       ie_close('p');
       ie_open('p');
-        itext('Basic configuration');
+        itext('A User has several Idents so in NoSQL we need to deduplicate a part of the Ident object inside an array inside the User object');
       ie_close('p');
-      $templateAlias2({code: '"successRedirect": "https://shootandprove.loopingz.com/user.html", // Redirect to this page after login\n"failureRedirect": "/login-error", // Redirect to this page after failed login\n"userStore": "", // If you want to override the userStore name by default Users\n"identStore": "", // If you want to override the identStore name by default Idents\n"providers": {\n  ... // See below\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The following is the Idents store configuration');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "map": {\n     "Users": { // Target store\n        "key": "user", // Property inside Ident Object\n        "target": "idents", // Property on the User Object\n        "fields": "type", // Fields from the Ident Object ( uuid is added by default )\n        "cascade": true // If User object is delete then delete all the linked Idents\n     }\n  }', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('So if you have a user like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "user_01"\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Then you save a new Ident object like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "ident_01",\n  "user": "user_01",\n  "type": "Google"\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Once the Ident saved, the User object will look like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "user_01",\n  "idents": [{"uuid":"ident_01","type":"Google"}]\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Then if you update the field type on your Ident object the User object will reflect the change, as well as if you delete the ident object it will be removed from the User object.');
+      ie_close('p');
+      ie_open('p');
+        itext('If cascade = true, then if you delete the User object, all attached Idents will be delete aswell.');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Register event');
+        itext('Events');
       ie_close('h2');
       ie_open('p');
-        itext('When a user register, the Authentication service send a Register event, so you can complete the user with additional informations.');
-      ie_close('p');
-      $templateAlias2({code: '// Datas is the profile coming from the OAuth or the Register form\nthis.emit("Register", {"user": user, "datas": datas, "ctx": ctx});', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Email authentication');
-      ie_close('h2');
-      ie_open('p');
-        itext('To use this feature you need to have a configured Mailer service, you can define the service name by adding the field mailer inside the email configuration.');
+        itext('The Stores emit events to let you implement some auto completion of the object if needed or taking any others action even deny the action by throwing an exception');
       ie_close('p');
       ie_open('p');
-        itext('The email authentication has two modes, one that register the user without waiting for the email validation, and the other one that register the user only when the registration form contains the right validation token sent by email.');
+        itext('The store event looks like');
       ie_close('p');
-      $templateAlias2({code: '...\n"providers": {\n  "email": {\n     "from": "", // Email sender\n     "subject": "", // Email subject\n     "html": "", // HTML to send by email for email validation\n     "text": "", // Text to send by email for email validation\n     "mailer": "DefinedMailer", // Defined mailer to use\n     "postValidation": false, // If true, create user without email validation\n     "skipEmailValidation": true // Don\'t even send a validation email, must be set along with postValidation=true\n  },\n}\n...', mode: 'javascript'}, null, opt_ijData);
+      $templateAlias2({code: '{\n  \'object\': object,\n  \'store\': this\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('The email authentication expose POST /auth/email if the body contains register=true then it will perform registration, if not then only login returning 404 if unknown user, 403 for bad password, 204 for successful login GET /auth/callback');
+        itext('Store.Save: Before saving the object Store.Saved: After saving the object Store.Update: Before updating the object Store.Updated: After updating the object Store.Delete: Before deleting the object Store.Deleted: After deleting the object Store.Get: When getting the object');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '4');
       ie_open('h2');
-        itext('OAuth');
+        itext('Models');
       ie_close('h2');
       ie_open('p');
-        itext('You can setup differents types of OAuth, we integrate for now only Facebook, Amazon, Twitter, GitHub, Google.');
+        itext('The store is using a Model to map your object.');
       ie_close('p');
-      $templateAlias2({code: '{\n  ...\n  providers: {\n    facebook: {\n      clientID: "facebookClientId",\n      clientSecret: "facebookSecret",\n      scope: ["email","public_profile"]\n    }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('This is the same for the other providers, except ');
-        ie_open('strong');
-          itext('Twitter');
-        ie_close('strong');
-        itext(' where the fields are OAuth1 : consumerKey and consumerSecret');
+        itext('It allows you to implement security constraint on the object itself, add some custom actions and validation');
+      ie_close('p');
+      ie_open('h3');
+        itext('Custom actions');
+      ie_close('h3');
+      ie_open('p');
+        itext('As we saw before the store will expose your objects via an URL');
+      ie_close('p');
+      ie_open('p');
+        itext('You can also add any specific behavior while saving / updating / deleting');
+      ie_close('p');
+      $templateAlias2({code: 'class MyModel extends CoreModel {\n  canAct(context, action) {\n    if (action === \'get\') {\n      return true;\n    } else if (action === \'update\') {\n      return true;\n    } else if (action === \'delete\') {\n      return true;\n    } else if (action === \'create\') {\n      return true;\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('If not specified the Store will pick the Owner policy as default. Policies are implicit service, so you can get them with a getService("OwnerPolicy"), but don\'t appear by default in the configuration file. That also means you can override a Policy if you want or create your own to implement your business model');
+      ie_close('p');
+      ie_open('h3');
+        itext('Owner Policy');
+      ie_close('h3');
+      ie_open('p');
+        itext('POST: Add the current user in the user field of the object PUT: Verify the current user is the user inside the user field GET: Verify the current user is the user inside the user field, or a public=true field exists on the object DELETE: Verify the current user is the user inside the user field');
+      ie_close('p');
+      ie_open('h3');
+        itext('Void policy');
+      ie_close('h3');
+      ie_open('p');
+        itext('No verification, not recommended at all');
+      ie_close('p');
+      ie_open('h2');
+        itext('Validation');
+      ie_close('h2');
+      ie_open('p');
+        itext('To ensure that the input is correct, you can setup a JSON schema this way any update or creation will verify that the object is correct.');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "validator": "schema"\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('All the input of POST or PUT will then be validate against it.');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '5');
       ie_open('h2');
+        itext('DynamoDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The DynamoDB stores requires at least accessKeyId, secretAccessKey and table');
+      ie_close('p');
+      ie_open('p');
+        itext('For more information on DynamoDB : ');
+        ie_open('a', null, null,
+            'href', 'https://aws.amazon.com/dynamodb/');
+          itext('AWS DynamoDB');
+        ie_close('a');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '6');
+      ie_open('h2');
+        itext('MongoDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The MongoDB configuration requires a collection and a mongo parameter where mongo is the MongoDB url');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '7');
+      ie_open('h2');
+        itext('FileDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The FileDB only requires a folder where to store the datas. It creates it if not exists');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '7');
+      ie_open('h2');
+        itext('MemoryDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The MemoryDB only store the in a Map, so it will loose all the datas if you shutdown the server. It can be usefull for local cache or for some unit test');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '8');
+      ie_open('h2');
         itext('Polymer');
       ie_close('h2');
       ie_open('p');
-        itext('You have a Polymer behavior that implement the Authentication : ...');
+        itext('You have a behavior defined for you, once added to your component you have the model property and a save/get/update/delete method for you to communicate with the API');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10269,11 +10372,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param480}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param628}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'XgoaZ.render';
+  $render.soyTemplateName = 'Bkmig.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10283,22 +10386,14 @@ return exports;
 
 });
 
-class XgoaZ extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(XgoaZ, templates);
+class Bkmig extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Bkmig, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
 /* 107 */,
 /* 108 */,
 /* 109 */,
@@ -10315,10 +10410,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(XgoaZ, templates);
 /* 120 */,
 /* 121 */,
 /* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10348,9 +10440,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _authenticationSoy = __webpack_require__(98);
+var _storeSoy = __webpack_require__(106);
 
-var _authenticationSoy2 = _interopRequireDefault(_authenticationSoy);
+var _storeSoy2 = _interopRequireDefault(_storeSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10360,23 +10452,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var XgoaZ = function (_Component) {
-  _inherits(XgoaZ, _Component);
+var Bkmig = function (_Component) {
+  _inherits(Bkmig, _Component);
 
-  function XgoaZ() {
-    _classCallCheck(this, XgoaZ);
+  function Bkmig() {
+    _classCallCheck(this, Bkmig);
 
-    return _possibleConstructorReturn(this, (XgoaZ.__proto__ || Object.getPrototypeOf(XgoaZ)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Bkmig.__proto__ || Object.getPrototypeOf(Bkmig)).apply(this, arguments));
   }
 
-  return XgoaZ;
+  return Bkmig;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(XgoaZ, _authenticationSoy2.default);
+_metalSoy2.default.register(Bkmig, _storeSoy2.default);
 
-exports.default = XgoaZ;
+exports.default = Bkmig;
 
 /***/ })
-],[126]);
+],[123]);
