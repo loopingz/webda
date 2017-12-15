@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([23],[
+webpackJsonppageComponent([24],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10105,12 +10105,14 @@ exports.default = parseFromAnchor;
 /* 83 */,
 /* 84 */,
 /* 85 */,
-/* 86 */
+/* 86 */,
+/* 87 */,
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "kTDbA", function() { return kTDbA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HiRdI", function() { return HiRdI; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10122,15 +10124,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from first-release.soy.
+// This file was automatically generated from new-website.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace kTDbA.
+ * @fileoverview Templates in namespace HiRdI.
  * @public
  */
 
-goog.module('kTDbA.incrementaldom');
+goog.module('HiRdI.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10162,124 +10164,82 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param162 = function() {
+  var param177 = function() {
     ie_open('article');
       ie_open('p');
-        itext('With the revolution of cloud we got very used to IaaS. Whenever we want a server, we just call an API and here we are with a brand new server ready within ');
-        ie_open('em');
-          itext('minutes');
-        ie_close('em');
-        itext('!');
+        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
       ie_close('p');
       ie_open('p');
-        itext('But ');
-        ie_open('em');
-          itext('minutes');
-        ie_close('em');
-        itext(' were way too long for us! So, then came ');
+        itext('Thanks to ');
         ie_open('a', null, null,
-            'href', 'https://www.docker.com',
-            'target', '_blank');
-          itext('Docker');
+            'href', 'https://electricjs.com/');
+          itext('Electric JS');
         ie_close('a');
-        itext(', which made it possible to have all our environments loaded within ');
-        ie_open('em');
-          itext('seconds');
-        ie_close('em');
-        itext('.');
+        itext(', we were able to create a whole new website way faster with those cool UI effects.');
       ie_close('p');
       ie_open('p');
-        itext('Of course, for all this you still needed a server to run on. Two years ago, AWS came up with ');
-        ie_open('a', null, null,
-            'href', 'https://aws.amazon.com/lambda/',
-            'target', '_blank');
-          itext('Lambda');
-        ie_close('a');
-        itext(', where all we have to do is store the function and trigger it either by other AWS services events or by an HTTP request.');
-      ie_close('p');
-      ie_open('p');
-        itext('Now, let\u2019s take the example of running lots of small services, which are called only a few thousand times per month, but as we cannot predict the time when they\'ll be used, they are just sitting there the rest of the time. Without Lambda, we will need more than one Docker container to run these services with failover. So the idea of having the failover and scaling without having to take care of any containers or servers was a no-brainer for me.');
-      ie_close('p');
-      ie_open('h2');
-        itext('Lambda');
-      ie_close('h2');
-      ie_open('p');
-        itext('When you use Lambda and want to expose through HTTP, you discover that you can use the API Gateway of AWS. It is a nice technology but kind of complex to configure. When something goes wrong in your code, you cannot debug it as easily as when it was hosted on your machine.');
-      ie_close('p');
-      ie_open('p');
-        itext('So, this is where the idea of ');
+        itext('The same day we are releasing the new website, we also have a fix release ');
         ie_open('strong');
-          itext('Webda');
+          itext('v0.4.6');
         ie_close('strong');
-        itext(' comes in!');
       ie_close('p');
-      ie_open('h2');
-        itext('The Goal');
-      ie_close('h2');
       ie_open('p');
-        itext('The goal of Webda is to ');
+        itext('This release includes :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('DynamoDB incrementAttribute with 0 fix');
+        ie_close('li');
+        ie_open('li');
+          itext('Email storage in lower case');
+        ie_close('li');
+      ie_close('ul');
+      ie_open('p');
+        itext('In the next weeks, as Christmas gift we will work hard on a ');
         ie_open('strong');
-          itext('have a framework that allows you to code locally and test it using a Node.JS and then deploy it automatically either to Lambda with API Gateway or by creating a Docker image with it including a NodeJS server');
+          itext('v0.5.0');
         ie_close('strong');
-        itext('.');
+        itext(' it should includes :');
       ie_close('p');
-      ie_open('p');
-        itext('This way ');
-        ie_open('strong');
-          itext('you can easily debug locally and then deploy to your AWS environment in a second');
-        ie_close('strong');
-        itext('.');
-      ie_close('p');
-      ie_open('p');
-        itext('Let\u2019s take a look at how to get started and create a new project : checkout our ');
-        ie_open('a', null, null,
-            'href', '/docs/create/');
-          itext('Quickstart Guide');
-        ie_close('a');
-      ie_close('p');
-      ie_open('h2');
-        itext('Resources');
-      ie_close('h2');
-      ie_open('p');
-        itext('Here are some more resources to help you:');
-      ie_close('p');
-      ie_open('p');
-        ie_open('strong');
-          itext('Website:');
-        ie_close('strong');
-        itext(' ');
-        ie_open('a', null, null,
-            'href', 'http://webda.io',
-            'target', '_blank');
-          itext('webda.io');
-        ie_close('a');
-        ie_open('br/');
-          ie_open('strong');
-            itext('Channel:');
-          ie_close('strong');
-          itext(' ');
+      ie_open('ul');
+        ie_open('li');
+          itext('Better ');
           ie_open('a', null, null,
-              'href', 'https://www.youtube.com/playlist?list=PLfn1MAL4_e7ERdqj9rWlmEkK5gMkL4bKI',
-              'target', '_blank');
-            itext('Youtube');
+              'href', 'https://wedeploy.com/');
+            itext('WeDeploy');
           ie_close('a');
-        ie_close('p');
-      ie_close('article');
-      ie_open('input', null, null,
-          'type', 'hidden',
-          'value', opt_data.page.title);
-      ie_close('input');
-      ie_open('input', null, null,
-          'type', 'hidden',
-          'value', opt_data.site.title);
-      ie_close('input');
-    };
-    $templateAlias1(soy.$$assignDefaults({content: param162}, opt_data), null, opt_ijData);
-  }
-  exports.render = $render;
-  if (goog.DEBUG) {
-    $render.soyTemplateName = 'kTDbA.render';
-  }
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Easier queue worker deployment');
+        ie_close('li');
+        ie_open('li');
+          ie_open('a', null, null,
+              'href', 'https://aws.amazon.com/fargate/');
+            itext('AWS Fargate');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Static website deployment integration');
+        ie_close('li');
+      ie_close('ul');
+    ie_close('article');
+    ie_open('input', null, null,
+        'type', 'hidden',
+        'value', opt_data.page.title);
+    ie_close('input');
+    ie_open('input', null, null,
+        'type', 'hidden',
+        'value', opt_data.site.title);
+    ie_close('input');
+  };
+  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
+}
+exports.render = $render;
+if (goog.DEBUG) {
+  $render.soyTemplateName = 'HiRdI.render';
+}
 
 exports.render.params = ["page","site"];
 exports.render.types = {"page":"any","site":"any"};
@@ -10288,16 +10248,14 @@ return exports;
 
 });
 
-class kTDbA extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(kTDbA, templates);
+class HiRdI extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(HiRdI, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 87 */,
-/* 88 */,
 /* 89 */,
 /* 90 */,
 /* 91 */,
@@ -10320,8 +10278,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(kTDbA, templates);
 /* 108 */,
 /* 109 */,
 /* 110 */,
-/* 111 */,
-/* 112 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10351,9 +10308,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _firstReleaseSoy = __webpack_require__(86);
+var _newWebsiteSoy = __webpack_require__(88);
 
-var _firstReleaseSoy2 = _interopRequireDefault(_firstReleaseSoy);
+var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10363,23 +10320,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var kTDbA = function (_Component) {
-  _inherits(kTDbA, _Component);
+var HiRdI = function (_Component) {
+  _inherits(HiRdI, _Component);
 
-  function kTDbA() {
-    _classCallCheck(this, kTDbA);
+  function HiRdI() {
+    _classCallCheck(this, HiRdI);
 
-    return _possibleConstructorReturn(this, (kTDbA.__proto__ || Object.getPrototypeOf(kTDbA)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (HiRdI.__proto__ || Object.getPrototypeOf(HiRdI)).apply(this, arguments));
   }
 
-  return kTDbA;
+  return HiRdI;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(kTDbA, _firstReleaseSoy2.default);
+_metalSoy2.default.register(HiRdI, _newWebsiteSoy2.default);
 
-exports.default = kTDbA;
+exports.default = HiRdI;
 
 /***/ })
-],[112]);
+],[111]);

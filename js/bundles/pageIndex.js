@@ -10572,7 +10572,7 @@ function $footer(opt_data, opt_ignored, opt_ijData) {
           'class', 'row');
         ie_open('p', null, null,
             'class', 'footer-description col-md-6 col-md-offset-2');
-          itext('Copyright ? 2017 ');
+          itext('Copyright @ 2017 ');
           ie_open('a', null, null,
               'href', 'https://webda.io');
             itext('Webda');

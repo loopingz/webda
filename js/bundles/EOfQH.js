@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([18],[
+webpackJsonppageComponent([12],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10115,12 +10115,21 @@ exports.default = parseFromAnchor;
 /* 93 */,
 /* 94 */,
 /* 95 */,
-/* 96 */
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FLJbY", function() { return FLJbY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EOfQH", function() { return EOfQH; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10132,15 +10141,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from local.soy.
+// This file was automatically generated from queues.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace FLJbY.
+ * @fileoverview Templates in namespace EOfQH.
  * @public
  */
 
-goog.module('FLJbY.incrementaldom');
+goog.module('EOfQH.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10161,8 +10170,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10174,28 +10181,31 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param453 = function() {
+  var param617 = function() {
     ie_open('h6');
-      var dyn33 = opt_data.page.description;
-      if (typeof dyn33 == 'function') dyn33(); else if (dyn33 != null) itext(dyn33);
+      var dyn42 = opt_data.page.description;
+      if (typeof dyn42 == 'function') dyn42(); else if (dyn42 != null) itext(dyn42);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
-      $templateAlias2({code: 'webda serve [-d deploymentName] [--devMode]', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('You can specify a ');
-        ie_open('em');
-          itext('deploymentName');
-        ie_close('em');
-        itext(' to serve API with the deployment configuration');
+        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
       ie_close('p');
       ie_open('p');
-        itext('You can disable CORS by adding a ');
+        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Worker');
+      ie_close('h2');
+      ie_open('p');
         ie_open('em');
-          itext('--devMode');
+          itext('to be completed');
         ie_close('em');
       ie_close('p');
     ie_close('article');
@@ -10208,11 +10218,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param453}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param617}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'FLJbY.render';
+  $render.soyTemplateName = 'EOfQH.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10222,23 +10232,14 @@ return exports;
 
 });
 
-class FLJbY extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(FLJbY, templates);
+class EOfQH extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(EOfQH, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
 /* 106 */,
 /* 107 */,
 /* 108 */,
@@ -10250,7 +10251,13 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(FLJbY, templates);
 /* 114 */,
 /* 115 */,
 /* 116 */,
-/* 117 */
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10280,9 +10287,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _localSoy = __webpack_require__(96);
+var _queuesSoy = __webpack_require__(105);
 
-var _localSoy2 = _interopRequireDefault(_localSoy);
+var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10292,23 +10299,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FLJbY = function (_Component) {
-  _inherits(FLJbY, _Component);
+var EOfQH = function (_Component) {
+  _inherits(EOfQH, _Component);
 
-  function FLJbY() {
-    _classCallCheck(this, FLJbY);
+  function EOfQH() {
+    _classCallCheck(this, EOfQH);
 
-    return _possibleConstructorReturn(this, (FLJbY.__proto__ || Object.getPrototypeOf(FLJbY)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (EOfQH.__proto__ || Object.getPrototypeOf(EOfQH)).apply(this, arguments));
   }
 
-  return FLJbY;
+  return EOfQH;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(FLJbY, _localSoy2.default);
+_metalSoy2.default.register(EOfQH, _queuesSoy2.default);
 
-exports.default = FLJbY;
+exports.default = EOfQH;
 
 /***/ })
-],[117]);
+],[123]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([16],[
+webpackJsonppageComponent([11],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10116,12 +10116,18 @@ exports.default = parseFromAnchor;
 /* 94 */,
 /* 95 */,
 /* 96 */,
-/* 97 */
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aOosB", function() { return aOosB; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LsXBh", function() { return LsXBh; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10133,15 +10139,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from wedeploy.soy.
+// This file was automatically generated from models.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace aOosB.
+ * @fileoverview Templates in namespace LsXBh.
  * @public
  */
 
-goog.module('aOosB.incrementaldom');
+goog.module('LsXBh.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10162,6 +10168,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10173,10 +10181,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param469 = function() {
+  var param580 = function() {
     ie_open('h6');
-      var dyn34 = opt_data.page.description;
-      if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
+      var dyn40 = opt_data.page.description;
+      if (typeof dyn40 == 'function') dyn40(); else if (dyn40 != null) itext(dyn40);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10184,20 +10192,48 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        ie_open('a', null, null,
-            'href', 'http://wedeploy.io');
-          itext('WeDeploy');
-        ie_close('a');
-        itext(' allows you to run your own Docker container without having to care about scalability or reverse proxy or monitoring');
+        itext('Model is the best way to express your business logic.');
       ie_close('p');
       ie_open('p');
-        itext('As Webda allows you to deploy on Docker, we just extend the deployer to automate the call to your wedeploy shell');
+        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
       ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Security');
+      ie_close('h2');
       ie_open('p');
+        itext('The model has a predefined method ');
         ie_open('em');
-          itext('to be completed');
+          itext('canAct');
         ie_close('em');
+        itext(' that will be called whenever an action is trigger on an object from an external source');
       ie_close('p');
+      ie_open('p');
+        itext('This method return a Promise that will stop the processing if it is rejected');
+      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Custom Actions');
+      ie_close('h2');
+      ie_open('p');
+        itext('The model can defined action that will be exposed by its Store');
+      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Store Events');
+      ie_close('h2');
+      ie_open('p');
+        itext('The model can defined behavior on store event without defining a listener The _onAction and _onActioned are not defined as the action by itself is already inside the object');
+      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n    _onSave() {\n      // Will be called beforeSave\n    }\n    _onSave() {\n      // Will be called afterSave\n    }\n    _onUpdate() {\n      // Will be called beforeUpdate\n    }\n    _onUpdated() {\n      // Will be called afterUpdate\n    }\n    _onDelete() {\n      // Will be called afterDelete\n    }\n    _onDeleted() {\n      // Will be called afterDelete\n    }\n    _onGet() {\n      // Will be called when an object is retrieved\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10208,11 +10244,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param469}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param580}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'aOosB.render';
+  $render.soyTemplateName = 'LsXBh.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10222,20 +10258,14 @@ return exports;
 
 });
 
-class aOosB extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(aOosB, templates);
+class LsXBh extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(LsXBh, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
 /* 104 */,
 /* 105 */,
 /* 106 */,
@@ -10251,7 +10281,12 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(aOosB, templates);
 /* 116 */,
 /* 117 */,
 /* 118 */,
-/* 119 */
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10281,9 +10316,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _wedeploySoy = __webpack_require__(97);
+var _modelsSoy = __webpack_require__(103);
 
-var _wedeploySoy2 = _interopRequireDefault(_wedeploySoy);
+var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10293,23 +10328,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var aOosB = function (_Component) {
-  _inherits(aOosB, _Component);
+var LsXBh = function (_Component) {
+  _inherits(LsXBh, _Component);
 
-  function aOosB() {
-    _classCallCheck(this, aOosB);
+  function LsXBh() {
+    _classCallCheck(this, LsXBh);
 
-    return _possibleConstructorReturn(this, (aOosB.__proto__ || Object.getPrototypeOf(aOosB)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (LsXBh.__proto__ || Object.getPrototypeOf(LsXBh)).apply(this, arguments));
   }
 
-  return aOosB;
+  return LsXBh;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(aOosB, _wedeploySoy2.default);
+_metalSoy2.default.register(LsXBh, _modelsSoy2.default);
 
-exports.default = aOosB;
+exports.default = LsXBh;
 
 /***/ })
-],[119]);
+],[124]);
