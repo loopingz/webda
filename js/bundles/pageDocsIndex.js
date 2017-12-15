@@ -2667,21 +2667,22 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $logo(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('div', null, null,
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', opt_data.site.basePath + '/');
+        'href', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', opt_data.site.basePath + '/images/webda.svg');
+            'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn11 = opt_data.site.title;
+        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10361,40 +10362,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageDocsIndex, templa
 /* 129 */,
 /* 130 */,
 /* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10455,4 +10423,4 @@ _metalSoy2.default.register(pageDocsIndex, _indexSoy2.default);
 exports.default = pageDocsIndex;
 
 /***/ })
-],[165]);
+],[132]);

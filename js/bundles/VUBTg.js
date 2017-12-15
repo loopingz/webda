@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([12],[
+webpackJsonppageComponent([24],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2667,21 +2667,22 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $logo(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('div', null, null,
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', opt_data.site.basePath + '/');
+        'href', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', opt_data.site.basePath + '/images/webda.svg');
+            'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn11 = opt_data.site.title;
+        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10104,24 +10105,12 @@ exports.default = parseFromAnchor;
 /* 83 */,
 /* 84 */,
 /* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HpqvR", function() { return HpqvR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VUBTg", function() { return VUBTg; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10133,15 +10122,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from authentication.soy.
+// This file was automatically generated from first-release.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace HpqvR.
+ * @fileoverview Templates in namespace VUBTg.
  * @public
  */
 
-goog.module('HpqvR.incrementaldom');
+goog.module('VUBTg.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10162,9 +10151,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -10175,105 +10162,124 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param480 = function() {
-    ie_open('h6');
-      var dyn27 = opt_data.page.description;
-      if (typeof dyn27 == 'function') dyn27(); else if (dyn27 != null) itext(dyn27);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
-      ie_open('h2');
-        itext('Overview');
-      ie_close('h2');
+  var param162 = function() {
+    ie_open('article');
       ie_open('p');
-        itext('The Authentication service highly depends on ');
+        itext('With the revolution of cloud we got very used to IaaS. Whenever we want a server, we just call an API and here we are with a brand new server ready within ');
+        ie_open('em');
+          itext('minutes');
+        ie_close('em');
+        itext('!');
+      ie_close('p');
+      ie_open('p');
+        itext('But ');
+        ie_open('em');
+          itext('minutes');
+        ie_close('em');
+        itext(' were way too long for us! So, then came ');
         ie_open('a', null, null,
-            'href', 'http://passportjs.org/');
-          itext('PassportJS');
+            'href', 'https://www.docker.com',
+            'target', '_blank');
+          itext('Docker');
         ie_close('a');
-        itext(' this is why its file is passport.js');
+        itext(', which made it possible to have all our environments loaded within ');
+        ie_open('em');
+          itext('seconds');
+        ie_close('em');
+        itext('.');
       ie_close('p');
       ie_open('p');
-        itext('It requires two stores : Idents and Users.');
+        itext('Of course, for all this you still needed a server to run on. Two years ago, AWS came up with ');
+        ie_open('a', null, null,
+            'href', 'https://aws.amazon.com/lambda/',
+            'target', '_blank');
+          itext('Lambda');
+        ie_close('a');
+        itext(', where all we have to do is store the function and trigger it either by other AWS services events or by an HTTP request.');
       ie_close('p');
       ie_open('p');
-        itext('The Idents will contains each mode of Authentication enabled by the user, you will find in the Ident also the profile returned by the OAuth provider if returned.');
+        itext('Now, let\u2019s take the example of running lots of small services, which are called only a few thousand times per month, but as we cannot predict the time when they\'ll be used, they are just sitting there the rest of the time. Without Lambda, we will need more than one Docker container to run these services with failover. So the idea of having the failover and scaling without having to take care of any containers or servers was a no-brainer for me.');
       ie_close('p');
-      ie_open('p');
-        itext('The Users will have one object per user, with the idents collection, it also contains the password if any is set.');
-      ie_close('p');
-      ie_open('p');
-        itext('Basic configuration');
-      ie_close('p');
-      $templateAlias2({code: '"successRedirect": "https://shootandprove.loopingz.com/user.html", // Redirect to this page after login\n"failureRedirect": "/login-error", // Redirect to this page after failed login\n"userStore": "", // If you want to override the userStore name by default Users\n"identStore": "", // If you want to override the identStore name by default Idents\n"providers": {\n  ... // See below\n}', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
       ie_open('h2');
-        itext('Register event');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('When a user register, the Authentication service send a Register event, so you can complete the user with additional informations.');
-      ie_close('p');
-      $templateAlias2({code: '// Datas is the profile coming from the OAuth or the Register form\nthis.emit("Register", {"user": user, "datas": datas, "ctx": ctx});', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Email authentication');
-      ie_close('h2');
-      ie_open('p');
-        itext('To use this feature you need to have a configured Mailer service, you can define the service name by adding the field mailer inside the email configuration.');
+        itext('When you use Lambda and want to expose through HTTP, you discover that you can use the API Gateway of AWS. It is a nice technology but kind of complex to configure. When something goes wrong in your code, you cannot debug it as easily as when it was hosted on your machine.');
       ie_close('p');
       ie_open('p');
-        itext('The email authentication has two modes, one that register the user without waiting for the email validation, and the other one that register the user only when the registration form contains the right validation token sent by email.');
-      ie_close('p');
-      $templateAlias2({code: '...\n"providers": {\n  "email": {\n     "from": "", // Email sender\n     "subject": "", // Email subject\n     "html": "", // HTML to send by email for email validation\n     "text": "", // Text to send by email for email validation\n     "mailer": "DefinedMailer", // Defined mailer to use\n     "postValidation": false, // If true, create user without email validation\n     "skipEmailValidation": true // Don\'t even send a validation email, must be set along with postValidation=true\n  },\n}\n...', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The email authentication expose POST /auth/email if the body contains register=true then it will perform registration, if not then only login returning 404 if unknown user, 403 for bad password, 204 for successful login GET /auth/callback');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('OAuth');
-      ie_close('h2');
-      ie_open('p');
-        itext('You can setup differents types of OAuth, we integrate for now only Facebook, Amazon, Twitter, GitHub, Google.');
-      ie_close('p');
-      $templateAlias2({code: '{\n  ...\n  providers: {\n    facebook: {\n      clientID: "facebookClientId",\n      clientSecret: "facebookSecret",\n      scope: ["email","public_profile"]\n    }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This is the same for the other providers, except ');
+        itext('So, this is where the idea of ');
         ie_open('strong');
-          itext('Twitter');
+          itext('Webda');
         ie_close('strong');
-        itext(' where the fields are OAuth1 : consumerKey and consumerSecret');
+        itext(' comes in!');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
       ie_open('h2');
-        itext('Polymer');
+        itext('The Goal');
       ie_close('h2');
       ie_open('p');
-        itext('You have a Polymer behavior that implement the Authentication : ...');
+        itext('The goal of Webda is to ');
+        ie_open('strong');
+          itext('have a framework that allows you to code locally and test it using a Node.JS and then deploy it automatically either to Lambda with API Gateway or by creating a Docker image with it including a NodeJS server');
+        ie_close('strong');
+        itext('.');
       ie_close('p');
-    ie_close('article');
-    ie_open('input', null, null,
-        'type', 'hidden',
-        'value', opt_data.page.title);
-    ie_close('input');
-    ie_open('input', null, null,
-        'type', 'hidden',
-        'value', opt_data.site.title);
-    ie_close('input');
-  };
-  $templateAlias1(soy.$$assignDefaults({content: param480}, opt_data), null, opt_ijData);
-}
-exports.render = $render;
-if (goog.DEBUG) {
-  $render.soyTemplateName = 'HpqvR.render';
-}
+      ie_open('p');
+        itext('This way ');
+        ie_open('strong');
+          itext('you can easily debug locally and then deploy to your AWS environment in a second');
+        ie_close('strong');
+        itext('.');
+      ie_close('p');
+      ie_open('p');
+        itext('Let\u2019s take a look at how to get started and create a new project : checkout our ');
+        ie_open('a', null, null,
+            'href', '/docs/create/');
+          itext('Quickstart Guide');
+        ie_close('a');
+      ie_close('p');
+      ie_open('h2');
+        itext('Resources');
+      ie_close('h2');
+      ie_open('p');
+        itext('Here are some more resources to help you:');
+      ie_close('p');
+      ie_open('p');
+        ie_open('strong');
+          itext('Website:');
+        ie_close('strong');
+        itext(' ');
+        ie_open('a', null, null,
+            'href', 'http://webda.io',
+            'target', '_blank');
+          itext('webda.io');
+        ie_close('a');
+        ie_open('br/');
+          ie_open('strong');
+            itext('Channel:');
+          ie_close('strong');
+          itext(' ');
+          ie_open('a', null, null,
+              'href', 'https://www.youtube.com/playlist?list=PLfn1MAL4_e7ERdqj9rWlmEkK5gMkL4bKI',
+              'target', '_blank');
+            itext('Youtube');
+          ie_close('a');
+        ie_close('p');
+      ie_close('article');
+      ie_open('input', null, null,
+          'type', 'hidden',
+          'value', opt_data.page.title);
+      ie_close('input');
+      ie_open('input', null, null,
+          'type', 'hidden',
+          'value', opt_data.site.title);
+      ie_close('input');
+    };
+    $templateAlias1(soy.$$assignDefaults({content: param162}, opt_data), null, opt_ijData);
+  }
+  exports.render = $render;
+  if (goog.DEBUG) {
+    $render.soyTemplateName = 'VUBTg.render';
+  }
 
 exports.render.params = ["page","site"];
 exports.render.types = {"page":"any","site":"any"};
@@ -10282,14 +10288,26 @@ return exports;
 
 });
 
-class HpqvR extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(HpqvR, templates);
+class VUBTg extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(VUBTg, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
 /* 99 */,
 /* 100 */,
 /* 101 */,
@@ -10302,54 +10320,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(HpqvR, templates);
 /* 108 */,
 /* 109 */,
 /* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10379,9 +10350,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _authenticationSoy = __webpack_require__(98);
+var _firstReleaseSoy = __webpack_require__(86);
 
-var _authenticationSoy2 = _interopRequireDefault(_authenticationSoy);
+var _firstReleaseSoy2 = _interopRequireDefault(_firstReleaseSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10391,23 +10362,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var HpqvR = function (_Component) {
-  _inherits(HpqvR, _Component);
+var VUBTg = function (_Component) {
+  _inherits(VUBTg, _Component);
 
-  function HpqvR() {
-    _classCallCheck(this, HpqvR);
+  function VUBTg() {
+    _classCallCheck(this, VUBTg);
 
-    return _possibleConstructorReturn(this, (HpqvR.__proto__ || Object.getPrototypeOf(HpqvR)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (VUBTg.__proto__ || Object.getPrototypeOf(VUBTg)).apply(this, arguments));
   }
 
-  return HpqvR;
+  return VUBTg;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(HpqvR, _authenticationSoy2.default);
+_metalSoy2.default.register(VUBTg, _firstReleaseSoy2.default);
 
-exports.default = HpqvR;
+exports.default = VUBTg;
 
 /***/ })
-],[158]);
+],[111]);

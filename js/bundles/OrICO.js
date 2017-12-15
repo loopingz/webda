@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([9],[
+webpackJsonppageComponent([10],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2667,21 +2667,22 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $logo(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('div', null, null,
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', opt_data.site.basePath + '/');
+        'href', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', opt_data.site.basePath + '/images/webda.svg');
+            'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn11 = opt_data.site.title;
+        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10124,7 +10125,7 @@ exports.default = parseFromAnchor;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ccpfR", function() { return ccpfR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrICO", function() { return OrICO; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10140,11 +10141,11 @@ goog.loadModule(function(exports) {
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace ccpfR.
+ * @fileoverview Templates in namespace OrICO.
  * @public
  */
 
-goog.module('ccpfR.incrementaldom');
+goog.module('OrICO.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10176,10 +10177,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param558 = function() {
+  var param542 = function() {
     ie_open('h6');
-      var dyn30 = opt_data.page.description;
-      if (typeof dyn30 == 'function') dyn30(); else if (dyn30 != null) itext(dyn30);
+      var dyn37 = opt_data.page.description;
+      if (typeof dyn37 == 'function') dyn37(); else if (dyn37 != null) itext(dyn37);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10286,11 +10287,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param558}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param542}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'ccpfR.render';
+  $render.soyTemplateName = 'OrICO.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10300,8 +10301,8 @@ return exports;
 
 });
 
-class ccpfR extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ccpfR, templates);
+class OrICO extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(OrICO, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
@@ -10331,44 +10332,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ccpfR, templates);
 /* 122 */,
 /* 123 */,
 /* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10410,23 +10374,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ccpfR = function (_Component) {
-  _inherits(ccpfR, _Component);
+var OrICO = function (_Component) {
+  _inherits(OrICO, _Component);
 
-  function ccpfR() {
-    _classCallCheck(this, ccpfR);
+  function OrICO() {
+    _classCallCheck(this, OrICO);
 
-    return _possibleConstructorReturn(this, (ccpfR.__proto__ || Object.getPrototypeOf(ccpfR)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (OrICO.__proto__ || Object.getPrototypeOf(OrICO)).apply(this, arguments));
   }
 
-  return ccpfR;
+  return OrICO;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(ccpfR, _indexSoy2.default);
+_metalSoy2.default.register(OrICO, _indexSoy2.default);
 
-exports.default = ccpfR;
+exports.default = OrICO;
 
 /***/ })
-],[162]);
+],[125]);

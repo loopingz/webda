@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([6],[
+webpackJsonppageComponent([8],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2667,21 +2667,22 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $logo(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('div', null, null,
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', opt_data.site.basePath + '/');
+        'href', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', opt_data.site.basePath + '/images/webda.svg');
+            'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn11 = opt_data.site.title;
+        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10117,17 +10118,12 @@ exports.default = parseFromAnchor;
 /* 96 */,
 /* 97 */,
 /* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DTbkt", function() { return DTbkt; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TlKVv", function() { return TlKVv; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10139,15 +10135,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from polymer.soy.
+// This file was automatically generated from binary.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace DTbkt.
+ * @fileoverview Templates in namespace TlKVv.
  * @public
  */
 
-goog.module('DTbkt.incrementaldom');
+goog.module('TlKVv.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10168,6 +10164,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10179,10 +10177,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param601 = function() {
+  var param495 = function() {
     ie_open('h6');
-      var dyn33 = opt_data.page.description;
-      if (typeof dyn33 == 'function') dyn33(); else if (dyn33 != null) itext(dyn33);
+      var dyn35 = opt_data.page.description;
+      if (typeof dyn35 == 'function') dyn35(); else if (dyn35 != null) itext(dyn35);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10190,13 +10188,105 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('The Webda project have webcomponents it implements the default Store api, the Authentication service');
+        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
       ie_close('p');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('The API exposed is');
       ie_close('p');
+      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
+      ie_open('p');
+        itext('You can reduce the exposition by adding an expose attribute as on Store');
+      ie_close('p');
+      ie_open('p');
+        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          ie_open('em');
+            itext('store');
+          ie_close('em');
+          itext(' is the Store of the object you want attached to');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('uid');
+          ie_close('em');
+          itext(' is the Object uuid');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('property');
+          ie_close('em');
+          itext(' is the field of the Object');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('index');
+          ie_close('em');
+          itext(' is the index of the Binary');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('hash');
+          ie_close('em');
+          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
+        ie_close('li');
+      ie_close('ul');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Map');
+      ie_close('h2');
+      ie_open('p');
+        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
+      ie_close('p');
+      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
+      ie_close('p');
+      ie_open('p');
+        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
+      ie_close('p');
+      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('S3Binary');
+      ie_close('h2');
+      ie_open('p');
+        itext('To configure just add the parameter bucket');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('FileBinary');
+      ie_close('h2');
+      ie_open('p');
+        itext('To configure just add the parameter folder');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('The behavior implementation can be found there :');
+      ie_close('p');
+      ie_open('p');
+        itext('Two different UI component exist also :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('A simple fab button upload :');
+        ie_close('li');
+        ie_open('li');
+          itext('IA paper-input with Browse button :');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10207,11 +10297,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param601}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param495}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'DTbkt.render';
+  $render.soyTemplateName = 'TlKVv.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10221,14 +10311,19 @@ return exports;
 
 });
 
-class DTbkt extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(DTbkt, templates);
+class TlKVv extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(TlKVv, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
 /* 105 */,
 /* 106 */,
 /* 107 */,
@@ -10251,36 +10346,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(DTbkt, templates);
 /* 124 */,
 /* 125 */,
 /* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10310,9 +10376,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _polymerSoy = __webpack_require__(104);
+var _binarySoy = __webpack_require__(99);
 
-var _polymerSoy2 = _interopRequireDefault(_polymerSoy);
+var _binarySoy2 = _interopRequireDefault(_binarySoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10322,23 +10388,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var DTbkt = function (_Component) {
-  _inherits(DTbkt, _Component);
+var TlKVv = function (_Component) {
+  _inherits(TlKVv, _Component);
 
-  function DTbkt() {
-    _classCallCheck(this, DTbkt);
+  function TlKVv() {
+    _classCallCheck(this, TlKVv);
 
-    return _possibleConstructorReturn(this, (DTbkt.__proto__ || Object.getPrototypeOf(DTbkt)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (TlKVv.__proto__ || Object.getPrototypeOf(TlKVv)).apply(this, arguments));
   }
 
-  return DTbkt;
+  return TlKVv;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(DTbkt, _polymerSoy2.default);
+_metalSoy2.default.register(TlKVv, _binarySoy2.default);
 
-exports.default = DTbkt;
+exports.default = TlKVv;
 
 /***/ })
-],[156]);
+],[127]);

@@ -2667,21 +2667,22 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $logo(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('div', null, null,
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', opt_data.site.basePath + '/');
+        'href', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', opt_data.site.basePath + '/images/webda.svg');
+            'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn11 = opt_data.site.title;
+        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10186,7 +10187,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param75 = function() {
+  var param126 = function() {
     $header(opt_data, null, opt_ijData);
     $links(null, null, opt_ijData);
     $why(null, null, opt_ijData);
@@ -10194,7 +10195,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     $how(null, null, opt_ijData);
     $footer(null, null, opt_ijData);
   };
-  $templateAlias1(soy.$$assignDefaults({content: param75}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param126}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -10210,24 +10211,25 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $header(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('header', null, null,
       'class', 'header');
     ie_open('div', null, null,
         'class', 'container');
       ie_open('h1', null, null,
           'class', 'header-title');
-        var dyn10 = opt_data.site.title;
-        if (typeof dyn10 == 'function') dyn10(); else if (dyn10 != null) itext(dyn10);
+        var dyn12 = opt_data.site.title;
+        if (typeof dyn12 == 'function') dyn12(); else if (dyn12 != null) itext(dyn12);
       ie_close('h1');
       ie_open('h2', null, null,
           'class', 'header-subtitle');
-        var dyn11 = opt_data.site.index.description;
-        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
+        var dyn13 = opt_data.site.index.description;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('h2');
       ie_open('div', null, null,
           'class', 'header-cta');
         ie_open('a', null, null,
-            'href', opt_data.site.basePath + '/docs/create',
+            'href', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/docs/create',
             'class', 'btn btn-accent');
           itext('Quick Start');
         ie_close('a');
@@ -10474,6 +10476,7 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $highlights(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('div', null, null,
       'class', 'highlights');
     ie_open('div', null, null,
@@ -10495,7 +10498,7 @@ function $highlights(opt_data, opt_ignored, opt_ijData) {
             'class', 'col-md-5 col-md-offset-1');
           ie_open('img', null, null,
               'class', 'highlight-image',
-              'src', opt_data.site.basePath + '/images/ease.jpg',
+              'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/ease.jpg',
               'alt', 'Quick and easy');
           ie_close('img');
         ie_close('div');
@@ -10517,7 +10520,7 @@ function $highlights(opt_data, opt_ignored, opt_ijData) {
             'class', 'col-md-5 col-md-offset-2 col-md-pull-6');
           ie_open('img', null, null,
               'class', 'highlight-image',
-              'src', opt_data.site.basePath + '/images/dev.jpg',
+              'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/dev.jpg',
               'alt', 'Ease of Development');
           ie_close('img');
         ie_close('div');
@@ -10539,7 +10542,7 @@ function $highlights(opt_data, opt_ignored, opt_ijData) {
             'class', 'col-md-5 col-md-offset-1');
           ie_open('img', null, null,
               'class', 'highlight-image',
-              'src', opt_data.site.basePath + '/images/deploy.jpg',
+              'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/deploy.jpg',
               'alt', 'Deploy everywhere');
           ie_close('img');
         ie_close('div');
@@ -10654,40 +10657,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 /* 131 */,
 /* 132 */,
 /* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10748,4 +10718,4 @@ _metalSoy2.default.register(pageIndex, _indexSoy2.default);
 exports.default = pageIndex;
 
 /***/ })
-],[167]);
+],[134]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([11],[
+webpackJsonppageComponent([6],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2667,21 +2667,22 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $logo(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('div', null, null,
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', opt_data.site.basePath + '/');
+        'href', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', opt_data.site.basePath + '/images/webda.svg');
+            'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn11 = opt_data.site.title;
+        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10116,13 +10117,12 @@ exports.default = parseFromAnchor;
 /* 95 */,
 /* 96 */,
 /* 97 */,
-/* 98 */,
-/* 99 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ouIQB", function() { return ouIQB; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "obneB", function() { return obneB; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10134,15 +10134,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from binary.soy.
+// This file was automatically generated from authentication.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace ouIQB.
+ * @fileoverview Templates in namespace obneB.
  * @public
  */
 
-goog.module('ouIQB.incrementaldom');
+goog.module('obneB.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10176,10 +10176,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param511 = function() {
+  var param464 = function() {
     ie_open('h6');
-      var dyn28 = opt_data.page.description;
-      if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
+      var dyn34 = opt_data.page.description;
+      if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10187,84 +10187,68 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+        itext('The Authentication service highly depends on ');
+        ie_open('a', null, null,
+            'href', 'http://passportjs.org/');
+          itext('PassportJS');
+        ie_close('a');
+        itext(' this is why its file is passport.js');
       ie_close('p');
       ie_open('p');
-        itext('The API exposed is');
-      ie_close('p');
-      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
-      ie_open('p');
-        itext('You can reduce the exposition by adding an expose attribute as on Store');
+        itext('It requires two stores : Idents and Users.');
       ie_close('p');
       ie_open('p');
-        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
+        itext('The Idents will contains each mode of Authentication enabled by the user, you will find in the Ident also the profile returned by the OAuth provider if returned.');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          ie_open('em');
-            itext('store');
-          ie_close('em');
-          itext(' is the Store of the object you want attached to');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('uid');
-          ie_close('em');
-          itext(' is the Object uuid');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('property');
-          ie_close('em');
-          itext(' is the field of the Object');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('index');
-          ie_close('em');
-          itext(' is the index of the Binary');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('hash');
-          ie_close('em');
-          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
-        ie_close('li');
-      ie_close('ul');
+      ie_open('p');
+        itext('The Users will have one object per user, with the idents collection, it also contains the password if any is set.');
+      ie_close('p');
+      ie_open('p');
+        itext('Basic configuration');
+      ie_close('p');
+      $templateAlias2({code: '"successRedirect": "https://shootandprove.loopingz.com/user.html", // Redirect to this page after login\n"failureRedirect": "/login-error", // Redirect to this page after failed login\n"userStore": "", // If you want to override the userStore name by default Users\n"identStore": "", // If you want to override the identStore name by default Idents\n"providers": {\n  ... // See below\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Map');
+        itext('Register event');
       ie_close('h2');
       ie_open('p');
-        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
+        itext('When a user register, the Authentication service send a Register event, so you can complete the user with additional informations.');
       ie_close('p');
-      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
-      ie_close('p');
-      ie_open('p');
-        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
-      ie_close('p');
-      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
+      $templateAlias2({code: '// Datas is the profile coming from the OAuth or the Register form\nthis.emit("Register", {"user": user, "datas": datas, "ctx": ctx});', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('S3Binary');
+        itext('Email authentication');
       ie_close('h2');
       ie_open('p');
-        itext('To configure just add the parameter bucket');
+        itext('To use this feature you need to have a configured Mailer service, you can define the service name by adding the field mailer inside the email configuration.');
+      ie_close('p');
+      ie_open('p');
+        itext('The email authentication has two modes, one that register the user without waiting for the email validation, and the other one that register the user only when the registration form contains the right validation token sent by email.');
+      ie_close('p');
+      $templateAlias2({code: '...\n"providers": {\n  "email": {\n     "from": "", // Email sender\n     "subject": "", // Email subject\n     "html": "", // HTML to send by email for email validation\n     "text": "", // Text to send by email for email validation\n     "mailer": "DefinedMailer", // Defined mailer to use\n     "postValidation": false, // If true, create user without email validation\n     "skipEmailValidation": true // Don\'t even send a validation email, must be set along with postValidation=true\n  },\n}\n...', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The email authentication expose POST /auth/email if the body contains register=true then it will perform registration, if not then only login returning 404 if unknown user, 403 for bad password, 204 for successful login GET /auth/callback');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '4');
       ie_open('h2');
-        itext('FileBinary');
+        itext('OAuth');
       ie_close('h2');
       ie_open('p');
-        itext('To configure just add the parameter folder');
+        itext('You can setup differents types of OAuth, we integrate for now only Facebook, Amazon, Twitter, GitHub, Google.');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  providers: {\n    facebook: {\n      clientID: "facebookClientId",\n      clientSecret: "facebookSecret",\n      scope: ["email","public_profile"]\n    }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This is the same for the other providers, except ');
+        ie_open('strong');
+          itext('Twitter');
+        ie_close('strong');
+        itext(' where the fields are OAuth1 : consumerKey and consumerSecret');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
@@ -10273,19 +10257,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Polymer');
       ie_close('h2');
       ie_open('p');
-        itext('The behavior implementation can be found there :');
+        itext('You have a Polymer behavior that implement the Authentication : ...');
       ie_close('p');
-      ie_open('p');
-        itext('Two different UI component exist also :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('A simple fab button upload :');
-        ie_close('li');
-        ie_open('li');
-          itext('IA paper-input with Browse button :');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10296,11 +10269,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param511}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param464}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'ouIQB.render';
+  $render.soyTemplateName = 'obneB.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10310,14 +10283,15 @@ return exports;
 
 });
 
-class ouIQB extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ouIQB, templates);
+class obneB extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(obneB, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 99 */,
 /* 100 */,
 /* 101 */,
 /* 102 */,
@@ -10347,41 +10321,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ouIQB, templates);
 /* 126 */,
 /* 127 */,
 /* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10411,9 +10351,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _binarySoy = __webpack_require__(99);
+var _authenticationSoy = __webpack_require__(98);
 
-var _binarySoy2 = _interopRequireDefault(_binarySoy);
+var _authenticationSoy2 = _interopRequireDefault(_authenticationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10423,23 +10363,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ouIQB = function (_Component) {
-  _inherits(ouIQB, _Component);
+var obneB = function (_Component) {
+  _inherits(obneB, _Component);
 
-  function ouIQB() {
-    _classCallCheck(this, ouIQB);
+  function obneB() {
+    _classCallCheck(this, obneB);
 
-    return _possibleConstructorReturn(this, (ouIQB.__proto__ || Object.getPrototypeOf(ouIQB)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (obneB.__proto__ || Object.getPrototypeOf(obneB)).apply(this, arguments));
   }
 
-  return ouIQB;
+  return obneB;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(ouIQB, _binarySoy2.default);
+_metalSoy2.default.register(obneB, _authenticationSoy2.default);
 
-exports.default = ouIQB;
+exports.default = obneB;
 
 /***/ })
-],[163]);
+],[129]);

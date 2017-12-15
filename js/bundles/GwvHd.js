@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([5],[
+webpackJsonppageComponent([18],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2667,21 +2667,22 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $logo(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('div', null, null,
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', opt_data.site.basePath + '/');
+        'href', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', opt_data.site.basePath + '/images/webda.svg');
+            'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn11 = opt_data.site.title;
+        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10112,23 +10113,12 @@ exports.default = parseFromAnchor;
 /* 91 */,
 /* 92 */,
 /* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MPzAH", function() { return MPzAH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GwvHd", function() { return GwvHd; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10140,15 +10130,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from queues.soy.
+// This file was automatically generated from docker.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace MPzAH.
+ * @fileoverview Templates in namespace GwvHd.
  * @public
  */
 
-goog.module('MPzAH.incrementaldom');
+goog.module('GwvHd.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10169,6 +10159,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10180,33 +10172,33 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param612 = function() {
+  var param400 = function() {
     ie_open('h6');
-      var dyn34 = opt_data.page.description;
-      if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
+      var dyn30 = opt_data.page.description;
+      if (typeof dyn30 == 'function') dyn30(); else if (dyn30 != null) itext(dyn30);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
+      ie_open('p');
+        itext('You can use webda to build your Docker image for you');
+      ie_close('p');
       ie_open('h2');
-        itext('Overview');
+        itext('Dockerfile');
       ie_close('h2');
       ie_open('p');
-        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
+        itext('You can create your own Dockerfile, if no Dockerfile is present then the default one is used');
       ie_close('p');
-      ie_open('p');
-        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
-      ie_close('p');
+      $templateAlias2({code: 'FROM node:latest\nMAINTAINER docker@webda.io\n\nRUN mkdir /server/\nADD . /server/\n\nRUN cd /server && rm -rf node_modules && npm install\nCMD cd /server && node_modules/.bin/webda serve > /data/webda.log', mode: 'text'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Worker');
+        itext('Configuration');
       ie_close('h2');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('The configuration take only two parameters the tag of the image to create and if it needs to push the image after a succesfull build.');
       ie_close('p');
+      $templateAlias2({code: '{\n   tag: "mytag",\n   push: true\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10217,11 +10209,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param612}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param400}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'MPzAH.render';
+  $render.soyTemplateName = 'GwvHd.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10231,14 +10223,25 @@ return exports;
 
 });
 
-class MPzAH extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(MPzAH, templates);
+class GwvHd extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GwvHd, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
 /* 106 */,
 /* 107 */,
 /* 108 */,
@@ -10250,49 +10253,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(MPzAH, templates);
 /* 114 */,
 /* 115 */,
 /* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10322,9 +10283,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _queuesSoy = __webpack_require__(105);
+var _dockerSoy = __webpack_require__(94);
 
-var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
+var _dockerSoy2 = _interopRequireDefault(_dockerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10334,23 +10295,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var MPzAH = function (_Component) {
-  _inherits(MPzAH, _Component);
+var GwvHd = function (_Component) {
+  _inherits(GwvHd, _Component);
 
-  function MPzAH() {
-    _classCallCheck(this, MPzAH);
+  function GwvHd() {
+    _classCallCheck(this, GwvHd);
 
-    return _possibleConstructorReturn(this, (MPzAH.__proto__ || Object.getPrototypeOf(MPzAH)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (GwvHd.__proto__ || Object.getPrototypeOf(GwvHd)).apply(this, arguments));
   }
 
-  return MPzAH;
+  return GwvHd;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(MPzAH, _queuesSoy2.default);
+_metalSoy2.default.register(GwvHd, _dockerSoy2.default);
 
-exports.default = MPzAH;
+exports.default = GwvHd;
 
 /***/ })
-],[159]);
+],[117]);

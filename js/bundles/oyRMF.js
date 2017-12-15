@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([22],[
+webpackJsonppageComponent([19],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2667,21 +2667,22 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $logo(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
   ie_open('div', null, null,
       'class', 'topbar-logo');
     ie_open('a', null, null,
         'class', 'topbar-logo-link',
-        'href', opt_data.site.basePath + '/');
+        'href', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/');
       ie_open('span', null, null,
           'class', 'topbar-logo-icon');
         ie_open('img', null, null,
-            'src', opt_data.site.basePath + '/images/webda.svg');
+            'src', (($$temp = opt_data.site.basePath) == null ? '' : $$temp) + '/images/webda.svg');
         ie_close('img');
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn13 = opt_data.site.title;
-        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+        var dyn11 = opt_data.site.title;
+        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10106,12 +10107,15 @@ exports.default = parseFromAnchor;
 /* 85 */,
 /* 86 */,
 /* 87 */,
-/* 88 */
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nLDQh", function() { return nLDQh; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "oyRMF", function() { return oyRMF; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10123,15 +10127,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from new-website.soy.
+// This file was automatically generated from tutorials.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace nLDQh.
+ * @fileoverview Templates in namespace oyRMF.
  * @public
  */
 
-goog.module('nLDQh.incrementaldom');
+goog.module('oyRMF.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10152,7 +10156,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
 /**
@@ -10163,64 +10167,87 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param177 = function() {
-    ie_open('article');
+  var param322 = function() {
+    ie_open('h6');
+      var dyn20 = opt_data.page.description;
+      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
+    ie_close('h6');
+    ie_open('article', null, null,
+        'id', '1');
+      ie_open('h2');
+        itext('Setting up a project from scratch');
+      ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
-      ie_close('p');
-      ie_open('p');
-        itext('Thanks to ');
-        ie_open('a', null, null,
-            'href', 'https://electricjs.com/');
-          itext('Electric JS');
-        ie_close('a');
-        itext(', we were able to create a whole new website way faster with those cool UI effects.');
-      ie_close('p');
-      ie_open('p');
-        itext('The same day we are releasing the new website, we also have a fix release ');
-        ie_open('strong');
-          itext('v0.4.6');
-        ie_close('strong');
-      ie_close('p');
-      ie_open('p');
-        itext('This release includes :');
+        itext('In this video you will see:');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          itext('DynamoDB incrementAttribute with 0 fix');
+          itext('How to install Webda');
         ie_close('li');
         ie_open('li');
-          itext('Email storage in lower case');
+          itext('How to use the configurator to add services like Authentication and NoSQL Store');
+        ie_close('li');
+        ie_open('li');
+          itext('Expose services as REST API');
+        ie_close('li');
+        ie_open('li');
+          itext('Deploy to the cloud using the AWS deployer');
         ie_close('li');
       ie_close('ul');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Add the mapping configuration to our project');
+      ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('In the next weeks, as Christmas gift we will work hard on a ');
-        ie_open('strong');
-          itext('v0.5.0');
-        ie_close('strong');
-        itext(' it should includes :');
+        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Use our new serverless API on a Polymer interface');
+      ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
+          'frameborder', '0',
+          'allowfullscreen', '');
+      ie_open('p');
+        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          itext('Better ');
-          ie_open('a', null, null,
-              'href', 'https://wedeploy.com/');
-            itext('WeDeploy');
-          ie_close('a');
-          itext(' integration');
+          itext('Registration with email');
         ie_close('li');
         ie_open('li');
-          itext('Easier queue worker deployment');
+          itext('Login with email');
         ie_close('li');
         ie_open('li');
-          ie_open('a', null, null,
-              'href', 'https://aws.amazon.com/fargate/');
-            itext('AWS Fargate');
-          ie_close('a');
-          itext(' integration');
+          itext('Add a contact');
         ie_close('li');
         ie_open('li');
-          itext('Static website deployment integration');
+          itext('Edit a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Remove a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Upload directly to S3');
         ie_close('li');
       ie_close('ul');
     ie_close('article');
@@ -10233,11 +10260,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param322}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'nLDQh.render';
+  $render.soyTemplateName = 'oyRMF.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10247,17 +10274,14 @@ return exports;
 
 });
 
-class nLDQh extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(nLDQh, templates);
+class oyRMF extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(oyRMF, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 89 */,
-/* 90 */,
-/* 91 */,
 /* 92 */,
 /* 93 */,
 /* 94 */,
@@ -10282,36 +10306,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(nLDQh, templates);
 /* 113 */,
 /* 114 */,
 /* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10341,9 +10336,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _newWebsiteSoy = __webpack_require__(88);
+var _tutorialsSoy = __webpack_require__(91);
 
-var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
+var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10353,23 +10348,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var nLDQh = function (_Component) {
-  _inherits(nLDQh, _Component);
+var oyRMF = function (_Component) {
+  _inherits(oyRMF, _Component);
 
-  function nLDQh() {
-    _classCallCheck(this, nLDQh);
+  function oyRMF() {
+    _classCallCheck(this, oyRMF);
 
-    return _possibleConstructorReturn(this, (nLDQh.__proto__ || Object.getPrototypeOf(nLDQh)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (oyRMF.__proto__ || Object.getPrototypeOf(oyRMF)).apply(this, arguments));
   }
 
-  return nLDQh;
+  return oyRMF;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(nLDQh, _newWebsiteSoy2.default);
+_metalSoy2.default.register(oyRMF, _tutorialsSoy2.default);
 
-exports.default = nLDQh;
+exports.default = oyRMF;
 
 /***/ })
-],[145]);
+],[116]);
