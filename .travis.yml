@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "node"
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq awscli
+script:
+  - npm i -g electric-cli
+  - npm install
+  - electric build
+  - aws s3 sync dist/* s3://webda.io/
+  - electric deploy -e ghpages
