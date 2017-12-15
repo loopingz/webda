@@ -8,5 +8,5 @@ script:
   - npm i -g electric-cli
   - npm install
   - electric build
-  - aws s3 sync dist/* s3://webda.io/
+  - aws s3 sync --region=us-west-2 dist/ s3://webda.io/
   - electric deploy -e ghpages
