@@ -38,7 +38,9 @@ Inside the configuration you can add a block for expose the store as a REST API
 The above configuration will end up creating the following routes:
 
 POST /storeurl
+
 GET /storeurl/[uuid]
+
 DELETE /storeurl/[uuid]
 
 You can see that by default, once the store exposed all the methods are available unless you restrict them.
@@ -116,11 +118,17 @@ The store event looks like
 ```
 
 Store.Save: Before saving the object
+
 Store.Saved: After saving the object
+
 Store.Update: Before updating the object
+
 Store.Updated: After updating the object
+
 Store.Delete: Before deleting the object
+
 Store.Deleted: After deleting the object
+
 Store.Get: When getting the object
 
 </article>
@@ -163,8 +171,11 @@ Policies are implicit service, so you can get them with a getService("OwnerPolic
 ### Owner Policy
 
 POST: Add the current user in the user field of the object
+
 PUT: Verify the current user is the user inside the user field
+
 GET: Verify the current user is the user inside the user field, or a public=true field exists on the object
+
 DELETE: Verify the current user is the user inside the user field
 
 ### Void policy
