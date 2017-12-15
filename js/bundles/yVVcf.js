@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([23],[
+webpackJsonppageComponent([5],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2681,8 +2681,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn11 = opt_data.site.title;
-        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10107,12 +10107,26 @@ exports.default = parseFromAnchor;
 /* 85 */,
 /* 86 */,
 /* 87 */,
-/* 88 */
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fRxpi", function() { return fRxpi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "yVVcf", function() { return yVVcf; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10124,15 +10138,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from new-website.soy.
+// This file was automatically generated from mailer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace fRxpi.
+ * @fileoverview Templates in namespace yVVcf.
  * @public
  */
 
-goog.module('fRxpi.incrementaldom');
+goog.module('yVVcf.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10153,7 +10167,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
 /**
@@ -10164,66 +10178,47 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param177 = function() {
-    ie_open('article');
+  var param569 = function() {
+    ie_open('h6');
+      var dyn39 = opt_data.page.description;
+      if (typeof dyn39 == 'function') dyn39(); else if (dyn39 != null) itext(dyn39);
+    ie_close('h6');
+    ie_open('article', null, null,
+        'id', '1');
+      ie_open('h2');
+        itext('Overview');
+      ie_close('h2');
       ie_open('p');
-        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
+        itext('Web Application always needs to send an email at one point.');
       ie_close('p');
       ie_open('p');
-        itext('Thanks to ');
-        ie_open('a', null, null,
-            'href', 'https://electricjs.com/');
-          itext('Electric JS');
-        ie_close('a');
-        itext(', we were able to create a whole new website way faster with those cool UI effects.');
+        itext('The mailer service is a wrapper on top of two NodeJS library : NodeMailer and EmailTemplate');
       ie_close('p');
       ie_open('p');
-        itext('The same day we are releasing the new website, we also have a fix release ');
-        ie_open('strong');
-          itext('v0.4.6');
-        ie_close('strong');
+        itext('It allows you to send email through SMTP, GMail, SES. It also provides Mustache templates to send email to the user with contextual informations and in his own language');
       ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('NodeMailer configuration');
+      ie_close('h2');
       ie_open('p');
-        itext('This release includes :');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('DynamoDB incrementAttribute with 0 fix');
-        ie_close('li');
-        ie_open('li');
-          itext('Email storage in lower case');
-        ie_close('li');
-      ie_close('ul');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Templating');
+      ie_close('h2');
       ie_open('p');
-        itext('In the next weeks, as Christmas gift we will work hard on a ');
-        ie_open('strong');
-          itext('v0.5.0');
-        ie_close('strong');
-        itext(' it should includes :');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Better ');
-          ie_open('a', null, null,
-              'href', 'https://wedeploy.com/');
-            itext('WeDeploy');
-          ie_close('a');
-          itext(' integration');
-        ie_close('li');
-        ie_open('li');
-          itext('Easier queue worker deployment');
-        ie_close('li');
-        ie_open('li');
-          ie_open('a', null, null,
-              'href', 'https://aws.amazon.com/fargate/');
-            itext('AWS Fargate');
-          ie_close('a');
-          itext(' integration');
-        ie_close('li');
-        ie_open('li');
-          itext('Static website deployment integration');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10234,11 +10229,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param569}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'fRxpi.render';
+  $render.soyTemplateName = 'yVVcf.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10248,28 +10243,14 @@ return exports;
 
 });
 
-class fRxpi extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(fRxpi, templates);
+class yVVcf extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(yVVcf, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
 /* 103 */,
 /* 104 */,
 /* 105 */,
@@ -10279,7 +10260,25 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(fRxpi, templates);
 /* 109 */,
 /* 110 */,
 /* 111 */,
-/* 112 */
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10309,9 +10308,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _newWebsiteSoy = __webpack_require__(88);
+var _mailerSoy = __webpack_require__(102);
 
-var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
+var _mailerSoy2 = _interopRequireDefault(_mailerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10321,23 +10320,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var fRxpi = function (_Component) {
-  _inherits(fRxpi, _Component);
+var yVVcf = function (_Component) {
+  _inherits(yVVcf, _Component);
 
-  function fRxpi() {
-    _classCallCheck(this, fRxpi);
+  function yVVcf() {
+    _classCallCheck(this, yVVcf);
 
-    return _possibleConstructorReturn(this, (fRxpi.__proto__ || Object.getPrototypeOf(fRxpi)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (yVVcf.__proto__ || Object.getPrototypeOf(yVVcf)).apply(this, arguments));
   }
 
-  return fRxpi;
+  return yVVcf;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(fRxpi, _newWebsiteSoy2.default);
+_metalSoy2.default.register(yVVcf, _mailerSoy2.default);
 
-exports.default = fRxpi;
+exports.default = yVVcf;
 
 /***/ })
-],[112]);
+],[130]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([13],[
+webpackJsonppageComponent([4],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2681,8 +2681,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn11 = opt_data.site.title;
-        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10111,12 +10111,24 @@ exports.default = parseFromAnchor;
 /* 89 */,
 /* 90 */,
 /* 91 */,
-/* 92 */
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vLdDR", function() { return vLdDR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "zXPsu", function() { return zXPsu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10128,15 +10140,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from aws.soy.
+// This file was automatically generated from polymer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace vLdDR.
+ * @fileoverview Templates in namespace zXPsu.
  * @public
  */
 
-goog.module('vLdDR.incrementaldom');
+goog.module('zXPsu.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10157,8 +10169,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10170,64 +10180,23 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param333 = function() {
+  var param606 = function() {
+    ie_open('h6');
+      var dyn41 = opt_data.page.description;
+      if (typeof dyn41 == 'function') dyn41(); else if (dyn41 != null) itext(dyn41);
+    ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', 'http://webda.io/images/schemas/aws_deploy.png',
-            'alt', 'image');
-        ie_close('img');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Deployment Policy');
-      ie_close('h2');
-      ie_open('p');
-        itext('To be able to deploy the deployment user must have at least :');
-      ie_close('p');
-      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This can be restrict more and should, need to update the documentation');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Package');
-      ie_close('h2');
-      ie_open('p');
-        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Lambda');
-      ie_close('h2');
-      ie_open('p');
-        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('API Gateway');
-      ie_close('h2');
-      ie_open('p');
-        itext('It map all the routes from your application, if a ');
-        ie_open('strong');
-          itext('website');
-        ie_close('strong');
-        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
+        itext('The Webda project have webcomponents it implements the default Store api, the Authentication service');
       ie_close('p');
       ie_open('p');
-        itext('It also deploy the API as Stage named with the name of the deployment.');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10239,11 +10208,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param333}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param606}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'vLdDR.render';
+  $render.soyTemplateName = 'zXPsu.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10253,26 +10222,14 @@ return exports;
 
 });
 
-class vLdDR extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vLdDR, templates);
+class zXPsu extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(zXPsu, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
 /* 105 */,
 /* 106 */,
 /* 107 */,
@@ -10290,7 +10247,16 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vLdDR, templates);
 /* 119 */,
 /* 120 */,
 /* 121 */,
-/* 122 */
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10320,9 +10286,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _awsSoy = __webpack_require__(92);
+var _polymerSoy = __webpack_require__(104);
 
-var _awsSoy2 = _interopRequireDefault(_awsSoy);
+var _polymerSoy2 = _interopRequireDefault(_polymerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10332,23 +10298,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var vLdDR = function (_Component) {
-  _inherits(vLdDR, _Component);
+var zXPsu = function (_Component) {
+  _inherits(zXPsu, _Component);
 
-  function vLdDR() {
-    _classCallCheck(this, vLdDR);
+  function zXPsu() {
+    _classCallCheck(this, zXPsu);
 
-    return _possibleConstructorReturn(this, (vLdDR.__proto__ || Object.getPrototypeOf(vLdDR)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (zXPsu.__proto__ || Object.getPrototypeOf(zXPsu)).apply(this, arguments));
   }
 
-  return vLdDR;
+  return zXPsu;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(vLdDR, _awsSoy2.default);
+_metalSoy2.default.register(zXPsu, _polymerSoy2.default);
 
-exports.default = vLdDR;
+exports.default = zXPsu;
 
 /***/ })
-],[122]);
+],[131]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([16],[
+webpackJsonppageComponent([23],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2681,8 +2681,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn11 = opt_data.site.title;
-        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10107,19 +10107,12 @@ exports.default = parseFromAnchor;
 /* 85 */,
 /* 86 */,
 /* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UQjAP", function() { return UQjAP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fzuiD", function() { return fzuiD; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10131,15 +10124,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from new-website.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace UQjAP.
+ * @fileoverview Templates in namespace fzuiD.
  * @public
  */
 
-goog.module('UQjAP.incrementaldom');
+goog.module('fzuiD.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10160,9 +10153,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -10173,76 +10164,66 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param421 = function() {
-    ie_open('h6');
-      var dyn31 = opt_data.page.description;
-      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
-      ie_open('h2');
-        itext('Lambda');
-      ie_close('h2');
+  var param177 = function() {
+    ie_open('article');
       ie_open('p');
-        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
+        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
       ie_close('p');
       ie_open('p');
-        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
+        itext('Thanks to ');
+        ie_open('a', null, null,
+            'href', 'https://electricjs.com/');
+          itext('Electric JS');
+        ie_close('a');
+        itext(', we were able to create a whole new website way faster with those cool UI effects.');
       ie_close('p');
       ie_open('p');
-        itext('But don\'t worry, with Webda it is as simple as a command');
+        itext('The same day we are releasing the new website, we also have a fix release ');
+        ie_open('strong');
+          itext('v0.4.6');
+        ie_close('strong');
       ie_close('p');
-      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('This command will do several step for you :');
+        itext('This release includes :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          itext('Create the policy and role for your Lambda');
+          itext('DynamoDB incrementAttribute with 0 fix');
         ie_close('li');
         ie_open('li');
-          itext('Create if needed the Dynamo table used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Create S3 buckets used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy the code to your Lambda');
-        ie_close('li');
-        ie_open('li');
-          itext('Create the API Gateway mapping');
-        ie_close('li');
-        ie_open('li');
-          itext('Add permission for API Gateways to your Lambda');
+          itext('Email storage in lower case');
         ie_close('li');
       ie_close('ul');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Docker');
-      ie_close('h2');
       ie_open('p');
-        itext('You can also just define a Docker image to build');
+        itext('In the next weeks, as Christmas gift we will work hard on a ');
+        ie_open('strong');
+          itext('v0.5.0');
+        ie_close('strong');
+        itext(' it should includes :');
       ie_close('p');
-      ie_open('p');
-        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
-      ie_close('p');
-      ie_open('p');
-        itext('If you specify a tag, after the build it will push the image to your repository');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('WeDeploy');
-      ie_close('h2');
-      ie_open('p');
-        itext('This service run your Docker image and allow you to deploy with a single command');
-      ie_close('p');
-      ie_open('p');
-        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
-      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Better ');
+          ie_open('a', null, null,
+              'href', 'https://wedeploy.com/');
+            itext('WeDeploy');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Easier queue worker deployment');
+        ie_close('li');
+        ie_open('li');
+          ie_open('a', null, null,
+              'href', 'https://aws.amazon.com/fargate/');
+            itext('AWS Fargate');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Static website deployment integration');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10253,11 +10234,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param421}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'UQjAP.render';
+  $render.soyTemplateName = 'fzuiD.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10267,14 +10248,21 @@ return exports;
 
 });
 
-class UQjAP extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(UQjAP, templates);
+class fzuiD extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(fzuiD, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
 /* 96 */,
 /* 97 */,
 /* 98 */,
@@ -10291,14 +10279,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(UQjAP, templates);
 /* 109 */,
 /* 110 */,
 /* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10328,9 +10309,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(95);
+var _newWebsiteSoy = __webpack_require__(88);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10340,23 +10321,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var UQjAP = function (_Component) {
-  _inherits(UQjAP, _Component);
+var fzuiD = function (_Component) {
+  _inherits(fzuiD, _Component);
 
-  function UQjAP() {
-    _classCallCheck(this, UQjAP);
+  function fzuiD() {
+    _classCallCheck(this, fzuiD);
 
-    return _possibleConstructorReturn(this, (UQjAP.__proto__ || Object.getPrototypeOf(UQjAP)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (fzuiD.__proto__ || Object.getPrototypeOf(fzuiD)).apply(this, arguments));
   }
 
-  return UQjAP;
+  return fzuiD;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(UQjAP, _indexSoy2.default);
+_metalSoy2.default.register(fzuiD, _newWebsiteSoy2.default);
 
-exports.default = UQjAP;
+exports.default = fzuiD;
 
 /***/ })
-],[119]);
+],[112]);

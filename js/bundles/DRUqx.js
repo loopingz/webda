@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([7],[
+webpackJsonppageComponent([17],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2681,8 +2681,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn11 = opt_data.site.title;
-        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10112,21 +10112,12 @@ exports.default = parseFromAnchor;
 /* 90 */,
 /* 91 */,
 /* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bnTpF", function() { return bnTpF; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DRUqx", function() { return DRUqx; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10138,15 +10129,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from mailer.soy.
+// This file was automatically generated from configuration.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace bnTpF.
+ * @fileoverview Templates in namespace DRUqx.
  * @public
  */
 
-goog.module('bnTpF.incrementaldom');
+goog.module('DRUqx.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10167,6 +10158,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -10178,10 +10171,11 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param553 = function() {
+  var $$temp;
+  var param363 = function() {
     ie_open('h6');
-      var dyn38 = opt_data.page.description;
-      if (typeof dyn38 == 'function') dyn38(); else if (dyn38 != null) itext(dyn38);
+      var dyn22 = opt_data.page.description;
+      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10189,35 +10183,76 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('Web Application always needs to send an email at one point.');
+        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
       ie_close('p');
       ie_open('p');
-        itext('The mailer service is a wrapper on top of two NodeJS library : NodeMailer and EmailTemplate');
+        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
       ie_close('p');
       ie_open('p');
-        itext('It allows you to send email through SMTP, GMail, SES. It also provides Mustache templates to send email to the user with contextual informations and in his own language');
+        itext('![image](');
+        var dyn23 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn23 == 'function') dyn23(); else if (dyn23 != null) itext(dyn23);
+        itext('/images/configuration_resolution.png)');
       ie_close('p');
+      ie_open('p');
+        itext('This is the detail configuration for each section');
+      ie_close('p');
+      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
+      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
+      ie_open('p');
+        itext('So this how webda will resolve Service final configuration');
+      ie_close('p');
+      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('NodeMailer configuration');
+        itext('Configuration UI');
       ie_close('h2');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('Here is some screenshots of the ui');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Templating');
-      ie_close('h2');
+      ie_open('h4');
+        itext('Routes');
+      ie_close('h4');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('![image](');
+        var dyn24 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn24 == 'function') dyn24(); else if (dyn24 != null) itext(dyn24);
+        itext('/images/ui_route_create.png) ![image](');
+        var dyn25 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
+        itext('/images/ui_route_config.png)');
+      ie_close('p');
+      ie_open('h4');
+        itext('Services');
+      ie_close('h4');
+      ie_open('p');
+        itext('![image](');
+        var dyn26 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn26 == 'function') dyn26(); else if (dyn26 != null) itext(dyn26);
+        itext('/images/ui_service_create.png) ![image](');
+        var dyn27 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn27 == 'function') dyn27(); else if (dyn27 != null) itext(dyn27);
+        itext('/images/ui_service_config.png)');
+      ie_close('p');
+      ie_open('h4');
+        itext('Deployments');
+      ie_close('h4');
+      ie_open('p');
+        itext('![image](');
+        var dyn28 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
+        itext('/images/ui_deployment_create.png) ![image](');
+        var dyn29 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn29 == 'function') dyn29(); else if (dyn29 != null) itext(dyn29);
+        itext('/images/ui_deployment_config.png) ![image](');
+        var dyn30 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn30 == 'function') dyn30(); else if (dyn30 != null) itext(dyn30);
+        itext('/images/ui_deployment_deploy.png)');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10229,11 +10264,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param553}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param363}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'bnTpF.render';
+  $render.soyTemplateName = 'DRUqx.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10243,14 +10278,23 @@ return exports;
 
 });
 
-class bnTpF extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(bnTpF, templates);
+class DRUqx extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(DRUqx, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
 /* 103 */,
 /* 104 */,
 /* 105 */,
@@ -10266,17 +10310,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(bnTpF, templates);
 /* 115 */,
 /* 116 */,
 /* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10306,9 +10340,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _mailerSoy = __webpack_require__(102);
+var _configurationSoy = __webpack_require__(93);
 
-var _mailerSoy2 = _interopRequireDefault(_mailerSoy);
+var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10318,23 +10352,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var bnTpF = function (_Component) {
-  _inherits(bnTpF, _Component);
+var DRUqx = function (_Component) {
+  _inherits(DRUqx, _Component);
 
-  function bnTpF() {
-    _classCallCheck(this, bnTpF);
+  function DRUqx() {
+    _classCallCheck(this, DRUqx);
 
-    return _possibleConstructorReturn(this, (bnTpF.__proto__ || Object.getPrototypeOf(bnTpF)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (DRUqx.__proto__ || Object.getPrototypeOf(DRUqx)).apply(this, arguments));
   }
 
-  return bnTpF;
+  return DRUqx;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(bnTpF, _mailerSoy2.default);
+_metalSoy2.default.register(DRUqx, _configurationSoy2.default);
 
-exports.default = bnTpF;
+exports.default = DRUqx;
 
 /***/ })
-],[128]);
+],[118]);

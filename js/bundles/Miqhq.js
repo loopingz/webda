@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([18],[
+webpackJsonppageComponent([16],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2681,8 +2681,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn11 = opt_data.site.title;
-        if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
+        var dyn13 = opt_data.site.title;
+        if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -10113,12 +10113,13 @@ exports.default = parseFromAnchor;
 /* 91 */,
 /* 92 */,
 /* 93 */,
-/* 94 */
+/* 94 */,
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GwvHd", function() { return GwvHd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Miqhq", function() { return Miqhq; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10130,15 +10131,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from docker.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace GwvHd.
+ * @fileoverview Templates in namespace Miqhq.
  * @public
  */
 
-goog.module('GwvHd.incrementaldom');
+goog.module('Miqhq.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10172,33 +10173,76 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param400 = function() {
+  var param437 = function() {
     ie_open('h6');
-      var dyn30 = opt_data.page.description;
-      if (typeof dyn30 == 'function') dyn30(); else if (dyn30 != null) itext(dyn30);
+      var dyn32 = opt_data.page.description;
+      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
-      ie_open('p');
-        itext('You can use webda to build your Docker image for you');
-      ie_close('p');
       ie_open('h2');
-        itext('Dockerfile');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('You can create your own Dockerfile, if no Dockerfile is present then the default one is used');
+        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
       ie_close('p');
-      $templateAlias2({code: 'FROM node:latest\nMAINTAINER docker@webda.io\n\nRUN mkdir /server/\nADD . /server/\n\nRUN cd /server && rm -rf node_modules && npm install\nCMD cd /server && node_modules/.bin/webda serve > /data/webda.log', mode: 'text'}, null, opt_ijData);
+      ie_open('p');
+        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
+      ie_close('p');
+      ie_open('p');
+        itext('But don\'t worry, with Webda it is as simple as a command');
+      ie_close('p');
+      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
+      ie_open('p');
+        itext('This command will do several step for you :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Create the policy and role for your Lambda');
+        ie_close('li');
+        ie_open('li');
+          itext('Create if needed the Dynamo table used in your application');
+        ie_close('li');
+        ie_open('li');
+          itext('Create S3 buckets used in your application');
+        ie_close('li');
+        ie_open('li');
+          itext('Deploy the code to your Lambda');
+        ie_close('li');
+        ie_open('li');
+          itext('Create the API Gateway mapping');
+        ie_close('li');
+        ie_open('li');
+          itext('Add permission for API Gateways to your Lambda');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Configuration');
+        itext('Docker');
       ie_close('h2');
       ie_open('p');
-        itext('The configuration take only two parameters the tag of the image to create and if it needs to push the image after a succesfull build.');
+        itext('You can also just define a Docker image to build');
       ie_close('p');
-      $templateAlias2({code: '{\n   tag: "mytag",\n   push: true\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
+      ie_close('p');
+      ie_open('p');
+        itext('If you specify a tag, after the build it will push the image to your repository');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('WeDeploy');
+      ie_close('h2');
+      ie_open('p');
+        itext('This service run your Docker image and allow you to deploy with a single command');
+      ie_close('p');
+      ie_open('p');
+        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
+      ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10209,11 +10253,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param400}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param437}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'GwvHd.render';
+  $render.soyTemplateName = 'Miqhq.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10223,15 +10267,14 @@ return exports;
 
 });
 
-class GwvHd extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GwvHd, templates);
+class Miqhq extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Miqhq, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 95 */,
 /* 96 */,
 /* 97 */,
 /* 98 */,
@@ -10253,7 +10296,9 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GwvHd, templates);
 /* 114 */,
 /* 115 */,
 /* 116 */,
-/* 117 */
+/* 117 */,
+/* 118 */,
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10283,9 +10328,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _dockerSoy = __webpack_require__(94);
+var _indexSoy = __webpack_require__(95);
 
-var _dockerSoy2 = _interopRequireDefault(_dockerSoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10295,23 +10340,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var GwvHd = function (_Component) {
-  _inherits(GwvHd, _Component);
+var Miqhq = function (_Component) {
+  _inherits(Miqhq, _Component);
 
-  function GwvHd() {
-    _classCallCheck(this, GwvHd);
+  function Miqhq() {
+    _classCallCheck(this, Miqhq);
 
-    return _possibleConstructorReturn(this, (GwvHd.__proto__ || Object.getPrototypeOf(GwvHd)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Miqhq.__proto__ || Object.getPrototypeOf(Miqhq)).apply(this, arguments));
   }
 
-  return GwvHd;
+  return Miqhq;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(GwvHd, _dockerSoy2.default);
+_metalSoy2.default.register(Miqhq, _indexSoy2.default);
 
-exports.default = GwvHd;
+exports.default = Miqhq;
 
 /***/ })
-],[117]);
+],[119]);
