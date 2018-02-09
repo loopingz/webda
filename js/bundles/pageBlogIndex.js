@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([22],[
+webpackJsonppageComponent([23],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -3035,6 +3035,7 @@ ElectricCodeTabs.STATE = {
   */
   dictionary: {
     value: {
+      'text/x-sh': 'cURL',
       'text/html': 'HTML',
       'text/x-java': 'Java',
       'application/json': 'JSON'
@@ -3161,9 +3162,13 @@ var ElectricReadingProgress = function (_Component) {
 			if (articleContainer) {
 				var articles = articleContainer.querySelectorAll(articleSelector);
 
-				var articleIds = [].map.call(articles, function (article) {
-					return '#' + article.id;
-				});
+				var articleIds = [].reduce.call(articles, function (result, article) {
+					if (article.querySelector(titleSelector)) {
+						result.push('#' + article.id);
+					}
+
+					return result;
+				}, []);
 
 				this.progress = new _metalReadingProgress2.default({
 					items: articleIds,
@@ -10106,7 +10111,8 @@ exports.default = parseFromAnchor;
 /* 84 */,
 /* 85 */,
 /* 86 */,
-/* 87 */
+/* 87 */,
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10213,7 +10219,6 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageBlogIndex, templa
 
 
 /***/ }),
-/* 88 */,
 /* 89 */,
 /* 90 */,
 /* 91 */,
@@ -10268,7 +10273,7 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(87);
+var _indexSoy = __webpack_require__(88);
 
 var _indexSoy2 = _interopRequireDefault(_indexSoy);
 

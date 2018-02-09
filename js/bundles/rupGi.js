@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([8],[
+webpackJsonppageComponent([4],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -3035,6 +3035,7 @@ ElectricCodeTabs.STATE = {
   */
   dictionary: {
     value: {
+      'text/x-sh': 'cURL',
       'text/html': 'HTML',
       'text/x-java': 'Java',
       'application/json': 'JSON'
@@ -3161,9 +3162,13 @@ var ElectricReadingProgress = function (_Component) {
 			if (articleContainer) {
 				var articles = articleContainer.querySelectorAll(articleSelector);
 
-				var articleIds = [].map.call(articles, function (article) {
-					return '#' + article.id;
-				});
+				var articleIds = [].reduce.call(articles, function (result, article) {
+					if (article.querySelector(titleSelector)) {
+						result.push('#' + article.id);
+					}
+
+					return result;
+				}, []);
 
 				this.progress = new _metalReadingProgress2.default({
 					items: articleIds,
@@ -10129,7 +10134,7 @@ exports.default = parseFromAnchor;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dbpfs", function() { return dbpfs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rupGi", function() { return rupGi; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10141,15 +10146,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from queues.soy.
+// This file was automatically generated from polymer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace dbpfs.
+ * @fileoverview Templates in namespace rupGi.
  * @public
  */
 
-goog.module('dbpfs.incrementaldom');
+goog.module('rupGi.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10181,10 +10186,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param617 = function() {
+  var param606 = function() {
     ie_open('h6');
-      var dyn42 = opt_data.page.description;
-      if (typeof dyn42 == 'function') dyn42(); else if (dyn42 != null) itext(dyn42);
+      var dyn41 = opt_data.page.description;
+      if (typeof dyn41 == 'function') dyn41(); else if (dyn41 != null) itext(dyn41);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -10192,17 +10197,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
+        itext('The Webda project have webcomponents it implements the default Store api, the Authentication service');
       ie_close('p');
-      ie_open('p');
-        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Worker');
-      ie_close('h2');
       ie_open('p');
         ie_open('em');
           itext('to be completed');
@@ -10218,11 +10214,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param617}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param606}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'dbpfs.render';
+  $render.soyTemplateName = 'rupGi.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10232,8 +10228,8 @@ return exports;
 
 });
 
-class dbpfs extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(dbpfs, templates);
+class rupGi extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(rupGi, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
@@ -10261,7 +10257,12 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(dbpfs, templates);
 /* 124 */,
 /* 125 */,
 /* 126 */,
-/* 127 */
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10291,9 +10292,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _queuesSoy = __webpack_require__(105);
+var _polymerSoy = __webpack_require__(105);
 
-var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
+var _polymerSoy2 = _interopRequireDefault(_polymerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10303,23 +10304,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var dbpfs = function (_Component) {
-  _inherits(dbpfs, _Component);
+var rupGi = function (_Component) {
+  _inherits(rupGi, _Component);
 
-  function dbpfs() {
-    _classCallCheck(this, dbpfs);
+  function rupGi() {
+    _classCallCheck(this, rupGi);
 
-    return _possibleConstructorReturn(this, (dbpfs.__proto__ || Object.getPrototypeOf(dbpfs)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (rupGi.__proto__ || Object.getPrototypeOf(rupGi)).apply(this, arguments));
   }
 
-  return dbpfs;
+  return rupGi;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(dbpfs, _queuesSoy2.default);
+_metalSoy2.default.register(rupGi, _polymerSoy2.default);
 
-exports.default = dbpfs;
+exports.default = rupGi;
 
 /***/ })
-],[127]);
+],[132]);

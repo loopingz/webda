@@ -174,7 +174,7 @@ Object.keys(_events).forEach(function (key) {
 	});
 });
 
-var _Component = __webpack_require__(141);
+var _Component = __webpack_require__(142);
 
 var _Component2 = _interopRequireDefault(_Component);
 
@@ -182,7 +182,7 @@ var _ComponentDataManager = __webpack_require__(73);
 
 var _ComponentDataManager2 = _interopRequireDefault(_ComponentDataManager);
 
-var _ComponentRegistry = __webpack_require__(142);
+var _ComponentRegistry = __webpack_require__(143);
 
 var _ComponentRegistry2 = _interopRequireDefault(_ComponentRegistry);
 
@@ -214,7 +214,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-__webpack_require__(160);
+__webpack_require__(161);
 
 var _metalComponent = __webpack_require__(0);
 
@@ -226,7 +226,7 @@ var _metalIncrementalDom = __webpack_require__(79);
 
 var _metalIncrementalDom2 = _interopRequireDefault(_metalIncrementalDom);
 
-var _SoyAop = __webpack_require__(161);
+var _SoyAop = __webpack_require__(162);
 
 var _SoyAop2 = _interopRequireDefault(_SoyAop);
 
@@ -525,7 +525,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.string = exports.object = exports.Disposable = exports.async = exports.array = undefined;
 
-var _core = __webpack_require__(167);
+var _core = __webpack_require__(168);
 
 Object.keys(_core).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -539,11 +539,11 @@ Object.keys(_core).forEach(function (key) {
 
 var _core2 = _interopRequireDefault(_core);
 
-var _array = __webpack_require__(165);
+var _array = __webpack_require__(166);
 
 var _array2 = _interopRequireDefault(_array);
 
-var _async = __webpack_require__(166);
+var _async = __webpack_require__(167);
 
 var _async2 = _interopRequireDefault(_async);
 
@@ -598,7 +598,7 @@ var _domData = __webpack_require__(71);
 
 var _domData2 = _interopRequireDefault(_domData);
 
-var _DomEventEmitterProxy = __webpack_require__(145);
+var _DomEventEmitterProxy = __webpack_require__(146);
 
 var _DomEventEmitterProxy2 = _interopRequireDefault(_DomEventEmitterProxy);
 
@@ -610,15 +610,15 @@ var _features = __webpack_require__(77);
 
 var _features2 = _interopRequireDefault(_features);
 
-var _globalEval = __webpack_require__(148);
+var _globalEval = __webpack_require__(149);
 
 var _globalEval2 = _interopRequireDefault(_globalEval);
 
-var _globalEvalStyles = __webpack_require__(149);
+var _globalEvalStyles = __webpack_require__(150);
 
 var _globalEvalStyles2 = _interopRequireDefault(_globalEvalStyles);
 
-__webpack_require__(147);
+__webpack_require__(148);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -645,11 +645,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.EventHandler = exports.EventHandle = exports.EventEmitterProxy = exports.EventEmitter = undefined;
 
-var _EventEmitter = __webpack_require__(150);
+var _EventEmitter = __webpack_require__(151);
 
 var _EventEmitter2 = _interopRequireDefault(_EventEmitter);
 
-var _EventEmitterProxy = __webpack_require__(151);
+var _EventEmitterProxy = __webpack_require__(152);
 
 var _EventEmitterProxy2 = _interopRequireDefault(_EventEmitterProxy);
 
@@ -657,7 +657,7 @@ var _EventHandle = __webpack_require__(78);
 
 var _EventHandle2 = _interopRequireDefault(_EventHandle);
 
-var _EventHandler = __webpack_require__(152);
+var _EventHandler = __webpack_require__(153);
 
 var _EventHandler2 = _interopRequireDefault(_EventHandler);
 
@@ -685,11 +685,11 @@ var _validators = __webpack_require__(85);
 
 var _validators2 = _interopRequireDefault(_validators);
 
-var _Config = __webpack_require__(162);
+var _Config = __webpack_require__(163);
 
 var _Config2 = _interopRequireDefault(_Config);
 
-var _State = __webpack_require__(163);
+var _State = __webpack_require__(164);
 
 var _State2 = _interopRequireDefault(_State);
 
@@ -732,11 +732,11 @@ var _metalSoy = __webpack_require__(1);
 
 var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
-var _metalToggler = __webpack_require__(164);
+var _metalToggler = __webpack_require__(165);
 
 var _metalToggler2 = _interopRequireDefault(_metalToggler);
 
-var _Sidebar = __webpack_require__(136);
+var _Sidebar = __webpack_require__(137);
 
 var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
@@ -844,7 +844,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.dom = undefined;
 
-var _domNamed = __webpack_require__(146);
+var _domNamed = __webpack_require__(147);
 
 Object.keys(_domNamed).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -900,6 +900,33 @@ function getData(component) {
 
 /***/ }),
 /* 69 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 70 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -1086,33 +1113,6 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
 
 
 /***/ }),
@@ -1978,11 +1978,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.HTML2IncDom = undefined;
 
-var _HTML2IncDom = __webpack_require__(155);
+var _HTML2IncDom = __webpack_require__(156);
 
 var _HTML2IncDom2 = _interopRequireDefault(_HTML2IncDom);
 
-var _IncrementalDomRenderer = __webpack_require__(153);
+var _IncrementalDomRenderer = __webpack_require__(154);
 
 var _IncrementalDomRenderer2 = _interopRequireDefault(_IncrementalDomRenderer);
 
@@ -2307,11 +2307,11 @@ function handleInterceptedTextCall_() {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-var _incrementalDom = __webpack_require__(140);
+var _incrementalDom = __webpack_require__(141);
 
 var IncrementalDOM = _interopRequireWildcard(_incrementalDom);
 
-var _incrementalDomString = __webpack_require__(139);
+var _incrementalDomString = __webpack_require__(140);
 
 var IncrementalDOMString = _interopRequireWildcard(_incrementalDomString);
 
@@ -2330,7 +2330,7 @@ if ((0, _metal.isServerSide)()) {
 
 	scope.IncrementalDOM = IncrementalDOM;
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(70)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(69)))
 
 /***/ }),
 /* 84 */
@@ -2351,7 +2351,7 @@ exports.render = render;
 exports.renderChild = renderChild;
 exports.renderFunction = renderFunction;
 
-var _attributes = __webpack_require__(158);
+var _attributes = __webpack_require__(159);
 
 var _callArgs = __webpack_require__(80);
 
@@ -2365,7 +2365,7 @@ var _data = __webpack_require__(68);
 
 var _metal = __webpack_require__(2);
 
-var _unused = __webpack_require__(154);
+var _unused = __webpack_require__(155);
 
 var _incrementalDomAop = __webpack_require__(72);
 
@@ -2895,7 +2895,14 @@ function renderSubComponent_(tagOrCtor, config, owner) {
 		config.key = parentData.config.key;
 	}
 
-	comp.getRenderer().renderInsidePatch(comp);
+	if (comp.portalElement && (0, _metal.isServerSide)()) {
+		return comp;
+	}
+
+	if (!comp.portalElement) {
+		comp.getRenderer().renderInsidePatch(comp);
+	}
+
 	if (!comp.wasRendered) {
 		comp.renderComponent();
 	}
@@ -3010,6 +3017,30 @@ var validators = {
 				return result;
 			}
 			return validateArrayItems(validator, value, name, context);
+		});
+	},
+
+	/**
+  * Creates a validator that checks for a value within a range.
+  * @param {!Number} min The minimum value allowed.
+  * @param {!Number} max The maximum value allowed.
+  * @return {!function()}
+  */
+	inRange: function inRange(min, max) {
+		var minResult = validators.number(min);
+		var maxResult = validators.number(max);
+		if (isInvalid(minResult)) {
+			return minResult;
+		}
+		if (isInvalid(maxResult)) {
+			return maxResult;
+		}
+		return maybe(function (value) {
+			var valueResult = validators.number(value);
+			if (isInvalid(valueResult)) {
+				return valueResult;
+			}
+			return value >= min && value <= max;
 		});
 	},
 
@@ -3251,7 +3282,353 @@ function validateType(expectedType, value, name, context) {
 exports.default = validators;
 
 /***/ }),
-/* 86 */,
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+/**
+ * A collection of core utility functions.
+ * @const
+ */
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+exports.abstractMethod = abstractMethod;
+exports.disableCompatibilityMode = disableCompatibilityMode;
+exports.enableCompatibilityMode = enableCompatibilityMode;
+exports.getCompatibilityModeData = getCompatibilityModeData;
+exports.getFunctionName = getFunctionName;
+exports.getStaticProperty = getStaticProperty;
+exports.getUid = getUid;
+exports.identityFunction = identityFunction;
+exports.isBoolean = isBoolean;
+exports.isDef = isDef;
+exports.isDefAndNotNull = isDefAndNotNull;
+exports.isDocument = isDocument;
+exports.isDocumentFragment = isDocumentFragment;
+exports.isElement = isElement;
+exports.isFunction = isFunction;
+exports.isNull = isNull;
+exports.isNumber = isNumber;
+exports.isWindow = isWindow;
+exports.isObject = isObject;
+exports.isPromise = isPromise;
+exports.isString = isString;
+exports.isServerSide = isServerSide;
+exports.nullFunction = nullFunction;
+var compatibilityModeData_ = void 0;
+
+/**
+ * Counter for unique id.
+ * @type {Number}
+ * @private
+ */
+var uniqueIdCounter_ = 1;
+
+/**
+ * Unique id property prefix.
+ * @type {String}
+ * @protected
+ */
+var UID_PROPERTY = exports.UID_PROPERTY = 'core_' + (Math.random() * 1e9 >>> 0);
+
+/**
+ * When defining a class Foo with an abstract method bar(), you can do:
+ * Foo.prototype.bar = abstractMethod
+ *
+ * Now if a subclass of Foo fails to override bar(), an error will be thrown
+ * when bar() is invoked.
+ *
+ * @type {!Function}
+ * @throws {Error} when invoked to indicate the method should be overridden.
+ */
+function abstractMethod() {
+  throw Error('Unimplemented abstract method');
+}
+
+/**
+ * Disables Metal.js's compatibility mode.
+ */
+function disableCompatibilityMode() {
+  compatibilityModeData_ = undefined;
+}
+
+/**
+ * Enables Metal.js's compatibility mode with the following features from rc
+ * and 1.x versions:
+ *     - Using "key" to reference component instances. In the current version
+ *       this should be done via "ref" instead. This allows old code still
+ *       using "key" to keep working like before. NOTE: this may cause
+ *       problems, since "key" is meant to be used differently. Only use this
+ *       if it's not possible to upgrade the code to use "ref" instead.
+ * @param {Object=} data Optional object with data to specify more
+ *     details, such as:
+ *         - renderers {Array} the template renderers that should be in
+ *           compatibility mode, either their constructors or strings
+ *           representing them (e.g. 'soy' or 'jsx'). By default, all the ones
+ *           that extend from IncrementalDomRenderer.
+ * @type {Object}
+ */
+function enableCompatibilityMode() {
+  var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  compatibilityModeData_ = data;
+}
+
+/**
+ * Returns the data used for compatibility mode, or nothing if it hasn't been
+ * enabled.
+ * @return {Object}
+ */
+function getCompatibilityModeData() {
+  // Compatibility mode can be set via the __METAL_COMPATIBILITY__ global var.
+  if (compatibilityModeData_ === undefined) {
+    if (typeof window !== 'undefined' && window.__METAL_COMPATIBILITY__) {
+      enableCompatibilityMode(window.__METAL_COMPATIBILITY__);
+    }
+  }
+  return compatibilityModeData_;
+}
+
+/**
+ * Returns the first argument if it's truthy, or the second otherwise.
+ * @param {*} a
+ * @param {*} b
+ * @return {*}
+ * @protected
+ */
+function getFirstTruthy_(a, b) {
+  return a || b;
+}
+
+/**
+ * Gets the name of the given function. If the current browser doesn't
+ * support the `name` property, this will calculate it from the function's
+ * content string.
+ * @param {!function()} fn
+ * @return {string}
+ */
+function getFunctionName(fn) {
+  if (!fn.name) {
+    var str = fn.toString();
+    fn.name = str.substring(9, str.indexOf('('));
+  }
+  return fn.name;
+}
+
+/**
+ * Gets the value of a static property in the given class. The value will be
+ * inherited from ancestors as expected, unless a custom merge function is given,
+ * which can change how the super classes' value for that property will be merged
+ * together.
+ * The final merged value will be stored in another property, so that it won't
+ * be recalculated even if this function is called multiple times.
+ * @param {!function()} ctor Class constructor.
+ * @param {string} propertyName Property name to be merged.
+ * @param {function(*, *):*=} mergeFn Function that receives the merged
+ *     value of the property so far and the next value to be merged to it.
+ *     Should return these two merged together. If not passed the final property
+ *     will be the first truthy value among ancestors.
+ * @return {Object}
+ */
+function getStaticProperty(ctor, propertyName) {
+  var mergeFn = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : getFirstTruthy_;
+
+  var mergedName = propertyName + '_MERGED';
+  if (!ctor.hasOwnProperty(mergedName)) {
+    // eslint-disable-next-line
+    var merged = ctor.hasOwnProperty(propertyName) ? ctor[propertyName] : null;
+    if (ctor.__proto__ && !ctor.__proto__.isPrototypeOf(Function)) {
+      merged = mergeFn(merged, getStaticProperty(ctor.__proto__, propertyName, mergeFn));
+    }
+    ctor[mergedName] = merged;
+  }
+  return ctor[mergedName];
+}
+
+/**
+ * Gets an unique id. If `object` argument is passed, the object is
+ * mutated with an unique id. Consecutive calls with the same object
+ * reference won't mutate the object again, instead the current object uid
+ * returns. See {@link UID_PROPERTY}.
+ * @param {Object=} object Optional object to be mutated with the uid. If
+ *     not specified this method only returns the uid.
+ * @param {boolean=} noInheritance Optional flag indicating if this
+ *     object's uid property can be inherited from parents or not.
+ * @throws {Error} when invoked to indicate the method should be overridden.
+ * @return {number}
+ */
+function getUid(object, noInheritance) {
+  if (object) {
+    var id = object[UID_PROPERTY];
+    if (noInheritance && !object.hasOwnProperty(UID_PROPERTY)) {
+      id = null;
+    }
+    return id || (object[UID_PROPERTY] = uniqueIdCounter_++);
+  }
+  return uniqueIdCounter_++;
+}
+
+/**
+ * The identity function. Returns its first argument.
+ * @param {*=} returnValue The single value that will be returned.
+ * @return {?} The first argument.
+ */
+function identityFunction(returnValue) {
+  return returnValue;
+}
+
+/**
+ * Returns true if the specified value is a boolean.
+ * @param {?} val Variable to test.
+ * @return {boolean} Whether variable is boolean.
+ */
+function isBoolean(val) {
+  return typeof val === 'boolean';
+}
+
+/**
+ * Returns true if the specified value is not undefined.
+ * @param {?} val Variable to test.
+ * @return {boolean} Whether variable is defined.
+ */
+function isDef(val) {
+  return val !== undefined;
+}
+
+/**
+ * Returns true if value is not undefined or null.
+ * @param {*} val
+ * @return {boolean}
+ */
+function isDefAndNotNull(val) {
+  return isDef(val) && !isNull(val);
+}
+
+/**
+ * Returns true if value is a document.
+ * @param {*} val
+ * @return {boolean}
+ */
+function isDocument(val) {
+  return val && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && val.nodeType === 9;
+}
+
+/**
+ * Returns true if value is a document-fragment.
+ * @param {*} val
+ * @return {boolean}
+ */
+function isDocumentFragment(val) {
+  return val && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && val.nodeType === 11;
+}
+
+/**
+ * Returns true if value is a dom element.
+ * @param {*} val
+ * @return {boolean}
+ */
+function isElement(val) {
+  return val && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && val.nodeType === 1;
+}
+
+/**
+ * Returns true if the specified value is a function.
+ * @param {?} val Variable to test.
+ * @return {boolean} Whether variable is a function.
+ */
+function isFunction(val) {
+  return typeof val === 'function';
+}
+
+/**
+ * Returns true if value is null.
+ * @param {*} val
+ * @return {boolean}
+ */
+function isNull(val) {
+  return val === null;
+}
+
+/**
+ * Returns true if the specified value is a number.
+ * @param {?} val Variable to test.
+ * @return {boolean} Whether variable is a number.
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Returns true if value is a window.
+ * @param {*} val
+ * @return {boolean}
+ */
+function isWindow(val) {
+  return val !== null && val === val.window;
+}
+
+/**
+ * Returns true if the specified value is an object. This includes arrays
+ * and functions.
+ * @param {?} val Variable to test.
+ * @return {boolean} Whether variable is an object.
+ */
+function isObject(val) {
+  var type = typeof val === 'undefined' ? 'undefined' : _typeof(val);
+  return type === 'object' && val !== null || type === 'function';
+}
+
+/**
+ * Returns true if value is a Promise.
+ * @param {*} val
+ * @return {boolean}
+ */
+function isPromise(val) {
+  return val && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && typeof val.then === 'function';
+}
+
+/**
+ * Returns true if value is a string.
+ * @param {*} val
+ * @return {boolean}
+ */
+function isString(val) {
+  return typeof val === 'string' || val instanceof String;
+}
+
+/**
+ * Sets to true if running inside Node.js environment with extra check for
+ * `process.browser` to skip Karma runner environment. Karma environment has
+ * `process` defined even though it runs on the browser.
+ * @param {?Object} options Contains `checkEnv` property which if true, checks
+ * the NODE_ENV variable. If NODE_ENV equals 'test', the function returns false.
+ * @return {boolean}
+ */
+function isServerSide() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { checkEnv: true };
+
+  var serverSide = typeof process !== 'undefined' && !process.browser;
+  if (serverSide && options.checkEnv) {
+    serverSide = typeof process.env !== 'undefined' && process.env.NODE_ENV !== 'test';
+  }
+  return serverSide;
+}
+
+/**
+ * Null function used for default values of callbacks, etc.
+ * @return {void} Nothing.
+ */
+function nullFunction() {}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(70)))
+
+/***/ }),
 /* 87 */,
 /* 88 */,
 /* 89 */,
@@ -3301,7 +3678,8 @@ exports.default = validators;
 /* 133 */,
 /* 134 */,
 /* 135 */,
-/* 136 */
+/* 136 */,
+/* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3436,7 +3814,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Sidebar, templates);
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -3626,13 +4004,13 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Sidebar, templates);
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(70), __webpack_require__(69)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(69), __webpack_require__(70)))
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var apply = Function.prototype.apply;
+/* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
 
 // DOM APIs, for completeness
 
@@ -3682,13 +4060,21 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(137);
-exports.setImmediate = setImmediate;
-exports.clearImmediate = clearImmediate;
+__webpack_require__(138);
+// On some exotic environments, it's not clear which object `setimmeidate` was
+// able to install onto.  Search each possibility in the same order as the
+// `setimmediate` library.
+exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
+                       (typeof global !== "undefined" && global.setImmediate) ||
+                       (this && this.setImmediate);
+exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
+                         (typeof global !== "undefined" && global.clearImmediate) ||
+                         (this && this.clearImmediate);
 
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(69)))
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -3966,7 +4352,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5389,10 +5775,10 @@ exports.notifications = notifications;
 exports.importNode = importNode;
 
 //# sourceMappingURL=incremental-dom-cjs.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(69)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(70)))
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5410,7 +5796,7 @@ var _events = __webpack_require__(75);
 
 var _metal = __webpack_require__(2);
 
-var _sync = __webpack_require__(143);
+var _sync = __webpack_require__(144);
 
 var _metalDom = __webpack_require__(3);
 
@@ -5552,6 +5938,13 @@ var Component = function (_EventEmitter) {
 		_this.initialConfig_ = config || {};
 
 		/**
+   * Indicates whether the component should be rendered as a Portal, outside
+   * of the parent component.
+   * @type {string|Element|boolean}
+   */
+		_this.portalElement = null;
+
+		/**
    * Whether the element was rendered.
    * @type {boolean}
    */
@@ -5571,6 +5964,8 @@ var Component = function (_EventEmitter) {
 		_this.setUpRenderer_();
 		_this.setUpDataManager_();
 		_this.setUpSyncUpdates_();
+
+		_this.setUpPortal_(_this.initialConfig_.portalElement);
 
 		_this.on('stateWillChange', _this.handleStateWillChange_);
 		_this.on('stateChanged', _this.handleComponentStateChanged_);
@@ -5816,6 +6211,33 @@ var Component = function (_EventEmitter) {
 		key: 'getInitialConfig',
 		value: function getInitialConfig() {
 			return this.initialConfig_;
+		}
+
+		/**
+   * Gets portalElement based on selector. If an id is passed and the element
+   * does not exist, the element is created with that id and appended to the body.
+   *
+   * @param {string|Element} portalElementSelector
+   * @return {?Element}
+   */
+
+	}, {
+		key: 'getPortalElement_',
+		value: function getPortalElement_(portalElementSelector) {
+			var portalElement = (0, _metalDom.toElement)(portalElementSelector);
+
+			if (portalElement) {
+				return portalElement;
+			}
+
+			if (portalElementSelector.indexOf('#') === 0 && portalElementSelector.indexOf(' ') === -1) {
+				portalElement = document.createElement('div');
+				portalElement.setAttribute('id', portalElementSelector.slice(1));
+
+				(0, _metalDom.enterDocument)(portalElement);
+			}
+
+			return portalElement;
 		}
 
 		/**
@@ -6081,6 +6503,41 @@ var Component = function (_EventEmitter) {
 			this.dataManager_ = (0, _metal.getStaticProperty)(this.constructor, 'DATA_MANAGER');
 			this.dataManager_.setUp(this, _metal.object.mixin({}, this.renderer_.getExtraDataConfig(this), Component.DATA) // eslint-disable-line
 			);
+		}
+
+		/**
+   * Overwrites element property if portalElement is passed. Creates
+   * a nested placeholder so that portalElement is not removed from the
+   * DOM when component first renders. When portalElement is equal to true,
+   * component is appeneded to the body.
+   *
+   * @param {string|Element|boolean} portalElement
+   */
+
+	}, {
+		key: 'setUpPortal_',
+		value: function setUpPortal_(portalElement) {
+			if (!portalElement || !(0, _metal.isElement)(portalElement) && !(0, _metal.isString)(portalElement) && !(0, _metal.isBoolean)(portalElement)) {
+				return;
+			} else if ((0, _metal.isBoolean)(portalElement) && portalElement) {
+				portalElement = 'body';
+			}
+
+			if ((0, _metal.isServerSide)()) {
+				this.portalElement = true;
+				return;
+			}
+
+			portalElement = this.getPortalElement_(portalElement);
+
+			if (portalElement) {
+				var placeholder = document.createElement('div');
+
+				portalElement.appendChild(placeholder);
+
+				this.element = placeholder;
+				this.portalElement = portalElement;
+			}
 		}
 
 		/**
@@ -6405,7 +6862,7 @@ var proxyBlackList_ = {
 exports.default = Component;
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6489,7 +6946,7 @@ ComponentRegistry.components_ = {};
 exports.default = ComponentRegistry;
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6558,7 +7015,7 @@ function syncState(component, changes) {
 }
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6639,7 +7096,7 @@ var DomDelegatedEventHandle = function (_EventHandle) {
 exports.default = DomDelegatedEventHandle;
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6753,7 +7210,7 @@ var DomEventEmitterProxy = function (_EventEmitterProxy) {
 exports.default = DomEventEmitterProxy;
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6795,7 +7252,7 @@ var _domData = __webpack_require__(71);
 
 var _domData2 = _interopRequireDefault(_domData);
 
-var _DomDelegatedEventHandle = __webpack_require__(144);
+var _DomDelegatedEventHandle = __webpack_require__(145);
 
 var _DomDelegatedEventHandle2 = _interopRequireDefault(_DomDelegatedEventHandle);
 
@@ -7666,7 +8123,7 @@ function triggerSelectorListeners_(container, element, event, defaultFns) {
 }
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7731,7 +8188,7 @@ if (!(0, _metal.isServerSide)()) {
 }
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7889,7 +8346,7 @@ var globalEval = function () {
 exports.default = globalEval;
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8029,7 +8486,7 @@ var globalEvalStyles = function () {
 exports.default = globalEvalStyles;
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8577,7 +9034,7 @@ function toArray(val) {
 exports.default = EventEmitter;
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8821,7 +9278,7 @@ var EventEmitterProxy = function (_Disposable) {
 exports.default = EventEmitterProxy;
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8918,7 +9375,7 @@ var EventHandler = function (_Disposable) {
 exports.default = EventHandler;
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8938,7 +9395,7 @@ var _data = __webpack_require__(68);
 
 var _children = __webpack_require__(82);
 
-var _patch2 = __webpack_require__(159);
+var _patch2 = __webpack_require__(160);
 
 var _render = __webpack_require__(84);
 
@@ -8993,7 +9450,9 @@ var IncrementalDomRenderer = function (_ComponentRenderer$co) {
 				for (var i = 0; i < data.childComponents.length; i++) {
 					var child = data.childComponents[i];
 					if (!child.isDisposed()) {
-						child.element = null;
+						if (!child.portalElement) {
+							child.element = null;
+						}
 						child.dispose();
 					}
 				}
@@ -9100,7 +9559,7 @@ var IncrementalDomRenderer = function (_ComponentRenderer$co) {
 	}, {
 		key: 'render',
 		value: function render(component, dataOrElement, parent) {
-			if (component instanceof _metalComponent.Component) {
+			if (component[_metalComponent.Component.COMPONENT_FLAG]) {
 				this.patch(component);
 			} else {
 				return (0, _render.renderFunction)(this, component, dataOrElement, parent);
@@ -9262,7 +9721,7 @@ renderer.RENDERER_NAME = 'incremental-dom';
 exports.default = renderer;
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9294,7 +9753,9 @@ function disposeUnused() {
 		if (!comp.isDisposed() && !(0, _data.getData)(comp).parent) {
 			// Don't let disposing cause the element to be removed, since it may
 			// be currently being reused by another component.
-			comp.element = null;
+			if (!comp.portalElement) {
+				comp.element = null;
+			}
 			comp.dispose();
 		}
 	}
@@ -9317,7 +9778,7 @@ function schedule(comps) {
 }
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9329,11 +9790,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _HTMLParser = __webpack_require__(156);
+var _HTMLParser = __webpack_require__(157);
 
 var _HTMLParser2 = _interopRequireDefault(_HTMLParser);
 
-var _unescape = __webpack_require__(157);
+var _unescape = __webpack_require__(158);
 
 var _unescape2 = _interopRequireDefault(_unescape);
 
@@ -9426,7 +9887,7 @@ var HTML2IncDom = function () {
 exports.default = HTML2IncDom;
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9685,7 +10146,7 @@ exports.default = HTMLParser;
 /* eslint-enable */
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9764,7 +10225,7 @@ exports.default = unescape;
 var HTML_ENTITY_PATTERN_ = /&([^;\s<&]+);?/g;
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9953,7 +10414,7 @@ function setValueAttrAsProperty_(element, name, value) {
 }
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10078,7 +10539,7 @@ function tryPatchWithNoParent_(component) {
 }
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13905,6 +14366,9 @@ __webpack_require__(79);
      * A CSS3 declaration, property, value or group of semicolon separated
      * declarations.
      */
+    STYLE: goog.DEBUG ? { sanitizedContentStyle: true } : {},
+
+    /** A CSS3 style sheet (list of rules). */
     CSS: goog.DEBUG ? { sanitizedContentCss: true } : {},
 
     /**
@@ -13930,7 +14394,7 @@ __webpack_require__(79);
    * @constructor
    */
   goog.soy.data.SanitizedContent = function () {
-    throw Error('Do not instantiate directly');
+    throw new Error('Do not instantiate directly');
   };
 
   /**
@@ -13966,17 +14430,57 @@ __webpack_require__(79);
   };
 
   /**
-   * An intermediary base class to allow the type system to sepcify text templates
-   * without referencing the soydata package.
+   * Converts sanitized content of kind TEXT or HTML into SafeHtml. HTML content
+   * is converted without modification, while text content is HTML-escaped.
+   * @return {!goog.html.SafeHtml}
+   * @throws {Error} when the content kind is not TEXT or HTML.
+   */
+  goog.soy.data.SanitizedContent.prototype.toSafeHtml = function () {
+    if (this.contentKind === goog.soy.data.SanitizedContentKind.TEXT) {
+      return goog.html.SafeHtml.htmlEscape(this.toString());
+    }
+    if (this.contentKind !== goog.soy.data.SanitizedContentKind.HTML) {
+      throw new Error('Sanitized content was not of kind TEXT or HTML.');
+    }
+    return goog.html.uncheckedconversions.safeHtmlFromStringKnownToSatisfyTypeContract(goog.string.Const.from('Soy SanitizedContent of kind HTML produces ' + 'SafeHtml-contract-compliant value.'), this.toString(), this.contentDir);
+  };
+
+  /**
+   * Converts sanitized content of kind URI into SafeUrl without modification.
+   * @return {!goog.html.SafeUrl}
+   * @throws {Error} when the content kind is not URI.
+   */
+  goog.soy.data.SanitizedContent.prototype.toSafeUrl = function () {
+    if (this.contentKind !== goog.soy.data.SanitizedContentKind.URI) {
+      throw new Error('Sanitized content was not of kind URI.');
+    }
+    return goog.html.uncheckedconversions.safeUrlFromStringKnownToSatisfyTypeContract(goog.string.Const.from('Soy SanitizedContent of kind URI produces ' + 'SafeHtml-contract-compliant value.'), this.toString());
+  };
+
+  /**
+   * Unsanitized plain text string.
+   *
+   * While all strings are effectively safe to use as a plain text, there are no
+   * guarantees about safety in any other context such as HTML. This is
+   * sometimes used to mark that should never be used unescaped.
+   *
+   * @param {*} content Plain text with no guarantees.
+   * @param {?goog.i18n.bidi.Dir=} opt_contentDir The content direction; null if
+   *     unknown and thus to be estimated when necessary. Default: null.
    * @extends {goog.soy.data.SanitizedContent}
    * @constructor
    */
-  goog.soy.data.UnsanitizedText = function () {
-    // TODO(gboyer): Delete this class after moving soydata to Closure.
-    goog.soy.data.UnsanitizedText.base(this, 'constructor');
-  };
+  goog.soy.data.UnsanitizedText = function (content, opt_contentDir) {
+    // Not calling the superclass constructor which just throws an exception.
 
+    /** @override */
+    this.content = String(content);
+    this.contentDir = opt_contentDir != null ? opt_contentDir : null;
+  };
   goog.inherits(goog.soy.data.UnsanitizedText, goog.soy.data.SanitizedContent);
+
+  /** @override */
+  goog.soy.data.UnsanitizedText.prototype.contentKind = goog.soy.data.SanitizedContentKind.TEXT;
 
   /**
    * Content of type {@link goog.soy.data.SanitizedContentKind.HTML}.
@@ -14008,6 +14512,204 @@ __webpack_require__(79);
     return goog.isString(value) || value instanceof goog.soy.data.SanitizedHtml || value instanceof goog.soy.data.UnsanitizedText || value instanceof goog.html.SafeHtml;
   };
 
+  /**
+   * Content of type {@link goog.soy.data.SanitizedContentKind.JS}.
+   *
+   * The content is JavaScript source that when evaluated does not execute any
+   * attacker-controlled scripts. The content direction is LTR.
+   *
+   * @extends {goog.soy.data.SanitizedContent}
+   * @constructor
+   */
+  goog.soy.data.SanitizedJs = function () {
+    goog.soy.data.SanitizedJs.base(this, 'constructor');
+  };
+  goog.inherits(goog.soy.data.SanitizedJs, goog.soy.data.SanitizedContent);
+
+  /** @override */
+  goog.soy.data.SanitizedJs.prototype.contentKind = goog.soy.data.SanitizedContentKind.JS;
+
+  /** @override */
+  goog.soy.data.SanitizedJs.prototype.contentDir = goog.i18n.bidi.Dir.LTR;
+
+  /**
+   * Checks if the value could be used as the Soy type {js}.
+   * @param {*} value
+   * @return {boolean}
+   */
+  goog.soy.data.SanitizedJs.isCompatibleWith = function (value) {
+    return goog.isString(value) || value instanceof goog.soy.data.SanitizedJs || value instanceof goog.soy.data.UnsanitizedText || value instanceof goog.html.SafeScript;
+  };
+
+  /**
+   * Content of type {@link goog.soy.data.SanitizedContentKind.URI}.
+   *
+   * The content is a URI chunk that the caller knows is safe to emit in a
+   * template. The content direction is LTR.
+   *
+   * @extends {goog.soy.data.SanitizedContent}
+   * @constructor
+   */
+  goog.soy.data.SanitizedUri = function () {
+    goog.soy.data.SanitizedUri.base(this, 'constructor');
+  };
+  goog.inherits(goog.soy.data.SanitizedUri, goog.soy.data.SanitizedContent);
+
+  /** @override */
+  goog.soy.data.SanitizedUri.prototype.contentKind = goog.soy.data.SanitizedContentKind.URI;
+
+  /** @override */
+  goog.soy.data.SanitizedUri.prototype.contentDir = goog.i18n.bidi.Dir.LTR;
+
+  /**
+   * Checks if the value could be used as the Soy type {uri}.
+   * @param {*} value
+   * @return {boolean}
+   */
+  goog.soy.data.SanitizedUri.isCompatibleWith = function (value) {
+    return goog.isString(value) || value instanceof goog.soy.data.SanitizedUri || value instanceof goog.soy.data.UnsanitizedText || value instanceof goog.html.SafeUrl || value instanceof goog.html.TrustedResourceUrl || value instanceof goog.Uri;
+  };
+
+  /**
+   * Content of type
+   * {@link goog.soy.data.SanitizedContentKind.TRUSTED_RESOURCE_URI}.
+   *
+   * The content is a TrustedResourceUri chunk that is not under attacker control.
+   * The content direction is LTR.
+   *
+   * @extends {goog.soy.data.SanitizedContent}
+   * @constructor
+   */
+  goog.soy.data.SanitizedTrustedResourceUri = function () {
+    goog.soy.data.SanitizedTrustedResourceUri.base(this, 'constructor');
+  };
+  goog.inherits(goog.soy.data.SanitizedTrustedResourceUri, goog.soy.data.SanitizedContent);
+
+  /** @override */
+  goog.soy.data.SanitizedTrustedResourceUri.prototype.contentKind = goog.soy.data.SanitizedContentKind.TRUSTED_RESOURCE_URI;
+
+  /** @override */
+  goog.soy.data.SanitizedTrustedResourceUri.prototype.contentDir = goog.i18n.bidi.Dir.LTR;
+
+  /**
+   * Converts sanitized content into TrustedResourceUrl without modification.
+   * @return {!goog.html.TrustedResourceUrl}
+   */
+  goog.soy.data.SanitizedTrustedResourceUri.prototype.toTrustedResourceUrl = function () {
+    return goog.html.uncheckedconversions.trustedResourceUrlFromStringKnownToSatisfyTypeContract(goog.string.Const.from('Soy SanitizedContent of kind TRUSTED_RESOURCE_URI produces ' + 'TrustedResourceUrl-contract-compliant value.'), this.toString());
+  };
+
+  /**
+   * Checks if the value could be used as the Soy type {trusted_resource_uri}.
+   * @param {*} value
+   * @return {boolean}
+   */
+  goog.soy.data.SanitizedTrustedResourceUri.isCompatibleWith = function (value) {
+    return goog.isString(value) || value instanceof goog.soy.data.SanitizedTrustedResourceUri || value instanceof goog.soy.data.UnsanitizedText || value instanceof goog.html.TrustedResourceUrl;
+  };
+
+  /**
+   * Content of type {@link goog.soy.data.SanitizedContentKind.ATTRIBUTES}.
+   *
+   * The content should be safely embeddable within an open tag, such as a
+   * key="value" pair. The content direction is LTR.
+   *
+   * @extends {goog.soy.data.SanitizedContent}
+   * @constructor
+   */
+  goog.soy.data.SanitizedHtmlAttribute = function () {
+    goog.soy.data.SanitizedHtmlAttribute.base(this, 'constructor');
+  };
+  goog.inherits(goog.soy.data.SanitizedHtmlAttribute, goog.soy.data.SanitizedContent);
+
+  /** @override */
+  goog.soy.data.SanitizedHtmlAttribute.prototype.contentKind = goog.soy.data.SanitizedContentKind.ATTRIBUTES;
+
+  /** @override */
+  goog.soy.data.SanitizedHtmlAttribute.prototype.contentDir = goog.i18n.bidi.Dir.LTR;
+
+  /**
+   * Checks if the value could be used as the Soy type {attribute}.
+   * @param {*} value
+   * @return {boolean}
+   */
+  goog.soy.data.SanitizedHtmlAttribute.isCompatibleWith = function (value) {
+    return goog.isString(value) || value instanceof goog.soy.data.SanitizedHtmlAttribute || value instanceof goog.soy.data.UnsanitizedText;
+  };
+
+  /**
+   * Content of type {@link goog.soy.data.SanitizedContentKind.STYLE}.
+   *
+   * The content is non-attacker-exploitable CSS, such as {@code color:#c3d9ff}.
+   * The content direction is LTR.
+   *
+   * @extends {goog.soy.data.SanitizedContent}
+   * @constructor
+   */
+  goog.soy.data.SanitizedStyle = function () {
+    goog.soy.data.SanitizedStyle.base(this, 'constructor');
+  };
+  goog.inherits(goog.soy.data.SanitizedStyle, goog.soy.data.SanitizedContent);
+
+  /** @override */
+  goog.soy.data.SanitizedStyle.prototype.contentKind = goog.soy.data.SanitizedContentKind.STYLE;
+
+  /** @override */
+  goog.soy.data.SanitizedStyle.prototype.contentDir = goog.i18n.bidi.Dir.LTR;
+
+  /**
+   * Checks if the value could be used as the Soy type {css}.
+   * @param {*} value
+   * @return {boolean}
+   */
+  goog.soy.data.SanitizedStyle.isCompatibleWith = function (value) {
+    return goog.isString(value) || value instanceof goog.soy.data.SanitizedStyle || value instanceof goog.soy.data.UnsanitizedText || value instanceof goog.html.SafeStyle;
+  };
+
+  /**
+   * Content of type {@link goog.soy.data.SanitizedContentKind.CSS}.
+   *
+   * The content is non-attacker-exploitable CSS, such as {@code @import url(x)}.
+   * The content direction is LTR.
+   *
+   * @extends {goog.soy.data.SanitizedContent}
+   * @constructor
+   */
+  goog.soy.data.SanitizedCss = function () {
+    goog.soy.data.SanitizedCss.base(this, 'constructor');
+  };
+  goog.inherits(goog.soy.data.SanitizedCss, goog.soy.data.SanitizedContent);
+
+  /** @override */
+  goog.soy.data.SanitizedCss.prototype.contentKind = goog.soy.data.SanitizedContentKind.CSS;
+
+  /** @override */
+  goog.soy.data.SanitizedCss.prototype.contentDir = goog.i18n.bidi.Dir.LTR;
+
+  /**
+   * Checks if the value could be used as the Soy type {css}.
+   * @param {*} value
+   * @return {boolean}
+   */
+  goog.soy.data.SanitizedCss.isCompatibleWith = function (value) {
+    return goog.isString(value) || value instanceof goog.soy.data.SanitizedCss || value instanceof goog.soy.data.UnsanitizedText || value instanceof goog.html.SafeStyle || // TODO(jakubvrana): Delete.
+    value instanceof goog.html.SafeStyleSheet;
+  };
+
+  /**
+   * Converts SanitizedCss into SafeStyleSheet.
+   * Note: SanitizedCss in Soy represents both SafeStyle and SafeStyleSheet in
+   * Closure. It's about to be split so that SanitizedCss represents only
+   * SafeStyleSheet.
+   * @return {!goog.html.SafeStyleSheet}
+   */
+  goog.soy.data.SanitizedCss.prototype.toSafeStyleSheet = function () {
+    var value = this.toString();
+    // TODO(jakubvrana): Remove this check when there's a separate type for style
+    // declaration.
+    goog.asserts.assert(/[@{]|^\s*$/.test(value), 'value doesn\'t look like style sheet: ' + value);
+    return goog.html.uncheckedconversions.safeStyleSheetFromStringKnownToSatisfyTypeContract(goog.string.Const.from('Soy SanitizedCss produces SafeStyleSheet-contract-compliant ' + 'value.'), value);
+  };
   /*
    * Copyright 2008 Google Inc.
    *
@@ -14713,10 +15415,10 @@ __webpack_require__(79);
     return IncrementalDOM;
   });
 }).call(typeof exports !== 'undefined' && typeof global !== 'undefined' ? global : window);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(70)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(69)))
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14806,7 +15508,7 @@ var SoyAop = {
 exports.default = SoyAop;
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14881,6 +15583,17 @@ var Config = {
   * @return {ConfigWithValidator} `State` configuration object.
   */
 	func: setPrimitiveValidators('func'),
+
+	/**
+  * Creates `State` configuration object with a `rangeOf` validator.
+  * @param {!Number} min The minimum value allowed.
+  * @param {!Number} max The maximum value allowed.
+  * @return {ConfigWithValidator} `State` configuration object.
+  */
+	inRange: function inRange(min, max) {
+		return this.validator(_validators2.default.inRange(min, max));
+	},
+
 
 	/**
   * Function that creates `State` object with an `instanceOf` validator.
@@ -15108,7 +15821,7 @@ function setPrimitiveValidators(name) {
 exports.default = Config;
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15947,7 +16660,7 @@ State.KeyStates = {
 exports.default = State;
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16283,7 +16996,7 @@ exports.Toggler = Toggler;
 exports.default = Toggler;
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16430,7 +17143,7 @@ var array = function () {
 exports.default = array;
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16444,6 +17157,9 @@ exports.default = array;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+
+var _coreNamed = __webpack_require__(86);
+
 var async = {};
 
 /**
@@ -16540,19 +17256,14 @@ async.nextTick = function (callback, context) {
 		cb = callback.bind(context);
 	}
 	cb = async.nextTick.wrapCallback_(cb);
-	// Introduced and currently only supported by IE10.
-	// Verify if variable is defined on the current runtime (i.e., node, browser).
-	// Can't use typeof enclosed in a function (such as core.isFunction) or an
-	// exception will be thrown when the function is called on an environment
-	// where the variable is undefined.
-	if (typeof setImmediate === 'function') {
-		setImmediate(cb);
-		return;
-	}
 	// Look for and cache the custom fallback version of setImmediate.
 	if (!async.nextTick.setImmediate_) {
-		// eslint-disable-next-line
-		async.nextTick.setImmediate_ = async.nextTick.getSetImmediateEmulator_();
+		if (typeof setImmediate === 'function' && (0, _coreNamed.isServerSide)({ checkEnv: false })) {
+			async.nextTick.setImmediate_ = setImmediate;
+		} else {
+			// eslint-disable-next-line
+			async.nextTick.setImmediate_ = async.nextTick.getSetImmediateEmulator_();
+		}
 	}
 	async.nextTick.setImmediate_(cb);
 };
@@ -16673,10 +17384,10 @@ async.nextTick.wrapCallback_ = function (callback) {
 };
 
 exports.default = async;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(138).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(139).setImmediate))
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16692,7 +17403,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.core = undefined;
 
-var _coreNamed = __webpack_require__(168);
+var _coreNamed = __webpack_require__(86);
 
 Object.keys(_coreNamed).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -16710,345 +17421,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 exports.default = core;
 exports.core = core;
-
-/***/ }),
-/* 168 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-/**
- * A collection of core utility functions.
- * @const
- */
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-exports.abstractMethod = abstractMethod;
-exports.disableCompatibilityMode = disableCompatibilityMode;
-exports.enableCompatibilityMode = enableCompatibilityMode;
-exports.getCompatibilityModeData = getCompatibilityModeData;
-exports.getFunctionName = getFunctionName;
-exports.getStaticProperty = getStaticProperty;
-exports.getUid = getUid;
-exports.identityFunction = identityFunction;
-exports.isBoolean = isBoolean;
-exports.isDef = isDef;
-exports.isDefAndNotNull = isDefAndNotNull;
-exports.isDocument = isDocument;
-exports.isDocumentFragment = isDocumentFragment;
-exports.isElement = isElement;
-exports.isFunction = isFunction;
-exports.isNull = isNull;
-exports.isNumber = isNumber;
-exports.isWindow = isWindow;
-exports.isObject = isObject;
-exports.isPromise = isPromise;
-exports.isString = isString;
-exports.isServerSide = isServerSide;
-exports.nullFunction = nullFunction;
-var compatibilityModeData_ = void 0;
-
-/**
- * Counter for unique id.
- * @type {Number}
- * @private
- */
-var uniqueIdCounter_ = 1;
-
-/**
- * Unique id property prefix.
- * @type {String}
- * @protected
- */
-var UID_PROPERTY = exports.UID_PROPERTY = 'core_' + (Math.random() * 1e9 >>> 0);
-
-/**
- * When defining a class Foo with an abstract method bar(), you can do:
- * Foo.prototype.bar = abstractMethod
- *
- * Now if a subclass of Foo fails to override bar(), an error will be thrown
- * when bar() is invoked.
- *
- * @type {!Function}
- * @throws {Error} when invoked to indicate the method should be overridden.
- */
-function abstractMethod() {
-  throw Error('Unimplemented abstract method');
-}
-
-/**
- * Disables Metal.js's compatibility mode.
- */
-function disableCompatibilityMode() {
-  compatibilityModeData_ = undefined;
-}
-
-/**
- * Enables Metal.js's compatibility mode with the following features from rc
- * and 1.x versions:
- *     - Using "key" to reference component instances. In the current version
- *       this should be done via "ref" instead. This allows old code still
- *       using "key" to keep working like before. NOTE: this may cause
- *       problems, since "key" is meant to be used differently. Only use this
- *       if it's not possible to upgrade the code to use "ref" instead.
- * @param {Object=} data Optional object with data to specify more
- *     details, such as:
- *         - renderers {Array} the template renderers that should be in
- *           compatibility mode, either their constructors or strings
- *           representing them (e.g. 'soy' or 'jsx'). By default, all the ones
- *           that extend from IncrementalDomRenderer.
- * @type {Object}
- */
-function enableCompatibilityMode() {
-  var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-  compatibilityModeData_ = data;
-}
-
-/**
- * Returns the data used for compatibility mode, or nothing if it hasn't been
- * enabled.
- * @return {Object}
- */
-function getCompatibilityModeData() {
-  // Compatibility mode can be set via the __METAL_COMPATIBILITY__ global var.
-  if (compatibilityModeData_ === undefined) {
-    if (typeof window !== 'undefined' && window.__METAL_COMPATIBILITY__) {
-      enableCompatibilityMode(window.__METAL_COMPATIBILITY__);
-    }
-  }
-  return compatibilityModeData_;
-}
-
-/**
- * Returns the first argument if it's truthy, or the second otherwise.
- * @param {*} a
- * @param {*} b
- * @return {*}
- * @protected
- */
-function getFirstTruthy_(a, b) {
-  return a || b;
-}
-
-/**
- * Gets the name of the given function. If the current browser doesn't
- * support the `name` property, this will calculate it from the function's
- * content string.
- * @param {!function()} fn
- * @return {string}
- */
-function getFunctionName(fn) {
-  if (!fn.name) {
-    var str = fn.toString();
-    fn.name = str.substring(9, str.indexOf('('));
-  }
-  return fn.name;
-}
-
-/**
- * Gets the value of a static property in the given class. The value will be
- * inherited from ancestors as expected, unless a custom merge function is given,
- * which can change how the super classes' value for that property will be merged
- * together.
- * The final merged value will be stored in another property, so that it won't
- * be recalculated even if this function is called multiple times.
- * @param {!function()} ctor Class constructor.
- * @param {string} propertyName Property name to be merged.
- * @param {function(*, *):*=} mergeFn Function that receives the merged
- *     value of the property so far and the next value to be merged to it.
- *     Should return these two merged together. If not passed the final property
- *     will be the first truthy value among ancestors.
- * @return {Object}
- */
-function getStaticProperty(ctor, propertyName) {
-  var mergeFn = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : getFirstTruthy_;
-
-  var mergedName = propertyName + '_MERGED';
-  if (!ctor.hasOwnProperty(mergedName)) {
-    // eslint-disable-next-line
-    var merged = ctor.hasOwnProperty(propertyName) ? ctor[propertyName] : null;
-    if (ctor.__proto__ && !ctor.__proto__.isPrototypeOf(Function)) {
-      merged = mergeFn(merged, getStaticProperty(ctor.__proto__, propertyName, mergeFn));
-    }
-    ctor[mergedName] = merged;
-  }
-  return ctor[mergedName];
-}
-
-/**
- * Gets an unique id. If `object` argument is passed, the object is
- * mutated with an unique id. Consecutive calls with the same object
- * reference won't mutate the object again, instead the current object uid
- * returns. See {@link UID_PROPERTY}.
- * @param {Object=} object Optional object to be mutated with the uid. If
- *     not specified this method only returns the uid.
- * @param {boolean=} noInheritance Optional flag indicating if this
- *     object's uid property can be inherited from parents or not.
- * @throws {Error} when invoked to indicate the method should be overridden.
- * @return {number}
- */
-function getUid(object, noInheritance) {
-  if (object) {
-    var id = object[UID_PROPERTY];
-    if (noInheritance && !object.hasOwnProperty(UID_PROPERTY)) {
-      id = null;
-    }
-    return id || (object[UID_PROPERTY] = uniqueIdCounter_++);
-  }
-  return uniqueIdCounter_++;
-}
-
-/**
- * The identity function. Returns its first argument.
- * @param {*=} returnValue The single value that will be returned.
- * @return {?} The first argument.
- */
-function identityFunction(returnValue) {
-  return returnValue;
-}
-
-/**
- * Returns true if the specified value is a boolean.
- * @param {?} val Variable to test.
- * @return {boolean} Whether variable is boolean.
- */
-function isBoolean(val) {
-  return typeof val === 'boolean';
-}
-
-/**
- * Returns true if the specified value is not undefined.
- * @param {?} val Variable to test.
- * @return {boolean} Whether variable is defined.
- */
-function isDef(val) {
-  return val !== undefined;
-}
-
-/**
- * Returns true if value is not undefined or null.
- * @param {*} val
- * @return {boolean}
- */
-function isDefAndNotNull(val) {
-  return isDef(val) && !isNull(val);
-}
-
-/**
- * Returns true if value is a document.
- * @param {*} val
- * @return {boolean}
- */
-function isDocument(val) {
-  return val && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && val.nodeType === 9;
-}
-
-/**
- * Returns true if value is a document-fragment.
- * @param {*} val
- * @return {boolean}
- */
-function isDocumentFragment(val) {
-  return val && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && val.nodeType === 11;
-}
-
-/**
- * Returns true if value is a dom element.
- * @param {*} val
- * @return {boolean}
- */
-function isElement(val) {
-  return val && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && val.nodeType === 1;
-}
-
-/**
- * Returns true if the specified value is a function.
- * @param {?} val Variable to test.
- * @return {boolean} Whether variable is a function.
- */
-function isFunction(val) {
-  return typeof val === 'function';
-}
-
-/**
- * Returns true if value is null.
- * @param {*} val
- * @return {boolean}
- */
-function isNull(val) {
-  return val === null;
-}
-
-/**
- * Returns true if the specified value is a number.
- * @param {?} val Variable to test.
- * @return {boolean} Whether variable is a number.
- */
-function isNumber(val) {
-  return typeof val === 'number';
-}
-
-/**
- * Returns true if value is a window.
- * @param {*} val
- * @return {boolean}
- */
-function isWindow(val) {
-  return val !== null && val === val.window;
-}
-
-/**
- * Returns true if the specified value is an object. This includes arrays
- * and functions.
- * @param {?} val Variable to test.
- * @return {boolean} Whether variable is an object.
- */
-function isObject(val) {
-  var type = typeof val === 'undefined' ? 'undefined' : _typeof(val);
-  return type === 'object' && val !== null || type === 'function';
-}
-
-/**
- * Returns true if value is a Promise.
- * @param {*} val
- * @return {boolean}
- */
-function isPromise(val) {
-  return val && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && typeof val.then === 'function';
-}
-
-/**
- * Returns true if value is a string.
- * @param {*} val
- * @return {boolean}
- */
-function isString(val) {
-  return typeof val === 'string' || val instanceof String;
-}
-
-/**
- * Sets to true if running inside Node.js environment with extra check for
- * `process.browser` to skip Karma runner environment. Karma environment has
- * `process` defined even though it runs on the browser.
- * @return {boolean}
- */
-function isServerSide() {
-  return typeof process !== 'undefined' && typeof process.env !== 'undefined' && process.env.NODE_ENV !== 'test' && !process.browser;
-}
-
-/**
- * Null function used for default values of callbacks, etc.
- * @return {void} Nothing.
- */
-function nullFunction() {}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(69)))
 
 /***/ }),
 /* 169 */

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([17],[
+webpackJsonppageComponent([14],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -3035,6 +3035,7 @@ ElectricCodeTabs.STATE = {
   */
   dictionary: {
     value: {
+      'text/x-sh': 'cURL',
       'text/html': 'HTML',
       'text/x-java': 'Java',
       'application/json': 'JSON'
@@ -3161,9 +3162,13 @@ var ElectricReadingProgress = function (_Component) {
 			if (articleContainer) {
 				var articles = articleContainer.querySelectorAll(articleSelector);
 
-				var articleIds = [].map.call(articles, function (article) {
-					return '#' + article.id;
-				});
+				var articleIds = [].reduce.call(articles, function (result, article) {
+					if (article.querySelector(titleSelector)) {
+						result.push('#' + article.id);
+					}
+
+					return result;
+				}, []);
 
 				this.progress = new _metalReadingProgress2.default({
 					items: articleIds,
@@ -10118,7 +10123,7 @@ exports.default = parseFromAnchor;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CPaIT", function() { return CPaIT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rsySY", function() { return rsySY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10130,15 +10135,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from docker.soy.
+// This file was automatically generated from configuration.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace CPaIT.
+ * @fileoverview Templates in namespace rsySY.
  * @public
  */
 
-goog.module('CPaIT.incrementaldom');
+goog.module('rsySY.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10172,33 +10177,89 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param416 = function() {
+  var $$temp;
+  var param363 = function() {
     ie_open('h6');
-      var dyn31 = opt_data.page.description;
-      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
+      var dyn22 = opt_data.page.description;
+      if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
-      ie_open('p');
-        itext('You can use webda to build your Docker image for you');
-      ie_close('p');
       ie_open('h2');
-        itext('Dockerfile');
+        itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('You can create your own Dockerfile, if no Dockerfile is present then the default one is used');
+        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
       ie_close('p');
-      $templateAlias2({code: 'FROM node:latest\nMAINTAINER docker@webda.io\n\nRUN mkdir /server/\nADD . /server/\n\nRUN cd /server && rm -rf node_modules && npm install\nCMD cd /server && node_modules/.bin/webda serve > /data/webda.log', mode: 'text'}, null, opt_ijData);
+      ie_open('p');
+        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
+      ie_close('p');
+      ie_open('p');
+        itext('![image](');
+        var dyn23 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn23 == 'function') dyn23(); else if (dyn23 != null) itext(dyn23);
+        itext('/images/configuration_resolution.png)');
+      ie_close('p');
+      ie_open('p');
+        itext('This is the detail configuration for each section');
+      ie_close('p');
+      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
+      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
+      ie_open('p');
+        itext('So this how webda will resolve Service final configuration');
+      ie_close('p');
+      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Configuration');
+        itext('Configuration UI');
       ie_close('h2');
       ie_open('p');
-        itext('The configuration take only two parameters the tag of the image to create and if it needs to push the image after a succesfull build.');
+        itext('Here is some screenshots of the ui');
       ie_close('p');
-      $templateAlias2({code: '{\n   tag: "mytag",\n   push: true\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('h4');
+        itext('Routes');
+      ie_close('h4');
+      ie_open('p');
+        itext('![image](');
+        var dyn24 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn24 == 'function') dyn24(); else if (dyn24 != null) itext(dyn24);
+        itext('/images/ui_route_create.png) ![image](');
+        var dyn25 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
+        itext('/images/ui_route_config.png)');
+      ie_close('p');
+      ie_open('h4');
+        itext('Services');
+      ie_close('h4');
+      ie_open('p');
+        itext('![image](');
+        var dyn26 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn26 == 'function') dyn26(); else if (dyn26 != null) itext(dyn26);
+        itext('/images/ui_service_create.png) ![image](');
+        var dyn27 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn27 == 'function') dyn27(); else if (dyn27 != null) itext(dyn27);
+        itext('/images/ui_service_config.png)');
+      ie_close('p');
+      ie_open('h4');
+        itext('Deployments');
+      ie_close('h4');
+      ie_open('p');
+        itext('![image](');
+        var dyn28 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
+        itext('/images/ui_deployment_create.png) ![image](');
+        var dyn29 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn29 == 'function') dyn29(); else if (dyn29 != null) itext(dyn29);
+        itext('/images/ui_deployment_config.png) ![image](');
+        var dyn30 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn30 == 'function') dyn30(); else if (dyn30 != null) itext(dyn30);
+        itext('/images/ui_deployment_deploy.png)');
+      ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10209,11 +10270,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param416}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param363}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'CPaIT.render';
+  $render.soyTemplateName = 'rsySY.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10223,8 +10284,8 @@ return exports;
 
 });
 
-class CPaIT extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(CPaIT, templates);
+class rsySY extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(rsySY, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
@@ -10254,7 +10315,11 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(CPaIT, templates);
 /* 115 */,
 /* 116 */,
 /* 117 */,
-/* 118 */
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10284,9 +10349,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _dockerSoy = __webpack_require__(94);
+var _configurationSoy = __webpack_require__(94);
 
-var _dockerSoy2 = _interopRequireDefault(_dockerSoy);
+var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10296,23 +10361,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var CPaIT = function (_Component) {
-  _inherits(CPaIT, _Component);
+var rsySY = function (_Component) {
+  _inherits(rsySY, _Component);
 
-  function CPaIT() {
-    _classCallCheck(this, CPaIT);
+  function rsySY() {
+    _classCallCheck(this, rsySY);
 
-    return _possibleConstructorReturn(this, (CPaIT.__proto__ || Object.getPrototypeOf(CPaIT)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (rsySY.__proto__ || Object.getPrototypeOf(rsySY)).apply(this, arguments));
   }
 
-  return CPaIT;
+  return rsySY;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(CPaIT, _dockerSoy2.default);
+_metalSoy2.default.register(rsySY, _configurationSoy2.default);
 
-exports.default = CPaIT;
+exports.default = rsySY;
 
 /***/ })
-],[118]);
+],[122]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([12],[
+webpackJsonppageComponent([22],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -3035,6 +3035,7 @@ ElectricCodeTabs.STATE = {
   */
   dictionary: {
     value: {
+      'text/x-sh': 'cURL',
       'text/html': 'HTML',
       'text/x-java': 'Java',
       'application/json': 'JSON'
@@ -3161,9 +3162,13 @@ var ElectricReadingProgress = function (_Component) {
 			if (articleContainer) {
 				var articles = articleContainer.querySelectorAll(articleSelector);
 
-				var articleIds = [].map.call(articles, function (article) {
-					return '#' + article.id;
-				});
+				var articleIds = [].reduce.call(articles, function (result, article) {
+					if (article.querySelector(titleSelector)) {
+						result.push('#' + article.id);
+					}
+
+					return result;
+				}, []);
 
 				this.progress = new _metalReadingProgress2.default({
 					items: articleIds,
@@ -10108,27 +10113,12 @@ exports.default = parseFromAnchor;
 /* 86 */,
 /* 87 */,
 /* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */
+/* 89 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CUZdT", function() { return CUZdT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vBUPj", function() { return vBUPj; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10140,15 +10130,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from polymer.soy.
+// This file was automatically generated from new-website.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace CUZdT.
+ * @fileoverview Templates in namespace vBUPj.
  * @public
  */
 
-goog.module('CUZdT.incrementaldom');
+goog.module('vBUPj.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10169,7 +10159,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -10180,24 +10170,66 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param606 = function() {
-    ie_open('h6');
-      var dyn41 = opt_data.page.description;
-      if (typeof dyn41 == 'function') dyn41(); else if (dyn41 != null) itext(dyn41);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
-      ie_open('h2');
-        itext('Overview');
-      ie_close('h2');
+  var param177 = function() {
+    ie_open('article');
       ie_open('p');
-        itext('The Webda project have webcomponents it implements the default Store api, the Authentication service');
+        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
       ie_close('p');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('Thanks to ');
+        ie_open('a', null, null,
+            'href', 'https://electricjs.com/');
+          itext('Electric JS');
+        ie_close('a');
+        itext(', we were able to create a whole new website way faster with those cool UI effects.');
       ie_close('p');
+      ie_open('p');
+        itext('The same day we are releasing the new website, we also have a fix release ');
+        ie_open('strong');
+          itext('v0.4.6');
+        ie_close('strong');
+      ie_close('p');
+      ie_open('p');
+        itext('This release includes :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('DynamoDB incrementAttribute with 0 fix');
+        ie_close('li');
+        ie_open('li');
+          itext('Email storage in lower case');
+        ie_close('li');
+      ie_close('ul');
+      ie_open('p');
+        itext('In the next weeks, as Christmas gift we will work hard on a ');
+        ie_open('strong');
+          itext('v0.5.0');
+        ie_close('strong');
+        itext(' it should includes :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Better ');
+          ie_open('a', null, null,
+              'href', 'https://wedeploy.com/');
+            itext('WeDeploy');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Easier queue worker deployment');
+        ie_close('li');
+        ie_open('li');
+          ie_open('a', null, null,
+              'href', 'https://aws.amazon.com/fargate/');
+            itext('AWS Fargate');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Static website deployment integration');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -10208,11 +10240,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param606}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param177}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'CUZdT.render';
+  $render.soyTemplateName = 'vBUPj.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10222,14 +10254,29 @@ return exports;
 
 });
 
-class CUZdT extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(CUZdT, templates);
+class vBUPj extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vBUPj, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
 /* 105 */,
 /* 106 */,
 /* 107 */,
@@ -10239,16 +10286,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(CUZdT, templates);
 /* 111 */,
 /* 112 */,
 /* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10278,9 +10316,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _polymerSoy = __webpack_require__(104);
+var _newWebsiteSoy = __webpack_require__(89);
 
-var _polymerSoy2 = _interopRequireDefault(_polymerSoy);
+var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10290,23 +10328,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var CUZdT = function (_Component) {
-  _inherits(CUZdT, _Component);
+var vBUPj = function (_Component) {
+  _inherits(vBUPj, _Component);
 
-  function CUZdT() {
-    _classCallCheck(this, CUZdT);
+  function vBUPj() {
+    _classCallCheck(this, vBUPj);
 
-    return _possibleConstructorReturn(this, (CUZdT.__proto__ || Object.getPrototypeOf(CUZdT)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (vBUPj.__proto__ || Object.getPrototypeOf(vBUPj)).apply(this, arguments));
   }
 
-  return CUZdT;
+  return vBUPj;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(CUZdT, _polymerSoy2.default);
+_metalSoy2.default.register(vBUPj, _newWebsiteSoy2.default);
 
-exports.default = CUZdT;
+exports.default = vBUPj;
 
 /***/ })
-],[123]);
+],[114]);

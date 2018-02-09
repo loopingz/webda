@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([13],[
+webpackJsonppageComponent([8],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -3035,6 +3035,7 @@ ElectricCodeTabs.STATE = {
   */
   dictionary: {
     value: {
+      'text/x-sh': 'cURL',
       'text/html': 'HTML',
       'text/x-java': 'Java',
       'application/json': 'JSON'
@@ -3161,9 +3162,13 @@ var ElectricReadingProgress = function (_Component) {
 			if (articleContainer) {
 				var articles = articleContainer.querySelectorAll(articleSelector);
 
-				var articleIds = [].map.call(articles, function (article) {
-					return '#' + article.id;
-				});
+				var articleIds = [].reduce.call(articles, function (result, article) {
+					if (article.querySelector(titleSelector)) {
+						result.push('#' + article.id);
+					}
+
+					return result;
+				}, []);
 
 				this.progress = new _metalReadingProgress2.default({
 					items: articleIds,
@@ -10116,12 +10121,17 @@ exports.default = parseFromAnchor;
 /* 94 */,
 /* 95 */,
 /* 96 */,
-/* 97 */
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mwapa", function() { return mwapa; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RIuHB", function() { return RIuHB; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10133,15 +10143,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from wedeploy.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace mwapa.
+ * @fileoverview Templates in namespace RIuHB.
  * @public
  */
 
-goog.module('mwapa.incrementaldom');
+goog.module('RIuHB.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10173,30 +10183,105 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param469 = function() {
+  var param558 = function() {
     ie_open('h6');
-      var dyn34 = opt_data.page.description;
-      if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
+      var dyn38 = opt_data.page.description;
+      if (typeof dyn38 == 'function') dyn38(); else if (dyn38 != null) itext(dyn38);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Concepts');
       ie_close('h2');
       ie_open('p');
+        itext('Webda introduces some basic concepts :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          ie_open('em');
+            itext('Service');
+          ie_close('em');
+          itext(' a singleton similar to Spring Bean to implement behaviors');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('Executor');
+          ie_close('em');
+          itext(' is a service that provide some routes and expose API to the world');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('Model');
+          ie_close('em');
+          itext(' to define your business logic');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('Deployment');
+          ie_close('em');
+          itext(' an instance of the app with its own configuration');
+        ie_close('li');
+      ie_close('ul');
+      ie_open('p');
+        itext('The ');
+        ie_open('strong');
+          itext('webda.config.json');
+        ie_close('strong');
+        itext(' contains the configuration of the app, defining Services, Routes and global configuration, you can consider it as the applicationContext.xml of Spring if you prefer, with Beans=Services');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Stores');
+      ie_close('h2');
+      ie_open('p');
+        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
+      ie_close('p');
+      ie_open('p');
+        itext('We have currently File, DynamoDB and MongoDB storage');
+      ie_close('p');
+      ie_open('p');
         ie_open('a', null, null,
-            'href', 'http://wedeploy.io');
-          itext('WeDeploy');
+            'href', '/docs/develop/store');
+          itext('Learn More');
         ie_close('a');
-        itext(' allows you to run your own Docker container without having to care about scalability or reverse proxy or monitoring');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Binaries');
+      ie_close('h2');
+      ie_open('p');
+        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
       ie_close('p');
       ie_open('p');
-        itext('As Webda allows you to deploy on Docker, we just extend the deployer to automate the call to your wedeploy shell');
+        itext('The storage detect duplicates and don\'t double store them, it also provides a Polymer component that will prevent upload of known binaries by using a challenge to speed up the upload.');
       ie_close('p');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        ie_open('a', null, null,
+            'href', '/docs/develop/binary');
+          itext('Learn More');
+        ie_close('a');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Models');
+      ie_close('h2');
+      ie_open('p');
+        itext('The stores use Models to load/save/validate/secure business object.');
+      ie_close('p');
+      ie_open('p');
+        itext('The models should implement most of your business logic, while service should be technical implementation');
+      ie_close('p');
+      ie_open('p');
+        ie_open('a', null, null,
+            'href', '/docs/develop/models');
+          itext('Learn More');
+        ie_close('a');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -10208,11 +10293,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param469}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param558}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'mwapa.render';
+  $render.soyTemplateName = 'RIuHB.render';
 }
 
 exports.render.params = ["page","site"];
@@ -10222,19 +10307,14 @@ return exports;
 
 });
 
-class mwapa extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(mwapa, templates);
+class RIuHB extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(RIuHB, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
 /* 103 */,
 /* 104 */,
 /* 105 */,
@@ -10254,7 +10334,13 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(mwapa, templates);
 /* 119 */,
 /* 120 */,
 /* 121 */,
-/* 122 */
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10284,9 +10370,9 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _wedeploySoy = __webpack_require__(97);
+var _indexSoy = __webpack_require__(102);
 
-var _wedeploySoy2 = _interopRequireDefault(_wedeploySoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10296,23 +10382,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var mwapa = function (_Component) {
-  _inherits(mwapa, _Component);
+var RIuHB = function (_Component) {
+  _inherits(RIuHB, _Component);
 
-  function mwapa() {
-    _classCallCheck(this, mwapa);
+  function RIuHB() {
+    _classCallCheck(this, RIuHB);
 
-    return _possibleConstructorReturn(this, (mwapa.__proto__ || Object.getPrototypeOf(mwapa)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (RIuHB.__proto__ || Object.getPrototypeOf(RIuHB)).apply(this, arguments));
   }
 
-  return mwapa;
+  return RIuHB;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(mwapa, _wedeploySoy2.default);
+_metalSoy2.default.register(RIuHB, _indexSoy2.default);
 
-exports.default = mwapa;
+exports.default = RIuHB;
 
 /***/ })
-],[122]);
+],[128]);

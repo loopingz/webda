@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([23],[
+webpackJsonppageComponent([24],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -3035,6 +3035,7 @@ ElectricCodeTabs.STATE = {
   */
   dictionary: {
     value: {
+      'text/x-sh': 'cURL',
       'text/html': 'HTML',
       'text/x-java': 'Java',
       'application/json': 'JSON'
@@ -3161,9 +3162,13 @@ var ElectricReadingProgress = function (_Component) {
 			if (articleContainer) {
 				var articles = articleContainer.querySelectorAll(articleSelector);
 
-				var articleIds = [].map.call(articles, function (article) {
-					return '#' + article.id;
-				});
+				var articleIds = [].reduce.call(articles, function (result, article) {
+					if (article.querySelector(titleSelector)) {
+						result.push('#' + article.id);
+					}
+
+					return result;
+				}, []);
 
 				this.progress = new _metalReadingProgress2.default({
 					items: articleIds,
@@ -10105,12 +10110,13 @@ exports.default = parseFromAnchor;
 /* 83 */,
 /* 84 */,
 /* 85 */,
-/* 86 */
+/* 86 */,
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZkPbT", function() { return ZkPbT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RQmPq", function() { return RQmPq; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -10126,11 +10132,11 @@ goog.loadModule(function(exports) {
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace ZkPbT.
+ * @fileoverview Templates in namespace RQmPq.
  * @public
  */
 
-goog.module('ZkPbT.incrementaldom');
+goog.module('RQmPq.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -10278,7 +10284,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
   }
   exports.render = $render;
   if (goog.DEBUG) {
-    $render.soyTemplateName = 'ZkPbT.render';
+    $render.soyTemplateName = 'RQmPq.render';
   }
 
 exports.render.params = ["page","site"];
@@ -10288,15 +10294,14 @@ return exports;
 
 });
 
-class ZkPbT extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ZkPbT, templates);
+class RQmPq extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(RQmPq, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 87 */,
 /* 88 */,
 /* 89 */,
 /* 90 */,
@@ -10351,7 +10356,7 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _firstReleaseSoy = __webpack_require__(86);
+var _firstReleaseSoy = __webpack_require__(87);
 
 var _firstReleaseSoy2 = _interopRequireDefault(_firstReleaseSoy);
 
@@ -10363,23 +10368,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ZkPbT = function (_Component) {
-  _inherits(ZkPbT, _Component);
+var RQmPq = function (_Component) {
+  _inherits(RQmPq, _Component);
 
-  function ZkPbT() {
-    _classCallCheck(this, ZkPbT);
+  function RQmPq() {
+    _classCallCheck(this, RQmPq);
 
-    return _possibleConstructorReturn(this, (ZkPbT.__proto__ || Object.getPrototypeOf(ZkPbT)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (RQmPq.__proto__ || Object.getPrototypeOf(RQmPq)).apply(this, arguments));
   }
 
-  return ZkPbT;
+  return RQmPq;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(ZkPbT, _firstReleaseSoy2.default);
+_metalSoy2.default.register(RQmPq, _firstReleaseSoy2.default);
 
-exports.default = ZkPbT;
+exports.default = RQmPq;
 
 /***/ })
 ],[112]);

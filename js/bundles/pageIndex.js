@@ -3035,6 +3035,7 @@ ElectricCodeTabs.STATE = {
   */
   dictionary: {
     value: {
+      'text/x-sh': 'cURL',
       'text/html': 'HTML',
       'text/x-java': 'Java',
       'application/json': 'JSON'
@@ -3161,9 +3162,13 @@ var ElectricReadingProgress = function (_Component) {
 			if (articleContainer) {
 				var articles = articleContainer.querySelectorAll(articleSelector);
 
-				var articleIds = [].map.call(articles, function (article) {
-					return '#' + article.id;
-				});
+				var articleIds = [].reduce.call(articles, function (result, article) {
+					if (article.querySelector(titleSelector)) {
+						result.push('#' + article.id);
+					}
+
+					return result;
+				}, []);
 
 				this.progress = new _metalReadingProgress2.default({
 					items: articleIds,
@@ -10128,7 +10133,8 @@ exports.default = parseFromAnchor;
 /* 106 */,
 /* 107 */,
 /* 108 */,
-/* 109 */
+/* 109 */,
+/* 110 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10310,6 +10316,12 @@ function $links(opt_data, opt_ignored, opt_ijData) {
               'src', 'https://travis-ci.org/loopingz/webda.svg?branch=master',
               'alt', 'Build Status',
               'class', 'style-scope marked-element');
+          ie_close('img');
+        ie_close('a');
+        ie_open('a', null, null,
+            'href', 'https://sonarcloud.io/dashboard?id=webda');
+          ie_open('img', null, null,
+              'src', 'https://sonarcloud.io/api/project_badges/measure?project=webda&metric=alert_status');
           ie_close('img');
         ie_close('a');
       ie_close('div');
@@ -10633,7 +10645,6 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 
 
 /***/ }),
-/* 110 */,
 /* 111 */,
 /* 112 */,
 /* 113 */,
@@ -10657,7 +10668,8 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 /* 131 */,
 /* 132 */,
 /* 133 */,
-/* 134 */
+/* 134 */,
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10687,7 +10699,7 @@ __webpack_require__(20);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(109);
+var _indexSoy = __webpack_require__(110);
 
 var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
@@ -10718,4 +10730,4 @@ _metalSoy2.default.register(pageIndex, _indexSoy2.default);
 exports.default = pageIndex;
 
 /***/ })
-],[134]);
+],[135]);
