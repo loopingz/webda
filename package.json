@@ -3,8 +3,9 @@
   "name": "webda",
   "version": "0.0.0",
   "devDependencies": {
-    "electric-marble-components": "^2.0.0",
-    "marble": "~2.7.0",
-    "metal-toggler": "^2.0.0"
+    "electric-marble-components": "^4.0.0",
+    "marble": "~3.2.6",
+    "metal-toggler": "^2.0.0",
+    "marble-topbar": "^1.6.0"
   }
 }
