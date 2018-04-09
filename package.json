@@ -15,8 +15,7 @@
     "pretest": "npm run build",
     "test": "nyc mocha --timeout=100000",
     "run": "node core",
-    "format": "node ./scripts/format.js",
-    "sonarcover": "node_modules/.bin/remap-istanbul -i reports/coverage-final.json -o reports/ts-coverage -t lcovonly -b src/"
+    "format": "node ./scripts/format.js"
   },
   "dependencies": {
     "accept-language": "=3.0.15",
@@ -50,7 +49,6 @@
     "js-beautify": "^1.7.5",
     "mocha": ">=2.2.5",
     "nyc": "^11.6.0",
-    "remap-istanbul": "^0.11.0",
     "source-map-support": "^0.5.4",
     "ts-node": "^5.0.1",
     "typescript": "^2.8.1"
