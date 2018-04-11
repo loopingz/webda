@@ -16,7 +16,8 @@
     "pretest": "npm run build",
     "test": "nyc mocha --timeout=100000",
     "run": "node core",
-    "format": "node ./scripts/format.js"
+    "format": "node ./scripts/format.js",
+    "precommit": "npm run format && npm run test"
   },
   "dependencies": {
     "accept-language": "=3.0.15",
