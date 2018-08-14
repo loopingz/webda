@@ -174,7 +174,7 @@ describe('Webda', function() {
   describe('getServicesImplementations()', function() {
     it('normal', function() {
       let stores = webda.getServicesImplementations(Webda.Store);
-      assert.equal(Object.keys(stores).length, 10);
+      assert.equal(Object.keys(stores).length, 11);
     });
     it('store', function() {
       assert.equal(Object.keys(webda.getStores()).length, Object.keys(webda.getServicesImplementations(Webda.Store)).length);

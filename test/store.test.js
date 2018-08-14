@@ -375,6 +375,11 @@ describe('Store', () => {
       eventFired++;
       assert.equal(eventFired, 3);
     });
+    it('Fallback to coreModel', () => {
+      let badModelStore = webda.getService("badModelStore");
+      let coreModel = webda.getModel("Webda/CoreModel");
+      assert.equal(badModelStore._model, coreModel);
+    });
   });
   describe('MongoStore', () => {
     afterEach(() => {
