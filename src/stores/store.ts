@@ -54,18 +54,15 @@ class Store < T extends CoreModel > extends Executor {
     this._reverseMap = [];
     this._cascade = [];
     this._writeConditionField = "lastUpdate";
-<<<<<<< Updated upstream
     let model = this._params.model;
     if (!model) {
       model = "Webda/CoreModel";
     }
-=======
   }
 
   init(config) {
     this.initMap(this._params.map);
     let model = this._params.model || "Webda/CoreModel";
->>>>>>> Stashed changes
     this._model = this._webda.getModel(model);
     if (!this._model) {
       this._webda.log('WARN', 'Bad model', model, 'fallback to CoreModel');

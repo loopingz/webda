@@ -249,10 +249,6 @@
     },
     "brokenService": {
       "type": "Test/VoidStore"
-    },
-    "badModelStore": {
-      "type" : "MemoryStore",
-      "model" : "badModel"
     }
   },
   "routes": {
