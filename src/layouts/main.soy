@@ -12,10 +12,10 @@
 			{call Topbar.render}
 				{param items: $site.topbar /}
 				{param style: 'topbar-light' /}
-				
 			{/call}
-			{call .logo data="all" /}
-
+			{call .logo}
+				{param site: $site /}
+			{/call}
 			{$content}
 		</main>
 	</div>
