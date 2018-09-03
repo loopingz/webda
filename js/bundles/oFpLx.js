@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([15,24,25,26,27,28],[
+webpackJsonppageComponent([6,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29135,12 +29135,21 @@ exports.default = parseFromAnchor;
 /* 231 */,
 /* 232 */,
 /* 233 */,
-/* 234 */
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UjWoF", function() { return UjWoF; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "oFpLx", function() { return oFpLx; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29152,15 +29161,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from polymer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace UjWoF.
+ * @fileoverview Templates in namespace oFpLx.
  * @public
  */
 
-goog.module('UjWoF.incrementaldom');
+goog.module('oFpLx.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29181,8 +29190,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29194,75 +29201,23 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param530 = function() {
+  var param699 = function() {
     ie_open('h6');
-      var dyn42 = opt_data.page.description;
-      if (typeof dyn42 == 'function') dyn42(); else if (dyn42 != null) itext(dyn42);
+      var dyn51 = opt_data.page.description;
+      if (typeof dyn51 == 'function') dyn51(); else if (dyn51 != null) itext(dyn51);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Lambda');
+        itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
+        itext('The Webda project have webcomponents it implements the default Store api, the Authentication service');
       ie_close('p');
       ie_open('p');
-        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
-      ie_close('p');
-      ie_open('p');
-        itext('But don\'t worry, with Webda it is as simple as a command');
-      ie_close('p');
-      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
-      ie_open('p');
-        itext('This command will do several step for you :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Create the policy and role for your Lambda');
-        ie_close('li');
-        ie_open('li');
-          itext('Create if needed the Dynamo table used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Create S3 buckets used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy the code to your Lambda');
-        ie_close('li');
-        ie_open('li');
-          itext('Create the API Gateway mapping');
-        ie_close('li');
-        ie_open('li');
-          itext('Add permission for API Gateways to your Lambda');
-        ie_close('li');
-      ie_close('ul');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Docker');
-      ie_close('h2');
-      ie_open('p');
-        itext('You can also just define a Docker image to build');
-      ie_close('p');
-      ie_open('p');
-        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
-      ie_close('p');
-      ie_open('p');
-        itext('If you specify a tag, after the build it will push the image to your repository');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('WeDeploy');
-      ie_close('h2');
-      ie_open('p');
-        itext('This service run your Docker image and allow you to deploy with a single command');
-      ie_close('p');
-      ie_open('p');
-        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29274,11 +29229,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param530}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param699}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'UjWoF.render';
+  $render.soyTemplateName = 'oFpLx.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29288,23 +29243,14 @@ return exports;
 
 });
 
-class UjWoF extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(UjWoF, templates);
+class oFpLx extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(oFpLx, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
 /* 244 */,
 /* 245 */,
 /* 246 */,
@@ -29316,7 +29262,19 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(UjWoF, templates);
 /* 252 */,
 /* 253 */,
 /* 254 */,
-/* 255 */
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29356,9 +29314,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _indexSoy = __webpack_require__(234);
+var _polymerSoy = __webpack_require__(243);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _polymerSoy2 = _interopRequireDefault(_polymerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29368,23 +29326,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var UjWoF = function (_Component) {
-  _inherits(UjWoF, _Component);
+var oFpLx = function (_Component) {
+  _inherits(oFpLx, _Component);
 
-  function UjWoF() {
-    _classCallCheck(this, UjWoF);
+  function oFpLx() {
+    _classCallCheck(this, oFpLx);
 
-    return _possibleConstructorReturn(this, (UjWoF.__proto__ || Object.getPrototypeOf(UjWoF)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (oFpLx.__proto__ || Object.getPrototypeOf(oFpLx)).apply(this, arguments));
   }
 
-  return UjWoF;
+  return oFpLx;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(UjWoF, _indexSoy2.default);
+_metalSoy2.default.register(oFpLx, _polymerSoy2.default);
 
-exports.default = UjWoF;
+exports.default = oFpLx;
 
 /***/ })
-],[255]);
+],[267]);

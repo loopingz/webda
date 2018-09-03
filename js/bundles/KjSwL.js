@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([18,24,25,26,27,28],[
+webpackJsonppageComponent([21,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29129,15 +29129,12 @@ exports.default = parseFromAnchor;
 /* 225 */,
 /* 226 */,
 /* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */
+/* 228 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "qPeFn", function() { return qPeFn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KjSwL", function() { return KjSwL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29149,15 +29146,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from aws.soy.
+// This file was automatically generated from new-website.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace qPeFn.
+ * @fileoverview Templates in namespace KjSwL.
  * @public
  */
 
-goog.module('qPeFn.incrementaldom');
+goog.module('KjSwL.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29178,9 +29175,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -29191,65 +29186,66 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param442 = function() {
-    ie_open('article', null, null,
-        'id', '1');
-      ie_open('h2');
-        itext('Overview');
-      ie_close('h2');
+  var param282 = function() {
+    ie_open('article');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', 'http://webda.io/images/schemas/aws_deploy.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Deployment Policy');
-      ie_close('h2');
       ie_open('p');
-        itext('To be able to deploy the deployment user must have at least :');
+        itext('Thanks to ');
+        ie_open('a', null, null,
+            'href', 'https://electricjs.com/');
+          itext('Electric JS');
+        ie_close('a');
+        itext(', we were able to create a whole new website way faster with those cool UI effects.');
       ie_close('p');
-      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('This can be restrict more and should, need to update the documentation');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Package');
-      ie_close('h2');
-      ie_open('p');
-        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Lambda');
-      ie_close('h2');
-      ie_open('p');
-        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('API Gateway');
-      ie_close('h2');
-      ie_open('p');
-        itext('It map all the routes from your application, if a ');
+        itext('The same day we are releasing the new website, we also have a fix release ');
         ie_open('strong');
-          itext('website');
+          itext('v0.4.6');
         ie_close('strong');
-        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
       ie_close('p');
       ie_open('p');
-        itext('It also deploy the API as Stage named with the name of the deployment.');
+        itext('This release includes :');
       ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('DynamoDB incrementAttribute with 0 fix');
+        ie_close('li');
+        ie_open('li');
+          itext('Email storage in lower case');
+        ie_close('li');
+      ie_close('ul');
+      ie_open('p');
+        itext('In the next weeks, as Christmas gift we will work hard on a ');
+        ie_open('strong');
+          itext('v0.5.0');
+        ie_close('strong');
+        itext(' it should includes :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Better ');
+          ie_open('a', null, null,
+              'href', 'https://wedeploy.com/');
+            itext('WeDeploy');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Easier queue worker deployment');
+        ie_close('li');
+        ie_open('li');
+          ie_open('a', null, null,
+              'href', 'https://aws.amazon.com/fargate/');
+            itext('AWS Fargate');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Static website deployment integration');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29260,11 +29256,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param442}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param282}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'qPeFn.render';
+  $render.soyTemplateName = 'KjSwL.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29274,14 +29270,17 @@ return exports;
 
 });
 
-class qPeFn extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(qPeFn, templates);
+class KjSwL extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(KjSwL, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 229 */,
+/* 230 */,
+/* 231 */,
 /* 232 */,
 /* 233 */,
 /* 234 */,
@@ -29300,15 +29299,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(qPeFn, templates);
 /* 247 */,
 /* 248 */,
 /* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29348,9 +29339,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _awsSoy = __webpack_require__(231);
+var _newWebsiteSoy = __webpack_require__(228);
 
-var _awsSoy2 = _interopRequireDefault(_awsSoy);
+var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29360,23 +29351,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var qPeFn = function (_Component) {
-  _inherits(qPeFn, _Component);
+var KjSwL = function (_Component) {
+  _inherits(KjSwL, _Component);
 
-  function qPeFn() {
-    _classCallCheck(this, qPeFn);
+  function KjSwL() {
+    _classCallCheck(this, KjSwL);
 
-    return _possibleConstructorReturn(this, (qPeFn.__proto__ || Object.getPrototypeOf(qPeFn)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (KjSwL.__proto__ || Object.getPrototypeOf(KjSwL)).apply(this, arguments));
   }
 
-  return qPeFn;
+  return KjSwL;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(qPeFn, _awsSoy2.default);
+_metalSoy2.default.register(KjSwL, _newWebsiteSoy2.default);
 
-exports.default = qPeFn;
+exports.default = KjSwL;
 
 /***/ })
-],[258]);
+],[250]);

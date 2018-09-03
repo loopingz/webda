@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([10,24,25,26,27,28],[
+webpackJsonppageComponent([18,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29132,20 +29132,12 @@ exports.default = parseFromAnchor;
 /* 228 */,
 /* 229 */,
 /* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */
+/* 231 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QsXMV", function() { return QsXMV; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "uwDDp", function() { return uwDDp; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29157,15 +29149,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from custom.soy.
+// This file was automatically generated from aws.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace QsXMV.
+ * @fileoverview Templates in namespace uwDDp.
  * @public
  */
 
-goog.module('QsXMV.incrementaldom');
+goog.module('uwDDp.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29199,45 +29191,65 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param630 = function() {
-    ie_open('h6');
-      var dyn47 = opt_data.page.description;
-      if (typeof dyn47 == 'function') dyn47(); else if (dyn47 != null) itext(dyn47);
-    ie_close('h6');
+  var param442 = function() {
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
-      ie_close('p');
-      ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+        ie_open('img', null, null,
+            'src', 'http://webda.io/images/schemas/aws_deploy.png',
+            'alt', 'image');
+        ie_close('img');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Internal service');
+        itext('Deployment Policy');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+        itext('To be able to deploy the deployment user must have at least :');
       ie_close('p');
+      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
-      ie_close('p');
-      $templateAlias2({code: 'const Service = require(\'webda/services/service\')\n\nclass MyInternalService extends Service {\n\n   init() {\n     this._gdrive = new ...;\n   }\n   \n   getDocument(uuid, token) {\n     return this._gdrive.getDocument(uuid, token);\n   }\n   \n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The GDrive API is faked here, but basically this service will allow you to get some configuration from the webda.config.json and expose some methods for others Services or Models to use inside Webda');
+        itext('This can be restrict more and should, need to update the documentation');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Service with exposed API');
+        itext('Package');
       ie_close('h2');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Lambda');
+      ie_close('h2');
+      ie_open('p');
+        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('API Gateway');
+      ie_close('h2');
+      ie_open('p');
+        itext('It map all the routes from your application, if a ');
+        ie_open('strong');
+          itext('website');
+        ie_close('strong');
+        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
+      ie_close('p');
+      ie_open('p');
+        itext('It also deploy the API as Stage named with the name of the deployment.');
+      ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29248,11 +29260,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param630}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param442}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'QsXMV.render';
+  $render.soyTemplateName = 'uwDDp.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29262,14 +29274,22 @@ return exports;
 
 });
 
-class QsXMV extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(QsXMV, templates);
+class uwDDp extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(uwDDp, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
 /* 240 */,
 /* 241 */,
 /* 242 */,
@@ -29288,12 +29308,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(QsXMV, templates);
 /* 255 */,
 /* 256 */,
 /* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29333,9 +29348,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _customSoy = __webpack_require__(239);
+var _awsSoy = __webpack_require__(231);
 
-var _customSoy2 = _interopRequireDefault(_customSoy);
+var _awsSoy2 = _interopRequireDefault(_awsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29345,23 +29360,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var QsXMV = function (_Component) {
-  _inherits(QsXMV, _Component);
+var uwDDp = function (_Component) {
+  _inherits(uwDDp, _Component);
 
-  function QsXMV() {
-    _classCallCheck(this, QsXMV);
+  function uwDDp() {
+    _classCallCheck(this, uwDDp);
 
-    return _possibleConstructorReturn(this, (QsXMV.__proto__ || Object.getPrototypeOf(QsXMV)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (uwDDp.__proto__ || Object.getPrototypeOf(uwDDp)).apply(this, arguments));
   }
 
-  return QsXMV;
+  return uwDDp;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(QsXMV, _customSoy2.default);
+_metalSoy2.default.register(uwDDp, _awsSoy2.default);
 
-exports.default = QsXMV;
+exports.default = uwDDp;
 
 /***/ })
-],[263]);
+],[258]);

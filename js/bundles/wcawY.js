@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([5,24,25,26,27,28],[
+webpackJsonppageComponent([16,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29134,23 +29134,12 @@ exports.default = parseFromAnchor;
 /* 230 */,
 /* 231 */,
 /* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */
+/* 233 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fKJlz", function() { return fKJlz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wcawY", function() { return wcawY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29162,15 +29151,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from queues.soy.
+// This file was automatically generated from docker.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace fKJlz.
+ * @fileoverview Templates in namespace wcawY.
  * @public
  */
 
-goog.module('fKJlz.incrementaldom');
+goog.module('wcawY.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29191,6 +29180,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29202,33 +29193,33 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param710 = function() {
+  var param509 = function() {
     ie_open('h6');
-      var dyn52 = opt_data.page.description;
-      if (typeof dyn52 == 'function') dyn52(); else if (dyn52 != null) itext(dyn52);
+      var dyn41 = opt_data.page.description;
+      if (typeof dyn41 == 'function') dyn41(); else if (dyn41 != null) itext(dyn41);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
+      ie_open('p');
+        itext('You can use webda to build your Docker image for you');
+      ie_close('p');
       ie_open('h2');
-        itext('Overview');
+        itext('Dockerfile');
       ie_close('h2');
       ie_open('p');
-        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
+        itext('You can create your own Dockerfile, if no Dockerfile is present then the default one is used');
       ie_close('p');
-      ie_open('p');
-        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
-      ie_close('p');
+      $templateAlias2({code: 'FROM node:latest\nMAINTAINER docker@webda.io\n\nRUN mkdir /server/\nADD . /server/\n\nRUN cd /server && rm -rf node_modules && npm install\nCMD cd /server && node_modules/.bin/webda serve > /data/webda.log', mode: 'text'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Worker');
+        itext('Configuration');
       ie_close('h2');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('The configuration take only two parameters the tag of the image to create and if it needs to push the image after a succesfull build.');
       ie_close('p');
+      $templateAlias2({code: '{\n   tag: "mytag",\n   push: true\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29239,11 +29230,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param710}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param509}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'fKJlz.render';
+  $render.soyTemplateName = 'wcawY.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29253,14 +29244,25 @@ return exports;
 
 });
 
-class fKJlz extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(fKJlz, templates);
+class wcawY extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(wcawY, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
 /* 245 */,
 /* 246 */,
 /* 247 */,
@@ -29276,13 +29278,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(fKJlz, templates);
 /* 257 */,
 /* 258 */,
 /* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29322,9 +29318,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _queuesSoy = __webpack_require__(244);
+var _dockerSoy = __webpack_require__(233);
 
-var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
+var _dockerSoy2 = _interopRequireDefault(_dockerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29334,23 +29330,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var fKJlz = function (_Component) {
-  _inherits(fKJlz, _Component);
+var wcawY = function (_Component) {
+  _inherits(wcawY, _Component);
 
-  function fKJlz() {
-    _classCallCheck(this, fKJlz);
+  function wcawY() {
+    _classCallCheck(this, wcawY);
 
-    return _possibleConstructorReturn(this, (fKJlz.__proto__ || Object.getPrototypeOf(fKJlz)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (wcawY.__proto__ || Object.getPrototypeOf(wcawY)).apply(this, arguments));
   }
 
-  return fKJlz;
+  return wcawY;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(fKJlz, _queuesSoy2.default);
+_metalSoy2.default.register(wcawY, _dockerSoy2.default);
 
-exports.default = fKJlz;
+exports.default = wcawY;
 
 /***/ })
-],[266]);
+],[260]);
