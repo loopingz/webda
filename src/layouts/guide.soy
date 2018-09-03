@@ -12,10 +12,9 @@
 				{call Topbar.render}
 					{param items: $site.topbar /}
 					{param style: 'topbar-light topbar-docs' /}
-					{param logo: [
-						'text': $site.title,
-						'icon': 'icon-16-hammer'
-					] /}
+				{/call}
+				{call .logo}
+					{param site: $site /}
 				{/call}
 				{call Sidebar.render}
 					{param section: $site.index.children['docs'] /}
@@ -24,6 +23,20 @@
 				{call .guide data="all" /}
 			</div>
 		</main>
+	</div>
+{/template}
+
+/**
+ */
+{template .logo}
+
+	{@param site: ?}
+
+	<div class="topbar-logo-docs">
+		<a class="topbar-logo-link" href="/">
+			<span class="topbar-logo-icon"><img src="/images/webda.svg" /></span>
+			<span class="topbar-logo-text">{$site.title}</span>
+		</a>
 	</div>
 {/template}
 
