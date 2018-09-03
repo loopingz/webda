@@ -16585,8 +16585,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_void('span', null, null,
           'class', 'icon icon-16-clock');
       itext(' ');
-      var dyn20 = opt_data.time;
-      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
+      var dyn7 = opt_data.time;
+      if (typeof dyn7 == 'function') dyn7(); else if (dyn7 != null) itext(dyn7);
     }
   ie_close('p');
 }
