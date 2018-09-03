@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([19,24,25,26,27,28],[
+webpackJsonppageComponent([6,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29131,12 +29131,25 @@ exports.default = parseFromAnchor;
 /* 227 */,
 /* 228 */,
 /* 229 */,
-/* 230 */
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GiBOb", function() { return GiBOb; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JYYqc", function() { return JYYqc; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29148,15 +29161,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from tutorials.soy.
+// This file was automatically generated from polymer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace GiBOb.
+ * @fileoverview Templates in namespace JYYqc.
  * @public
  */
 
-goog.module('GiBOb.incrementaldom');
+goog.module('JYYqc.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29188,89 +29201,24 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param431 = function() {
+  var param699 = function() {
     ie_open('h6');
-      var dyn31 = opt_data.page.description;
-      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
+      var dyn51 = opt_data.page.description;
+      if (typeof dyn51 == 'function') dyn51(); else if (dyn51 != null) itext(dyn51);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Setting up a project from scratch');
+        itext('Overview');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('In this video you will see:');
+        itext('The Webda project have webcomponents it implements the default Store api, the Authentication service');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('How to install Webda');
-        ie_close('li');
-        ie_open('li');
-          itext('How to use the configurator to add services like Authentication and NoSQL Store');
-        ie_close('li');
-        ie_open('li');
-          itext('Expose services as REST API');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy to the cloud using the AWS deployer');
-        ie_close('li');
-      ie_close('ul');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Add the mapping configuration to our project');
-      ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Use our new serverless API on a Polymer interface');
-      ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
-          'frameborder', '0',
-          'allowfullscreen', '');
-      ie_open('p');
-        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Registration with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Login with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Add a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Edit a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Remove a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Upload directly to S3');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29281,11 +29229,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param431}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param699}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'GiBOb.render';
+  $render.soyTemplateName = 'JYYqc.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29295,27 +29243,14 @@ return exports;
 
 });
 
-class GiBOb extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GiBOb, templates);
+class JYYqc extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(JYYqc, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
 /* 244 */,
 /* 245 */,
 /* 246 */,
@@ -29325,7 +29260,17 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GiBOb, templates);
 /* 250 */,
 /* 251 */,
 /* 252 */,
-/* 253 */
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29365,9 +29310,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _tutorialsSoy = __webpack_require__(230);
+var _polymerSoy = __webpack_require__(243);
 
-var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
+var _polymerSoy2 = _interopRequireDefault(_polymerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29377,23 +29322,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var GiBOb = function (_Component) {
-  _inherits(GiBOb, _Component);
+var JYYqc = function (_Component) {
+  _inherits(JYYqc, _Component);
 
-  function GiBOb() {
-    _classCallCheck(this, GiBOb);
+  function JYYqc() {
+    _classCallCheck(this, JYYqc);
 
-    return _possibleConstructorReturn(this, (GiBOb.__proto__ || Object.getPrototypeOf(GiBOb)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (JYYqc.__proto__ || Object.getPrototypeOf(JYYqc)).apply(this, arguments));
   }
 
-  return GiBOb;
+  return JYYqc;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(GiBOb, _tutorialsSoy2.default);
+_metalSoy2.default.register(JYYqc, _polymerSoy2.default);
 
-exports.default = GiBOb;
+exports.default = JYYqc;
 
 /***/ })
-],[253]);
+],[263]);

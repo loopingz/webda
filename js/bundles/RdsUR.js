@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([5,24,25,26,27,28],[
+webpackJsonppageComponent([23,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29127,30 +29127,12 @@ exports.default = parseFromAnchor;
 /* 223 */,
 /* 224 */,
 /* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */
+/* 226 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QXnQh", function() { return QXnQh; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RdsUR", function() { return RdsUR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29162,15 +29144,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from queues.soy.
+// This file was automatically generated from first-release.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace QXnQh.
+ * @fileoverview Templates in namespace RdsUR.
  * @public
  */
 
-goog.module('QXnQh.incrementaldom');
+goog.module('RdsUR.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29191,7 +29173,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -29202,49 +29184,124 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param710 = function() {
-    ie_open('h6');
-      var dyn52 = opt_data.page.description;
-      if (typeof dyn52 == 'function') dyn52(); else if (dyn52 != null) itext(dyn52);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
-      ie_open('h2');
-        itext('Overview');
-      ie_close('h2');
+  var param249 = function() {
+    ie_open('article');
       ie_open('p');
-        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
-      ie_close('p');
-      ie_open('p');
-        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Worker');
-      ie_close('h2');
-      ie_open('p');
+        itext('With the revolution of cloud we got very used to IaaS. Whenever we want a server, we just call an API and here we are with a brand new server ready within ');
         ie_open('em');
-          itext('to be completed');
+          itext('minutes');
         ie_close('em');
+        itext('!');
       ie_close('p');
-    ie_close('article');
-    ie_open('input', null, null,
-        'type', 'hidden',
-        'value', opt_data.page.title);
-    ie_close('input');
-    ie_open('input', null, null,
-        'type', 'hidden',
-        'value', opt_data.site.title);
-    ie_close('input');
-  };
-  $templateAlias1(soy.$$assignDefaults({content: param710}, opt_data), null, opt_ijData);
-}
-exports.render = $render;
-if (goog.DEBUG) {
-  $render.soyTemplateName = 'QXnQh.render';
-}
+      ie_open('p');
+        itext('But ');
+        ie_open('em');
+          itext('minutes');
+        ie_close('em');
+        itext(' were way too long for us! So, then came ');
+        ie_open('a', null, null,
+            'href', 'https://www.docker.com',
+            'target', '_blank');
+          itext('Docker');
+        ie_close('a');
+        itext(', which made it possible to have all our environments loaded within ');
+        ie_open('em');
+          itext('seconds');
+        ie_close('em');
+        itext('.');
+      ie_close('p');
+      ie_open('p');
+        itext('Of course, for all this you still needed a server to run on. Two years ago, AWS came up with ');
+        ie_open('a', null, null,
+            'href', 'https://aws.amazon.com/lambda/',
+            'target', '_blank');
+          itext('Lambda');
+        ie_close('a');
+        itext(', where all we have to do is store the function and trigger it either by other AWS services events or by an HTTP request.');
+      ie_close('p');
+      ie_open('p');
+        itext('Now, let\u2019s take the example of running lots of small services, which are called only a few thousand times per month, but as we cannot predict the time when they\'ll be used, they are just sitting there the rest of the time. Without Lambda, we will need more than one Docker container to run these services with failover. So the idea of having the failover and scaling without having to take care of any containers or servers was a no-brainer for me.');
+      ie_close('p');
+      ie_open('h2');
+        itext('Lambda');
+      ie_close('h2');
+      ie_open('p');
+        itext('When you use Lambda and want to expose through HTTP, you discover that you can use the API Gateway of AWS. It is a nice technology but kind of complex to configure. When something goes wrong in your code, you cannot debug it as easily as when it was hosted on your machine.');
+      ie_close('p');
+      ie_open('p');
+        itext('So, this is where the idea of ');
+        ie_open('strong');
+          itext('Webda');
+        ie_close('strong');
+        itext(' comes in!');
+      ie_close('p');
+      ie_open('h2');
+        itext('The Goal');
+      ie_close('h2');
+      ie_open('p');
+        itext('The goal of Webda is to ');
+        ie_open('strong');
+          itext('have a framework that allows you to code locally and test it using a Node.JS and then deploy it automatically either to Lambda with API Gateway or by creating a Docker image with it including a NodeJS server');
+        ie_close('strong');
+        itext('.');
+      ie_close('p');
+      ie_open('p');
+        itext('This way ');
+        ie_open('strong');
+          itext('you can easily debug locally and then deploy to your AWS environment in a second');
+        ie_close('strong');
+        itext('.');
+      ie_close('p');
+      ie_open('p');
+        itext('Let\u2019s take a look at how to get started and create a new project : checkout our ');
+        ie_open('a', null, null,
+            'href', '/docs/create/');
+          itext('Quickstart Guide');
+        ie_close('a');
+      ie_close('p');
+      ie_open('h2');
+        itext('Resources');
+      ie_close('h2');
+      ie_open('p');
+        itext('Here are some more resources to help you:');
+      ie_close('p');
+      ie_open('p');
+        ie_open('strong');
+          itext('Website:');
+        ie_close('strong');
+        itext(' ');
+        ie_open('a', null, null,
+            'href', 'http://webda.io',
+            'target', '_blank');
+          itext('webda.io');
+        ie_close('a');
+        ie_open('br/');
+          ie_open('strong');
+            itext('Channel:');
+          ie_close('strong');
+          itext(' ');
+          ie_open('a', null, null,
+              'href', 'https://www.youtube.com/playlist?list=PLfn1MAL4_e7ERdqj9rWlmEkK5gMkL4bKI',
+              'target', '_blank');
+            itext('Youtube');
+          ie_close('a');
+        ie_close('p');
+      ie_close('article');
+      ie_open('input', null, null,
+          'type', 'hidden',
+          'value', opt_data.page.title);
+      ie_close('input');
+      ie_open('input', null, null,
+          'type', 'hidden',
+          'value', opt_data.site.title);
+      ie_close('input');
+    };
+    $templateAlias1(soy.$$assignDefaults({content: param249}, opt_data), null, opt_ijData);
+  }
+  exports.render = $render;
+  if (goog.DEBUG) {
+    $render.soyTemplateName = 'RdsUR.render';
+  }
 
 exports.render.params = ["page","site"];
 exports.render.types = {"page":"any","site":"any"};
@@ -29253,34 +29310,38 @@ return exports;
 
 });
 
-class QXnQh extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(QXnQh, templates);
+class RdsUR extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(RdsUR, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
 /* 245 */,
 /* 246 */,
 /* 247 */,
 /* 248 */,
 /* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29320,9 +29381,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _queuesSoy = __webpack_require__(244);
+var _firstReleaseSoy = __webpack_require__(226);
 
-var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
+var _firstReleaseSoy2 = _interopRequireDefault(_firstReleaseSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29332,23 +29393,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var QXnQh = function (_Component) {
-  _inherits(QXnQh, _Component);
+var RdsUR = function (_Component) {
+  _inherits(RdsUR, _Component);
 
-  function QXnQh() {
-    _classCallCheck(this, QXnQh);
+  function RdsUR() {
+    _classCallCheck(this, RdsUR);
 
-    return _possibleConstructorReturn(this, (QXnQh.__proto__ || Object.getPrototypeOf(QXnQh)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (RdsUR.__proto__ || Object.getPrototypeOf(RdsUR)).apply(this, arguments));
   }
 
-  return QXnQh;
+  return RdsUR;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(QXnQh, _queuesSoy2.default);
+_metalSoy2.default.register(RdsUR, _firstReleaseSoy2.default);
 
-exports.default = QXnQh;
+exports.default = RdsUR;
 
 /***/ })
-],[264]);
+],[250]);

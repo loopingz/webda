@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([11,24,25,26,27,28],[
+webpackJsonppageComponent([16,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29134,17 +29134,12 @@ exports.default = parseFromAnchor;
 /* 230 */,
 /* 231 */,
 /* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */
+/* 233 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fKmQU", function() { return fKmQU; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jeEve", function() { return jeEve; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29156,15 +29151,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from binary.soy.
+// This file was automatically generated from docker.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace fKmQU.
+ * @fileoverview Templates in namespace jeEve.
  * @public
  */
 
-goog.module('fKmQU.incrementaldom');
+goog.module('jeEve.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29198,116 +29193,33 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param604 = function() {
+  var param509 = function() {
     ie_open('h6');
-      var dyn46 = opt_data.page.description;
-      if (typeof dyn46 == 'function') dyn46(); else if (dyn46 != null) itext(dyn46);
+      var dyn41 = opt_data.page.description;
+      if (typeof dyn41 == 'function') dyn41(); else if (dyn41 != null) itext(dyn41);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
+      ie_open('p');
+        itext('You can use webda to build your Docker image for you');
+      ie_close('p');
       ie_open('h2');
-        itext('Overview');
+        itext('Dockerfile');
       ie_close('h2');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+        itext('You can create your own Dockerfile, if no Dockerfile is present then the default one is used');
       ie_close('p');
-      ie_open('p');
-        itext('The API exposed is');
-      ie_close('p');
-      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
-      ie_open('p');
-        itext('You can reduce the exposition by adding an expose attribute as on Store');
-      ie_close('p');
-      ie_open('p');
-        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          ie_open('em');
-            itext('store');
-          ie_close('em');
-          itext(' is the Store of the object you want attached to');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('uid');
-          ie_close('em');
-          itext(' is the Object uuid');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('property');
-          ie_close('em');
-          itext(' is the field of the Object');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('index');
-          ie_close('em');
-          itext(' is the index of the Binary');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('hash');
-          ie_close('em');
-          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
-        ie_close('li');
-      ie_close('ul');
+      $templateAlias2({code: 'FROM node:latest\nMAINTAINER docker@webda.io\n\nRUN mkdir /server/\nADD . /server/\n\nRUN cd /server && rm -rf node_modules && npm install\nCMD cd /server && node_modules/.bin/webda serve > /data/webda.log', mode: 'text'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Map');
+        itext('Configuration');
       ie_close('h2');
       ie_open('p');
-        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
+        itext('The configuration take only two parameters the tag of the image to create and if it needs to push the image after a succesfull build.');
       ie_close('p');
-      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
-      ie_close('p');
-      ie_open('p');
-        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
-      ie_close('p');
-      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('S3Binary');
-      ie_close('h2');
-      ie_open('p');
-        itext('To configure just add the parameter bucket');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('FileBinary');
-      ie_close('h2');
-      ie_open('p');
-        itext('To configure just add the parameter folder');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('Polymer');
-      ie_close('h2');
-      ie_open('p');
-        itext('The behavior implementation can be found there :');
-      ie_close('p');
-      ie_open('p');
-        itext('Two different UI component exist also :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('A simple fab button upload :');
-        ie_close('li');
-        ie_open('li');
-          itext('IA paper-input with Browse button :');
-        ie_close('li');
-      ie_close('ul');
+      $templateAlias2({code: '{\n   tag: "mytag",\n   push: true\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29318,11 +29230,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param604}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param509}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'fKmQU.render';
+  $render.soyTemplateName = 'jeEve.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29332,14 +29244,19 @@ return exports;
 
 });
 
-class fKmQU extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(fKmQU, templates);
+class jeEve extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jeEve, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
 /* 239 */,
 /* 240 */,
 /* 241 */,
@@ -29360,15 +29277,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(fKmQU, templates);
 /* 256 */,
 /* 257 */,
 /* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29408,9 +29317,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _binarySoy = __webpack_require__(238);
+var _dockerSoy = __webpack_require__(233);
 
-var _binarySoy2 = _interopRequireDefault(_binarySoy);
+var _dockerSoy2 = _interopRequireDefault(_dockerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29420,23 +29329,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var fKmQU = function (_Component) {
-  _inherits(fKmQU, _Component);
+var jeEve = function (_Component) {
+  _inherits(jeEve, _Component);
 
-  function fKmQU() {
-    _classCallCheck(this, fKmQU);
+  function jeEve() {
+    _classCallCheck(this, jeEve);
 
-    return _possibleConstructorReturn(this, (fKmQU.__proto__ || Object.getPrototypeOf(fKmQU)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (jeEve.__proto__ || Object.getPrototypeOf(jeEve)).apply(this, arguments));
   }
 
-  return fKmQU;
+  return jeEve;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(fKmQU, _binarySoy2.default);
+_metalSoy2.default.register(jeEve, _dockerSoy2.default);
 
-exports.default = fKmQU;
+exports.default = jeEve;
 
 /***/ })
-],[267]);
+],[259]);
