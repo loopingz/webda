@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([6,24,25,26,27,28],[
+webpackJsonppageComponent([12,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29138,18 +29138,12 @@ exports.default = parseFromAnchor;
 /* 234 */,
 /* 235 */,
 /* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */
+/* 237 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "oFpLx", function() { return oFpLx; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RXPxw", function() { return RXPxw; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29161,15 +29155,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from polymer.soy.
+// This file was automatically generated from authentication.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace oFpLx.
+ * @fileoverview Templates in namespace RXPxw.
  * @public
  */
 
-goog.module('oFpLx.incrementaldom');
+goog.module('RXPxw.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29190,6 +29184,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29201,10 +29197,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param699 = function() {
+  var param573 = function() {
     ie_open('h6');
-      var dyn51 = opt_data.page.description;
-      if (typeof dyn51 == 'function') dyn51(); else if (dyn51 != null) itext(dyn51);
+      var dyn45 = opt_data.page.description;
+      if (typeof dyn45 == 'function') dyn45(); else if (dyn45 != null) itext(dyn45);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -29212,12 +29208,77 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('The Webda project have webcomponents it implements the default Store api, the Authentication service');
+        itext('The Authentication service highly depends on ');
+        ie_open('a', null, null,
+            'href', 'http://passportjs.org/');
+          itext('PassportJS');
+        ie_close('a');
+        itext(' this is why its file is passport.js');
       ie_close('p');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('It requires two stores : Idents and Users.');
+      ie_close('p');
+      ie_open('p');
+        itext('The Idents will contains each mode of Authentication enabled by the user, you will find in the Ident also the profile returned by the OAuth provider if returned.');
+      ie_close('p');
+      ie_open('p');
+        itext('The Users will have one object per user, with the idents collection, it also contains the password if any is set.');
+      ie_close('p');
+      ie_open('p');
+        itext('Basic configuration');
+      ie_close('p');
+      $templateAlias2({code: '"successRedirect": "https://shootandprove.loopingz.com/user.html", // Redirect to this page after login\n"failureRedirect": "/login-error", // Redirect to this page after failed login\n"userStore": "", // If you want to override the userStore name by default Users\n"identStore": "", // If you want to override the identStore name by default Idents\n"providers": {\n  ... // See below\n}', mode: 'javascript'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Register event');
+      ie_close('h2');
+      ie_open('p');
+        itext('When a user register, the Authentication service send a Register event, so you can complete the user with additional informations.');
+      ie_close('p');
+      $templateAlias2({code: '// Datas is the profile coming from the OAuth or the Register form\nthis.emit("Register", {"user": user, "datas": datas, "ctx": ctx});', mode: 'javascript'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Email authentication');
+      ie_close('h2');
+      ie_open('p');
+        itext('To use this feature you need to have a configured Mailer service, you can define the service name by adding the field mailer inside the email configuration.');
+      ie_close('p');
+      ie_open('p');
+        itext('The email authentication has two modes, one that register the user without waiting for the email validation, and the other one that register the user only when the registration form contains the right validation token sent by email.');
+      ie_close('p');
+      $templateAlias2({code: '...\n"providers": {\n  "email": {\n     "from": "", // Email sender\n     "subject": "", // Email subject\n     "html": "", // HTML to send by email for email validation\n     "text": "", // Text to send by email for email validation\n     "mailer": "DefinedMailer", // Defined mailer to use\n     "postValidation": false, // If true, create user without email validation\n     "skipEmailValidation": true // Don\'t even send a validation email, must be set along with postValidation=true\n  },\n}\n...', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The email authentication expose POST /auth/email if the body contains register=true then it will perform registration, if not then only login returning 404 if unknown user, 403 for bad password, 204 for successful login GET /auth/callback');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('OAuth');
+      ie_close('h2');
+      ie_open('p');
+        itext('You can setup differents types of OAuth, we integrate for now only Facebook, Amazon, Twitter, GitHub, Google.');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  providers: {\n    facebook: {\n      clientID: "facebookClientId",\n      clientSecret: "facebookSecret",\n      scope: ["email","public_profile"]\n    }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This is the same for the other providers, except ');
+        ie_open('strong');
+          itext('Twitter');
+        ie_close('strong');
+        itext(' where the fields are OAuth1 : consumerKey and consumerSecret');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('You have a Polymer behavior that implement the Authentication : ...');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29229,11 +29290,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param699}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param573}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'oFpLx.render';
+  $render.soyTemplateName = 'RXPxw.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29243,14 +29304,20 @@ return exports;
 
 });
 
-class oFpLx extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(oFpLx, templates);
+class RXPxw extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(RXPxw, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
 /* 244 */,
 /* 245 */,
 /* 246 */,
@@ -29273,8 +29340,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(oFpLx, templates);
 /* 263 */,
 /* 264 */,
 /* 265 */,
-/* 266 */,
-/* 267 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29314,9 +29380,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _polymerSoy = __webpack_require__(243);
+var _authenticationSoy = __webpack_require__(237);
 
-var _polymerSoy2 = _interopRequireDefault(_polymerSoy);
+var _authenticationSoy2 = _interopRequireDefault(_authenticationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29326,23 +29392,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var oFpLx = function (_Component) {
-  _inherits(oFpLx, _Component);
+var RXPxw = function (_Component) {
+  _inherits(RXPxw, _Component);
 
-  function oFpLx() {
-    _classCallCheck(this, oFpLx);
+  function RXPxw() {
+    _classCallCheck(this, RXPxw);
 
-    return _possibleConstructorReturn(this, (oFpLx.__proto__ || Object.getPrototypeOf(oFpLx)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (RXPxw.__proto__ || Object.getPrototypeOf(RXPxw)).apply(this, arguments));
   }
 
-  return oFpLx;
+  return RXPxw;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(oFpLx, _polymerSoy2.default);
+_metalSoy2.default.register(RXPxw, _authenticationSoy2.default);
 
-exports.default = oFpLx;
+exports.default = RXPxw;
 
 /***/ })
-],[267]);
+],[266]);

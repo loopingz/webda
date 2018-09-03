@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([13,24,25,26,27,28],[
+webpackJsonppageComponent([19,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29131,18 +29131,12 @@ exports.default = parseFromAnchor;
 /* 227 */,
 /* 228 */,
 /* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */
+/* 230 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vjxfT", function() { return vjxfT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GiBOb", function() { return GiBOb; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29154,15 +29148,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from wedeploy.soy.
+// This file was automatically generated from tutorials.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace vjxfT.
+ * @fileoverview Templates in namespace GiBOb.
  * @public
  */
 
-goog.module('vjxfT.incrementaldom');
+goog.module('GiBOb.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29194,31 +29188,89 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param562 = function() {
+  var param431 = function() {
     ie_open('h6');
-      var dyn44 = opt_data.page.description;
-      if (typeof dyn44 == 'function') dyn44(); else if (dyn44 != null) itext(dyn44);
+      var dyn31 = opt_data.page.description;
+      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Setting up a project from scratch');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        ie_open('a', null, null,
-            'href', 'http://wedeploy.io');
-          itext('WeDeploy');
-        ie_close('a');
-        itext(' allows you to run your own Docker container without having to care about scalability or reverse proxy or monitoring');
+        itext('In this video you will see:');
       ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('How to install Webda');
+        ie_close('li');
+        ie_open('li');
+          itext('How to use the configurator to add services like Authentication and NoSQL Store');
+        ie_close('li');
+        ie_open('li');
+          itext('Expose services as REST API');
+        ie_close('li');
+        ie_open('li');
+          itext('Deploy to the cloud using the AWS deployer');
+        ie_close('li');
+      ie_close('ul');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Add the mapping configuration to our project');
+      ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('As Webda allows you to deploy on Docker, we just extend the deployer to automate the call to your wedeploy shell');
+        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
       ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Use our new serverless API on a Polymer interface');
+      ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
       ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Registration with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Login with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Add a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Edit a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Remove a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Upload directly to S3');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29229,11 +29281,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param562}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param431}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'vjxfT.render';
+  $render.soyTemplateName = 'GiBOb.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29243,14 +29295,20 @@ return exports;
 
 });
 
-class vjxfT extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vjxfT, templates);
+class GiBOb extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(GiBOb, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
 /* 237 */,
 /* 238 */,
 /* 239 */,
@@ -29267,13 +29325,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vjxfT, templates);
 /* 250 */,
 /* 251 */,
 /* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29313,9 +29365,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _wedeploySoy = __webpack_require__(236);
+var _tutorialsSoy = __webpack_require__(230);
 
-var _wedeploySoy2 = _interopRequireDefault(_wedeploySoy);
+var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29325,23 +29377,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var vjxfT = function (_Component) {
-  _inherits(vjxfT, _Component);
+var GiBOb = function (_Component) {
+  _inherits(GiBOb, _Component);
 
-  function vjxfT() {
-    _classCallCheck(this, vjxfT);
+  function GiBOb() {
+    _classCallCheck(this, GiBOb);
 
-    return _possibleConstructorReturn(this, (vjxfT.__proto__ || Object.getPrototypeOf(vjxfT)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (GiBOb.__proto__ || Object.getPrototypeOf(GiBOb)).apply(this, arguments));
   }
 
-  return vjxfT;
+  return GiBOb;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(vjxfT, _wedeploySoy2.default);
+_metalSoy2.default.register(GiBOb, _tutorialsSoy2.default);
 
-exports.default = vjxfT;
+exports.default = GiBOb;
 
 /***/ })
-],[259]);
+],[253]);

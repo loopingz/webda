@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([8,24,25,26,27,28],[
+webpackJsonppageComponent([18,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29132,22 +29132,12 @@ exports.default = parseFromAnchor;
 /* 228 */,
 /* 229 */,
 /* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */
+/* 231 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PzoOh", function() { return PzoOh; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "qChxH", function() { return qChxH; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29159,15 +29149,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from mailer.soy.
+// This file was automatically generated from aws.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace PzoOh.
+ * @fileoverview Templates in namespace qChxH.
  * @public
  */
 
-goog.module('PzoOh.incrementaldom');
+goog.module('qChxH.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29188,6 +29178,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29199,46 +29191,64 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param662 = function() {
-    ie_open('h6');
-      var dyn49 = opt_data.page.description;
-      if (typeof dyn49 == 'function') dyn49(); else if (dyn49 != null) itext(dyn49);
-    ie_close('h6');
+  var param442 = function() {
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('Web Application always needs to send an email at one point.');
-      ie_close('p');
-      ie_open('p');
-        itext('The mailer service is a wrapper on top of two NodeJS library : NodeMailer and EmailTemplate');
-      ie_close('p');
-      ie_open('p');
-        itext('It allows you to send email through SMTP, GMail, SES. It also provides Mustache templates to send email to the user with contextual informations and in his own language');
+        ie_open('img', null, null,
+            'src', 'http://webda.io/images/schemas/aws_deploy.png',
+            'alt', 'image');
+        ie_close('img');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('NodeMailer configuration');
+        itext('Deployment Policy');
       ie_close('h2');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('To be able to deploy the deployment user must have at least :');
+      ie_close('p');
+      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This can be restrict more and should, need to update the documentation');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Templating');
+        itext('Package');
       ie_close('h2');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Lambda');
+      ie_close('h2');
+      ie_open('p');
+        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('API Gateway');
+      ie_close('h2');
+      ie_open('p');
+        itext('It map all the routes from your application, if a ');
+        ie_open('strong');
+          itext('website');
+        ie_close('strong');
+        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
+      ie_close('p');
+      ie_open('p');
+        itext('It also deploy the API as Stage named with the name of the deployment.');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29250,11 +29260,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param662}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param442}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'PzoOh.render';
+  $render.soyTemplateName = 'qChxH.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29264,14 +29274,24 @@ return exports;
 
 });
 
-class PzoOh extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(PzoOh, templates);
+class qChxH extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(qChxH, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
 /* 242 */,
 /* 243 */,
 /* 244 */,
@@ -29288,12 +29308,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(PzoOh, templates);
 /* 255 */,
 /* 256 */,
 /* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29333,9 +29348,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _mailerSoy = __webpack_require__(241);
+var _awsSoy = __webpack_require__(231);
 
-var _mailerSoy2 = _interopRequireDefault(_mailerSoy);
+var _awsSoy2 = _interopRequireDefault(_awsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29345,23 +29360,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var PzoOh = function (_Component) {
-  _inherits(PzoOh, _Component);
+var qChxH = function (_Component) {
+  _inherits(qChxH, _Component);
 
-  function PzoOh() {
-    _classCallCheck(this, PzoOh);
+  function qChxH() {
+    _classCallCheck(this, qChxH);
 
-    return _possibleConstructorReturn(this, (PzoOh.__proto__ || Object.getPrototypeOf(PzoOh)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (qChxH.__proto__ || Object.getPrototypeOf(qChxH)).apply(this, arguments));
   }
 
-  return PzoOh;
+  return qChxH;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(PzoOh, _mailerSoy2.default);
+_metalSoy2.default.register(qChxH, _awsSoy2.default);
 
-exports.default = PzoOh;
+exports.default = qChxH;
 
 /***/ })
-],[263]);
+],[258]);

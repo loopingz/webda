@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([17,24,25,26,27,28],[
+webpackJsonppageComponent([10,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29133,12 +29133,19 @@ exports.default = parseFromAnchor;
 /* 229 */,
 /* 230 */,
 /* 231 */,
-/* 232 */
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "YwRwm", function() { return YwRwm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Kcgvp", function() { return Kcgvp; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29150,15 +29157,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from configuration.soy.
+// This file was automatically generated from custom.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace YwRwm.
+ * @fileoverview Templates in namespace Kcgvp.
  * @public
  */
 
-goog.module('YwRwm.incrementaldom');
+goog.module('Kcgvp.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29192,11 +29199,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var $$temp;
-  var param456 = function() {
+  var param630 = function() {
     ie_open('h6');
-      var dyn32 = opt_data.page.description;
-      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
+      var dyn47 = opt_data.page.description;
+      if (typeof dyn47 == 'function') dyn47(); else if (dyn47 != null) itext(dyn47);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -29204,77 +29210,34 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
+        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
       ie_close('p');
       ie_open('p');
-        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
+        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
       ie_close('p');
-      ie_open('p');
-        itext('![image](');
-        var dyn33 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn33 == 'function') dyn33(); else if (dyn33 != null) itext(dyn33);
-        itext('/images/configuration_resolution.png)');
-      ie_close('p');
-      ie_open('p');
-        itext('This is the detail configuration for each section');
-      ie_close('p');
-      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
-      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
-      ie_open('p');
-        itext('So this how webda will resolve Service final configuration');
-      ie_close('p');
-      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Configuration UI');
+        itext('Internal service');
       ie_close('h2');
       ie_open('p');
-        itext('Here is some screenshots of the ui');
+        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
       ie_close('p');
-      ie_open('h4');
-        itext('Routes');
-      ie_close('h4');
       ie_open('p');
-        itext('![image](');
-        var dyn34 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
-        itext('/images/ui_route_create.png) ![image](');
-        var dyn35 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn35 == 'function') dyn35(); else if (dyn35 != null) itext(dyn35);
-        itext('/images/ui_route_config.png)');
+        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
       ie_close('p');
-      ie_open('h4');
-        itext('Services');
-      ie_close('h4');
+      $templateAlias2({code: 'const Service = require(\'webda/services/service\')\n\nclass MyInternalService extends Service {\n\n   init() {\n     this._gdrive = new ...;\n   }\n   \n   getDocument(uuid, token) {\n     return this._gdrive.getDocument(uuid, token);\n   }\n   \n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('![image](');
-        var dyn36 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn36 == 'function') dyn36(); else if (dyn36 != null) itext(dyn36);
-        itext('/images/ui_service_create.png) ![image](');
-        var dyn37 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn37 == 'function') dyn37(); else if (dyn37 != null) itext(dyn37);
-        itext('/images/ui_service_config.png)');
+        itext('The GDrive API is faked here, but basically this service will allow you to get some configuration from the webda.config.json and expose some methods for others Services or Models to use inside Webda');
       ie_close('p');
-      ie_open('h4');
-        itext('Deployments');
-      ie_close('h4');
-      ie_open('p');
-        itext('![image](');
-        var dyn38 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn38 == 'function') dyn38(); else if (dyn38 != null) itext(dyn38);
-        itext('/images/ui_deployment_create.png) ![image](');
-        var dyn39 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn39 == 'function') dyn39(); else if (dyn39 != null) itext(dyn39);
-        itext('/images/ui_deployment_config.png) ![image](');
-        var dyn40 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn40 == 'function') dyn40(); else if (dyn40 != null) itext(dyn40);
-        itext('/images/ui_deployment_deploy.png)');
-      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Service with exposed API');
+      ie_close('h2');
+      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29285,11 +29248,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param456}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param630}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'YwRwm.render';
+  $render.soyTemplateName = 'Kcgvp.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29299,21 +29262,14 @@ return exports;
 
 });
 
-class YwRwm extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(YwRwm, templates);
+class Kcgvp extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Kcgvp, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
 /* 240 */,
 /* 241 */,
 /* 242 */,
@@ -29330,7 +29286,13 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(YwRwm, templates);
 /* 253 */,
 /* 254 */,
 /* 255 */,
-/* 256 */
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29370,9 +29332,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _configurationSoy = __webpack_require__(232);
+var _customSoy = __webpack_require__(239);
 
-var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
+var _customSoy2 = _interopRequireDefault(_customSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29382,23 +29344,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var YwRwm = function (_Component) {
-  _inherits(YwRwm, _Component);
+var Kcgvp = function (_Component) {
+  _inherits(Kcgvp, _Component);
 
-  function YwRwm() {
-    _classCallCheck(this, YwRwm);
+  function Kcgvp() {
+    _classCallCheck(this, Kcgvp);
 
-    return _possibleConstructorReturn(this, (YwRwm.__proto__ || Object.getPrototypeOf(YwRwm)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Kcgvp.__proto__ || Object.getPrototypeOf(Kcgvp)).apply(this, arguments));
   }
 
-  return YwRwm;
+  return Kcgvp;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(YwRwm, _configurationSoy2.default);
+_metalSoy2.default.register(Kcgvp, _customSoy2.default);
 
-exports.default = YwRwm;
+exports.default = Kcgvp;
 
 /***/ })
-],[256]);
+],[262]);

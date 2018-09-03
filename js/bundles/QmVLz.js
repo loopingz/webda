@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([19,24,25,26,27,28],[
+webpackJsonppageComponent([8,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29131,12 +29131,23 @@ exports.default = parseFromAnchor;
 /* 227 */,
 /* 228 */,
 /* 229 */,
-/* 230 */
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rkTJY", function() { return rkTJY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QmVLz", function() { return QmVLz; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29148,15 +29159,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from tutorials.soy.
+// This file was automatically generated from mailer.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace rkTJY.
+ * @fileoverview Templates in namespace QmVLz.
  * @public
  */
 
-goog.module('rkTJY.incrementaldom');
+goog.module('QmVLz.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29188,89 +29199,47 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param431 = function() {
+  var param662 = function() {
     ie_open('h6');
-      var dyn31 = opt_data.page.description;
-      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
+      var dyn49 = opt_data.page.description;
+      if (typeof dyn49 == 'function') dyn49(); else if (dyn49 != null) itext(dyn49);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Setting up a project from scratch');
+        itext('Overview');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('In this video you will see:');
+        itext('Web Application always needs to send an email at one point.');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('How to install Webda');
-        ie_close('li');
-        ie_open('li');
-          itext('How to use the configurator to add services like Authentication and NoSQL Store');
-        ie_close('li');
-        ie_open('li');
-          itext('Expose services as REST API');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy to the cloud using the AWS deployer');
-        ie_close('li');
-      ie_close('ul');
+      ie_open('p');
+        itext('The mailer service is a wrapper on top of two NodeJS library : NodeMailer and EmailTemplate');
+      ie_close('p');
+      ie_open('p');
+        itext('It allows you to send email through SMTP, GMail, SES. It also provides Mustache templates to send email to the user with contextual informations and in his own language');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Add the mapping configuration to our project');
+        itext('NodeMailer configuration');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Use our new serverless API on a Polymer interface');
+        itext('Templating');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
+        ie_open('em');
+          itext('to be completed');
+        ie_close('em');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Registration with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Login with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Add a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Edit a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Remove a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Upload directly to S3');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29281,11 +29250,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param431}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param662}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'rkTJY.render';
+  $render.soyTemplateName = 'QmVLz.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29295,25 +29264,14 @@ return exports;
 
 });
 
-class rkTJY extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(rkTJY, templates);
+class QmVLz extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(QmVLz, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
 /* 242 */,
 /* 243 */,
 /* 244 */,
@@ -29326,7 +29284,18 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(rkTJY, templates);
 /* 251 */,
 /* 252 */,
 /* 253 */,
-/* 254 */
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29366,9 +29335,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _tutorialsSoy = __webpack_require__(230);
+var _mailerSoy = __webpack_require__(241);
 
-var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
+var _mailerSoy2 = _interopRequireDefault(_mailerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29378,23 +29347,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var rkTJY = function (_Component) {
-  _inherits(rkTJY, _Component);
+var QmVLz = function (_Component) {
+  _inherits(QmVLz, _Component);
 
-  function rkTJY() {
-    _classCallCheck(this, rkTJY);
+  function QmVLz() {
+    _classCallCheck(this, QmVLz);
 
-    return _possibleConstructorReturn(this, (rkTJY.__proto__ || Object.getPrototypeOf(rkTJY)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (QmVLz.__proto__ || Object.getPrototypeOf(QmVLz)).apply(this, arguments));
   }
 
-  return rkTJY;
+  return QmVLz;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(rkTJY, _tutorialsSoy2.default);
+_metalSoy2.default.register(QmVLz, _mailerSoy2.default);
 
-exports.default = rkTJY;
+exports.default = QmVLz;
 
 /***/ })
-],[254]);
+],[265]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([11,24,25,26,27,28],[
+webpackJsonppageComponent([7,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29139,12 +29139,16 @@ exports.default = parseFromAnchor;
 /* 235 */,
 /* 236 */,
 /* 237 */,
-/* 238 */
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "virEh", function() { return virEh; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CFTAI", function() { return CFTAI; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29156,15 +29160,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from binary.soy.
+// This file was automatically generated from models.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace virEh.
+ * @fileoverview Templates in namespace CFTAI.
  * @public
  */
 
-goog.module('virEh.incrementaldom');
+goog.module('CFTAI.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29198,10 +29202,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param604 = function() {
+  var param673 = function() {
     ie_open('h6');
-      var dyn46 = opt_data.page.description;
-      if (typeof dyn46 == 'function') dyn46(); else if (dyn46 != null) itext(dyn46);
+      var dyn50 = opt_data.page.description;
+      if (typeof dyn50 == 'function') dyn50(); else if (dyn50 != null) itext(dyn50);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -29209,105 +29213,48 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+        itext('Model is the best way to express your business logic.');
       ie_close('p');
       ie_open('p');
-        itext('The API exposed is');
+        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
       ie_close('p');
-      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
-      ie_open('p');
-        itext('You can reduce the exposition by adding an expose attribute as on Store');
-      ie_close('p');
-      ie_open('p');
-        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          ie_open('em');
-            itext('store');
-          ie_close('em');
-          itext(' is the Store of the object you want attached to');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('uid');
-          ie_close('em');
-          itext(' is the Object uuid');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('property');
-          ie_close('em');
-          itext(' is the field of the Object');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('index');
-          ie_close('em');
-          itext(' is the index of the Binary');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('hash');
-          ie_close('em');
-          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
-        ie_close('li');
-      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Map');
+        itext('Security');
       ie_close('h2');
       ie_open('p');
-        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
+        itext('The model has a predefined method ');
+        ie_open('em');
+          itext('canAct');
+        ie_close('em');
+        itext(' that will be called whenever an action is trigger on an object from an external source');
       ie_close('p');
-      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
+        itext('This method return a Promise that will stop the processing if it is rejected');
       ie_close('p');
-      ie_open('p');
-        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
-      ie_close('p');
-      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
+      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('S3Binary');
+        itext('Custom Actions');
       ie_close('h2');
       ie_open('p');
-        itext('To configure just add the parameter bucket');
+        itext('The model can defined action that will be exposed by its Store');
       ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '4');
       ie_open('h2');
-        itext('FileBinary');
+        itext('Store Events');
       ie_close('h2');
       ie_open('p');
-        itext('To configure just add the parameter folder');
+        itext('The model can defined behavior on store event without defining a listener The _onAction and _onActioned are not defined as the action by itself is already inside the object');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('Polymer');
-      ie_close('h2');
-      ie_open('p');
-        itext('The behavior implementation can be found there :');
-      ie_close('p');
-      ie_open('p');
-        itext('Two different UI component exist also :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('A simple fab button upload :');
-        ie_close('li');
-        ie_open('li');
-          itext('IA paper-input with Browse button :');
-        ie_close('li');
-      ie_close('ul');
+      $templateAlias2({code: 'class CoreModel {\n    _onSave() {\n      // Will be called beforeSave\n    }\n    _onSave() {\n      // Will be called afterSave\n    }\n    _onUpdate() {\n      // Will be called beforeUpdate\n    }\n    _onUpdated() {\n      // Will be called afterUpdate\n    }\n    _onDelete() {\n      // Will be called afterDelete\n    }\n    _onDeleted() {\n      // Will be called afterDelete\n    }\n    _onGet() {\n      // Will be called when an object is retrieved\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29318,11 +29265,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param604}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param673}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'virEh.render';
+  $render.soyTemplateName = 'CFTAI.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29332,18 +29279,14 @@ return exports;
 
 });
 
-class virEh extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(virEh, templates);
+class CFTAI extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(CFTAI, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
 /* 243 */,
 /* 244 */,
 /* 245 */,
@@ -29362,15 +29305,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(virEh, templates);
 /* 258 */,
 /* 259 */,
 /* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29410,9 +29345,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _binarySoy = __webpack_require__(238);
+var _modelsSoy = __webpack_require__(242);
 
-var _binarySoy2 = _interopRequireDefault(_binarySoy);
+var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29422,23 +29357,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var virEh = function (_Component) {
-  _inherits(virEh, _Component);
+var CFTAI = function (_Component) {
+  _inherits(CFTAI, _Component);
 
-  function virEh() {
-    _classCallCheck(this, virEh);
+  function CFTAI() {
+    _classCallCheck(this, CFTAI);
 
-    return _possibleConstructorReturn(this, (virEh.__proto__ || Object.getPrototypeOf(virEh)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (CFTAI.__proto__ || Object.getPrototypeOf(CFTAI)).apply(this, arguments));
   }
 
-  return virEh;
+  return CFTAI;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(virEh, _binarySoy2.default);
+_metalSoy2.default.register(CFTAI, _modelsSoy2.default);
 
-exports.default = virEh;
+exports.default = CFTAI;
 
 /***/ })
-],[269]);
+],[261]);
