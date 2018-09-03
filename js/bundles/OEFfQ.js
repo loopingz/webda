@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([8,24,25,26,27,28],[
+webpackJsonppageComponent([12,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19324,14 +19324,14 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   opt_data = opt_data || {};
-  var param112 = function() {
+  var param3 = function() {
     ie_open('div', null, null,
         'class', 'blog');
       $mainPost(opt_data, null, opt_ijData);
       $olderPosts(opt_data, null, opt_ijData);
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param112}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param3}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -19356,24 +19356,24 @@ function $mainPost(opt_data, opt_ignored, opt_ijData) {
     ie_open('header');
       ie_open('small');
         itext('By ');
-        var dyn8 = opt_data.page.author;
-        if (typeof dyn8 == 'function') dyn8(); else if (dyn8 != null) itext(dyn8);
+        var dyn0 = opt_data.page.author;
+        if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
         itext(' ');
         ie_open('span');
           itext('| ');
-          var dyn9 = opt_data.page.date;
-          if (typeof dyn9 == 'function') dyn9(); else if (dyn9 != null) itext(dyn9);
+          var dyn1 = opt_data.page.date;
+          if (typeof dyn1 == 'function') dyn1(); else if (dyn1 != null) itext(dyn1);
         ie_close('span');
       ie_close('small');
       ie_open('h3');
-        var dyn10 = opt_data.page.title;
-        if (typeof dyn10 == 'function') dyn10(); else if (dyn10 != null) itext(dyn10);
+        var dyn2 = opt_data.page.title;
+        if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
       ie_close('h3');
     ie_close('header');
     ie_open('div', null, null,
         'class', 'content');
-      var dyn11 = opt_data.content;
-      if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
+      var dyn3 = opt_data.content;
+      if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
     ie_close('div');
     $templateAlias2(opt_data, null, opt_ijData);
   ie_close('article');
@@ -19395,8 +19395,8 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $olderPosts(opt_data, opt_ignored, opt_ijData) {
-  var blogObject__soy132 = opt_data.site.index.children['blog'];
-  $templateAlias3({blogObject: blogObject__soy132, url: opt_data.page.url}, null, opt_ijData);
+  var blogObject__soy23 = opt_data.site.index.children['blog'];
+  $templateAlias3({blogObject: blogObject__soy23, url: opt_data.page.url}, null, opt_ijData);
 }
 exports.olderPosts = $olderPosts;
 if (goog.DEBUG) {
@@ -19528,8 +19528,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
           'class', 'container-hybrid');
         ie_open('h1', null, null,
             'class', 'title');
-          var dyn12 = opt_data.page.title;
-          if (typeof dyn12 == 'function') dyn12(); else if (dyn12 != null) itext(dyn12);
+          var dyn4 = opt_data.page.title;
+          if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
           itext(' Guide');
         ie_close('h1');
       ie_close('div');
@@ -19542,8 +19542,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
             'class', 'docs-content col-xs-16 col-md-9');
           ie_open('div', null, null,
               'class', 'guide-content');
-            var dyn13 = opt_data.content;
-            if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+            var dyn5 = opt_data.content;
+            if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
           ie_close('div');
           if (opt_data.site.githubRepo) {
             $contribute(opt_data, null, opt_ijData);
@@ -19693,8 +19693,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'content');
       $templateAlias1({items: opt_data.site.topbar, style: 'topbar-light'}, null, opt_ijData);
       $logo(opt_data, null, opt_ijData);
-      var dyn14 = opt_data.content;
-      if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+      var dyn6 = opt_data.content;
+      if (typeof dyn6 == 'function') dyn6(); else if (dyn6 != null) itext(dyn6);
     ie_close('main');
   ie_close('div');
 }
@@ -19727,8 +19727,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn15 = opt_data.site.title;
-        if (typeof dyn15 == 'function') dyn15(); else if (dyn15 != null) itext(dyn15);
+        var dyn7 = opt_data.site.title;
+        if (typeof dyn7 == 'function') dyn7(); else if (dyn7 != null) itext(dyn7);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -19864,14 +19864,14 @@ function $tutorials(opt_data, opt_ignored, opt_ijData) {
         'class', 'container');
       ie_open('h6', null, null,
           'class', 'tutorial-title');
-        var dyn16 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId].tutorialTitle;
-        if (typeof dyn16 == 'function') dyn16(); else if (dyn16 != null) itext(dyn16);
+        var dyn8 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId].tutorialTitle;
+        if (typeof dyn8 == 'function') dyn8(); else if (dyn8 != null) itext(dyn8);
       ie_close('h6');
       $templateAlias2(null, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'container-blog card');
-        var dyn17 = opt_data.content;
-        if (typeof dyn17 == 'function') dyn17(); else if (dyn17 != null) itext(dyn17);
+        var dyn9 = opt_data.content;
+        if (typeof dyn9 == 'function') dyn9(); else if (dyn9 != null) itext(dyn9);
         $footerButtons(opt_data, null, opt_ijData);
       ie_close('div');
     ie_close('div');
@@ -19896,15 +19896,15 @@ if (goog.DEBUG) {
 function $footerButtons(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'tutorial-page-nav');
-    var tutorialObject__soy215 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId];
-    if (opt_data.page.weight < tutorialObject__soy215.childIds.length) {
+    var tutorialObject__soy106 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId];
+    if (opt_data.page.weight < tutorialObject__soy106.childIds.length) {
       if (opt_data.page.buttonTitle) {
-        var nextPageUrl__soy220 = tutorialObject__soy215.children[tutorialObject__soy215.childIds[opt_data.page.weight]].url;
+        var nextPageUrl__soy111 = tutorialObject__soy106.children[tutorialObject__soy106.childIds[opt_data.page.weight]].url;
         ie_open('a', null, null,
-            'href', nextPageUrl__soy220,
+            'href', nextPageUrl__soy111,
             'class', 'btn btn-accent btn-sm');
-          var dyn18 = opt_data.page.buttonTitle;
-          if (typeof dyn18 == 'function') dyn18(); else if (dyn18 != null) itext(dyn18);
+          var dyn10 = opt_data.page.buttonTitle;
+          if (typeof dyn10 == 'function') dyn10(); else if (dyn10 != null) itext(dyn10);
         ie_close('a');
       }
     }
@@ -19949,7 +19949,7 @@ if (goog.DEBUG) {
  * @return {void}
  * @suppress {checkTypes}
  */
-function __deltemplate_s235_88c0813b(opt_data, opt_ignored, opt_ijData) {
+function __deltemplate_s126_88c0813b(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link' + (opt_data.page.active ? ' sidebar-link-selected' : ''),
       'href', opt_data.page.url,
@@ -19958,23 +19958,23 @@ function __deltemplate_s235_88c0813b(opt_data, opt_ignored, opt_ijData) {
         'class', 'before');
     ie_open('span', null, null,
         'class', 'tutorial-step');
-      var dyn19 = opt_data.page.weight;
-      if (typeof dyn19 == 'function') dyn19(); else if (dyn19 != null) itext(dyn19);
+      var dyn11 = opt_data.page.weight;
+      if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
     ie_close('span');
     ie_open('span', null, null,
         'class', 'section-title');
-      var dyn20 = opt_data.page.title;
-      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
+      var dyn12 = opt_data.page.title;
+      if (typeof dyn12 == 'function') dyn12(); else if (dyn12 != null) itext(dyn12);
     ie_close('span');
     ie_void('span', null, null,
         'class', 'after');
   ie_close('a');
 }
-exports.__deltemplate_s235_88c0813b = __deltemplate_s235_88c0813b;
+exports.__deltemplate_s126_88c0813b = __deltemplate_s126_88c0813b;
 if (goog.DEBUG) {
-  __deltemplate_s235_88c0813b.soyTemplateName = 'tutorial.__deltemplate_s235_88c0813b';
+  __deltemplate_s126_88c0813b.soyTemplateName = 'tutorial.__deltemplate_s126_88c0813b';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'tutorial', 0, __deltemplate_s235_88c0813b);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'tutorial', 0, __deltemplate_s126_88c0813b);
 
 exports.render.params = ["content","page","site","elementClasses"];
 exports.render.types = {"content":"?","page":"?","site":"?","elementClasses":"?"};
@@ -20254,8 +20254,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_open('p', null, null,
             'class', 'footer-description col-md-6 col-md-offset-2');
           itext('Copyright \u00A9 ');
-          var dyn2 = opt_data.year;
-          if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
+          var dyn15 = opt_data.year;
+          if (typeof dyn15 == 'function') dyn15(); else if (dyn15 != null) itext(dyn15);
           itext(' ');
           ie_open('a', null, null,
               'href', 'https://liferay.com');
@@ -20359,30 +20359,30 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     ie_open('div', null, null,
         'class', 'container');
       if (opt_data.posts) {
-        var postList56 = opt_data.posts;
-        var postListLen56 = postList56.length;
-        for (var postIndex56 = 0; postIndex56 < postListLen56; postIndex56++) {
-          var postData56 = postList56[postIndex56];
+        var postList193 = opt_data.posts;
+        var postListLen193 = postList193.length;
+        for (var postIndex193 = 0; postIndex193 < postListLen193; postIndex193++) {
+          var postData193 = postList193[postIndex193];
           ie_open('div', null, null,
               'class', 'post-item container-blog');
             ie_open('a', null, null,
                 'class', 'post-item__link',
-                'href', postData56.url);
+                'href', postData193.url);
               ie_open('small');
                 itext('By ');
-                var dyn3 = postData56.author;
-                if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
+                var dyn16 = postData193.author;
+                if (typeof dyn16 == 'function') dyn16(); else if (dyn16 != null) itext(dyn16);
                 itext(' ');
                 ie_open('span');
                   itext('| ');
-                  var dyn4 = postData56.date;
-                  if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
+                  var dyn17 = postData193.date;
+                  if (typeof dyn17 == 'function') dyn17(); else if (dyn17 != null) itext(dyn17);
                 ie_close('span');
               ie_close('small');
               ie_open('h4', null, null,
                   'class', 'post-item__title');
-                var dyn5 = postData56.title;
-                if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
+                var dyn18 = postData193.title;
+                if (typeof dyn18 == 'function') dyn18(); else if (dyn18 != null) itext(dyn18);
               ie_close('h4');
             ie_close('a');
           ie_close('div');
@@ -20519,7 +20519,7 @@ if (goog.DEBUG) {
  * @return {void}
  * @suppress {checkTypes}
  */
-function __deltemplate_s74_d34389eb(opt_data, opt_ignored, opt_ijData) {
+function __deltemplate_s211_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
       'href', opt_data.page.url);
@@ -20528,16 +20528,16 @@ function __deltemplate_s74_d34389eb(opt_data, opt_ignored, opt_ijData) {
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
     }
     ie_open('span');
-      var dyn6 = opt_data.page.title;
-      if (typeof dyn6 == 'function') dyn6(); else if (dyn6 != null) itext(dyn6);
+      var dyn19 = opt_data.page.title;
+      if (typeof dyn19 == 'function') dyn19(); else if (dyn19 != null) itext(dyn19);
     ie_close('span');
   ie_close('a');
 }
-exports.__deltemplate_s74_d34389eb = __deltemplate_s74_d34389eb;
+exports.__deltemplate_s211_d34389eb = __deltemplate_s211_d34389eb;
 if (goog.DEBUG) {
-  __deltemplate_s74_d34389eb.soyTemplateName = 'Sidebar.__deltemplate_s74_d34389eb';
+  __deltemplate_s211_d34389eb.soyTemplateName = 'Sidebar.__deltemplate_s211_d34389eb';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'sidebar', 0, __deltemplate_s74_d34389eb);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'sidebar', 0, __deltemplate_s211_d34389eb);
 
 exports.render.params = ["section","site"];
 exports.render.types = {"section":"?","site":"?"};
@@ -20735,8 +20735,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_void('span', null, null,
           'class', 'icon icon-16-clock');
       itext(' ');
-      var dyn7 = opt_data.time;
-      if (typeof dyn7 == 'function') dyn7(); else if (dyn7 != null) itext(dyn7);
+      var dyn20 = opt_data.time;
+      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
     }
   ie_close('p');
 }
@@ -29138,16 +29138,12 @@ exports.default = parseFromAnchor;
 /* 234 */,
 /* 235 */,
 /* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */
+/* 237 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "qEpFZ", function() { return qEpFZ; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OEFfQ", function() { return OEFfQ; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29159,15 +29155,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from mailer.soy.
+// This file was automatically generated from authentication.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace qEpFZ.
+ * @fileoverview Templates in namespace OEFfQ.
  * @public
  */
 
-goog.module('qEpFZ.incrementaldom');
+goog.module('OEFfQ.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29188,6 +29184,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29199,10 +29197,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param662 = function() {
+  var param573 = function() {
     ie_open('h6');
-      var dyn49 = opt_data.page.description;
-      if (typeof dyn49 == 'function') dyn49(); else if (dyn49 != null) itext(dyn49);
+      var dyn45 = opt_data.page.description;
+      if (typeof dyn45 == 'function') dyn45(); else if (dyn45 != null) itext(dyn45);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -29210,35 +29208,77 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('Web Application always needs to send an email at one point.');
+        itext('The Authentication service highly depends on ');
+        ie_open('a', null, null,
+            'href', 'http://passportjs.org/');
+          itext('PassportJS');
+        ie_close('a');
+        itext(' this is why its file is passport.js');
       ie_close('p');
       ie_open('p');
-        itext('The mailer service is a wrapper on top of two NodeJS library : NodeMailer and EmailTemplate');
+        itext('It requires two stores : Idents and Users.');
       ie_close('p');
       ie_open('p');
-        itext('It allows you to send email through SMTP, GMail, SES. It also provides Mustache templates to send email to the user with contextual informations and in his own language');
+        itext('The Idents will contains each mode of Authentication enabled by the user, you will find in the Ident also the profile returned by the OAuth provider if returned.');
       ie_close('p');
+      ie_open('p');
+        itext('The Users will have one object per user, with the idents collection, it also contains the password if any is set.');
+      ie_close('p');
+      ie_open('p');
+        itext('Basic configuration');
+      ie_close('p');
+      $templateAlias2({code: '"successRedirect": "https://shootandprove.loopingz.com/user.html", // Redirect to this page after login\n"failureRedirect": "/login-error", // Redirect to this page after failed login\n"userStore": "", // If you want to override the userStore name by default Users\n"identStore": "", // If you want to override the identStore name by default Idents\n"providers": {\n  ... // See below\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('NodeMailer configuration');
+        itext('Register event');
       ie_close('h2');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('When a user register, the Authentication service send a Register event, so you can complete the user with additional informations.');
       ie_close('p');
+      $templateAlias2({code: '// Datas is the profile coming from the OAuth or the Register form\nthis.emit("Register", {"user": user, "datas": datas, "ctx": ctx});', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Templating');
+        itext('Email authentication');
       ie_close('h2');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('To use this feature you need to have a configured Mailer service, you can define the service name by adding the field mailer inside the email configuration.');
+      ie_close('p');
+      ie_open('p');
+        itext('The email authentication has two modes, one that register the user without waiting for the email validation, and the other one that register the user only when the registration form contains the right validation token sent by email.');
+      ie_close('p');
+      $templateAlias2({code: '...\n"providers": {\n  "email": {\n     "from": "", // Email sender\n     "subject": "", // Email subject\n     "html": "", // HTML to send by email for email validation\n     "text": "", // Text to send by email for email validation\n     "mailer": "DefinedMailer", // Defined mailer to use\n     "postValidation": false, // If true, create user without email validation\n     "skipEmailValidation": true // Don\'t even send a validation email, must be set along with postValidation=true\n  },\n}\n...', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The email authentication expose POST /auth/email if the body contains register=true then it will perform registration, if not then only login returning 404 if unknown user, 403 for bad password, 204 for successful login GET /auth/callback');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('OAuth');
+      ie_close('h2');
+      ie_open('p');
+        itext('You can setup differents types of OAuth, we integrate for now only Facebook, Amazon, Twitter, GitHub, Google.');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  providers: {\n    facebook: {\n      clientID: "facebookClientId",\n      clientSecret: "facebookSecret",\n      scope: ["email","public_profile"]\n    }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This is the same for the other providers, except ');
+        ie_open('strong');
+          itext('Twitter');
+        ie_close('strong');
+        itext(' where the fields are OAuth1 : consumerKey and consumerSecret');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('You have a Polymer behavior that implement the Authentication : ...');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29250,11 +29290,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param662}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param573}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'qEpFZ.render';
+  $render.soyTemplateName = 'OEFfQ.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29264,14 +29304,18 @@ return exports;
 
 });
 
-class qEpFZ extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(qEpFZ, templates);
+class OEFfQ extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(OEFfQ, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
 /* 242 */,
 /* 243 */,
 /* 244 */,
@@ -29292,14 +29336,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(qEpFZ, templates);
 /* 259 */,
 /* 260 */,
 /* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29339,9 +29376,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _mailerSoy = __webpack_require__(241);
+var _authenticationSoy = __webpack_require__(237);
 
-var _mailerSoy2 = _interopRequireDefault(_mailerSoy);
+var _authenticationSoy2 = _interopRequireDefault(_authenticationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29351,23 +29388,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var qEpFZ = function (_Component) {
-  _inherits(qEpFZ, _Component);
+var OEFfQ = function (_Component) {
+  _inherits(OEFfQ, _Component);
 
-  function qEpFZ() {
-    _classCallCheck(this, qEpFZ);
+  function OEFfQ() {
+    _classCallCheck(this, OEFfQ);
 
-    return _possibleConstructorReturn(this, (qEpFZ.__proto__ || Object.getPrototypeOf(qEpFZ)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (OEFfQ.__proto__ || Object.getPrototypeOf(OEFfQ)).apply(this, arguments));
   }
 
-  return qEpFZ;
+  return OEFfQ;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(qEpFZ, _mailerSoy2.default);
+_metalSoy2.default.register(OEFfQ, _authenticationSoy2.default);
 
-exports.default = qEpFZ;
+exports.default = OEFfQ;
 
 /***/ })
-],[269]);
+],[262]);
