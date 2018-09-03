@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([20,24,25,26,27,28],[
+webpackJsonppageComponent([4,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29130,12 +29130,28 @@ exports.default = parseFromAnchor;
 /* 226 */,
 /* 227 */,
 /* 228 */,
-/* 229 */
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KUHtb", function() { return KUHtb; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VegWi", function() { return VegWi; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29147,15 +29163,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from store.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace KUHtb.
+ * @fileoverview Templates in namespace VegWi.
  * @public
  */
 
-goog.module('KUHtb.incrementaldom');
+goog.module('VegWi.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29189,157 +29205,216 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param355 = function() {
+  var param634 = function() {
     ie_open('h6');
-      var dyn30 = opt_data.page.description;
-      if (typeof dyn30 == 'function') dyn30(); else if (dyn30 != null) itext(dyn30);
+      var dyn51 = opt_data.page.description;
+      if (typeof dyn51 == 'function') dyn51(); else if (dyn51 != null) itext(dyn51);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Installation');
+        itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('You first need to install webda-shell.');
-      ie_close('p');
-      $templateAlias2({code: 'npm install -g webda-shell', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will install the webda shell tools, that allows you to configure and deploy your project You have the configuration UI available, where you can create a service, use a service, or create a custom API resource. You can also manually edit the webda.config.json if you prefer');
+        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
       ie_close('p');
       ie_open('p');
-        itext('Below is the manual step with the manual modification, I would recommand to use the configuration UI to modify the webda.config.json');
+        itext('We have currently File, DynamoDB and MongoDB storage');
+      ie_close('p');
+      ie_open('h2');
+        itext('Expose REST API');
+      ie_close('h2');
+      ie_open('p');
+        itext('Inside the configuration you can add a block for expose the store as a REST API');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "expose": {\n     "url": "/storeurl", // By default the URL is the store name in lower case\n     "restrict": {\n       "update": true, // Prevent the creation of an object the PUT method wont be exposed\n       "delete": false // Allow delete for the object\n     }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The above configuration will end up creating the following routes:');
+      ie_close('p');
+      ie_open('p');
+        itext('POST /storeurl');
+      ie_close('p');
+      ie_open('p');
+        itext('GET /storeurl/[uuid]');
+      ie_close('p');
+      ie_open('p');
+        itext('DELETE /storeurl/[uuid]');
+      ie_close('p');
+      ie_open('p');
+        itext('You can see that by default, once the store exposed all the methods are available unless you restrict them.');
+      ie_close('p');
+      ie_open('h2');
+        itext('Configuring Mapping');
+      ie_close('h2');
+      ie_open('p');
+        itext('As an example we will use the Users / Idents stores used by the Authentication module.');
+      ie_close('p');
+      ie_open('p');
+        itext('A User has several Idents so in NoSQL we need to deduplicate a part of the Ident object inside an array inside the User object');
+      ie_close('p');
+      ie_open('p');
+        itext('The following is the Idents store configuration');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "map": {\n     "Users": { // Target store\n        "key": "user", // Property inside Ident Object\n        "target": "idents", // Property on the User Object\n        "fields": "type", // Fields from the Ident Object ( uuid is added by default )\n        "cascade": true // If User object is delete then delete all the linked Idents\n     }\n  }', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('So if you have a user like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "user_01"\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Then you save a new Ident object like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "ident_01",\n  "user": "user_01",\n  "type": "Google"\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Once the Ident saved, the User object will look like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "user_01",\n  "idents": [{"uuid":"ident_01","type":"Google"}]\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Then if you update the field type on your Ident object the User object will reflect the change, as well as if you delete the ident object it will be removed from the User object.');
+      ie_close('p');
+      ie_open('p');
+        itext('If cascade = true, then if you delete the User object, all attached Idents will be delete aswell.');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Init a project');
+        itext('Events');
       ie_close('h2');
       ie_open('p');
-        itext('Create a new project folder');
-      ie_close('p');
-      $templateAlias2({code: 'mkdir my-new-project\ncd my-new-project', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('If you do want to use our sample project, first type');
-      ie_close('p');
-      $templateAlias2({code: 'webda init', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('Launch your project configuration interface');
-      ie_close('p');
-      $templateAlias2({code: 'webda config', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('You should now see the configuration website in your browser');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Create a new route');
-      ie_close('h2');
-      ie_open('p');
-        itext('We will use the inline RouteHelper here, except the Lambda Route helper, the other are mainly helper for quick and easy test but you should use Service when you can as they are easier to unit test and make code cleaner.');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This is defining the GET /myurl API');
+        itext('The Stores emit events to let you implement some auto completion of the object if needed or taking any others action even deny the action by throwing an exception');
       ie_close('p');
       ie_open('p');
-        itext('There is 5 types of route : file, inline, lambda, resource, string');
+        itext('The store event looks like');
       ie_close('p');
-      ie_open('h3');
-        itext('File route');
-      ie_close('h3');
+      $templateAlias2({code: '{\n  \'object\': object,\n  \'store\': this\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        ie_open('strong');
-          itext('file');
-        ie_close('strong');
-        itext(' include the javascript file and call its main export with the context');
+        itext('Store.Save: Before saving the object');
       ie_close('p');
       ie_open('p');
-        itext('webda.config.json');
+        itext('Store.Saved: After saving the object');
       ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myapi": {\n      "type": "file",\n      "file": "./test.js"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('test.js');
+        itext('Store.Update: Before updating the object');
       ie_close('p');
-      $templateAlias2({code: 'module.exports = (ctx) {\n  ctx.write(\'This is my custom API\')\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('h3');
-        itext('Inline route');
-      ie_close('h3');
       ie_open('p');
-        ie_open('strong');
-          itext('inline');
-        ie_close('strong');
-        itext(' eval the content of the callback string');
+        itext('Store.Updated: After updating the object');
       ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('h3');
-        itext('Lambda route');
-      ie_close('h3');
       ie_open('p');
-        ie_open('strong');
-          itext('lambda');
-        ie_close('strong');
-        itext(' call a Lambda function and return its result');
+        itext('Store.Delete: Before deleting the object');
       ie_close('p');
-      ie_open('h3');
-        itext('Resource route');
-      ie_close('h3');
       ie_open('p');
-        ie_open('strong');
-          itext('resource');
-        ie_close('strong');
-        itext(' return the content of the file, guessing it\'s mime type');
+        itext('Store.Deleted: After deleting the object');
       ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "resource",\n      "file": "./test.jpg"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('This will return the jpeg with image/jpeg mime type');
-      ie_close('p');
-      ie_open('h3');
-        itext('String route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('string');
-        ie_close('strong');
-        itext(' return the content of result, you can specify the mime');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "string",\n      "result": "Hi Webda !"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will return a "Hi Webda !"');
+        itext('Store.Get: When getting the object');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '4');
       ie_open('h2');
-        itext('Create a new service');
+        itext('Models');
       ie_close('h2');
       ie_open('p');
-        itext('We will create a new service from executor, so we can map some urls directly to the service');
+        itext('The store is using a Model to map your object.');
       ie_close('p');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('Here is the corresponding configuration');
+        itext('It allows you to implement security constraint on the object itself, add some custom actions and validation');
       ie_close('p');
-      $templateAlias2({code: '{\n  ...\n  services: {\n     ...\n     "MyService": {\n       require: "./myservice.js",\n       sentence: "I am a GET route and i\'ve sent an welcome email to you"\n     }\n     ...\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('h3');
+        itext('Custom actions');
+      ie_close('h3');
+      ie_open('p');
+        itext('As we saw before the store will expose your objects via an URL');
+      ie_close('p');
+      ie_open('p');
+        itext('You can also add any specific behavior while saving / updating / deleting');
+      ie_close('p');
+      $templateAlias2({code: 'class MyModel extends CoreModel {\n  canAct(context, action) {\n    if (action === \'get\') {\n      return true;\n    } else if (action === \'update\') {\n      return true;\n    } else if (action === \'delete\') {\n      return true;\n    } else if (action === \'create\') {\n      return true;\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('If not specified the Store will pick the Owner policy as default. Policies are implicit service, so you can get them with a getService("OwnerPolicy"), but don\'t appear by default in the configuration file. That also means you can override a Policy if you want or create your own to implement your business model');
+      ie_close('p');
+      ie_open('h3');
+        itext('Owner Policy');
+      ie_close('h3');
+      ie_open('p');
+        itext('POST: Add the current user in the user field of the object');
+      ie_close('p');
+      ie_open('p');
+        itext('PUT: Verify the current user is the user inside the user field');
+      ie_close('p');
+      ie_open('p');
+        itext('GET: Verify the current user is the user inside the user field, or a public=true field exists on the object');
+      ie_close('p');
+      ie_open('p');
+        itext('DELETE: Verify the current user is the user inside the user field');
+      ie_close('p');
+      ie_open('h3');
+        itext('Void policy');
+      ie_close('h3');
+      ie_open('p');
+        itext('No verification, not recommended at all');
+      ie_close('p');
+      ie_open('h2');
+        itext('Validation');
+      ie_close('h2');
+      ie_open('p');
+        itext('To ensure that the input is correct, you can setup a JSON schema this way any update or creation will verify that the object is correct.');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "validator": "schema"\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('All the input of POST or PUT will then be validate against it.');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '5');
       ie_open('h2');
-        itext('Run it');
+        itext('DynamoDB');
       ie_close('h2');
-      $templateAlias2({code: 'webda serve', mode: 'text'}, null, opt_ijData);
       ie_open('p');
-        itext('You can call the http://localhost:18080/myservice, and see the nice output');
+        itext('The DynamoDB stores requires at least accessKeyId, secretAccessKey and table');
       ie_close('p');
       ie_open('p');
-        itext('"I am a GET route and i\'ve sent an welcome email to you"');
+        itext('For more information on DynamoDB : ');
+        ie_open('a', null, null,
+            'href', 'https://aws.amazon.com/dynamodb/');
+          itext('AWS DynamoDB');
+        ie_close('a');
       ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '6');
+      ie_open('h2');
+        itext('MongoDB');
+      ie_close('h2');
       ie_open('p');
-        itext('And then the http://localhost:18080/myurl');
+        itext('The MongoDB configuration requires a collection and a mongo parameter where mongo is the MongoDB url');
       ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '7');
+      ie_open('h2');
+        itext('FileDB');
+      ie_close('h2');
       ie_open('p');
-        itext('"I am a inline route"');
+        itext('The FileDB only requires a folder where to store the datas. It creates it if not exists');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '7');
+      ie_open('h2');
+        itext('MemoryDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The MemoryDB only store the in a Map, so it will loose all the datas if you shutdown the server. It can be usefull for local cache or for some unit test');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '8');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('You have a behavior defined for you, once added to your component you have the model property and a save/get/update/delete method for you to communicate with the API');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29351,11 +29426,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param355}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param634}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'KUHtb.render';
+  $render.soyTemplateName = 'VegWi.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29365,30 +29440,14 @@ return exports;
 
 });
 
-class KUHtb extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(KUHtb, templates);
+class VegWi extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(VegWi, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
 /* 246 */,
 /* 247 */,
 /* 248 */,
@@ -29397,7 +29456,16 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(KUHtb, templates);
 /* 251 */,
 /* 252 */,
 /* 253 */,
-/* 254 */
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29437,9 +29505,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _indexSoy = __webpack_require__(229);
+var _storeSoy = __webpack_require__(245);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _storeSoy2 = _interopRequireDefault(_storeSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29449,23 +29517,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var KUHtb = function (_Component) {
-  _inherits(KUHtb, _Component);
+var VegWi = function (_Component) {
+  _inherits(VegWi, _Component);
 
-  function KUHtb() {
-    _classCallCheck(this, KUHtb);
+  function VegWi() {
+    _classCallCheck(this, VegWi);
 
-    return _possibleConstructorReturn(this, (KUHtb.__proto__ || Object.getPrototypeOf(KUHtb)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (VegWi.__proto__ || Object.getPrototypeOf(VegWi)).apply(this, arguments));
   }
 
-  return KUHtb;
+  return VegWi;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(KUHtb, _indexSoy2.default);
+_metalSoy2.default.register(VegWi, _storeSoy2.default);
 
-exports.default = KUHtb;
+exports.default = VegWi;
 
 /***/ })
-],[254]);
+],[263]);

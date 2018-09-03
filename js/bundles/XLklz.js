@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([19,24,25,26,27,28],[
+webpackJsonppageComponent([9,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29131,12 +29131,22 @@ exports.default = parseFromAnchor;
 /* 227 */,
 /* 228 */,
 /* 229 */,
-/* 230 */
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cdlvr", function() { return Cdlvr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XLklz", function() { return XLklz; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29148,15 +29158,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from tutorials.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace Cdlvr.
+ * @fileoverview Templates in namespace XLklz.
  * @public
  */
 
-goog.module('Cdlvr.incrementaldom');
+goog.module('XLklz.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29188,89 +29198,106 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param431 = function() {
+  var param564 = function() {
     ie_open('h6');
-      var dyn31 = opt_data.page.description;
-      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
+      var dyn46 = opt_data.page.description;
+      if (typeof dyn46 == 'function') dyn46(); else if (dyn46 != null) itext(dyn46);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Setting up a project from scratch');
+        itext('Concepts');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('In this video you will see:');
+        itext('Webda introduces some basic concepts :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          itext('How to install Webda');
+          ie_open('em');
+            itext('Service');
+          ie_close('em');
+          itext(' a singleton similar to Spring Bean to implement behaviors');
         ie_close('li');
         ie_open('li');
-          itext('How to use the configurator to add services like Authentication and NoSQL Store');
+          ie_open('em');
+            itext('Executor');
+          ie_close('em');
+          itext(' is a service that provide some routes and expose API to the world');
         ie_close('li');
         ie_open('li');
-          itext('Expose services as REST API');
+          ie_open('em');
+            itext('Model');
+          ie_close('em');
+          itext(' to define your business logic');
         ie_close('li');
         ie_open('li');
-          itext('Deploy to the cloud using the AWS deployer');
+          ie_open('em');
+            itext('Deployment');
+          ie_close('em');
+          itext(' an instance of the app with its own configuration');
         ie_close('li');
       ie_close('ul');
+      ie_open('p');
+        itext('The ');
+        ie_open('strong');
+          itext('webda.config.json');
+        ie_close('strong');
+        itext(' contains the configuration of the app, defining Services, Routes and global configuration, you can consider it as the applicationContext.xml of Spring if you prefer, with Beans=Services');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Add the mapping configuration to our project');
+        itext('Stores');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
+        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
+      ie_close('p');
+      ie_open('p');
+        itext('We have currently File, DynamoDB and MongoDB storage');
+      ie_close('p');
+      ie_open('p');
+        ie_open('a', null, null,
+            'href', '/docs/develop/store');
+          itext('Learn More');
+        ie_close('a');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Use our new serverless API on a Polymer interface');
+        itext('Binaries');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
+        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Registration with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Login with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Add a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Edit a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Remove a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Upload directly to S3');
-        ie_close('li');
-      ie_close('ul');
+      ie_open('p');
+        itext('The storage detect duplicates and don\'t double store them, it also provides a Polymer component that will prevent upload of known binaries by using a challenge to speed up the upload.');
+      ie_close('p');
+      ie_open('p');
+        ie_open('a', null, null,
+            'href', '/docs/develop/binary');
+          itext('Learn More');
+        ie_close('a');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Models');
+      ie_close('h2');
+      ie_open('p');
+        itext('The stores use Models to load/save/validate/secure business object.');
+      ie_close('p');
+      ie_open('p');
+        itext('The models should implement most of your business logic, while service should be technical implementation');
+      ie_close('p');
+      ie_open('p');
+        ie_open('a', null, null,
+            'href', '/docs/develop/models');
+          itext('Learn More');
+        ie_close('a');
+      ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29281,11 +29308,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param431}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param564}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'Cdlvr.render';
+  $render.soyTemplateName = 'XLklz.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29295,24 +29322,14 @@ return exports;
 
 });
 
-class Cdlvr extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Cdlvr, templates);
+class XLklz extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(XLklz, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
 /* 241 */,
 /* 242 */,
 /* 243 */,
@@ -29325,7 +29342,18 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Cdlvr, templates);
 /* 250 */,
 /* 251 */,
 /* 252 */,
-/* 253 */
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29365,9 +29393,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _tutorialsSoy = __webpack_require__(230);
+var _indexSoy = __webpack_require__(240);
 
-var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29377,23 +29405,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Cdlvr = function (_Component) {
-  _inherits(Cdlvr, _Component);
+var XLklz = function (_Component) {
+  _inherits(XLklz, _Component);
 
-  function Cdlvr() {
-    _classCallCheck(this, Cdlvr);
+  function XLklz() {
+    _classCallCheck(this, XLklz);
 
-    return _possibleConstructorReturn(this, (Cdlvr.__proto__ || Object.getPrototypeOf(Cdlvr)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (XLklz.__proto__ || Object.getPrototypeOf(XLklz)).apply(this, arguments));
   }
 
-  return Cdlvr;
+  return XLklz;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(Cdlvr, _tutorialsSoy2.default);
+_metalSoy2.default.register(XLklz, _indexSoy2.default);
 
-exports.default = Cdlvr;
+exports.default = XLklz;
 
 /***/ })
-],[253]);
+],[264]);

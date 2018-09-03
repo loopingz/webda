@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([18,24,25,26,27,28],[
+webpackJsonppageComponent([7,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29132,12 +29132,23 @@ exports.default = parseFromAnchor;
 /* 228 */,
 /* 229 */,
 /* 230 */,
-/* 231 */
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VtdpP", function() { return VtdpP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IeyGh", function() { return IeyGh; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29149,15 +29160,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from aws.soy.
+// This file was automatically generated from models.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace VtdpP.
+ * @fileoverview Templates in namespace IeyGh.
  * @public
  */
 
-goog.module('VtdpP.incrementaldom');
+goog.module('IeyGh.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29191,65 +29202,59 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param442 = function() {
+  var param586 = function() {
+    ie_open('h6');
+      var dyn48 = opt_data.page.description;
+      if (typeof dyn48 == 'function') dyn48(); else if (dyn48 != null) itext(dyn48);
+    ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', 'http://webda.io/images/schemas/aws_deploy.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('Model is the best way to express your business logic.');
+      ie_close('p');
+      ie_open('p');
+        itext('Stores will use them to load/save/validate your objects and access to it. If no model are specified to a Store it will use the default CoreModel');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Deployment Policy');
+        itext('Security');
       ie_close('h2');
       ie_open('p');
-        itext('To be able to deploy the deployment user must have at least :');
+        itext('The model has a predefined method ');
+        ie_open('em');
+          itext('canAct');
+        ie_close('em');
+        itext(' that will be called whenever an action is trigger on an object from an external source');
       ie_close('p');
-      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('This can be restrict more and should, need to update the documentation');
+        itext('This method return a Promise that will stop the processing if it is rejected');
       ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n  canAct(ctx, action) {\n    if (action === \'create\') {\n      return this.canCreate(ctx);\n    } else if (action === \'update\') {\n      return this.canUpdate(ctx);\n    } else if (action === \'get\') {\n      return this.canGet(ctx);\n    } else if (action === \'delete\') {\n      return this.canDelete(ctx);\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Package');
+        itext('Custom Actions');
       ie_close('h2');
       ie_open('p');
-        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
+        itext('The model can defined action that will be exposed by its Store');
       ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n    static getActions() {\n      return {\n        \'push\': {method: \'POST\'},\n        \'qrcode\': {method: [\'GET\', \'PUT\']}\n      };\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '4');
       ie_open('h2');
-        itext('Lambda');
+        itext('Store Events');
       ie_close('h2');
       ie_open('p');
-        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
+        itext('The model can defined behavior on store event without defining a listener The _onAction and _onActioned are not defined as the action by itself is already inside the object');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('API Gateway');
-      ie_close('h2');
-      ie_open('p');
-        itext('It map all the routes from your application, if a ');
-        ie_open('strong');
-          itext('website');
-        ie_close('strong');
-        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
-      ie_close('p');
-      ie_open('p');
-        itext('It also deploy the API as Stage named with the name of the deployment.');
-      ie_close('p');
+      $templateAlias2({code: 'class CoreModel {\n    _onSave() {\n      // Will be called beforeSave\n    }\n    _onSave() {\n      // Will be called afterSave\n    }\n    _onUpdate() {\n      // Will be called beforeUpdate\n    }\n    _onUpdated() {\n      // Will be called afterUpdate\n    }\n    _onDelete() {\n      // Will be called afterDelete\n    }\n    _onDeleted() {\n      // Will be called afterDelete\n    }\n    _onGet() {\n      // Will be called when an object is retrieved\n    }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29260,11 +29265,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param442}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param586}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'VtdpP.render';
+  $render.soyTemplateName = 'IeyGh.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29274,25 +29279,14 @@ return exports;
 
 });
 
-class VtdpP extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(VtdpP, templates);
+class IeyGh extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(IeyGh, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
 /* 243 */,
 /* 244 */,
 /* 245 */,
@@ -29307,7 +29301,12 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(VtdpP, templates);
 /* 254 */,
 /* 255 */,
 /* 256 */,
-/* 257 */
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29347,9 +29346,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _awsSoy = __webpack_require__(231);
+var _modelsSoy = __webpack_require__(242);
 
-var _awsSoy2 = _interopRequireDefault(_awsSoy);
+var _modelsSoy2 = _interopRequireDefault(_modelsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29359,23 +29358,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var VtdpP = function (_Component) {
-  _inherits(VtdpP, _Component);
+var IeyGh = function (_Component) {
+  _inherits(IeyGh, _Component);
 
-  function VtdpP() {
-    _classCallCheck(this, VtdpP);
+  function IeyGh() {
+    _classCallCheck(this, IeyGh);
 
-    return _possibleConstructorReturn(this, (VtdpP.__proto__ || Object.getPrototypeOf(VtdpP)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (IeyGh.__proto__ || Object.getPrototypeOf(IeyGh)).apply(this, arguments));
   }
 
-  return VtdpP;
+  return IeyGh;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(VtdpP, _awsSoy2.default);
+_metalSoy2.default.register(IeyGh, _modelsSoy2.default);
 
-exports.default = VtdpP;
+exports.default = IeyGh;
 
 /***/ })
-],[257]);
+],[262]);
