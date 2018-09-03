@@ -19589,7 +19589,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/master/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -29142,7 +29142,7 @@ exports.default = parseFromAnchor;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QqvjO", function() { return QqvjO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StLlU", function() { return StLlU; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29158,11 +29158,11 @@ goog.loadModule(function(exports) {
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace QqvjO.
+ * @fileoverview Templates in namespace StLlU.
  * @public
  */
 
-goog.module('QqvjO.incrementaldom');
+goog.module('StLlU.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29194,10 +29194,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param475 = function() {
+  var param564 = function() {
     ie_open('h6');
-      var dyn42 = opt_data.page.description;
-      if (typeof dyn42 == 'function') dyn42(); else if (dyn42 != null) itext(dyn42);
+      var dyn44 = opt_data.page.description;
+      if (typeof dyn44 == 'function') dyn44(); else if (dyn44 != null) itext(dyn44);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -29229,11 +29229,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param475}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param564}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'QqvjO.render';
+  $render.soyTemplateName = 'StLlU.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29243,8 +29243,8 @@ return exports;
 
 });
 
-class QqvjO extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(QqvjO, templates);
+class StLlU extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(StLlU, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
@@ -29269,7 +29269,10 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(QqvjO, templates);
 /* 252 */,
 /* 253 */,
 /* 254 */,
-/* 255 */
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29321,23 +29324,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var QqvjO = function (_Component) {
-  _inherits(QqvjO, _Component);
+var StLlU = function (_Component) {
+  _inherits(StLlU, _Component);
 
-  function QqvjO() {
-    _classCallCheck(this, QqvjO);
+  function StLlU() {
+    _classCallCheck(this, StLlU);
 
-    return _possibleConstructorReturn(this, (QqvjO.__proto__ || Object.getPrototypeOf(QqvjO)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (StLlU.__proto__ || Object.getPrototypeOf(StLlU)).apply(this, arguments));
   }
 
-  return QqvjO;
+  return StLlU;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(QqvjO, _wedeploySoy2.default);
+_metalSoy2.default.register(StLlU, _wedeploySoy2.default);
 
-exports.default = QqvjO;
+exports.default = StLlU;
 
 /***/ })
-],[255]);
+],[258]);

@@ -19589,7 +19589,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/master/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -29209,7 +29209,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param343 = function() {
+  var param291 = function() {
     ie_open('div');
       ie_open('header', null, null,
           'class', 'header');
@@ -29217,20 +29217,20 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             'class', 'container');
           ie_open('h1', null, null,
               'class', 'header-title');
-            var dyn28 = opt_data.page.title;
-            if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
+            var dyn25 = opt_data.page.title;
+            if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
           ie_close('h1');
           ie_open('h2', null, null,
               'class', 'header-subtitle');
-            var dyn29 = opt_data.page.description;
-            if (typeof dyn29 == 'function') dyn29(); else if (dyn29 != null) itext(dyn29);
+            var dyn26 = opt_data.page.description;
+            if (typeof dyn26 == 'function') dyn26(); else if (dyn26 != null) itext(dyn26);
           ie_close('h2');
         ie_close('div');
       ie_close('header');
       $templateAlias2({updates: opt_data.page.updates}, null, opt_ijData);
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param343}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param291}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {

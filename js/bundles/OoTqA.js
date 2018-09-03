@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([12,24,25,26,27,28],[
+webpackJsonppageComponent([19,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19589,7 +19589,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/master/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -29131,19 +29131,12 @@ exports.default = parseFromAnchor;
 /* 227 */,
 /* 228 */,
 /* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */
+/* 230 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "vkrHp", function() { return vkrHp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OoTqA", function() { return OoTqA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29155,15 +29148,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from authentication.soy.
+// This file was automatically generated from tutorials.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace vkrHp.
+ * @fileoverview Templates in namespace OoTqA.
  * @public
  */
 
-goog.module('vkrHp.incrementaldom');
+goog.module('OoTqA.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29184,8 +29177,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29197,89 +29188,89 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param486 = function() {
+  var param433 = function() {
     ie_open('h6');
-      var dyn43 = opt_data.page.description;
-      if (typeof dyn43 == 'function') dyn43(); else if (dyn43 != null) itext(dyn43);
+      var dyn31 = opt_data.page.description;
+      if (typeof dyn31 == 'function') dyn31(); else if (dyn31 != null) itext(dyn31);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Setting up a project from scratch');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('The Authentication service highly depends on ');
-        ie_open('a', null, null,
-            'href', 'http://passportjs.org/');
-          itext('PassportJS');
-        ie_close('a');
-        itext(' this is why its file is passport.js');
+        itext('In this video you will see:');
       ie_close('p');
-      ie_open('p');
-        itext('It requires two stores : Idents and Users.');
-      ie_close('p');
-      ie_open('p');
-        itext('The Idents will contains each mode of Authentication enabled by the user, you will find in the Ident also the profile returned by the OAuth provider if returned.');
-      ie_close('p');
-      ie_open('p');
-        itext('The Users will have one object per user, with the idents collection, it also contains the password if any is set.');
-      ie_close('p');
-      ie_open('p');
-        itext('Basic configuration');
-      ie_close('p');
-      $templateAlias2({code: '"successRedirect": "https://shootandprove.loopingz.com/user.html", // Redirect to this page after login\n"failureRedirect": "/login-error", // Redirect to this page after failed login\n"userStore": "", // If you want to override the userStore name by default Users\n"identStore": "", // If you want to override the identStore name by default Idents\n"providers": {\n  ... // See below\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('ul');
+        ie_open('li');
+          itext('How to install Webda');
+        ie_close('li');
+        ie_open('li');
+          itext('How to use the configurator to add services like Authentication and NoSQL Store');
+        ie_close('li');
+        ie_open('li');
+          itext('Expose services as REST API');
+        ie_close('li');
+        ie_open('li');
+          itext('Deploy to the cloud using the AWS deployer');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Register event');
+        itext('Add the mapping configuration to our project');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('When a user register, the Authentication service send a Register event, so you can complete the user with additional informations.');
+        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
       ie_close('p');
-      $templateAlias2({code: '// Datas is the profile coming from the OAuth or the Register form\nthis.emit("Register", {"user": user, "datas": datas, "ctx": ctx});', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Email authentication');
+        itext('Use our new serverless API on a Polymer interface');
       ie_close('h2');
+      ie_void('iframe', null, null,
+          'width', '560',
+          'height', '315',
+          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
+          'frameborder', '0',
+          'allowfullscreen', '');
       ie_open('p');
-        itext('To use this feature you need to have a configured Mailer service, you can define the service name by adding the field mailer inside the email configuration.');
+        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
       ie_close('p');
-      ie_open('p');
-        itext('The email authentication has two modes, one that register the user without waiting for the email validation, and the other one that register the user only when the registration form contains the right validation token sent by email.');
-      ie_close('p');
-      $templateAlias2({code: '...\n"providers": {\n  "email": {\n     "from": "", // Email sender\n     "subject": "", // Email subject\n     "html": "", // HTML to send by email for email validation\n     "text": "", // Text to send by email for email validation\n     "mailer": "DefinedMailer", // Defined mailer to use\n     "postValidation": false, // If true, create user without email validation\n     "skipEmailValidation": true // Don\'t even send a validation email, must be set along with postValidation=true\n  },\n}\n...', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('The email authentication expose POST /auth/email if the body contains register=true then it will perform registration, if not then only login returning 404 if unknown user, 403 for bad password, 204 for successful login GET /auth/callback');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('OAuth');
-      ie_close('h2');
-      ie_open('p');
-        itext('You can setup differents types of OAuth, we integrate for now only Facebook, Amazon, Twitter, GitHub, Google.');
-      ie_close('p');
-      $templateAlias2({code: '{\n  ...\n  providers: {\n    facebook: {\n      clientID: "facebookClientId",\n      clientSecret: "facebookSecret",\n      scope: ["email","public_profile"]\n    }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This is the same for the other providers, except ');
-        ie_open('strong');
-          itext('Twitter');
-        ie_close('strong');
-        itext(' where the fields are OAuth1 : consumerKey and consumerSecret');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('Polymer');
-      ie_close('h2');
-      ie_open('p');
-        itext('You have a Polymer behavior that implement the Authentication : ...');
-      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Registration with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Login with email');
+        ie_close('li');
+        ie_open('li');
+          itext('Add a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Edit a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Remove a contact');
+        ie_close('li');
+        ie_open('li');
+          itext('Upload directly to S3');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29290,11 +29281,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param486}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param433}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'vkrHp.render';
+  $render.soyTemplateName = 'OoTqA.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29304,14 +29295,21 @@ return exports;
 
 });
 
-class vkrHp extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vkrHp, templates);
+class OoTqA extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(OoTqA, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
 /* 238 */,
 /* 239 */,
 /* 240 */,
@@ -29327,20 +29325,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(vkrHp, templates);
 /* 250 */,
 /* 251 */,
 /* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29380,9 +29365,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _authenticationSoy = __webpack_require__(237);
+var _tutorialsSoy = __webpack_require__(230);
 
-var _authenticationSoy2 = _interopRequireDefault(_authenticationSoy);
+var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29392,23 +29377,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var vkrHp = function (_Component) {
-  _inherits(vkrHp, _Component);
+var OoTqA = function (_Component) {
+  _inherits(OoTqA, _Component);
 
-  function vkrHp() {
-    _classCallCheck(this, vkrHp);
+  function OoTqA() {
+    _classCallCheck(this, OoTqA);
 
-    return _possibleConstructorReturn(this, (vkrHp.__proto__ || Object.getPrototypeOf(vkrHp)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (OoTqA.__proto__ || Object.getPrototypeOf(OoTqA)).apply(this, arguments));
   }
 
-  return vkrHp;
+  return OoTqA;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(vkrHp, _authenticationSoy2.default);
+_metalSoy2.default.register(OoTqA, _tutorialsSoy2.default);
 
-exports.default = vkrHp;
+exports.default = OoTqA;
 
 /***/ })
-],[266]);
+],[253]);

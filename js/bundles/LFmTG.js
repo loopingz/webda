@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([16,24,25,26,27,28],[
+webpackJsonppageComponent([23,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19589,7 +19589,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/master/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -29127,19 +29127,12 @@ exports.default = parseFromAnchor;
 /* 223 */,
 /* 224 */,
 /* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */
+/* 226 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jAhia", function() { return jAhia; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LFmTG", function() { return LFmTG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29151,15 +29144,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from docker.soy.
+// This file was automatically generated from first-release.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace jAhia.
+ * @fileoverview Templates in namespace LFmTG.
  * @public
  */
 
-goog.module('jAhia.incrementaldom');
+goog.module('LFmTG.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29180,9 +29173,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -29193,49 +29184,124 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param422 = function() {
-    ie_open('h6');
-      var dyn39 = opt_data.page.description;
-      if (typeof dyn39 == 'function') dyn39(); else if (dyn39 != null) itext(dyn39);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
+  var param249 = function() {
+    ie_open('article');
       ie_open('p');
-        itext('You can use webda to build your Docker image for you');
+        itext('With the revolution of cloud we got very used to IaaS. Whenever we want a server, we just call an API and here we are with a brand new server ready within ');
+        ie_open('em');
+          itext('minutes');
+        ie_close('em');
+        itext('!');
+      ie_close('p');
+      ie_open('p');
+        itext('But ');
+        ie_open('em');
+          itext('minutes');
+        ie_close('em');
+        itext(' were way too long for us! So, then came ');
+        ie_open('a', null, null,
+            'href', 'https://www.docker.com',
+            'target', '_blank');
+          itext('Docker');
+        ie_close('a');
+        itext(', which made it possible to have all our environments loaded within ');
+        ie_open('em');
+          itext('seconds');
+        ie_close('em');
+        itext('.');
+      ie_close('p');
+      ie_open('p');
+        itext('Of course, for all this you still needed a server to run on. Two years ago, AWS came up with ');
+        ie_open('a', null, null,
+            'href', 'https://aws.amazon.com/lambda/',
+            'target', '_blank');
+          itext('Lambda');
+        ie_close('a');
+        itext(', where all we have to do is store the function and trigger it either by other AWS services events or by an HTTP request.');
+      ie_close('p');
+      ie_open('p');
+        itext('Now, let\u2019s take the example of running lots of small services, which are called only a few thousand times per month, but as we cannot predict the time when they\'ll be used, they are just sitting there the rest of the time. Without Lambda, we will need more than one Docker container to run these services with failover. So the idea of having the failover and scaling without having to take care of any containers or servers was a no-brainer for me.');
       ie_close('p');
       ie_open('h2');
-        itext('Dockerfile');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('You can create your own Dockerfile, if no Dockerfile is present then the default one is used');
+        itext('When you use Lambda and want to expose through HTTP, you discover that you can use the API Gateway of AWS. It is a nice technology but kind of complex to configure. When something goes wrong in your code, you cannot debug it as easily as when it was hosted on your machine.');
       ie_close('p');
-      $templateAlias2({code: 'FROM node:latest\nMAINTAINER docker@webda.io\n\nRUN mkdir /server/\nADD . /server/\n\nRUN cd /server && rm -rf node_modules && npm install\nCMD cd /server && node_modules/.bin/webda serve > /data/webda.log', mode: 'text'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
+      ie_open('p');
+        itext('So, this is where the idea of ');
+        ie_open('strong');
+          itext('Webda');
+        ie_close('strong');
+        itext(' comes in!');
+      ie_close('p');
       ie_open('h2');
-        itext('Configuration');
+        itext('The Goal');
       ie_close('h2');
       ie_open('p');
-        itext('The configuration take only two parameters the tag of the image to create and if it needs to push the image after a succesfull build.');
+        itext('The goal of Webda is to ');
+        ie_open('strong');
+          itext('have a framework that allows you to code locally and test it using a Node.JS and then deploy it automatically either to Lambda with API Gateway or by creating a Docker image with it including a NodeJS server');
+        ie_close('strong');
+        itext('.');
       ie_close('p');
-      $templateAlias2({code: '{\n   tag: "mytag",\n   push: true\n}', mode: 'javascript'}, null, opt_ijData);
-    ie_close('article');
-    ie_open('input', null, null,
-        'type', 'hidden',
-        'value', opt_data.page.title);
-    ie_close('input');
-    ie_open('input', null, null,
-        'type', 'hidden',
-        'value', opt_data.site.title);
-    ie_close('input');
-  };
-  $templateAlias1(soy.$$assignDefaults({content: param422}, opt_data), null, opt_ijData);
-}
-exports.render = $render;
-if (goog.DEBUG) {
-  $render.soyTemplateName = 'jAhia.render';
-}
+      ie_open('p');
+        itext('This way ');
+        ie_open('strong');
+          itext('you can easily debug locally and then deploy to your AWS environment in a second');
+        ie_close('strong');
+        itext('.');
+      ie_close('p');
+      ie_open('p');
+        itext('Let\u2019s take a look at how to get started and create a new project : checkout our ');
+        ie_open('a', null, null,
+            'href', '/docs/create/');
+          itext('Quickstart Guide');
+        ie_close('a');
+      ie_close('p');
+      ie_open('h2');
+        itext('Resources');
+      ie_close('h2');
+      ie_open('p');
+        itext('Here are some more resources to help you:');
+      ie_close('p');
+      ie_open('p');
+        ie_open('strong');
+          itext('Website:');
+        ie_close('strong');
+        itext(' ');
+        ie_open('a', null, null,
+            'href', 'http://webda.io',
+            'target', '_blank');
+          itext('webda.io');
+        ie_close('a');
+        ie_open('br/');
+          ie_open('strong');
+            itext('Channel:');
+          ie_close('strong');
+          itext(' ');
+          ie_open('a', null, null,
+              'href', 'https://www.youtube.com/playlist?list=PLfn1MAL4_e7ERdqj9rWlmEkK5gMkL4bKI',
+              'target', '_blank');
+            itext('Youtube');
+          ie_close('a');
+        ie_close('p');
+      ie_close('article');
+      ie_open('input', null, null,
+          'type', 'hidden',
+          'value', opt_data.page.title);
+      ie_close('input');
+      ie_open('input', null, null,
+          'type', 'hidden',
+          'value', opt_data.site.title);
+      ie_close('input');
+    };
+    $templateAlias1(soy.$$assignDefaults({content: param249}, opt_data), null, opt_ijData);
+  }
+  exports.render = $render;
+  if (goog.DEBUG) {
+    $render.soyTemplateName = 'LFmTG.render';
+  }
 
 exports.render.params = ["page","site"];
 exports.render.types = {"page":"any","site":"any"};
@@ -29244,14 +29310,21 @@ return exports;
 
 });
 
-class jAhia extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jAhia, templates);
+class LFmTG extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(LFmTG, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
 /* 234 */,
 /* 235 */,
 /* 236 */,
@@ -29268,14 +29341,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jAhia, templates);
 /* 247 */,
 /* 248 */,
 /* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29315,9 +29381,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _dockerSoy = __webpack_require__(233);
+var _firstReleaseSoy = __webpack_require__(226);
 
-var _dockerSoy2 = _interopRequireDefault(_dockerSoy);
+var _firstReleaseSoy2 = _interopRequireDefault(_firstReleaseSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29327,23 +29393,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var jAhia = function (_Component) {
-  _inherits(jAhia, _Component);
+var LFmTG = function (_Component) {
+  _inherits(LFmTG, _Component);
 
-  function jAhia() {
-    _classCallCheck(this, jAhia);
+  function LFmTG() {
+    _classCallCheck(this, LFmTG);
 
-    return _possibleConstructorReturn(this, (jAhia.__proto__ || Object.getPrototypeOf(jAhia)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (LFmTG.__proto__ || Object.getPrototypeOf(LFmTG)).apply(this, arguments));
   }
 
-  return jAhia;
+  return LFmTG;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(jAhia, _dockerSoy2.default);
+_metalSoy2.default.register(LFmTG, _firstReleaseSoy2.default);
 
-exports.default = jAhia;
+exports.default = LFmTG;
 
 /***/ })
-],[257]);
+],[250]);

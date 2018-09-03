@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([19,24,25,26,27,28],[
+webpackJsonppageComponent([10,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19589,7 +19589,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/master/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -29131,12 +29131,21 @@ exports.default = parseFromAnchor;
 /* 227 */,
 /* 228 */,
 /* 229 */,
-/* 230 */
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dpaDG", function() { return dpaDG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lBAyG", function() { return lBAyG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29148,15 +29157,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from tutorials.soy.
+// This file was automatically generated from custom.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace dpaDG.
+ * @fileoverview Templates in namespace lBAyG.
  * @public
  */
 
-goog.module('dpaDG.incrementaldom');
+goog.module('lBAyG.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29177,6 +29186,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29188,89 +29199,45 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param761 = function() {
+  var param632 = function() {
     ie_open('h6');
-      var dyn53 = opt_data.page.description;
-      if (typeof dyn53 == 'function') dyn53(); else if (dyn53 != null) itext(dyn53);
+      var dyn47 = opt_data.page.description;
+      if (typeof dyn47 == 'function') dyn47(); else if (dyn47 != null) itext(dyn47);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Setting up a project from scratch');
+        itext('Overview');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/T45sg5qbQVY',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('In this video you will see:');
+        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('How to install Webda');
-        ie_close('li');
-        ie_open('li');
-          itext('How to use the configurator to add services like Authentication and NoSQL Store');
-        ie_close('li');
-        ie_open('li');
-          itext('Expose services as REST API');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy to the cloud using the AWS deployer');
-        ie_close('li');
-      ie_close('ul');
+      ie_open('p');
+        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Add the mapping configuration to our project');
+        itext('Internal service');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/mW6-I0edsbA',
-          'frameborder', '0',
-          'allowfullscreen', '');
       ie_open('p');
-        itext('Creating links between objects using the map so the NoSQL data deduplication is handled for you');
+        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+      ie_close('p');
+      ie_open('p');
+        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+      ie_close('p');
+      $templateAlias2({code: 'const Service = require(\'webda/services/service\')\n\nclass MyInternalService extends Service {\n\n   init() {\n     this._gdrive = new ...;\n   }\n   \n   getDocument(uuid, token) {\n     return this._gdrive.getDocument(uuid, token);\n   }\n   \n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The GDrive API is faked here, but basically this service will allow you to get some configuration from the webda.config.json and expose some methods for others Services or Models to use inside Webda');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Use our new serverless API on a Polymer interface');
+        itext('Service with exposed API');
       ie_close('h2');
-      ie_void('iframe', null, null,
-          'width', '560',
-          'height', '315',
-          'src', 'https://www.youtube.com/embed/xzzRHYQOS0E',
-          'frameborder', '0',
-          'allowfullscreen', '');
-      ie_open('p');
-        itext('Now that the two previous videos created an API online on Lambda and expose throught the API Gateway You can setup a nice UI using Polymer and our set of components We\'ll implement :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          itext('Registration with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Login with email');
-        ie_close('li');
-        ie_open('li');
-          itext('Add a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Edit a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Remove a contact');
-        ie_close('li');
-        ie_open('li');
-          itext('Upload directly to S3');
-        ie_close('li');
-      ie_close('ul');
+      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29281,11 +29248,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param761}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param632}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'dpaDG.render';
+  $render.soyTemplateName = 'lBAyG.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29295,23 +29262,14 @@ return exports;
 
 });
 
-class dpaDG extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(dpaDG, templates);
+class lBAyG extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(lBAyG, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
 /* 240 */,
 /* 241 */,
 /* 242 */,
@@ -29326,7 +29284,18 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(dpaDG, templates);
 /* 251 */,
 /* 252 */,
 /* 253 */,
-/* 254 */
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29366,9 +29335,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _tutorialsSoy = __webpack_require__(230);
+var _customSoy = __webpack_require__(239);
 
-var _tutorialsSoy2 = _interopRequireDefault(_tutorialsSoy);
+var _customSoy2 = _interopRequireDefault(_customSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29378,23 +29347,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var dpaDG = function (_Component) {
-  _inherits(dpaDG, _Component);
+var lBAyG = function (_Component) {
+  _inherits(lBAyG, _Component);
 
-  function dpaDG() {
-    _classCallCheck(this, dpaDG);
+  function lBAyG() {
+    _classCallCheck(this, lBAyG);
 
-    return _possibleConstructorReturn(this, (dpaDG.__proto__ || Object.getPrototypeOf(dpaDG)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (lBAyG.__proto__ || Object.getPrototypeOf(lBAyG)).apply(this, arguments));
   }
 
-  return dpaDG;
+  return lBAyG;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(dpaDG, _tutorialsSoy2.default);
+_metalSoy2.default.register(lBAyG, _customSoy2.default);
 
-exports.default = dpaDG;
+exports.default = lBAyG;
 
 /***/ })
-],[254]);
+],[265]);

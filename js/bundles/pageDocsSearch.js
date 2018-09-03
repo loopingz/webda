@@ -19589,7 +19589,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/master/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -29214,7 +29214,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   var $$temp;
-  var param327 = function() {
+  var param341 = function() {
     $templateAlias2({section: opt_data.site.index.children['docs'], site: opt_data.site}, null, opt_ijData);
     ie_open('div', null, null,
         'class', 'sidebar-offset');
@@ -29234,8 +29234,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
             ie_open('p', null, null,
                 'class', 'docs-home-top-description');
               itext('Start learning how to leverage the power of ');
-              var dyn27 = opt_data.site.title;
-              if (typeof dyn27 == 'function') dyn27(); else if (dyn27 != null) itext(dyn27);
+              var dyn29 = opt_data.site.title;
+              if (typeof dyn29 == 'function') dyn29(); else if (dyn29 != null) itext(dyn29);
               itext('.');
             ie_close('p');
           ie_close('div');
@@ -29250,7 +29250,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_close('div');
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param327}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param341}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {

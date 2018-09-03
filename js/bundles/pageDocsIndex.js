@@ -19589,7 +19589,7 @@ function $contribute(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('Contribute on Github! ');
         ie_open('a', null, null,
-            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/master/' + opt_data.page.srcFilePath,
+            'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/electricjs/' + opt_data.page.srcFilePath,
             'class', 'contribute-link',
             'target', '_blank');
           itext('Edit this section');
@@ -29259,8 +29259,8 @@ function $topics(opt_data, opt_ignored, opt_ijData) {
           ie_open('p', null, null,
               'class', 'docs-home-top-description');
             itext('Start learning how to leverage the power of ');
-            var dyn25 = opt_data.site.title;
-            if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
+            var dyn27 = opt_data.site.title;
+            if (typeof dyn27 == 'function') dyn27(); else if (dyn27 != null) itext(dyn27);
             itext('.');
           ie_close('p');
         ie_close('div');
@@ -29314,26 +29314,26 @@ function $topics(opt_data, opt_ignored, opt_ijData) {
               'class', 'col-md-12 col-md-offset-2 col-xs-16');
             ie_open('div', null, null,
                 'class', 'row');
-              var childIdList321 = opt_data.page.childIds;
-              var childIdListLen321 = childIdList321.length;
-              for (var childIdIndex321 = 0; childIdIndex321 < childIdListLen321; childIdIndex321++) {
-                var childIdData321 = childIdList321[childIdIndex321];
-                var topic__soy311 = opt_data.page.children[childIdData321];
-                if (! topic__soy311.hidden) {
+              var childIdList335 = opt_data.page.childIds;
+              var childIdListLen335 = childIdList335.length;
+              for (var childIdIndex335 = 0; childIdIndex335 < childIdListLen335; childIdIndex335++) {
+                var childIdData335 = childIdList335[childIdIndex335];
+                var topic__soy323 = opt_data.page.children[childIdData335];
+                if (! topic__soy323.hidden) {
                   ie_open('div', null, null,
                       'class', 'col-md-8 col-md-offset-0 col-xs-14 col-xs-offset-1');
                     ie_open('a', null, null,
-                        'class', 'topic radial-out',
-                        'href', topic__soy311.url);
+                        'class', 'topic radial-out ' + topic__soy323['class'],
+                        'href', topic__soy323.url);
                       ie_open('div', null, null,
                           'class', 'topic-icon');
                         ie_void('span', null, null,
-                            'class', 'icon-16-' + topic__soy311.icon);
+                            'class', 'icon-16-' + topic__soy323.icon);
                       ie_close('div');
                       ie_open('h3', null, null,
                           'class', 'topic-title');
-                        var dyn26 = topic__soy311.title;
-                        if (typeof dyn26 == 'function') dyn26(); else if (dyn26 != null) itext(dyn26);
+                        var dyn28 = topic__soy323.title;
+                        if (typeof dyn28 == 'function') dyn28(); else if (dyn28 != null) itext(dyn28);
                       ie_close('h3');
                     ie_close('a');
                   ie_close('div');
