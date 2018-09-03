@@ -1,4 +1,4 @@
-$accent: #3F51B5;
+$accent: #4285F4;
 
 @import "marble";
 
@@ -25,6 +25,7 @@ $accent: #3F51B5;
 
 .topbar-logo-icon > img {
 	width: 36px;
+	height: 36px;
 }
 
 .topic.orange .topic-icon {
@@ -91,4 +92,24 @@ $accent: #3F51B5;
 
 .links .row > a > img {
 	vertical-align: top;
+}
+
+.header {
+    padding-top: 50px;
+  }
+.header-title {
+	color: main-color;
+	font-family: "Montserrat";
+	font-size: 3.5em;
+}
+.topbar-link {
+	color: main-color;
+}
+.topbar-logo {
+	position: absolute;
+	top: 12px;
+	left: 30px;
+}
+.highlight-image {
+	border-radius: 20px;
 }

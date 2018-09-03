@@ -1,5 +1,7 @@
 {
 	"title": "Webda",
+	"logo": "../images/webda.svg",
 	"githubRepo": "loopingz/webda",
-	"googleAnalytics": "UA-77346317-1"
+	"googleAnalytics": "UA-77346317-1",
+	"basePath": "./"
 }

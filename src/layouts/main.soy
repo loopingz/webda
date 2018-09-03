@@ -1,15 +1,34 @@
 {namespace main}
 
 /**
- * @param content
- * @param? elementClasses
  */
 {template .render}
+	{@param content: ?}
+	{@param site: ?}
+	{@param? elementClasses: ?}
+
 	<div class="{$elementClasses ?: 'main'}">
 		<main class="content">
-			{call Topbar.render data="all" /}
+			{call Topbar.render}
+				{param items: $site.topbar /}
+				{param style: 'topbar-light' /}
+				
+			{/call}
+			{call .logo data="all" /}
 
 			{$content}
 		</main>
+	</div>
+{/template}
+
+{template .logo}
+
+	{@param site: ?}
+
+	<div class="topbar-logo">
+		<a class="topbar-logo-link" href="/">
+			<span class="topbar-logo-icon"><img src="/images/webda.svg" /></span>
+			<span class="topbar-logo-text">{$site.title}</span>
+		</a>
 	</div>
 {/template}

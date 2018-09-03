@@ -1,9 +1,11 @@
 {namespace Sidebar}
 
 /**
- * @param section
  */
 {template .render}
+	{@param section: ?}
+	{@param site: ?}
+
 	<nav class="sidebar">
 		<a class="sidebar-header toggler-header-collapsed">
 			<span class="sidebar-icon icon-16-menu"></span>
@@ -17,6 +19,7 @@
 		<div class="sidebar-toggler-content toggler-collapsed">
 			<div class="sidebar-search">
 				{call ElectricSearchAutocomplete.render}
+					{param dataURL: ($site.basePath ?: '') + '/site.json' /}
 					{param maxResults: 3 /}
 					{param path: '/docs/' /}
 					{param placeholder: 'Search Docs' /}
@@ -24,7 +27,7 @@
 			</div>
 
 			{call ElectricNavigation.render}
-				{param elementClasses: 'sidebar-list sidebar-list-1' /}
+				{param listClasses: 'sidebar-list sidebar-list-1' /}
 				{param listItemClasses: 'sidebar-item' /}
 				{param anchorVariant: 'sidebar' /}
 				{param section: $section /}
@@ -34,9 +37,10 @@
 {/template}
 
 /**
- * @param page
  */
 {deltemplate ElectricNavigation.anchor variant="'sidebar'"}
+	{@param page: ?}
+
 	<a class="sidebar-link {$page.active ? 'sidebar-link-selected' : ''}" href="{$page.url}">
 		{if $page.icon}
 			<span class="sidebar-icon icon-16-{$page.icon}"></span>
