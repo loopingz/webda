@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([9,24,25,26,27,28],[
+webpackJsonppageComponent([4,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19324,14 +19324,14 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   opt_data = opt_data || {};
-  var param3 = function() {
+  var param112 = function() {
     ie_open('div', null, null,
         'class', 'blog');
       $mainPost(opt_data, null, opt_ijData);
       $olderPosts(opt_data, null, opt_ijData);
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param3}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param112}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -19356,24 +19356,24 @@ function $mainPost(opt_data, opt_ignored, opt_ijData) {
     ie_open('header');
       ie_open('small');
         itext('By ');
-        var dyn0 = opt_data.page.author;
-        if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
+        var dyn8 = opt_data.page.author;
+        if (typeof dyn8 == 'function') dyn8(); else if (dyn8 != null) itext(dyn8);
         itext(' ');
         ie_open('span');
           itext('| ');
-          var dyn1 = opt_data.page.date;
-          if (typeof dyn1 == 'function') dyn1(); else if (dyn1 != null) itext(dyn1);
+          var dyn9 = opt_data.page.date;
+          if (typeof dyn9 == 'function') dyn9(); else if (dyn9 != null) itext(dyn9);
         ie_close('span');
       ie_close('small');
       ie_open('h3');
-        var dyn2 = opt_data.page.title;
-        if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
+        var dyn10 = opt_data.page.title;
+        if (typeof dyn10 == 'function') dyn10(); else if (dyn10 != null) itext(dyn10);
       ie_close('h3');
     ie_close('header');
     ie_open('div', null, null,
         'class', 'content');
-      var dyn3 = opt_data.content;
-      if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
+      var dyn11 = opt_data.content;
+      if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
     ie_close('div');
     $templateAlias2(opt_data, null, opt_ijData);
   ie_close('article');
@@ -19395,8 +19395,8 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $olderPosts(opt_data, opt_ignored, opt_ijData) {
-  var blogObject__soy23 = opt_data.site.index.children['blog'];
-  $templateAlias3({blogObject: blogObject__soy23, url: opt_data.page.url}, null, opt_ijData);
+  var blogObject__soy132 = opt_data.site.index.children['blog'];
+  $templateAlias3({blogObject: blogObject__soy132, url: opt_data.page.url}, null, opt_ijData);
 }
 exports.olderPosts = $olderPosts;
 if (goog.DEBUG) {
@@ -19532,8 +19532,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn4 = opt_data.site.title;
-        if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
+        var dyn12 = opt_data.site.title;
+        if (typeof dyn12 == 'function') dyn12(); else if (dyn12 != null) itext(dyn12);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -19564,8 +19564,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
           'class', 'container-hybrid');
         ie_open('h1', null, null,
             'class', 'title');
-          var dyn5 = opt_data.page.title;
-          if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
+          var dyn13 = opt_data.page.title;
+          if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
           itext(' Guide');
         ie_close('h1');
       ie_close('div');
@@ -19578,8 +19578,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
             'class', 'docs-content col-xs-16 col-md-9');
           ie_open('div', null, null,
               'class', 'guide-content');
-            var dyn6 = opt_data.content;
-            if (typeof dyn6 == 'function') dyn6(); else if (dyn6 != null) itext(dyn6);
+            var dyn14 = opt_data.content;
+            if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
           ie_close('div');
           if (opt_data.site.githubRepo) {
             $contribute(opt_data, null, opt_ijData);
@@ -19731,8 +19731,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'content');
       $templateAlias1({items: opt_data.site.topbar, style: 'topbar-light'}, null, opt_ijData);
       $logo(opt_data, null, opt_ijData);
-      var dyn7 = opt_data.content;
-      if (typeof dyn7 == 'function') dyn7(); else if (dyn7 != null) itext(dyn7);
+      var dyn15 = opt_data.content;
+      if (typeof dyn15 == 'function') dyn15(); else if (dyn15 != null) itext(dyn15);
     ie_close('main');
   ie_close('div');
 }
@@ -19765,8 +19765,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn8 = opt_data.site.title;
-        if (typeof dyn8 == 'function') dyn8(); else if (dyn8 != null) itext(dyn8);
+        var dyn16 = opt_data.site.title;
+        if (typeof dyn16 == 'function') dyn16(); else if (dyn16 != null) itext(dyn16);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -19902,14 +19902,14 @@ function $tutorials(opt_data, opt_ignored, opt_ijData) {
         'class', 'container');
       ie_open('h6', null, null,
           'class', 'tutorial-title');
-        var dyn9 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId].tutorialTitle;
-        if (typeof dyn9 == 'function') dyn9(); else if (dyn9 != null) itext(dyn9);
+        var dyn17 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId].tutorialTitle;
+        if (typeof dyn17 == 'function') dyn17(); else if (dyn17 != null) itext(dyn17);
       ie_close('h6');
       $templateAlias2(null, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'container-blog card');
-        var dyn10 = opt_data.content;
-        if (typeof dyn10 == 'function') dyn10(); else if (dyn10 != null) itext(dyn10);
+        var dyn18 = opt_data.content;
+        if (typeof dyn18 == 'function') dyn18(); else if (dyn18 != null) itext(dyn18);
         $footerButtons(opt_data, null, opt_ijData);
       ie_close('div');
     ie_close('div');
@@ -19934,15 +19934,15 @@ if (goog.DEBUG) {
 function $footerButtons(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'tutorial-page-nav');
-    var tutorialObject__soy112 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId];
-    if (opt_data.page.weight < tutorialObject__soy112.childIds.length) {
+    var tutorialObject__soy221 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId];
+    if (opt_data.page.weight < tutorialObject__soy221.childIds.length) {
       if (opt_data.page.buttonTitle) {
-        var nextPageUrl__soy117 = tutorialObject__soy112.children[tutorialObject__soy112.childIds[opt_data.page.weight]].url;
+        var nextPageUrl__soy226 = tutorialObject__soy221.children[tutorialObject__soy221.childIds[opt_data.page.weight]].url;
         ie_open('a', null, null,
-            'href', nextPageUrl__soy117,
+            'href', nextPageUrl__soy226,
             'class', 'btn btn-accent btn-sm');
-          var dyn11 = opt_data.page.buttonTitle;
-          if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
+          var dyn19 = opt_data.page.buttonTitle;
+          if (typeof dyn19 == 'function') dyn19(); else if (dyn19 != null) itext(dyn19);
         ie_close('a');
       }
     }
@@ -19987,7 +19987,7 @@ if (goog.DEBUG) {
  * @return {void}
  * @suppress {checkTypes}
  */
-function __deltemplate_s132_88c0813b(opt_data, opt_ignored, opt_ijData) {
+function __deltemplate_s241_88c0813b(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link' + (opt_data.page.active ? ' sidebar-link-selected' : ''),
       'href', opt_data.page.url,
@@ -19996,23 +19996,23 @@ function __deltemplate_s132_88c0813b(opt_data, opt_ignored, opt_ijData) {
         'class', 'before');
     ie_open('span', null, null,
         'class', 'tutorial-step');
-      var dyn12 = opt_data.page.weight;
-      if (typeof dyn12 == 'function') dyn12(); else if (dyn12 != null) itext(dyn12);
+      var dyn20 = opt_data.page.weight;
+      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
     ie_close('span');
     ie_open('span', null, null,
         'class', 'section-title');
-      var dyn13 = opt_data.page.title;
-      if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+      var dyn21 = opt_data.page.title;
+      if (typeof dyn21 == 'function') dyn21(); else if (dyn21 != null) itext(dyn21);
     ie_close('span');
     ie_void('span', null, null,
         'class', 'after');
   ie_close('a');
 }
-exports.__deltemplate_s132_88c0813b = __deltemplate_s132_88c0813b;
+exports.__deltemplate_s241_88c0813b = __deltemplate_s241_88c0813b;
 if (goog.DEBUG) {
-  __deltemplate_s132_88c0813b.soyTemplateName = 'tutorial.__deltemplate_s132_88c0813b';
+  __deltemplate_s241_88c0813b.soyTemplateName = 'tutorial.__deltemplate_s241_88c0813b';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'tutorial', 0, __deltemplate_s132_88c0813b);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'tutorial', 0, __deltemplate_s241_88c0813b);
 
 exports.render.params = ["content","page","site","elementClasses"];
 exports.render.types = {"content":"?","page":"?","site":"?","elementClasses":"?"};
@@ -20292,8 +20292,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_open('p', null, null,
             'class', 'footer-description col-md-6 col-md-offset-2');
           itext('Copyright \u00A9 ');
-          var dyn16 = opt_data.year;
-          if (typeof dyn16 == 'function') dyn16(); else if (dyn16 != null) itext(dyn16);
+          var dyn2 = opt_data.year;
+          if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
           itext(' ');
           ie_open('a', null, null,
               'href', 'https://liferay.com');
@@ -20397,30 +20397,30 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     ie_open('div', null, null,
         'class', 'container');
       if (opt_data.posts) {
-        var postList199 = opt_data.posts;
-        var postListLen199 = postList199.length;
-        for (var postIndex199 = 0; postIndex199 < postListLen199; postIndex199++) {
-          var postData199 = postList199[postIndex199];
+        var postList56 = opt_data.posts;
+        var postListLen56 = postList56.length;
+        for (var postIndex56 = 0; postIndex56 < postListLen56; postIndex56++) {
+          var postData56 = postList56[postIndex56];
           ie_open('div', null, null,
               'class', 'post-item container-blog');
             ie_open('a', null, null,
                 'class', 'post-item__link',
-                'href', postData199.url);
+                'href', postData56.url);
               ie_open('small');
                 itext('By ');
-                var dyn17 = postData199.author;
-                if (typeof dyn17 == 'function') dyn17(); else if (dyn17 != null) itext(dyn17);
+                var dyn3 = postData56.author;
+                if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
                 itext(' ');
                 ie_open('span');
                   itext('| ');
-                  var dyn18 = postData199.date;
-                  if (typeof dyn18 == 'function') dyn18(); else if (dyn18 != null) itext(dyn18);
+                  var dyn4 = postData56.date;
+                  if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
                 ie_close('span');
               ie_close('small');
               ie_open('h4', null, null,
                   'class', 'post-item__title');
-                var dyn19 = postData199.title;
-                if (typeof dyn19 == 'function') dyn19(); else if (dyn19 != null) itext(dyn19);
+                var dyn5 = postData56.title;
+                if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
               ie_close('h4');
             ie_close('a');
           ie_close('div');
@@ -20557,7 +20557,7 @@ if (goog.DEBUG) {
  * @return {void}
  * @suppress {checkTypes}
  */
-function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
+function __deltemplate_s74_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
       'href', opt_data.page.url);
@@ -20566,16 +20566,16 @@ function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
     }
     ie_open('span');
-      var dyn20 = opt_data.page.title;
-      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
+      var dyn6 = opt_data.page.title;
+      if (typeof dyn6 == 'function') dyn6(); else if (dyn6 != null) itext(dyn6);
     ie_close('span');
   ie_close('a');
 }
-exports.__deltemplate_s217_d34389eb = __deltemplate_s217_d34389eb;
+exports.__deltemplate_s74_d34389eb = __deltemplate_s74_d34389eb;
 if (goog.DEBUG) {
-  __deltemplate_s217_d34389eb.soyTemplateName = 'Sidebar.__deltemplate_s217_d34389eb';
+  __deltemplate_s74_d34389eb.soyTemplateName = 'Sidebar.__deltemplate_s74_d34389eb';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'sidebar', 0, __deltemplate_s217_d34389eb);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'sidebar', 0, __deltemplate_s74_d34389eb);
 
 exports.render.params = ["section","site"];
 exports.render.types = {"section":"?","site":"?"};
@@ -20773,8 +20773,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_void('span', null, null,
           'class', 'icon icon-16-clock');
       itext(' ');
-      var dyn21 = opt_data.time;
-      if (typeof dyn21 == 'function') dyn21(); else if (dyn21 != null) itext(dyn21);
+      var dyn7 = opt_data.time;
+      if (typeof dyn7 == 'function') dyn7(); else if (dyn7 != null) itext(dyn7);
     }
   ie_close('p');
 }
@@ -29179,12 +29179,17 @@ exports.default = parseFromAnchor;
 /* 237 */,
 /* 238 */,
 /* 239 */,
-/* 240 */
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "buVsn", function() { return buVsn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JWZfm", function() { return JWZfm; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29196,15 +29201,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from store.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace buVsn.
+ * @fileoverview Templates in namespace JWZfm.
  * @public
  */
 
-goog.module('buVsn.incrementaldom');
+goog.module('JWZfm.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29225,6 +29230,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29236,57 +29243,15 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param664 = function() {
+  var param734 = function() {
     ie_open('h6');
-      var dyn50 = opt_data.page.description;
-      if (typeof dyn50 == 'function') dyn50(); else if (dyn50 != null) itext(dyn50);
+      var dyn55 = opt_data.page.description;
+      if (typeof dyn55 == 'function') dyn55(); else if (dyn55 != null) itext(dyn55);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Concepts');
-      ie_close('h2');
-      ie_open('p');
-        itext('Webda introduces some basic concepts :');
-      ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          ie_open('em');
-            itext('Service');
-          ie_close('em');
-          itext(' a singleton similar to Spring Bean to implement behaviors');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('Executor');
-          ie_close('em');
-          itext(' is a service that provide some routes and expose API to the world');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('Model');
-          ie_close('em');
-          itext(' to define your business logic');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('Deployment');
-          ie_close('em');
-          itext(' an instance of the app with its own configuration');
-        ie_close('li');
-      ie_close('ul');
-      ie_open('p');
-        itext('The ');
-        ie_open('strong');
-          itext('webda.config.json');
-        ie_close('strong');
-        itext(' contains the configuration of the app, defining Services, Routes and global configuration, you can consider it as the applicationContext.xml of Spring if you prefer, with Beans=Services');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Stores');
+        itext('Overview');
       ie_close('h2');
       ie_open('p');
         itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
@@ -29294,29 +29259,92 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_open('p');
         itext('We have currently File, DynamoDB and MongoDB storage');
       ie_close('p');
+      ie_open('h2');
+        itext('Expose REST API');
+      ie_close('h2');
       ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/store');
-          itext('Learn More');
-        ie_close('a');
+        itext('Inside the configuration you can add a block for expose the store as a REST API');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "expose": {\n     "url": "/storeurl", // By default the URL is the store name in lower case\n     "restrict": {\n       "update": true, // Prevent the creation of an object the PUT method wont be exposed\n       "delete": false // Allow delete for the object\n     }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('The above configuration will end up creating the following routes:');
+      ie_close('p');
+      ie_open('p');
+        itext('POST /storeurl');
+      ie_close('p');
+      ie_open('p');
+        itext('GET /storeurl/[uuid]');
+      ie_close('p');
+      ie_open('p');
+        itext('DELETE /storeurl/[uuid]');
+      ie_close('p');
+      ie_open('p');
+        itext('You can see that by default, once the store exposed all the methods are available unless you restrict them.');
+      ie_close('p');
+      ie_open('h2');
+        itext('Configuring Mapping');
+      ie_close('h2');
+      ie_open('p');
+        itext('As an example we will use the Users / Idents stores used by the Authentication module.');
+      ie_close('p');
+      ie_open('p');
+        itext('A User has several Idents so in NoSQL we need to deduplicate a part of the Ident object inside an array inside the User object');
+      ie_close('p');
+      ie_open('p');
+        itext('The following is the Idents store configuration');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "map": {\n     "Users": { // Target store\n        "key": "user", // Property inside Ident Object\n        "target": "idents", // Property on the User Object\n        "fields": "type", // Fields from the Ident Object ( uuid is added by default )\n        "cascade": true // If User object is delete then delete all the linked Idents\n     }\n  }', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('So if you have a user like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "user_01"\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Then you save a new Ident object like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "ident_01",\n  "user": "user_01",\n  "type": "Google"\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Once the Ident saved, the User object will look like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "uuid": "user_01",\n  "idents": [{"uuid":"ident_01","type":"Google"}]\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Then if you update the field type on your Ident object the User object will reflect the change, as well as if you delete the ident object it will be removed from the User object.');
+      ie_close('p');
+      ie_open('p');
+        itext('If cascade = true, then if you delete the User object, all attached Idents will be delete aswell.');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
-        'id', '3');
+        'id', '2');
       ie_open('h2');
-        itext('Binaries');
+        itext('Events');
       ie_close('h2');
       ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+        itext('The Stores emit events to let you implement some auto completion of the object if needed or taking any others action even deny the action by throwing an exception');
       ie_close('p');
       ie_open('p');
-        itext('The storage detect duplicates and don\'t double store them, it also provides a Polymer component that will prevent upload of known binaries by using a challenge to speed up the upload.');
+        itext('The store event looks like');
+      ie_close('p');
+      $templateAlias2({code: '{\n  \'object\': object,\n  \'store\': this\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('Store.Save: Before saving the object');
       ie_close('p');
       ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/binary');
-          itext('Learn More');
-        ie_close('a');
+        itext('Store.Saved: After saving the object');
+      ie_close('p');
+      ie_open('p');
+        itext('Store.Update: Before updating the object');
+      ie_close('p');
+      ie_open('p');
+        itext('Store.Updated: After updating the object');
+      ie_close('p');
+      ie_open('p');
+        itext('Store.Delete: Before deleting the object');
+      ie_close('p');
+      ie_open('p');
+        itext('Store.Deleted: After deleting the object');
+      ie_close('p');
+      ie_open('p');
+        itext('Store.Get: When getting the object');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
@@ -29325,16 +29353,106 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Models');
       ie_close('h2');
       ie_open('p');
-        itext('The stores use Models to load/save/validate/secure business object.');
+        itext('The store is using a Model to map your object.');
       ie_close('p');
       ie_open('p');
-        itext('The models should implement most of your business logic, while service should be technical implementation');
+        itext('It allows you to implement security constraint on the object itself, add some custom actions and validation');
+      ie_close('p');
+      ie_open('h3');
+        itext('Custom actions');
+      ie_close('h3');
+      ie_open('p');
+        itext('As we saw before the store will expose your objects via an URL');
       ie_close('p');
       ie_open('p');
+        itext('You can also add any specific behavior while saving / updating / deleting');
+      ie_close('p');
+      $templateAlias2({code: 'class MyModel extends CoreModel {\n  canAct(context, action) {\n    if (action === \'get\') {\n      return true;\n    } else if (action === \'update\') {\n      return true;\n    } else if (action === \'delete\') {\n      return true;\n    } else if (action === \'create\') {\n      return true;\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('If not specified the Store will pick the Owner policy as default. Policies are implicit service, so you can get them with a getService("OwnerPolicy"), but don\'t appear by default in the configuration file. That also means you can override a Policy if you want or create your own to implement your business model');
+      ie_close('p');
+      ie_open('h3');
+        itext('Owner Policy');
+      ie_close('h3');
+      ie_open('p');
+        itext('POST: Add the current user in the user field of the object');
+      ie_close('p');
+      ie_open('p');
+        itext('PUT: Verify the current user is the user inside the user field');
+      ie_close('p');
+      ie_open('p');
+        itext('GET: Verify the current user is the user inside the user field, or a public=true field exists on the object');
+      ie_close('p');
+      ie_open('p');
+        itext('DELETE: Verify the current user is the user inside the user field');
+      ie_close('p');
+      ie_open('h3');
+        itext('Void policy');
+      ie_close('h3');
+      ie_open('p');
+        itext('No verification, not recommended at all');
+      ie_close('p');
+      ie_open('h2');
+        itext('Validation');
+      ie_close('h2');
+      ie_open('p');
+        itext('To ensure that the input is correct, you can setup a JSON schema this way any update or creation will verify that the object is correct.');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  "validator": "schema"\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('All the input of POST or PUT will then be validate against it.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('DynamoDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The DynamoDB stores requires at least accessKeyId, secretAccessKey and table');
+      ie_close('p');
+      ie_open('p');
+        itext('For more information on DynamoDB : ');
         ie_open('a', null, null,
-            'href', '/docs/develop/models');
-          itext('Learn More');
+            'href', 'https://aws.amazon.com/dynamodb/');
+          itext('AWS DynamoDB');
         ie_close('a');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '6');
+      ie_open('h2');
+        itext('MongoDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The MongoDB configuration requires a collection and a mongo parameter where mongo is the MongoDB url');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '7');
+      ie_open('h2');
+        itext('FileDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The FileDB only requires a folder where to store the datas. It creates it if not exists');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '7');
+      ie_open('h2');
+        itext('MemoryDB');
+      ie_close('h2');
+      ie_open('p');
+        itext('The MemoryDB only store the in a Map, so it will loose all the datas if you shutdown the server. It can be usefull for local cache or for some unit test');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '8');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('You have a behavior defined for you, once added to your component you have the model property and a save/get/update/delete method for you to communicate with the API');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29346,11 +29464,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param664}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param734}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'buVsn.render';
+  $render.soyTemplateName = 'JWZfm.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29360,19 +29478,14 @@ return exports;
 
 });
 
-class buVsn extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(buVsn, templates);
+class JWZfm extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(JWZfm, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
 /* 246 */,
 /* 247 */,
 /* 248 */,
@@ -29390,8 +29503,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(buVsn, templates);
 /* 260 */,
 /* 261 */,
 /* 262 */,
-/* 263 */,
-/* 264 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29431,9 +29543,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _indexSoy = __webpack_require__(240);
+var _storeSoy = __webpack_require__(245);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _storeSoy2 = _interopRequireDefault(_storeSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29443,23 +29555,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var buVsn = function (_Component) {
-  _inherits(buVsn, _Component);
+var JWZfm = function (_Component) {
+  _inherits(JWZfm, _Component);
 
-  function buVsn() {
-    _classCallCheck(this, buVsn);
+  function JWZfm() {
+    _classCallCheck(this, JWZfm);
 
-    return _possibleConstructorReturn(this, (buVsn.__proto__ || Object.getPrototypeOf(buVsn)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (JWZfm.__proto__ || Object.getPrototypeOf(JWZfm)).apply(this, arguments));
   }
 
-  return buVsn;
+  return JWZfm;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(buVsn, _indexSoy2.default);
+_metalSoy2.default.register(JWZfm, _storeSoy2.default);
 
-exports.default = buVsn;
+exports.default = JWZfm;
 
 /***/ })
-],[264]);
+],[263]);
