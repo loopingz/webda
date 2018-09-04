@@ -137,8 +137,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_open('p', null, null,
             'class', 'footer-description col-md-6 col-md-offset-2');
           itext('Copyright \u00A9 ');
-          var dyn2 = opt_data.year;
-          if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
+          var dyn16 = opt_data.year;
+          if (typeof dyn16 == 'function') dyn16(); else if (dyn16 != null) itext(dyn16);
           itext(' ');
           ie_open('a', null, null,
               'href', 'https://liferay.com');

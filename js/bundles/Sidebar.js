@@ -528,25 +528,25 @@ if (goog.DEBUG) {
  * @return {void}
  * @suppress {checkTypes}
  */
-function __deltemplate_s74_d34389eb(opt_data, opt_ignored, opt_ijData) {
+function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
-      'href', opt_data.page.url);
+      'href', opt_data.page.url + opt_data.page.index);
     if (opt_data.page.icon) {
       ie_void('span', null, null,
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
     }
     ie_open('span');
-      var dyn6 = opt_data.page.title;
-      if (typeof dyn6 == 'function') dyn6(); else if (dyn6 != null) itext(dyn6);
+      var dyn20 = opt_data.page.title;
+      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
     ie_close('span');
   ie_close('a');
 }
-exports.__deltemplate_s74_d34389eb = __deltemplate_s74_d34389eb;
+exports.__deltemplate_s217_d34389eb = __deltemplate_s217_d34389eb;
 if (goog.DEBUG) {
-  __deltemplate_s74_d34389eb.soyTemplateName = 'Sidebar.__deltemplate_s74_d34389eb';
+  __deltemplate_s217_d34389eb.soyTemplateName = 'Sidebar.__deltemplate_s217_d34389eb';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'sidebar', 0, __deltemplate_s74_d34389eb);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'sidebar', 0, __deltemplate_s217_d34389eb);
 
 exports.render.params = ["section","site"];
 exports.render.types = {"section":"?","site":"?"};

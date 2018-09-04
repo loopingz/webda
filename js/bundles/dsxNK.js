@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([20,24,25,26,27,28],[
+webpackJsonppageComponent([11,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19324,14 +19324,14 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   opt_data = opt_data || {};
-  var param112 = function() {
+  var param3 = function() {
     ie_open('div', null, null,
         'class', 'blog');
       $mainPost(opt_data, null, opt_ijData);
       $olderPosts(opt_data, null, opt_ijData);
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param112}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param3}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -19356,24 +19356,24 @@ function $mainPost(opt_data, opt_ignored, opt_ijData) {
     ie_open('header');
       ie_open('small');
         itext('By ');
-        var dyn8 = opt_data.page.author;
-        if (typeof dyn8 == 'function') dyn8(); else if (dyn8 != null) itext(dyn8);
+        var dyn0 = opt_data.page.author;
+        if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
         itext(' ');
         ie_open('span');
           itext('| ');
-          var dyn9 = opt_data.page.date;
-          if (typeof dyn9 == 'function') dyn9(); else if (dyn9 != null) itext(dyn9);
+          var dyn1 = opt_data.page.date;
+          if (typeof dyn1 == 'function') dyn1(); else if (dyn1 != null) itext(dyn1);
         ie_close('span');
       ie_close('small');
       ie_open('h3');
-        var dyn10 = opt_data.page.title;
-        if (typeof dyn10 == 'function') dyn10(); else if (dyn10 != null) itext(dyn10);
+        var dyn2 = opt_data.page.title;
+        if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
       ie_close('h3');
     ie_close('header');
     ie_open('div', null, null,
         'class', 'content');
-      var dyn11 = opt_data.content;
-      if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
+      var dyn3 = opt_data.content;
+      if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
     ie_close('div');
     $templateAlias2(opt_data, null, opt_ijData);
   ie_close('article');
@@ -19395,8 +19395,8 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $olderPosts(opt_data, opt_ignored, opt_ijData) {
-  var blogObject__soy132 = opt_data.site.index.children['blog'];
-  $templateAlias3({blogObject: blogObject__soy132, url: opt_data.page.url}, null, opt_ijData);
+  var blogObject__soy23 = opt_data.site.index.children['blog'];
+  $templateAlias3({blogObject: blogObject__soy23, url: opt_data.page.url}, null, opt_ijData);
 }
 exports.olderPosts = $olderPosts;
 if (goog.DEBUG) {
@@ -19532,8 +19532,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn12 = opt_data.site.title;
-        if (typeof dyn12 == 'function') dyn12(); else if (dyn12 != null) itext(dyn12);
+        var dyn4 = opt_data.site.title;
+        if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -19564,8 +19564,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
           'class', 'container-hybrid');
         ie_open('h1', null, null,
             'class', 'title');
-          var dyn13 = opt_data.page.title;
-          if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
+          var dyn5 = opt_data.page.title;
+          if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
           itext(' Guide');
         ie_close('h1');
       ie_close('div');
@@ -19578,8 +19578,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
             'class', 'docs-content col-xs-16 col-md-9');
           ie_open('div', null, null,
               'class', 'guide-content');
-            var dyn14 = opt_data.content;
-            if (typeof dyn14 == 'function') dyn14(); else if (dyn14 != null) itext(dyn14);
+            var dyn6 = opt_data.content;
+            if (typeof dyn6 == 'function') dyn6(); else if (dyn6 != null) itext(dyn6);
           ie_close('div');
           if (opt_data.site.githubRepo) {
             $contribute(opt_data, null, opt_ijData);
@@ -19731,8 +19731,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'class', 'content');
       $templateAlias1({items: opt_data.site.topbar, style: 'topbar-light'}, null, opt_ijData);
       $logo(opt_data, null, opt_ijData);
-      var dyn15 = opt_data.content;
-      if (typeof dyn15 == 'function') dyn15(); else if (dyn15 != null) itext(dyn15);
+      var dyn7 = opt_data.content;
+      if (typeof dyn7 == 'function') dyn7(); else if (dyn7 != null) itext(dyn7);
     ie_close('main');
   ie_close('div');
 }
@@ -19765,8 +19765,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_close('span');
       ie_open('span', null, null,
           'class', 'topbar-logo-text');
-        var dyn16 = opt_data.site.title;
-        if (typeof dyn16 == 'function') dyn16(); else if (dyn16 != null) itext(dyn16);
+        var dyn8 = opt_data.site.title;
+        if (typeof dyn8 == 'function') dyn8(); else if (dyn8 != null) itext(dyn8);
       ie_close('span');
     ie_close('a');
   ie_close('div');
@@ -19902,14 +19902,14 @@ function $tutorials(opt_data, opt_ignored, opt_ijData) {
         'class', 'container');
       ie_open('h6', null, null,
           'class', 'tutorial-title');
-        var dyn17 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId].tutorialTitle;
-        if (typeof dyn17 == 'function') dyn17(); else if (dyn17 != null) itext(dyn17);
+        var dyn9 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId].tutorialTitle;
+        if (typeof dyn9 == 'function') dyn9(); else if (dyn9 != null) itext(dyn9);
       ie_close('h6');
       $templateAlias2(null, null, opt_ijData);
       ie_open('div', null, null,
           'class', 'container-blog card');
-        var dyn18 = opt_data.content;
-        if (typeof dyn18 == 'function') dyn18(); else if (dyn18 != null) itext(dyn18);
+        var dyn10 = opt_data.content;
+        if (typeof dyn10 == 'function') dyn10(); else if (dyn10 != null) itext(dyn10);
         $footerButtons(opt_data, null, opt_ijData);
       ie_close('div');
     ie_close('div');
@@ -19934,15 +19934,15 @@ if (goog.DEBUG) {
 function $footerButtons(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
       'class', 'tutorial-page-nav');
-    var tutorialObject__soy221 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId];
-    if (opt_data.page.weight < tutorialObject__soy221.childIds.length) {
+    var tutorialObject__soy112 = opt_data.site.index.children['tutorials'].children[opt_data.page.parentId];
+    if (opt_data.page.weight < tutorialObject__soy112.childIds.length) {
       if (opt_data.page.buttonTitle) {
-        var nextPageUrl__soy226 = tutorialObject__soy221.children[tutorialObject__soy221.childIds[opt_data.page.weight]].url;
+        var nextPageUrl__soy117 = tutorialObject__soy112.children[tutorialObject__soy112.childIds[opt_data.page.weight]].url;
         ie_open('a', null, null,
-            'href', nextPageUrl__soy226,
+            'href', nextPageUrl__soy117,
             'class', 'btn btn-accent btn-sm');
-          var dyn19 = opt_data.page.buttonTitle;
-          if (typeof dyn19 == 'function') dyn19(); else if (dyn19 != null) itext(dyn19);
+          var dyn11 = opt_data.page.buttonTitle;
+          if (typeof dyn11 == 'function') dyn11(); else if (dyn11 != null) itext(dyn11);
         ie_close('a');
       }
     }
@@ -19987,7 +19987,7 @@ if (goog.DEBUG) {
  * @return {void}
  * @suppress {checkTypes}
  */
-function __deltemplate_s241_88c0813b(opt_data, opt_ignored, opt_ijData) {
+function __deltemplate_s132_88c0813b(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link' + (opt_data.page.active ? ' sidebar-link-selected' : ''),
       'href', opt_data.page.url,
@@ -19996,23 +19996,23 @@ function __deltemplate_s241_88c0813b(opt_data, opt_ignored, opt_ijData) {
         'class', 'before');
     ie_open('span', null, null,
         'class', 'tutorial-step');
-      var dyn20 = opt_data.page.weight;
-      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
+      var dyn12 = opt_data.page.weight;
+      if (typeof dyn12 == 'function') dyn12(); else if (dyn12 != null) itext(dyn12);
     ie_close('span');
     ie_open('span', null, null,
         'class', 'section-title');
-      var dyn21 = opt_data.page.title;
-      if (typeof dyn21 == 'function') dyn21(); else if (dyn21 != null) itext(dyn21);
+      var dyn13 = opt_data.page.title;
+      if (typeof dyn13 == 'function') dyn13(); else if (dyn13 != null) itext(dyn13);
     ie_close('span');
     ie_void('span', null, null,
         'class', 'after');
   ie_close('a');
 }
-exports.__deltemplate_s241_88c0813b = __deltemplate_s241_88c0813b;
+exports.__deltemplate_s132_88c0813b = __deltemplate_s132_88c0813b;
 if (goog.DEBUG) {
-  __deltemplate_s241_88c0813b.soyTemplateName = 'tutorial.__deltemplate_s241_88c0813b';
+  __deltemplate_s132_88c0813b.soyTemplateName = 'tutorial.__deltemplate_s132_88c0813b';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'tutorial', 0, __deltemplate_s241_88c0813b);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'tutorial', 0, __deltemplate_s132_88c0813b);
 
 exports.render.params = ["content","page","site","elementClasses"];
 exports.render.types = {"content":"?","page":"?","site":"?","elementClasses":"?"};
@@ -20292,8 +20292,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_open('p', null, null,
             'class', 'footer-description col-md-6 col-md-offset-2');
           itext('Copyright \u00A9 ');
-          var dyn2 = opt_data.year;
-          if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
+          var dyn16 = opt_data.year;
+          if (typeof dyn16 == 'function') dyn16(); else if (dyn16 != null) itext(dyn16);
           itext(' ');
           ie_open('a', null, null,
               'href', 'https://liferay.com');
@@ -20397,30 +20397,30 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     ie_open('div', null, null,
         'class', 'container');
       if (opt_data.posts) {
-        var postList56 = opt_data.posts;
-        var postListLen56 = postList56.length;
-        for (var postIndex56 = 0; postIndex56 < postListLen56; postIndex56++) {
-          var postData56 = postList56[postIndex56];
+        var postList199 = opt_data.posts;
+        var postListLen199 = postList199.length;
+        for (var postIndex199 = 0; postIndex199 < postListLen199; postIndex199++) {
+          var postData199 = postList199[postIndex199];
           ie_open('div', null, null,
               'class', 'post-item container-blog');
             ie_open('a', null, null,
                 'class', 'post-item__link',
-                'href', postData56.url);
+                'href', postData199.url);
               ie_open('small');
                 itext('By ');
-                var dyn3 = postData56.author;
-                if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
+                var dyn17 = postData199.author;
+                if (typeof dyn17 == 'function') dyn17(); else if (dyn17 != null) itext(dyn17);
                 itext(' ');
                 ie_open('span');
                   itext('| ');
-                  var dyn4 = postData56.date;
-                  if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
+                  var dyn18 = postData199.date;
+                  if (typeof dyn18 == 'function') dyn18(); else if (dyn18 != null) itext(dyn18);
                 ie_close('span');
               ie_close('small');
               ie_open('h4', null, null,
                   'class', 'post-item__title');
-                var dyn5 = postData56.title;
-                if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
+                var dyn19 = postData199.title;
+                if (typeof dyn19 == 'function') dyn19(); else if (dyn19 != null) itext(dyn19);
               ie_close('h4');
             ie_close('a');
           ie_close('div');
@@ -20557,25 +20557,25 @@ if (goog.DEBUG) {
  * @return {void}
  * @suppress {checkTypes}
  */
-function __deltemplate_s74_d34389eb(opt_data, opt_ignored, opt_ijData) {
+function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
-      'href', opt_data.page.url);
+      'href', opt_data.page.url + opt_data.page.index);
     if (opt_data.page.icon) {
       ie_void('span', null, null,
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
     }
     ie_open('span');
-      var dyn6 = opt_data.page.title;
-      if (typeof dyn6 == 'function') dyn6(); else if (dyn6 != null) itext(dyn6);
+      var dyn20 = opt_data.page.title;
+      if (typeof dyn20 == 'function') dyn20(); else if (dyn20 != null) itext(dyn20);
     ie_close('span');
   ie_close('a');
 }
-exports.__deltemplate_s74_d34389eb = __deltemplate_s74_d34389eb;
+exports.__deltemplate_s217_d34389eb = __deltemplate_s217_d34389eb;
 if (goog.DEBUG) {
-  __deltemplate_s74_d34389eb.soyTemplateName = 'Sidebar.__deltemplate_s74_d34389eb';
+  __deltemplate_s217_d34389eb.soyTemplateName = 'Sidebar.__deltemplate_s217_d34389eb';
 }
-soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'sidebar', 0, __deltemplate_s74_d34389eb);
+soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'sidebar', 0, __deltemplate_s217_d34389eb);
 
 exports.render.params = ["section","site"];
 exports.render.types = {"section":"?","site":"?"};
@@ -20773,8 +20773,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_void('span', null, null,
           'class', 'icon icon-16-clock');
       itext(' ');
-      var dyn7 = opt_data.time;
-      if (typeof dyn7 == 'function') dyn7(); else if (dyn7 != null) itext(dyn7);
+      var dyn21 = opt_data.time;
+      if (typeof dyn21 == 'function') dyn21(); else if (dyn21 != null) itext(dyn21);
     }
   ie_close('p');
 }
@@ -29168,12 +29168,21 @@ exports.default = parseFromAnchor;
 /* 226 */,
 /* 227 */,
 /* 228 */,
-/* 229 */
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hrckr", function() { return hrckr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dsxNK", function() { return dsxNK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29185,15 +29194,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from binary.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace hrckr.
+ * @fileoverview Templates in namespace dsxNK.
  * @public
  */
 
-goog.module('hrckr.incrementaldom');
+goog.module('dsxNK.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29227,158 +29236,116 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param368 = function() {
+  var param618 = function() {
     ie_open('h6');
-      var dyn32 = opt_data.page.description;
-      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
+      var dyn48 = opt_data.page.description;
+      if (typeof dyn48 == 'function') dyn48(); else if (dyn48 != null) itext(dyn48);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Installation');
+        itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('You first need to install webda-shell.');
-      ie_close('p');
-      $templateAlias2({code: 'npm install -g webda-shell', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will install the webda shell tools, that allows you to configure and deploy your project You have the configuration UI available, where you can create a service, use a service, or create a custom API resource. You can also manually edit the webda.config.json if you prefer');
+        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
       ie_close('p');
       ie_open('p');
-        itext('Below is the manual step with the manual modification, I would recommand to use the configuration UI to modify the webda.config.json');
+        itext('The API exposed is');
       ie_close('p');
+      $templateAlias2({code: 'GET /binary/{store}/{uuid}/{property}/{index}\nPUT /binary/upload/{store}/{uuid}/{property}/{index}\nDELETE /binary/{store}/{uuid}/{property}/{index}/{hash}', mode: 'text'}, null, opt_ijData);
+      ie_open('p');
+        itext('You can reduce the exposition by adding an expose attribute as on Store');
+      ie_close('p');
+      ie_open('p');
+        itext('As you can only add a binary attached to an object stored on the system, the url reflect this :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          ie_open('em');
+            itext('store');
+          ie_close('em');
+          itext(' is the Store of the object you want attached to');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('uid');
+          ie_close('em');
+          itext(' is the Object uuid');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('property');
+          ie_close('em');
+          itext(' is the field of the Object');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('index');
+          ie_close('em');
+          itext(' is the index of the Binary');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('hash');
+          ie_close('em');
+          itext(' the hash of the file to delete to ensure, if someone insert another file you don\'t delete the wrong file by accident');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Init a project');
+        itext('Map');
       ie_close('h2');
       ie_open('p');
-        itext('Create a new project folder');
+        itext('To prevent people for adding files everywhere you specify in which object and fields you can post a file.');
       ie_close('p');
-      $templateAlias2({code: 'mkdir my-new-project\ncd my-new-project', mode: 'shell'}, null, opt_ijData);
+      $templateAlias2({code: '"map": {\n    "users": ["s3images"]\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('If you do want to use our sample project, first type');
+        itext('The above configuration will allow a user to link a binary to a user on the field s3images.');
       ie_close('p');
-      $templateAlias2({code: 'webda init', mode: 'shell'}, null, opt_ijData);
       ie_open('p');
-        itext('Launch your project configuration interface');
+        itext('So with the previous URL that means to play with binaries for a User ( uuid: user_02 )');
       ie_close('p');
-      $templateAlias2({code: 'webda config', mode: 'shell'}, null, opt_ijData);
-      ie_open('p');
-        itext('You should now see the configuration website in your browser');
-      ie_close('p');
+      $templateAlias2({code: 'To add\nPUT /binary/upload/users/user_02/s3images/add\n\nTo replace\nPUT /binary/upload/users/user_02/s3images/0\n\nTo get\nGET /binary/users/user_02/s3images/0\n\nTo delete\nDELETE /binary/users/user_02/s3images/0/1928434324...', mode: 'text'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Create a new route');
+        itext('S3Binary');
       ie_close('h2');
       ie_open('p');
-        itext('We will use the inline RouteHelper here, except the Lambda Route helper, the other are mainly helper for quick and easy test but you should use Service when you can as they are easier to unit test and make code cleaner.');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This is defining the GET /myurl API');
-      ie_close('p');
-      ie_open('p');
-        itext('There is 5 types of route : file, inline, lambda, resource, string');
-      ie_close('p');
-      ie_open('h3');
-        itext('File route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('file');
-        ie_close('strong');
-        itext(' include the javascript file and call its main export with the context');
-      ie_close('p');
-      ie_open('p');
-        itext('webda.config.json');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myapi": {\n      "type": "file",\n      "file": "./test.js"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('test.js');
-      ie_close('p');
-      $templateAlias2({code: 'module.exports = (ctx) {\n  ctx.write(\'This is my custom API\')\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('h3');
-        itext('Inline route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('inline');
-        ie_close('strong');
-        itext(' eval the content of the callback string');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('h3');
-        itext('Lambda route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('lambda');
-        ie_close('strong');
-        itext(' call a Lambda function and return its result');
-      ie_close('p');
-      ie_open('h3');
-        itext('Resource route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('resource');
-        ie_close('strong');
-        itext(' return the content of the file, guessing it\'s mime type');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "resource",\n      "file": "./test.jpg"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will return the jpeg with image/jpeg mime type');
-      ie_close('p');
-      ie_open('h3');
-        itext('String route');
-      ie_close('h3');
-      ie_open('p');
-        ie_open('strong');
-          itext('string');
-        ie_close('strong');
-        itext(' return the content of result, you can specify the mime');
-      ie_close('p');
-      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "string",\n      "result": "Hi Webda !"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('This will return a "Hi Webda !"');
+        itext('To configure just add the parameter bucket');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '4');
       ie_open('h2');
-        itext('Create a new service');
+        itext('FileBinary');
       ie_close('h2');
       ie_open('p');
-        itext('We will create a new service from executor, so we can map some urls directly to the service');
+        itext('To configure just add the parameter folder');
       ie_close('p');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
-      ie_open('p');
-        itext('Here is the corresponding configuration');
-      ie_close('p');
-      $templateAlias2({code: '{\n  ...\n  services: {\n     ...\n     "MyService": {\n       require: "./myservice.js",\n       sentence: "I am a GET route and i\'ve sent an welcome email to you"\n     }\n     ...\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '5');
       ie_open('h2');
-        itext('Run it');
+        itext('Polymer');
       ie_close('h2');
-      $templateAlias2({code: 'webda serve', mode: 'text'}, null, opt_ijData);
       ie_open('p');
-        itext('You can call the http://localhost:18080/myservice, and see the nice output');
+        itext('The behavior implementation can be found there :');
       ie_close('p');
       ie_open('p');
-        itext('"I am a GET route and i\'ve sent an welcome email to you"');
+        itext('Two different UI component exist also :');
       ie_close('p');
-      ie_open('p');
-        itext('And then the http://localhost:18080/myurl');
-      ie_close('p');
-      ie_open('p');
-        itext('"I am a inline route"');
-      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('A simple fab button upload :');
+        ie_close('li');
+        ie_open('li');
+          itext('IA paper-input with Browse button :');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29389,11 +29356,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param368}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param618}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'hrckr.render';
+  $render.soyTemplateName = 'dsxNK.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29403,23 +29370,14 @@ return exports;
 
 });
 
-class hrckr extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(hrckr, templates);
+class dsxNK extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(dsxNK, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
 /* 239 */,
 /* 240 */,
 /* 241 */,
@@ -29435,7 +29393,20 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(hrckr, templates);
 /* 251 */,
 /* 252 */,
 /* 253 */,
-/* 254 */
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29475,9 +29446,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _indexSoy = __webpack_require__(229);
+var _binarySoy = __webpack_require__(238);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _binarySoy2 = _interopRequireDefault(_binarySoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29487,23 +29458,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var hrckr = function (_Component) {
-  _inherits(hrckr, _Component);
+var dsxNK = function (_Component) {
+  _inherits(dsxNK, _Component);
 
-  function hrckr() {
-    _classCallCheck(this, hrckr);
+  function dsxNK() {
+    _classCallCheck(this, dsxNK);
 
-    return _possibleConstructorReturn(this, (hrckr.__proto__ || Object.getPrototypeOf(hrckr)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (dsxNK.__proto__ || Object.getPrototypeOf(dsxNK)).apply(this, arguments));
   }
 
-  return hrckr;
+  return dsxNK;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(hrckr, _indexSoy2.default);
+_metalSoy2.default.register(dsxNK, _binarySoy2.default);
 
-exports.default = hrckr;
+exports.default = dsxNK;
 
 /***/ })
-],[254]);
+],[267]);
