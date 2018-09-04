@@ -3,7 +3,6 @@ title: "Local"
 description: "Run a NodeJS Express server to serve your API."
 layout: "guide"
 weight: 3
-index: ""
 ---
 
 ###### {$page.description}

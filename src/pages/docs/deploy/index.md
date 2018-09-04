@@ -5,7 +5,7 @@ layout: "guide"
 icon: "cloud"
 weight: 4
 class: orange
-index: "index.html"
+url: /docs/deploy/index.html
 ---
 
 ###### {$page.description}

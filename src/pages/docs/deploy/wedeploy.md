@@ -3,7 +3,6 @@ title: "WeDeploy"
 description: "Very nice product made by our friends at Liferay, you should definitely check out."
 layout: "guide"
 weight: 3
-index: ""
 ---
 
 ###### {$page.description}

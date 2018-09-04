@@ -5,7 +5,6 @@ layout: "guide"
 icon: "flash"
 weight: 1
 class: blue
-index: ""
 ---
 
 ###### {$page.description}
