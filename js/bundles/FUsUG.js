@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([12,24,25,26,27,28],[
+webpackJsonppageComponent([20,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20560,7 +20560,7 @@ if (goog.DEBUG) {
 function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
-      'href', opt_data.page.url + opt_data.page.index);
+      'href', opt_data.page.url);
     if (opt_data.page.icon) {
       ie_void('span', null, null,
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
@@ -29168,20 +29168,12 @@ exports.default = parseFromAnchor;
 /* 226 */,
 /* 227 */,
 /* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */
+/* 229 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rVPol", function() { return rVPol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FUsUG", function() { return FUsUG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29193,15 +29185,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from authentication.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace rVPol.
+ * @fileoverview Templates in namespace FUsUG.
  * @public
  */
 
-goog.module('rVPol.incrementaldom');
+goog.module('FUsUG.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29235,88 +29227,157 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param587 = function() {
+  var param368 = function() {
     ie_open('h6');
-      var dyn47 = opt_data.page.description;
-      if (typeof dyn47 == 'function') dyn47(); else if (dyn47 != null) itext(dyn47);
+      var dyn32 = opt_data.page.description;
+      if (typeof dyn32 == 'function') dyn32(); else if (dyn32 != null) itext(dyn32);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Installation');
       ie_close('h2');
       ie_open('p');
-        itext('The Authentication service highly depends on ');
-        ie_open('a', null, null,
-            'href', 'http://passportjs.org/');
-          itext('PassportJS');
-        ie_close('a');
-        itext(' this is why its file is passport.js');
+        itext('You first need to install webda-shell.');
+      ie_close('p');
+      $templateAlias2({code: 'npm install -g webda-shell', mode: 'shell'}, null, opt_ijData);
+      ie_open('p');
+        itext('This will install the webda shell tools, that allows you to configure and deploy your project You have the configuration UI available, where you can create a service, use a service, or create a custom API resource. You can also manually edit the webda.config.json if you prefer');
       ie_close('p');
       ie_open('p');
-        itext('It requires two stores : Idents and Users.');
+        itext('Below is the manual step with the manual modification, I would recommand to use the configuration UI to modify the webda.config.json');
       ie_close('p');
-      ie_open('p');
-        itext('The Idents will contains each mode of Authentication enabled by the user, you will find in the Ident also the profile returned by the OAuth provider if returned.');
-      ie_close('p');
-      ie_open('p');
-        itext('The Users will have one object per user, with the idents collection, it also contains the password if any is set.');
-      ie_close('p');
-      ie_open('p');
-        itext('Basic configuration');
-      ie_close('p');
-      $templateAlias2({code: '"successRedirect": "https://shootandprove.loopingz.com/user.html", // Redirect to this page after login\n"failureRedirect": "/login-error", // Redirect to this page after failed login\n"userStore": "", // If you want to override the userStore name by default Users\n"identStore": "", // If you want to override the identStore name by default Idents\n"providers": {\n  ... // See below\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Register event');
+        itext('Init a project');
       ie_close('h2');
       ie_open('p');
-        itext('When a user register, the Authentication service send a Register event, so you can complete the user with additional informations.');
+        itext('Create a new project folder');
       ie_close('p');
-      $templateAlias2({code: '// Datas is the profile coming from the OAuth or the Register form\nthis.emit("Register", {"user": user, "datas": datas, "ctx": ctx});', mode: 'javascript'}, null, opt_ijData);
+      $templateAlias2({code: 'mkdir my-new-project\ncd my-new-project', mode: 'shell'}, null, opt_ijData);
+      ie_open('p');
+        itext('If you do want to use our sample project, first type');
+      ie_close('p');
+      $templateAlias2({code: 'webda init', mode: 'shell'}, null, opt_ijData);
+      ie_open('p');
+        itext('Launch your project configuration interface');
+      ie_close('p');
+      $templateAlias2({code: 'webda config', mode: 'shell'}, null, opt_ijData);
+      ie_open('p');
+        itext('You should now see the configuration website in your browser');
+      ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Email authentication');
+        itext('Create a new route');
       ie_close('h2');
       ie_open('p');
-        itext('To use this feature you need to have a configured Mailer service, you can define the service name by adding the field mailer inside the email configuration.');
+        itext('We will use the inline RouteHelper here, except the Lambda Route helper, the other are mainly helper for quick and easy test but you should use Service when you can as they are easier to unit test and make code cleaner.');
+      ie_close('p');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This is defining the GET /myurl API');
       ie_close('p');
       ie_open('p');
-        itext('The email authentication has two modes, one that register the user without waiting for the email validation, and the other one that register the user only when the registration form contains the right validation token sent by email.');
+        itext('There is 5 types of route : file, inline, lambda, resource, string');
       ie_close('p');
-      $templateAlias2({code: '...\n"providers": {\n  "email": {\n     "from": "", // Email sender\n     "subject": "", // Email subject\n     "html": "", // HTML to send by email for email validation\n     "text": "", // Text to send by email for email validation\n     "mailer": "DefinedMailer", // Defined mailer to use\n     "postValidation": false, // If true, create user without email validation\n     "skipEmailValidation": true // Don\'t even send a validation email, must be set along with postValidation=true\n  },\n}\n...', mode: 'javascript'}, null, opt_ijData);
+      ie_open('h3');
+        itext('File route');
+      ie_close('h3');
       ie_open('p');
-        itext('The email authentication expose POST /auth/email if the body contains register=true then it will perform registration, if not then only login returning 404 if unknown user, 403 for bad password, 204 for successful login GET /auth/callback');
+        ie_open('strong');
+          itext('file');
+        ie_close('strong');
+        itext(' include the javascript file and call its main export with the context');
+      ie_close('p');
+      ie_open('p');
+        itext('webda.config.json');
+      ie_close('p');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myapi": {\n      "type": "file",\n      "file": "./test.js"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('test.js');
+      ie_close('p');
+      $templateAlias2({code: 'module.exports = (ctx) {\n  ctx.write(\'This is my custom API\')\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('h3');
+        itext('Inline route');
+      ie_close('h3');
+      ie_open('p');
+        ie_open('strong');
+          itext('inline');
+        ie_close('strong');
+        itext(' eval the content of the callback string');
+      ie_close('p');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "inline",\n      "callback": "function(ctx) { ctx.write(\'I am an inline route\'); }"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('h3');
+        itext('Lambda route');
+      ie_close('h3');
+      ie_open('p');
+        ie_open('strong');
+          itext('lambda');
+        ie_close('strong');
+        itext(' call a Lambda function and return its result');
+      ie_close('p');
+      ie_open('h3');
+        itext('Resource route');
+      ie_close('h3');
+      ie_open('p');
+        ie_open('strong');
+          itext('resource');
+        ie_close('strong');
+        itext(' return the content of the file, guessing it\'s mime type');
+      ie_close('p');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "resource",\n      "file": "./test.jpg"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This will return the jpeg with image/jpeg mime type');
+      ie_close('p');
+      ie_open('h3');
+        itext('String route');
+      ie_close('h3');
+      ie_open('p');
+        ie_open('strong');
+          itext('string');
+        ie_close('strong');
+        itext(' return the content of result, you can specify the mime');
+      ie_close('p');
+      $templateAlias2({code: '{\n  "*": "demo.webda.io",\n  "demo.webda.io": {\n    ...\n    "/myurl": {\n      "type": "string",\n      "result": "Hi Webda !"\n    }\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This will return a "Hi Webda !"');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '4');
       ie_open('h2');
-        itext('OAuth');
+        itext('Create a new service');
       ie_close('h2');
       ie_open('p');
-        itext('You can setup differents types of OAuth, we integrate for now only Facebook, Amazon, Twitter, GitHub, Google.');
+        itext('We will create a new service from executor, so we can map some urls directly to the service');
       ie_close('p');
-      $templateAlias2({code: '{\n  ...\n  providers: {\n    facebook: {\n      clientID: "facebookClientId",\n      clientSecret: "facebookSecret",\n      scope: ["email","public_profile"]\n    }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('This is the same for the other providers, except ');
-        ie_open('strong');
-          itext('Twitter');
-        ie_close('strong');
-        itext(' where the fields are OAuth1 : consumerKey and consumerSecret');
+        itext('Here is the corresponding configuration');
       ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  services: {\n     ...\n     "MyService": {\n       require: "./myservice.js",\n       sentence: "I am a GET route and i\'ve sent an welcome email to you"\n     }\n     ...\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '5');
       ie_open('h2');
-        itext('Polymer');
+        itext('Run it');
       ie_close('h2');
+      $templateAlias2({code: 'webda serve', mode: 'text'}, null, opt_ijData);
       ie_open('p');
-        itext('You have a Polymer behavior that implement the Authentication : ...');
+        itext('You can call the http://localhost:18080/myservice, and see the nice output');
+      ie_close('p');
+      ie_open('p');
+        itext('"I am a GET route and i\'ve sent an welcome email to you"');
+      ie_close('p');
+      ie_open('p');
+        itext('And then the http://localhost:18080/myurl');
+      ie_close('p');
+      ie_open('p');
+        itext('"I am a inline route"');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29328,11 +29389,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param587}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param368}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'rVPol.render';
+  $render.soyTemplateName = 'FUsUG.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29342,14 +29403,22 @@ return exports;
 
 });
 
-class rVPol extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(rVPol, templates);
+class FUsUG extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(FUsUG, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
 /* 238 */,
 /* 239 */,
 /* 240 */,
@@ -29365,22 +29434,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(rVPol, templates);
 /* 250 */,
 /* 251 */,
 /* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29420,9 +29474,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _authenticationSoy = __webpack_require__(237);
+var _indexSoy = __webpack_require__(229);
 
-var _authenticationSoy2 = _interopRequireDefault(_authenticationSoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29432,23 +29486,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var rVPol = function (_Component) {
-  _inherits(rVPol, _Component);
+var FUsUG = function (_Component) {
+  _inherits(FUsUG, _Component);
 
-  function rVPol() {
-    _classCallCheck(this, rVPol);
+  function FUsUG() {
+    _classCallCheck(this, FUsUG);
 
-    return _possibleConstructorReturn(this, (rVPol.__proto__ || Object.getPrototypeOf(rVPol)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (FUsUG.__proto__ || Object.getPrototypeOf(FUsUG)).apply(this, arguments));
   }
 
-  return rVPol;
+  return FUsUG;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(rVPol, _authenticationSoy2.default);
+_metalSoy2.default.register(FUsUG, _indexSoy2.default);
 
-exports.default = rVPol;
+exports.default = FUsUG;
 
 /***/ })
-],[268]);
+],[253]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([13,24,25,26,27,28],[
+webpackJsonppageComponent([21,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20560,7 +20560,7 @@ if (goog.DEBUG) {
 function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
-      'href', opt_data.page.url + opt_data.page.index);
+      'href', opt_data.page.url);
     if (opt_data.page.icon) {
       ie_void('span', null, null,
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
@@ -29167,20 +29167,12 @@ exports.default = parseFromAnchor;
 /* 225 */,
 /* 226 */,
 /* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */
+/* 228 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "yFROz", function() { return yFROz; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PEKOI", function() { return PEKOI; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29192,15 +29184,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from wedeploy.soy.
+// This file was automatically generated from new-website.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace yFROz.
+ * @fileoverview Templates in namespace PEKOI.
  * @public
  */
 
-goog.module('yFROz.incrementaldom');
+goog.module('PEKOI.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29221,7 +29213,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -29232,31 +29224,66 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param576 = function() {
-    ie_open('h6');
-      var dyn46 = opt_data.page.description;
-      if (typeof dyn46 == 'function') dyn46(); else if (dyn46 != null) itext(dyn46);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
-      ie_open('h2');
-        itext('Overview');
-      ie_close('h2');
+  var param288 = function() {
+    ie_open('article');
       ie_open('p');
+        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
+      ie_close('p');
+      ie_open('p');
+        itext('Thanks to ');
         ie_open('a', null, null,
-            'href', 'http://wedeploy.io');
-          itext('WeDeploy');
+            'href', 'https://electricjs.com/');
+          itext('Electric JS');
         ie_close('a');
-        itext(' allows you to run your own Docker container without having to care about scalability or reverse proxy or monitoring');
+        itext(', we were able to create a whole new website way faster with those cool UI effects.');
       ie_close('p');
       ie_open('p');
-        itext('As Webda allows you to deploy on Docker, we just extend the deployer to automate the call to your wedeploy shell');
+        itext('The same day we are releasing the new website, we also have a fix release ');
+        ie_open('strong');
+          itext('v0.4.6');
+        ie_close('strong');
       ie_close('p');
       ie_open('p');
-        ie_open('em');
-          itext('to be completed');
-        ie_close('em');
+        itext('This release includes :');
       ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('DynamoDB incrementAttribute with 0 fix');
+        ie_close('li');
+        ie_open('li');
+          itext('Email storage in lower case');
+        ie_close('li');
+      ie_close('ul');
+      ie_open('p');
+        itext('In the next weeks, as Christmas gift we will work hard on a ');
+        ie_open('strong');
+          itext('v0.5.0');
+        ie_close('strong');
+        itext(' it should includes :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Better ');
+          ie_open('a', null, null,
+              'href', 'https://wedeploy.com/');
+            itext('WeDeploy');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Easier queue worker deployment');
+        ie_close('li');
+        ie_open('li');
+          ie_open('a', null, null,
+              'href', 'https://aws.amazon.com/fargate/');
+            itext('AWS Fargate');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Static website deployment integration');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29267,11 +29294,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param576}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param288}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'yFROz.render';
+  $render.soyTemplateName = 'PEKOI.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29281,14 +29308,22 @@ return exports;
 
 });
 
-class yFROz extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(yFROz, templates);
+class PEKOI extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(PEKOI, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
 /* 237 */,
 /* 238 */,
 /* 239 */,
@@ -29302,17 +29337,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(yFROz, templates);
 /* 247 */,
 /* 248 */,
 /* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29352,9 +29377,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _wedeploySoy = __webpack_require__(236);
+var _newWebsiteSoy = __webpack_require__(228);
 
-var _wedeploySoy2 = _interopRequireDefault(_wedeploySoy);
+var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29364,23 +29389,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var yFROz = function (_Component) {
-  _inherits(yFROz, _Component);
+var PEKOI = function (_Component) {
+  _inherits(PEKOI, _Component);
 
-  function yFROz() {
-    _classCallCheck(this, yFROz);
+  function PEKOI() {
+    _classCallCheck(this, PEKOI);
 
-    return _possibleConstructorReturn(this, (yFROz.__proto__ || Object.getPrototypeOf(yFROz)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (PEKOI.__proto__ || Object.getPrototypeOf(PEKOI)).apply(this, arguments));
   }
 
-  return yFROz;
+  return PEKOI;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(yFROz, _wedeploySoy2.default);
+_metalSoy2.default.register(PEKOI, _newWebsiteSoy2.default);
 
-exports.default = yFROz;
+exports.default = PEKOI;
 
 /***/ })
-],[260]);
+],[250]);

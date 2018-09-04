@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([17,24,25,26,27,28],[
+webpackJsonppageComponent([9,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20560,7 +20560,7 @@ if (goog.DEBUG) {
 function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
-      'href', opt_data.page.url + opt_data.page.index);
+      'href', opt_data.page.url);
     if (opt_data.page.icon) {
       ie_void('span', null, null,
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
@@ -29171,12 +29171,20 @@ exports.default = parseFromAnchor;
 /* 229 */,
 /* 230 */,
 /* 231 */,
-/* 232 */
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "frfqT", function() { return frfqT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "oKyre", function() { return oKyre; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29188,15 +29196,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from configuration.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace frfqT.
+ * @fileoverview Templates in namespace oKyre.
  * @public
  */
 
-goog.module('frfqT.incrementaldom');
+goog.module('oKyre.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29217,8 +29225,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29230,88 +29236,105 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var $$temp;
-  var param470 = function() {
+  var param664 = function() {
     ie_open('h6');
-      var dyn34 = opt_data.page.description;
-      if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
+      var dyn50 = opt_data.page.description;
+      if (typeof dyn50 == 'function') dyn50(); else if (dyn50 != null) itext(dyn50);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Concepts');
       ie_close('h2');
       ie_open('p');
-        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
+        itext('Webda introduces some basic concepts :');
       ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          ie_open('em');
+            itext('Service');
+          ie_close('em');
+          itext(' a singleton similar to Spring Bean to implement behaviors');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('Executor');
+          ie_close('em');
+          itext(' is a service that provide some routes and expose API to the world');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('Model');
+          ie_close('em');
+          itext(' to define your business logic');
+        ie_close('li');
+        ie_open('li');
+          ie_open('em');
+            itext('Deployment');
+          ie_close('em');
+          itext(' an instance of the app with its own configuration');
+        ie_close('li');
+      ie_close('ul');
       ie_open('p');
-        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
+        itext('The ');
+        ie_open('strong');
+          itext('webda.config.json');
+        ie_close('strong');
+        itext(' contains the configuration of the app, defining Services, Routes and global configuration, you can consider it as the applicationContext.xml of Spring if you prefer, with Beans=Services');
       ie_close('p');
-      ie_open('p');
-        itext('![image](');
-        var dyn35 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn35 == 'function') dyn35(); else if (dyn35 != null) itext(dyn35);
-        itext('/images/configuration_resolution.png)');
-      ie_close('p');
-      ie_open('p');
-        itext('This is the detail configuration for each section');
-      ie_close('p');
-      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
-      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
-      ie_open('p');
-        itext('So this how webda will resolve Service final configuration');
-      ie_close('p');
-      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Configuration UI');
+        itext('Stores');
       ie_close('h2');
       ie_open('p');
-        itext('Here is some screenshots of the ui');
+        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
       ie_close('p');
-      ie_open('h4');
-        itext('Routes');
-      ie_close('h4');
       ie_open('p');
-        itext('![image](');
-        var dyn36 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn36 == 'function') dyn36(); else if (dyn36 != null) itext(dyn36);
-        itext('/images/ui_route_create.png) ![image](');
-        var dyn37 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn37 == 'function') dyn37(); else if (dyn37 != null) itext(dyn37);
-        itext('/images/ui_route_config.png)');
+        itext('We have currently File, DynamoDB and MongoDB storage');
       ie_close('p');
-      ie_open('h4');
-        itext('Services');
-      ie_close('h4');
       ie_open('p');
-        itext('![image](');
-        var dyn38 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn38 == 'function') dyn38(); else if (dyn38 != null) itext(dyn38);
-        itext('/images/ui_service_create.png) ![image](');
-        var dyn39 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn39 == 'function') dyn39(); else if (dyn39 != null) itext(dyn39);
-        itext('/images/ui_service_config.png)');
+        ie_open('a', null, null,
+            'href', '/docs/develop/store');
+          itext('Learn More');
+        ie_close('a');
       ie_close('p');
-      ie_open('h4');
-        itext('Deployments');
-      ie_close('h4');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Binaries');
+      ie_close('h2');
       ie_open('p');
-        itext('![image](');
-        var dyn40 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn40 == 'function') dyn40(); else if (dyn40 != null) itext(dyn40);
-        itext('/images/ui_deployment_create.png) ![image](');
-        var dyn41 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn41 == 'function') dyn41(); else if (dyn41 != null) itext(dyn41);
-        itext('/images/ui_deployment_config.png) ![image](');
-        var dyn42 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn42 == 'function') dyn42(); else if (dyn42 != null) itext(dyn42);
-        itext('/images/ui_deployment_deploy.png)');
+        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
+      ie_close('p');
+      ie_open('p');
+        itext('The storage detect duplicates and don\'t double store them, it also provides a Polymer component that will prevent upload of known binaries by using a challenge to speed up the upload.');
+      ie_close('p');
+      ie_open('p');
+        ie_open('a', null, null,
+            'href', '/docs/develop/binary');
+          itext('Learn More');
+        ie_close('a');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Models');
+      ie_close('h2');
+      ie_open('p');
+        itext('The stores use Models to load/save/validate/secure business object.');
+      ie_close('p');
+      ie_open('p');
+        itext('The models should implement most of your business logic, while service should be technical implementation');
+      ie_close('p');
+      ie_open('p');
+        ie_open('a', null, null,
+            'href', '/docs/develop/models');
+          itext('Learn More');
+        ie_close('a');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29323,11 +29346,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param470}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param664}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'frfqT.render';
+  $render.soyTemplateName = 'oKyre.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29337,22 +29360,14 @@ return exports;
 
 });
 
-class frfqT extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(frfqT, templates);
+class oKyre extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(oKyre, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
 /* 241 */,
 /* 242 */,
 /* 243 */,
@@ -29369,7 +29384,18 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(frfqT, templates);
 /* 254 */,
 /* 255 */,
 /* 256 */,
-/* 257 */
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29409,9 +29435,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _configurationSoy = __webpack_require__(232);
+var _indexSoy = __webpack_require__(240);
 
-var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29421,23 +29447,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var frfqT = function (_Component) {
-  _inherits(frfqT, _Component);
+var oKyre = function (_Component) {
+  _inherits(oKyre, _Component);
 
-  function frfqT() {
-    _classCallCheck(this, frfqT);
+  function oKyre() {
+    _classCallCheck(this, oKyre);
 
-    return _possibleConstructorReturn(this, (frfqT.__proto__ || Object.getPrototypeOf(frfqT)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (oKyre.__proto__ || Object.getPrototypeOf(oKyre)).apply(this, arguments));
   }
 
-  return frfqT;
+  return oKyre;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(frfqT, _configurationSoy2.default);
+_metalSoy2.default.register(oKyre, _indexSoy2.default);
 
-exports.default = frfqT;
+exports.default = oKyre;
 
 /***/ })
-],[257]);
+],[268]);

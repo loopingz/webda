@@ -20560,7 +20560,7 @@ if (goog.DEBUG) {
 function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
-      'href', opt_data.page.url + opt_data.page.index);
+      'href', opt_data.page.url);
     if (opt_data.page.icon) {
       ie_void('span', null, null,
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
@@ -29178,7 +29178,7 @@ exports.default = parseFromAnchor;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERVCr", function() { return ERVCr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Jsztu", function() { return Jsztu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29194,11 +29194,11 @@ goog.loadModule(function(exports) {
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace ERVCr.
+ * @fileoverview Templates in namespace Jsztu.
  * @public
  */
 
-goog.module('ERVCr.incrementaldom');
+goog.module('Jsztu.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29232,7 +29232,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param544 = function() {
+  var param543 = function() {
     ie_open('h6');
       var dyn44 = opt_data.page.description;
       if (typeof dyn44 == 'function') dyn44(); else if (dyn44 != null) itext(dyn44);
@@ -29312,11 +29312,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param544}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param543}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'ERVCr.render';
+  $render.soyTemplateName = 'Jsztu.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29326,8 +29326,8 @@ return exports;
 
 });
 
-class ERVCr extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ERVCr, templates);
+class Jsztu extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Jsztu, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
@@ -29354,7 +29354,8 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ERVCr, templates);
 /* 252 */,
 /* 253 */,
 /* 254 */,
-/* 255 */
+/* 255 */,
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29406,23 +29407,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ERVCr = function (_Component) {
-  _inherits(ERVCr, _Component);
+var Jsztu = function (_Component) {
+  _inherits(Jsztu, _Component);
 
-  function ERVCr() {
-    _classCallCheck(this, ERVCr);
+  function Jsztu() {
+    _classCallCheck(this, Jsztu);
 
-    return _possibleConstructorReturn(this, (ERVCr.__proto__ || Object.getPrototypeOf(ERVCr)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Jsztu.__proto__ || Object.getPrototypeOf(Jsztu)).apply(this, arguments));
   }
 
-  return ERVCr;
+  return Jsztu;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(ERVCr, _indexSoy2.default);
+_metalSoy2.default.register(Jsztu, _indexSoy2.default);
 
-exports.default = ERVCr;
+exports.default = Jsztu;
 
 /***/ })
-],[255]);
+],[256]);

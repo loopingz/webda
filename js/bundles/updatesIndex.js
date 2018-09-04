@@ -20560,7 +20560,7 @@ if (goog.DEBUG) {
 function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
-      'href', opt_data.page.url + opt_data.page.index);
+      'href', opt_data.page.url);
     if (opt_data.page.icon) {
       ie_void('span', null, null,
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
@@ -29247,7 +29247,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param357 = function() {
+  var param356 = function() {
     ie_open('div');
       ie_open('header', null, null,
           'class', 'header');
@@ -29268,7 +29268,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       $templateAlias2({updates: opt_data.page.updates}, null, opt_ijData);
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param357}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param356}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {

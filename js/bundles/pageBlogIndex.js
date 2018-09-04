@@ -20560,7 +20560,7 @@ if (goog.DEBUG) {
 function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
-      'href', opt_data.page.url + opt_data.page.index);
+      'href', opt_data.page.url);
     if (opt_data.page.icon) {
       ie_void('span', null, null,
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
@@ -29226,13 +29226,13 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   opt_data = opt_data || {};
-  var param265 = function() {
+  var param264 = function() {
     ie_open('div', null, null,
         'class', 'blog');
       $allPosts(opt_data, null, opt_ijData);
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param265}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param264}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -29254,34 +29254,34 @@ function $allPosts(opt_data, opt_ignored, opt_ijData) {
       'class', 'posts-list posts-list-all');
     ie_open('div', null, null,
         'class', 'container');
-      var childIdList284 = opt_data.site.index.children['blog'].childIds;
-      var childIdListLen284 = childIdList284.length;
-      for (var childIdIndex284 = 0; childIdIndex284 < childIdListLen284; childIdIndex284++) {
-        var childIdData284 = childIdList284[childIdIndex284];
-        var childPage__soy272 = opt_data.site.index.children['blog'].children[childIdData284];
+      var childIdList283 = opt_data.site.index.children['blog'].childIds;
+      var childIdListLen283 = childIdList283.length;
+      for (var childIdIndex283 = 0; childIdIndex283 < childIdListLen283; childIdIndex283++) {
+        var childIdData283 = childIdList283[childIdIndex283];
+        var childPage__soy271 = opt_data.site.index.children['blog'].children[childIdData283];
         ie_open('article', null, null,
             'class', 'post-item container-blog');
           ie_open('a', null, null,
               'class', 'post-item__link',
-              'href', childPage__soy272.url);
+              'href', childPage__soy271.url);
             ie_open('small');
               itext('By ');
-              var dyn22 = childPage__soy272.author;
+              var dyn22 = childPage__soy271.author;
               if (typeof dyn22 == 'function') dyn22(); else if (dyn22 != null) itext(dyn22);
               itext(' ');
               ie_open('span');
                 itext('| ');
-                var dyn23 = childPage__soy272.date;
+                var dyn23 = childPage__soy271.date;
                 if (typeof dyn23 == 'function') dyn23(); else if (dyn23 != null) itext(dyn23);
               ie_close('span');
             ie_close('small');
             ie_open('h4', null, null,
                 'class', 'post-item__title');
-              var dyn24 = childPage__soy272.title;
+              var dyn24 = childPage__soy271.title;
               if (typeof dyn24 == 'function') dyn24(); else if (dyn24 != null) itext(dyn24);
             ie_close('h4');
             ie_open('p');
-              var dyn25 = childPage__soy272.description;
+              var dyn25 = childPage__soy271.description;
               if (typeof dyn25 == 'function') dyn25(); else if (dyn25 != null) itext(dyn25);
             ie_close('p');
           ie_close('a');

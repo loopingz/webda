@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([14,24,25,26,27,28],[
+webpackJsonppageComponent([18,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20560,7 +20560,7 @@ if (goog.DEBUG) {
 function __deltemplate_s217_d34389eb(opt_data, opt_ignored, opt_ijData) {
   ie_open('a', null, null,
       'class', 'sidebar-link ' + (opt_data.page.active ? 'sidebar-link-selected' : ''),
-      'href', opt_data.page.url + opt_data.page.index);
+      'href', opt_data.page.url);
     if (opt_data.page.icon) {
       ie_void('span', null, null,
           'class', 'sidebar-icon icon-16-' + opt_data.page.icon);
@@ -29170,16 +29170,12 @@ exports.default = parseFromAnchor;
 /* 228 */,
 /* 229 */,
 /* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */
+/* 231 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrMGL", function() { return wrMGL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VLKUx", function() { return VLKUx; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29191,15 +29187,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from local.soy.
+// This file was automatically generated from aws.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace wrMGL.
+ * @fileoverview Templates in namespace VLKUx.
  * @public
  */
 
-goog.module('wrMGL.incrementaldom');
+goog.module('VLKUx.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29233,29 +29229,64 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param560 = function() {
-    ie_open('h6');
-      var dyn45 = opt_data.page.description;
-      if (typeof dyn45 == 'function') dyn45(); else if (dyn45 != null) itext(dyn45);
-    ie_close('h6');
+  var param455 = function() {
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
-      $templateAlias2({code: 'webda serve [-d deploymentName] [--devMode]', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('You can specify a ');
-        ie_open('em');
-          itext('deploymentName');
-        ie_close('em');
-        itext(' to serve API with the deployment configuration');
+        ie_open('img', null, null,
+            'src', 'http://webda.io/images/schemas/aws_deploy.png',
+            'alt', 'image');
+        ie_close('img');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Deployment Policy');
+      ie_close('h2');
+      ie_open('p');
+        itext('To be able to deploy the deployment user must have at least :');
+      ie_close('p');
+      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This can be restrict more and should, need to update the documentation');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Package');
+      ie_close('h2');
+      ie_open('p');
+        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('Lambda');
+      ie_close('h2');
+      ie_open('p');
+        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('API Gateway');
+      ie_close('h2');
+      ie_open('p');
+        itext('It map all the routes from your application, if a ');
+        ie_open('strong');
+          itext('website');
+        ie_close('strong');
+        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
       ie_close('p');
       ie_open('p');
-        itext('You can disable CORS by adding a ');
-        ie_open('em');
-          itext('--devMode');
-        ie_close('em');
+        itext('It also deploy the API as Stage named with the name of the deployment.');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29267,11 +29298,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param560}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param455}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'wrMGL.render';
+  $render.soyTemplateName = 'VLKUx.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29281,14 +29312,18 @@ return exports;
 
 });
 
-class wrMGL extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(wrMGL, templates);
+class VLKUx extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(VLKUx, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
 /* 236 */,
 /* 237 */,
 /* 238 */,
@@ -29311,8 +29346,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(wrMGL, templates);
 /* 255 */,
 /* 256 */,
 /* 257 */,
-/* 258 */,
-/* 259 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29352,9 +29386,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _localSoy = __webpack_require__(235);
+var _awsSoy = __webpack_require__(231);
 
-var _localSoy2 = _interopRequireDefault(_localSoy);
+var _awsSoy2 = _interopRequireDefault(_awsSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29364,23 +29398,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var wrMGL = function (_Component) {
-  _inherits(wrMGL, _Component);
+var VLKUx = function (_Component) {
+  _inherits(VLKUx, _Component);
 
-  function wrMGL() {
-    _classCallCheck(this, wrMGL);
+  function VLKUx() {
+    _classCallCheck(this, VLKUx);
 
-    return _possibleConstructorReturn(this, (wrMGL.__proto__ || Object.getPrototypeOf(wrMGL)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (VLKUx.__proto__ || Object.getPrototypeOf(VLKUx)).apply(this, arguments));
   }
 
-  return wrMGL;
+  return VLKUx;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(wrMGL, _localSoy2.default);
+_metalSoy2.default.register(VLKUx, _awsSoy2.default);
 
-exports.default = wrMGL;
+exports.default = VLKUx;
 
 /***/ })
-],[259]);
+],[258]);
