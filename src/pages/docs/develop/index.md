@@ -5,6 +5,7 @@ layout: "guide"
 icon: "code-file"
 weight: 2
 class: green
+url: "/docs/develop/index.html"
 ---
 
 ###### {$page.description}
