@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([18,24,25,26,27,28],[
+webpackJsonppageComponent([17,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29170,12 +29170,13 @@ exports.default = parseFromAnchor;
 /* 228 */,
 /* 229 */,
 /* 230 */,
-/* 231 */
+/* 231 */,
+/* 232 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mKIpa", function() { return mKIpa; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bfYGT", function() { return bfYGT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29187,15 +29188,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from aws.soy.
+// This file was automatically generated from configuration.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace mKIpa.
+ * @fileoverview Templates in namespace bfYGT.
  * @public
  */
 
-goog.module('mKIpa.incrementaldom');
+goog.module('bfYGT.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29229,64 +29230,88 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param455 = function() {
+  var $$temp;
+  var param469 = function() {
+    ie_open('h6');
+      var dyn34 = opt_data.page.description;
+      if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
+    ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        ie_open('img', null, null,
-            'src', 'http://webda.io/images/schemas/aws_deploy.png',
-            'alt', 'image');
-        ie_close('img');
+        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
       ie_close('p');
+      ie_open('p');
+        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
+      ie_close('p');
+      ie_open('p');
+        itext('![image](');
+        var dyn35 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn35 == 'function') dyn35(); else if (dyn35 != null) itext(dyn35);
+        itext('/images/configuration_resolution.png)');
+      ie_close('p');
+      ie_open('p');
+        itext('This is the detail configuration for each section');
+      ie_close('p');
+      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
+      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
+      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
+      ie_open('p');
+        itext('So this how webda will resolve Service final configuration');
+      ie_close('p');
+      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Deployment Policy');
+        itext('Configuration UI');
       ie_close('h2');
       ie_open('p');
-        itext('To be able to deploy the deployment user must have at least :');
+        itext('Here is some screenshots of the ui');
       ie_close('p');
-      $templateAlias2({code: '{\n    "Sid": "Stmt1438583420001",\n    "Effect": "Allow",\n    "Action": [\n        "lambda:*",\n        "iam:PassRole",\n        "apigateway:*"\n    ],\n    "Resource": [\n        "*"\n    ]\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('h4');
+        itext('Routes');
+      ie_close('h4');
       ie_open('p');
-        itext('This can be restrict more and should, need to update the documentation');
+        itext('![image](');
+        var dyn36 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn36 == 'function') dyn36(); else if (dyn36 != null) itext(dyn36);
+        itext('/images/ui_route_create.png) ![image](');
+        var dyn37 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn37 == 'function') dyn37(); else if (dyn37 != null) itext(dyn37);
+        itext('/images/ui_route_config.png)');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Package');
-      ie_close('h2');
+      ie_open('h4');
+        itext('Services');
+      ie_close('h4');
       ie_open('p');
-        itext('The package is a zip of your folder, we dont have advanced cleaning feature nor ignore files, so the package can be big if you forget to clean your folder before.');
+        itext('![image](');
+        var dyn38 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn38 == 'function') dyn38(); else if (dyn38 != null) itext(dyn38);
+        itext('/images/ui_service_create.png) ![image](');
+        var dyn39 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn39 == 'function') dyn39(); else if (dyn39 != null) itext(dyn39);
+        itext('/images/ui_service_config.png)');
       ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Lambda');
-      ie_close('h2');
+      ie_open('h4');
+        itext('Deployments');
+      ie_close('h4');
       ie_open('p');
-        itext('Once the package done, it will be upload as a Lambda function with the name specified, updating if it already exists.');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '5');
-      ie_open('h2');
-        itext('API Gateway');
-      ie_close('h2');
-      ie_open('p');
-        itext('It map all the routes from your application, if a ');
-        ie_open('strong');
-          itext('website');
-        ie_close('strong');
-        itext(' parameter is found on the parameters of deployment then it will enable CORS for you for this URL');
-      ie_close('p');
-      ie_open('p');
-        itext('It also deploy the API as Stage named with the name of the deployment.');
+        itext('![image](');
+        var dyn40 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn40 == 'function') dyn40(); else if (dyn40 != null) itext(dyn40);
+        itext('/images/ui_deployment_create.png) ![image](');
+        var dyn41 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn41 == 'function') dyn41(); else if (dyn41 != null) itext(dyn41);
+        itext('/images/ui_deployment_config.png) ![image](');
+        var dyn42 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
+        if (typeof dyn42 == 'function') dyn42(); else if (dyn42 != null) itext(dyn42);
+        itext('/images/ui_deployment_deploy.png)');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29298,11 +29323,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param455}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param469}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'mKIpa.render';
+  $render.soyTemplateName = 'bfYGT.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29312,15 +29337,14 @@ return exports;
 
 });
 
-class mKIpa extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(mKIpa, templates);
+class bfYGT extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(bfYGT, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 232 */,
 /* 233 */,
 /* 234 */,
 /* 235 */,
@@ -29345,10 +29369,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(mKIpa, templates);
 /* 254 */,
 /* 255 */,
 /* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29388,9 +29409,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _awsSoy = __webpack_require__(231);
+var _configurationSoy = __webpack_require__(232);
 
-var _awsSoy2 = _interopRequireDefault(_awsSoy);
+var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29400,23 +29421,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var mKIpa = function (_Component) {
-  _inherits(mKIpa, _Component);
+var bfYGT = function (_Component) {
+  _inherits(bfYGT, _Component);
 
-  function mKIpa() {
-    _classCallCheck(this, mKIpa);
+  function bfYGT() {
+    _classCallCheck(this, bfYGT);
 
-    return _possibleConstructorReturn(this, (mKIpa.__proto__ || Object.getPrototypeOf(mKIpa)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (bfYGT.__proto__ || Object.getPrototypeOf(bfYGT)).apply(this, arguments));
   }
 
-  return mKIpa;
+  return bfYGT;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(mKIpa, _awsSoy2.default);
+_metalSoy2.default.register(bfYGT, _configurationSoy2.default);
 
-exports.default = mKIpa;
+exports.default = bfYGT;
 
 /***/ })
-],[260]);
+],[257]);

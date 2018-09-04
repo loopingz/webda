@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([10,24,25,26,27,28],[
+webpackJsonppageComponent([15,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29173,17 +29173,12 @@ exports.default = parseFromAnchor;
 /* 231 */,
 /* 232 */,
 /* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */
+/* 234 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wVoPw", function() { return wVoPw; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ybjqi", function() { return ybjqi; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29195,15 +29190,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from custom.soy.
+// This file was automatically generated from index.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace wVoPw.
+ * @fileoverview Templates in namespace ybjqi.
  * @public
  */
 
-goog.module('wVoPw.incrementaldom');
+goog.module('ybjqi.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29237,45 +29232,76 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param643 = function() {
+  var param543 = function() {
     ie_open('h6');
-      var dyn49 = opt_data.page.description;
-      if (typeof dyn49 == 'function') dyn49(); else if (dyn49 != null) itext(dyn49);
+      var dyn44 = opt_data.page.description;
+      if (typeof dyn44 == 'function') dyn44(); else if (dyn44 != null) itext(dyn44);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
       ie_open('h2');
-        itext('Overview');
+        itext('Lambda');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
       ie_close('p');
       ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
       ie_close('p');
+      ie_open('p');
+        itext('But don\'t worry, with Webda it is as simple as a command');
+      ie_close('p');
+      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
+      ie_open('p');
+        itext('This command will do several step for you :');
+      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Create the policy and role for your Lambda');
+        ie_close('li');
+        ie_open('li');
+          itext('Create if needed the Dynamo table used in your application');
+        ie_close('li');
+        ie_open('li');
+          itext('Create S3 buckets used in your application');
+        ie_close('li');
+        ie_open('li');
+          itext('Deploy the code to your Lambda');
+        ie_close('li');
+        ie_open('li');
+          itext('Create the API Gateway mapping');
+        ie_close('li');
+        ie_open('li');
+          itext('Add permission for API Gateways to your Lambda');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Internal service');
+        itext('Docker');
       ie_close('h2');
       ie_open('p');
-        itext('If you need to implement a new functionality like Google Drive. You will create a service to be able to login and retrieve documents from Google Drive');
+        itext('You can also just define a Docker image to build');
       ie_close('p');
       ie_open('p');
-        itext('It can either be an internal service that has no API exposed or an external one ( from Executor )');
+        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
       ie_close('p');
-      $templateAlias2({code: 'const Service = require(\'webda/services/service\')\n\nclass MyInternalService extends Service {\n\n   init() {\n     this._gdrive = new ...;\n   }\n   \n   getDocument(uuid, token) {\n     return this._gdrive.getDocument(uuid, token);\n   }\n   \n}', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('The GDrive API is faked here, but basically this service will allow you to get some configuration from the webda.config.json and expose some methods for others Services or Models to use inside Webda');
+        itext('If you specify a tag, after the build it will push the image to your repository');
       ie_close('p');
     ie_close('article');
     ie_open('article', null, null,
         'id', '3');
       ie_open('h2');
-        itext('Service with exposed API');
+        itext('WeDeploy');
       ie_close('h2');
-      $templateAlias2({code: 'const Executor = require(\'webda/services/executor\')\n\nclass MyService extends Executor {\n\n   init(config) {\n     // Let\'s add our routes here, for Modda the URL should be dynamic\n     config[\'/myservice\'] = {\n                              method:["GET", "DELETE"],\n                              _method: this.handleRequest,\n                              executor: this\n                            };\n     // This will declare two routes\n     // GET /myservice\n     // DELETE /myservice\n   }\n   \n   delete(ctx) {\n     // If we dont output anything, then the default result will be a 204\n   }    \n   \n   get(ctx) {\n    // Should output : I am a getter and i\'ve sent an welcome email to you\n    // The _params object is passed from the configuration file\n    // You will see below the configuration file with the sentence attribute defined\n    ctx.write(this._params.sentence);\n    let otherService = this.getService("Mailer");\n    otherService.send();\n   }\n   \n   handleRequest(ctx) {\n     // As we redirect both GET and DELETE to handleRequest, we filter here\n     if (ctx._route._http.method === "GET") {\n        this.get(ctx);\n     } else {\n        this.delete(ctx);\n     }\n   }\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This service run your Docker image and allow you to deploy with a single command');
+      ie_close('p');
+      ie_open('p');
+        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
+      ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29286,11 +29312,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param643}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param543}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'wVoPw.render';
+  $render.soyTemplateName = 'ybjqi.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29300,14 +29326,19 @@ return exports;
 
 });
 
-class wVoPw extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(wVoPw, templates);
+class ybjqi extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ybjqi, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
 /* 240 */,
 /* 241 */,
 /* 242 */,
@@ -29328,16 +29359,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(wVoPw, templates);
 /* 257 */,
 /* 258 */,
 /* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29377,9 +29399,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _customSoy = __webpack_require__(239);
+var _indexSoy = __webpack_require__(234);
 
-var _customSoy2 = _interopRequireDefault(_customSoy);
+var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29389,23 +29411,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var wVoPw = function (_Component) {
-  _inherits(wVoPw, _Component);
+var ybjqi = function (_Component) {
+  _inherits(ybjqi, _Component);
 
-  function wVoPw() {
-    _classCallCheck(this, wVoPw);
+  function ybjqi() {
+    _classCallCheck(this, ybjqi);
 
-    return _possibleConstructorReturn(this, (wVoPw.__proto__ || Object.getPrototypeOf(wVoPw)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ybjqi.__proto__ || Object.getPrototypeOf(ybjqi)).apply(this, arguments));
   }
 
-  return wVoPw;
+  return ybjqi;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(wVoPw, _customSoy2.default);
+_metalSoy2.default.register(ybjqi, _indexSoy2.default);
 
-exports.default = wVoPw;
+exports.default = ybjqi;
 
 /***/ })
-],[269]);
+],[260]);

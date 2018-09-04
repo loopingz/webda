@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([15,24,25,26,27,28],[
+webpackJsonppageComponent([21,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29167,18 +29167,12 @@ exports.default = parseFromAnchor;
 /* 225 */,
 /* 226 */,
 /* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */
+/* 228 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VkIoM", function() { return VkIoM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XkTrq", function() { return XkTrq; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29190,15 +29184,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from new-website.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace VkIoM.
+ * @fileoverview Templates in namespace XkTrq.
  * @public
  */
 
-goog.module('VkIoM.incrementaldom');
+goog.module('XkTrq.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29219,9 +29213,7 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
-
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
+var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('blog.incrementaldom', 'render');
 
 
 /**
@@ -29232,76 +29224,66 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param543 = function() {
-    ie_open('h6');
-      var dyn44 = opt_data.page.description;
-      if (typeof dyn44 == 'function') dyn44(); else if (dyn44 != null) itext(dyn44);
-    ie_close('h6');
-    ie_open('article', null, null,
-        'id', '1');
-      ie_open('h2');
-        itext('Lambda');
-      ie_close('h2');
+  var param288 = function() {
+    ie_open('article');
       ie_open('p');
-        itext('To be able to run a \'webserver\' on Lambda, you need to setup API Gateway, and configure every path defined by your code to link to your Lambda.');
+        itext('After some improvments since the first version of Webda, it requires a new look for its website.');
       ie_close('p');
       ie_open('p');
-        itext('This is how a normal deployment looks like : [img](Lambda Deployment)');
+        itext('Thanks to ');
+        ie_open('a', null, null,
+            'href', 'https://electricjs.com/');
+          itext('Electric JS');
+        ie_close('a');
+        itext(', we were able to create a whole new website way faster with those cool UI effects.');
       ie_close('p');
       ie_open('p');
-        itext('But don\'t worry, with Webda it is as simple as a command');
+        itext('The same day we are releasing the new website, we also have a fix release ');
+        ie_open('strong');
+          itext('v0.4.6');
+        ie_close('strong');
       ie_close('p');
-      $templateAlias2({code: 'webda deploy -d LambdaDeployment', mode: 'bash'}, null, opt_ijData);
       ie_open('p');
-        itext('This command will do several step for you :');
+        itext('This release includes :');
       ie_close('p');
       ie_open('ul');
         ie_open('li');
-          itext('Create the policy and role for your Lambda');
+          itext('DynamoDB incrementAttribute with 0 fix');
         ie_close('li');
         ie_open('li');
-          itext('Create if needed the Dynamo table used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Create S3 buckets used in your application');
-        ie_close('li');
-        ie_open('li');
-          itext('Deploy the code to your Lambda');
-        ie_close('li');
-        ie_open('li');
-          itext('Create the API Gateway mapping');
-        ie_close('li');
-        ie_open('li');
-          itext('Add permission for API Gateways to your Lambda');
+          itext('Email storage in lower case');
         ie_close('li');
       ie_close('ul');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '2');
-      ie_open('h2');
-        itext('Docker');
-      ie_close('h2');
       ie_open('p');
-        itext('You can also just define a Docker image to build');
+        itext('In the next weeks, as Christmas gift we will work hard on a ');
+        ie_open('strong');
+          itext('v0.5.0');
+        ie_close('strong');
+        itext(' it should includes :');
       ie_close('p');
-      ie_open('p');
-        itext('It will build the image for you with the Dockerfile specified or create a dynamic Dockerfile if not specified');
-      ie_close('p');
-      ie_open('p');
-        itext('If you specify a tag, after the build it will push the image to your repository');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('WeDeploy');
-      ie_close('h2');
-      ie_open('p');
-        itext('This service run your Docker image and allow you to deploy with a single command');
-      ie_close('p');
-      ie_open('p');
-        itext('As an extend to our Docker deployment, we can build the Dockerfile and deploy it directly to your WeDeploy account. Just specify the WeDeploy Project and Service, and we will take care of the rest.');
-      ie_close('p');
+      ie_open('ul');
+        ie_open('li');
+          itext('Better ');
+          ie_open('a', null, null,
+              'href', 'https://wedeploy.com/');
+            itext('WeDeploy');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Easier queue worker deployment');
+        ie_close('li');
+        ie_open('li');
+          ie_open('a', null, null,
+              'href', 'https://aws.amazon.com/fargate/');
+            itext('AWS Fargate');
+          ie_close('a');
+          itext(' integration');
+        ie_close('li');
+        ie_open('li');
+          itext('Static website deployment integration');
+        ie_close('li');
+      ie_close('ul');
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29312,11 +29294,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param543}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param288}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'VkIoM.render';
+  $render.soyTemplateName = 'XkTrq.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29326,14 +29308,20 @@ return exports;
 
 });
 
-class VkIoM extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(VkIoM, templates);
+class XkTrq extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(XkTrq, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
 /* 235 */,
 /* 236 */,
 /* 237 */,
@@ -29349,13 +29337,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(VkIoM, templates);
 /* 247 */,
 /* 248 */,
 /* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29395,9 +29377,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _indexSoy = __webpack_require__(234);
+var _newWebsiteSoy = __webpack_require__(228);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _newWebsiteSoy2 = _interopRequireDefault(_newWebsiteSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29407,23 +29389,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var VkIoM = function (_Component) {
-  _inherits(VkIoM, _Component);
+var XkTrq = function (_Component) {
+  _inherits(XkTrq, _Component);
 
-  function VkIoM() {
-    _classCallCheck(this, VkIoM);
+  function XkTrq() {
+    _classCallCheck(this, XkTrq);
 
-    return _possibleConstructorReturn(this, (VkIoM.__proto__ || Object.getPrototypeOf(VkIoM)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (XkTrq.__proto__ || Object.getPrototypeOf(XkTrq)).apply(this, arguments));
   }
 
-  return VkIoM;
+  return XkTrq;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(VkIoM, _indexSoy2.default);
+_metalSoy2.default.register(XkTrq, _newWebsiteSoy2.default);
 
-exports.default = VkIoM;
+exports.default = XkTrq;
 
 /***/ })
-],[256]);
+],[250]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([9,24,25,26,27,28],[
+webpackJsonppageComponent([16,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29172,19 +29172,12 @@ exports.default = parseFromAnchor;
 /* 230 */,
 /* 231 */,
 /* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */
+/* 233 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "jPski", function() { return jPski; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aegDz", function() { return aegDz; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29196,15 +29189,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from index.soy.
+// This file was automatically generated from docker.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace jPski.
+ * @fileoverview Templates in namespace aegDz.
  * @public
  */
 
-goog.module('jPski.incrementaldom');
+goog.module('aegDz.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29225,6 +29218,8 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
+var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricCode.incrementaldom', 'render');
+
 var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('guide.incrementaldom', 'render');
 
 
@@ -29236,106 +29231,33 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param664 = function() {
+  var param522 = function() {
     ie_open('h6');
-      var dyn50 = opt_data.page.description;
-      if (typeof dyn50 == 'function') dyn50(); else if (dyn50 != null) itext(dyn50);
+      var dyn43 = opt_data.page.description;
+      if (typeof dyn43 == 'function') dyn43(); else if (dyn43 != null) itext(dyn43);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
+      ie_open('p');
+        itext('You can use webda to build your Docker image for you');
+      ie_close('p');
       ie_open('h2');
-        itext('Concepts');
+        itext('Dockerfile');
       ie_close('h2');
       ie_open('p');
-        itext('Webda introduces some basic concepts :');
+        itext('You can create your own Dockerfile, if no Dockerfile is present then the default one is used');
       ie_close('p');
-      ie_open('ul');
-        ie_open('li');
-          ie_open('em');
-            itext('Service');
-          ie_close('em');
-          itext(' a singleton similar to Spring Bean to implement behaviors');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('Executor');
-          ie_close('em');
-          itext(' is a service that provide some routes and expose API to the world');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('Model');
-          ie_close('em');
-          itext(' to define your business logic');
-        ie_close('li');
-        ie_open('li');
-          ie_open('em');
-            itext('Deployment');
-          ie_close('em');
-          itext(' an instance of the app with its own configuration');
-        ie_close('li');
-      ie_close('ul');
-      ie_open('p');
-        itext('The ');
-        ie_open('strong');
-          itext('webda.config.json');
-        ie_close('strong');
-        itext(' contains the configuration of the app, defining Services, Routes and global configuration, you can consider it as the applicationContext.xml of Spring if you prefer, with Beans=Services');
-      ie_close('p');
+      $templateAlias2({code: 'FROM node:latest\nMAINTAINER docker@webda.io\n\nRUN mkdir /server/\nADD . /server/\n\nRUN cd /server && rm -rf node_modules && npm install\nCMD cd /server && node_modules/.bin/webda serve > /data/webda.log', mode: 'text'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Stores');
+        itext('Configuration');
       ie_close('h2');
       ie_open('p');
-        itext('The store services allow you to store object in a NoSQL database it handles for you mapping between objects, have a security policy and check the object with JSON Schema');
+        itext('The configuration take only two parameters the tag of the image to create and if it needs to push the image after a succesfull build.');
       ie_close('p');
-      ie_open('p');
-        itext('We have currently File, DynamoDB and MongoDB storage');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/store');
-          itext('Learn More');
-        ie_close('a');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '3');
-      ie_open('h2');
-        itext('Binaries');
-      ie_close('h2');
-      ie_open('p');
-        itext('The storage of files is handle by those categories, we have two services FileStorage and S3Storage');
-      ie_close('p');
-      ie_open('p');
-        itext('The storage detect duplicates and don\'t double store them, it also provides a Polymer component that will prevent upload of known binaries by using a challenge to speed up the upload.');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/binary');
-          itext('Learn More');
-        ie_close('a');
-      ie_close('p');
-    ie_close('article');
-    ie_open('article', null, null,
-        'id', '4');
-      ie_open('h2');
-        itext('Models');
-      ie_close('h2');
-      ie_open('p');
-        itext('The stores use Models to load/save/validate/secure business object.');
-      ie_close('p');
-      ie_open('p');
-        itext('The models should implement most of your business logic, while service should be technical implementation');
-      ie_close('p');
-      ie_open('p');
-        ie_open('a', null, null,
-            'href', '/docs/develop/models');
-          itext('Learn More');
-        ie_close('a');
-      ie_close('p');
+      $templateAlias2({code: '{\n   tag: "mytag",\n   push: true\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('input', null, null,
         'type', 'hidden',
@@ -29346,11 +29268,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param664}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param522}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'jPski.render';
+  $render.soyTemplateName = 'aegDz.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29360,14 +29282,21 @@ return exports;
 
 });
 
-class jPski extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jPski, templates);
+class aegDz extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(aegDz, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
 /* 241 */,
 /* 242 */,
 /* 243 */,
@@ -29383,18 +29312,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(jPski, templates);
 /* 253 */,
 /* 254 */,
 /* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29434,9 +29352,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _indexSoy = __webpack_require__(240);
+var _dockerSoy = __webpack_require__(233);
 
-var _indexSoy2 = _interopRequireDefault(_indexSoy);
+var _dockerSoy2 = _interopRequireDefault(_dockerSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29446,23 +29364,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var jPski = function (_Component) {
-  _inherits(jPski, _Component);
+var aegDz = function (_Component) {
+  _inherits(aegDz, _Component);
 
-  function jPski() {
-    _classCallCheck(this, jPski);
+  function aegDz() {
+    _classCallCheck(this, aegDz);
 
-    return _possibleConstructorReturn(this, (jPski.__proto__ || Object.getPrototypeOf(jPski)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (aegDz.__proto__ || Object.getPrototypeOf(aegDz)).apply(this, arguments));
   }
 
-  return jPski;
+  return aegDz;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(jPski, _indexSoy2.default);
+_metalSoy2.default.register(aegDz, _dockerSoy2.default);
 
-exports.default = jPski;
+exports.default = aegDz;
 
 /***/ })
-],[267]);
+],[256]);

@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([17,24,25,26,27,28],[
+webpackJsonppageComponent([12,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29171,12 +29171,17 @@ exports.default = parseFromAnchor;
 /* 229 */,
 /* 230 */,
 /* 231 */,
-/* 232 */
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Zijtd", function() { return Zijtd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gaDHP", function() { return gaDHP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29188,15 +29193,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from configuration.soy.
+// This file was automatically generated from authentication.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace Zijtd.
+ * @fileoverview Templates in namespace gaDHP.
  * @public
  */
 
-goog.module('Zijtd.incrementaldom');
+goog.module('gaDHP.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29230,11 +29235,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var $$temp;
-  var param469 = function() {
+  var param586 = function() {
     ie_open('h6');
-      var dyn34 = opt_data.page.description;
-      if (typeof dyn34 == 'function') dyn34(); else if (dyn34 != null) itext(dyn34);
+      var dyn47 = opt_data.page.description;
+      if (typeof dyn47 == 'function') dyn47(); else if (dyn47 != null) itext(dyn47);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -29242,76 +29246,77 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        itext('To ease up the configuration of an application we came up with the follow configuration resolution schema.');
+        itext('The Authentication service highly depends on ');
+        ie_open('a', null, null,
+            'href', 'http://passportjs.org/');
+          itext('PassportJS');
+        ie_close('a');
+        itext(' this is why its file is passport.js');
       ie_close('p');
       ie_open('p');
-        itext('You have the global configuration for the application, that is override by the deployment configuration, that is override by the local element configuration, and finally override by the deployment element configuration.');
+        itext('It requires two stores : Idents and Users.');
       ie_close('p');
       ie_open('p');
-        itext('![image](');
-        var dyn35 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn35 == 'function') dyn35(); else if (dyn35 != null) itext(dyn35);
-        itext('/images/configuration_resolution.png)');
+        itext('The Idents will contains each mode of Authentication enabled by the user, you will find in the Ident also the profile returned by the OAuth provider if returned.');
       ie_close('p');
       ie_open('p');
-        itext('This is the detail configuration for each section');
+        itext('The Users will have one object per user, with the idents collection, it also contains the password if any is set.');
       ie_close('p');
-      $templateAlias2({code: '// Global Configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}', mode: 'general'}, null, opt_ijData);
-      $templateAlias2({code: '// Deployment Global Configuration\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2"\n}', mode: 'deployment-general'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Local Configuration\n{\n  "param2": "localtest2",\n  "param3": {\n    "subparam2": "sublocaltest2"\n  }\n}', mode: 'service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param3": {\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'deployment-service'}, null, opt_ijData);
-      $templateAlias2({code: '// Service Deployment Configuration\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'result'}, null, opt_ijData);
       ie_open('p');
-        itext('So this how webda will resolve Service final configuration');
+        itext('Basic configuration');
       ie_close('p');
-      $templateAlias2({code: '// Step 1 - Global configuration\n{\n  "param1": "test1",\n  "param2": "test2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 2 - Deployment global configuration override\n{\n  "param1": "deploytest1",\n  "param2": "deplyparamtest2",\n  "param3": {\n    "subparam1": "subtest1"\n  }\n}\n// Step 3 - Service local configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "sublocaltest2"\n  }\n}\n// Step 4 - Service deployment configuration override\n{\n  "param1": "deploytest1",\n  "param2": "localtest2",\n  "param3": {\n    "subparam1": "subtest1",\n    "subparam2": "subdeploytest2"\n  }\n}', mode: 'javascript'}, null, opt_ijData);
+      $templateAlias2({code: '"successRedirect": "https://shootandprove.loopingz.com/user.html", // Redirect to this page after login\n"failureRedirect": "/login-error", // Redirect to this page after failed login\n"userStore": "", // If you want to override the userStore name by default Users\n"identStore": "", // If you want to override the identStore name by default Idents\n"providers": {\n  ... // See below\n}', mode: 'javascript'}, null, opt_ijData);
     ie_close('article');
     ie_open('article', null, null,
         'id', '2');
       ie_open('h2');
-        itext('Configuration UI');
+        itext('Register event');
       ie_close('h2');
       ie_open('p');
-        itext('Here is some screenshots of the ui');
+        itext('When a user register, the Authentication service send a Register event, so you can complete the user with additional informations.');
       ie_close('p');
-      ie_open('h4');
-        itext('Routes');
-      ie_close('h4');
+      $templateAlias2({code: '// Datas is the profile coming from the OAuth or the Register form\nthis.emit("Register", {"user": user, "datas": datas, "ctx": ctx});', mode: 'javascript'}, null, opt_ijData);
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '3');
+      ie_open('h2');
+        itext('Email authentication');
+      ie_close('h2');
       ie_open('p');
-        itext('![image](');
-        var dyn36 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn36 == 'function') dyn36(); else if (dyn36 != null) itext(dyn36);
-        itext('/images/ui_route_create.png) ![image](');
-        var dyn37 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn37 == 'function') dyn37(); else if (dyn37 != null) itext(dyn37);
-        itext('/images/ui_route_config.png)');
+        itext('To use this feature you need to have a configured Mailer service, you can define the service name by adding the field mailer inside the email configuration.');
       ie_close('p');
-      ie_open('h4');
-        itext('Services');
-      ie_close('h4');
       ie_open('p');
-        itext('![image](');
-        var dyn38 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn38 == 'function') dyn38(); else if (dyn38 != null) itext(dyn38);
-        itext('/images/ui_service_create.png) ![image](');
-        var dyn39 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn39 == 'function') dyn39(); else if (dyn39 != null) itext(dyn39);
-        itext('/images/ui_service_config.png)');
+        itext('The email authentication has two modes, one that register the user without waiting for the email validation, and the other one that register the user only when the registration form contains the right validation token sent by email.');
       ie_close('p');
-      ie_open('h4');
-        itext('Deployments');
-      ie_close('h4');
+      $templateAlias2({code: '...\n"providers": {\n  "email": {\n     "from": "", // Email sender\n     "subject": "", // Email subject\n     "html": "", // HTML to send by email for email validation\n     "text": "", // Text to send by email for email validation\n     "mailer": "DefinedMailer", // Defined mailer to use\n     "postValidation": false, // If true, create user without email validation\n     "skipEmailValidation": true // Don\'t even send a validation email, must be set along with postValidation=true\n  },\n}\n...', mode: 'javascript'}, null, opt_ijData);
       ie_open('p');
-        itext('![image](');
-        var dyn40 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn40 == 'function') dyn40(); else if (dyn40 != null) itext(dyn40);
-        itext('/images/ui_deployment_create.png) ![image](');
-        var dyn41 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn41 == 'function') dyn41(); else if (dyn41 != null) itext(dyn41);
-        itext('/images/ui_deployment_config.png) ![image](');
-        var dyn42 = ($$temp = opt_data.site.basePath) == null ? '' : $$temp;
-        if (typeof dyn42 == 'function') dyn42(); else if (dyn42 != null) itext(dyn42);
-        itext('/images/ui_deployment_deploy.png)');
+        itext('The email authentication expose POST /auth/email if the body contains register=true then it will perform registration, if not then only login returning 404 if unknown user, 403 for bad password, 204 for successful login GET /auth/callback');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '4');
+      ie_open('h2');
+        itext('OAuth');
+      ie_close('h2');
+      ie_open('p');
+        itext('You can setup differents types of OAuth, we integrate for now only Facebook, Amazon, Twitter, GitHub, Google.');
+      ie_close('p');
+      $templateAlias2({code: '{\n  ...\n  providers: {\n    facebook: {\n      clientID: "facebookClientId",\n      clientSecret: "facebookSecret",\n      scope: ["email","public_profile"]\n    }\n  }\n  ...\n}', mode: 'javascript'}, null, opt_ijData);
+      ie_open('p');
+        itext('This is the same for the other providers, except ');
+        ie_open('strong');
+          itext('Twitter');
+        ie_close('strong');
+        itext(' where the fields are OAuth1 : consumerKey and consumerSecret');
+      ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '5');
+      ie_open('h2');
+        itext('Polymer');
+      ie_close('h2');
+      ie_open('p');
+        itext('You have a Polymer behavior that implement the Authentication : ...');
       ie_close('p');
     ie_close('article');
     ie_open('input', null, null,
@@ -29323,11 +29328,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param469}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param586}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'Zijtd.render';
+  $render.soyTemplateName = 'gaDHP.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29337,19 +29342,14 @@ return exports;
 
 });
 
-class Zijtd extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Zijtd, templates);
+class gaDHP extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(gaDHP, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
 /* 238 */,
 /* 239 */,
 /* 240 */,
@@ -29370,7 +29370,16 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Zijtd, templates);
 /* 255 */,
 /* 256 */,
 /* 257 */,
-/* 258 */
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29410,9 +29419,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _configurationSoy = __webpack_require__(232);
+var _authenticationSoy = __webpack_require__(237);
 
-var _configurationSoy2 = _interopRequireDefault(_configurationSoy);
+var _authenticationSoy2 = _interopRequireDefault(_authenticationSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29422,23 +29431,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Zijtd = function (_Component) {
-  _inherits(Zijtd, _Component);
+var gaDHP = function (_Component) {
+  _inherits(gaDHP, _Component);
 
-  function Zijtd() {
-    _classCallCheck(this, Zijtd);
+  function gaDHP() {
+    _classCallCheck(this, gaDHP);
 
-    return _possibleConstructorReturn(this, (Zijtd.__proto__ || Object.getPrototypeOf(Zijtd)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (gaDHP.__proto__ || Object.getPrototypeOf(gaDHP)).apply(this, arguments));
   }
 
-  return Zijtd;
+  return gaDHP;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(Zijtd, _configurationSoy2.default);
+_metalSoy2.default.register(gaDHP, _authenticationSoy2.default);
 
-exports.default = Zijtd;
+exports.default = gaDHP;
 
 /***/ })
-],[258]);
+],[267]);

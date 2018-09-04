@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([13,24,25,26,27,28],[
+webpackJsonppageComponent([5,24,25,26,27,28],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29175,12 +29175,20 @@ exports.default = parseFromAnchor;
 /* 233 */,
 /* 234 */,
 /* 235 */,
-/* 236 */
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZOYsY", function() { return ZOYsY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "crFPe", function() { return crFPe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
@@ -29192,15 +29200,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var templates;
 goog.loadModule(function(exports) {
 
-// This file was automatically generated from wedeploy.soy.
+// This file was automatically generated from queues.soy.
 // Please don't edit this file by hand.
 
 /**
- * @fileoverview Templates in namespace ZOYsY.
+ * @fileoverview Templates in namespace crFPe.
  * @public
  */
 
-goog.module('ZOYsY.incrementaldom');
+goog.module('crFPe.incrementaldom');
 
 /** @suppress {extraRequire} */
 var soy = goog.require('soy');
@@ -29232,10 +29240,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param575 = function() {
+  var param723 = function() {
     ie_open('h6');
-      var dyn46 = opt_data.page.description;
-      if (typeof dyn46 == 'function') dyn46(); else if (dyn46 != null) itext(dyn46);
+      var dyn54 = opt_data.page.description;
+      if (typeof dyn54 == 'function') dyn54(); else if (dyn54 != null) itext(dyn54);
     ie_close('h6');
     ie_open('article', null, null,
         'id', '1');
@@ -29243,15 +29251,17 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         itext('Overview');
       ie_close('h2');
       ie_open('p');
-        ie_open('a', null, null,
-            'href', 'http://wedeploy.io');
-          itext('WeDeploy');
-        ie_close('a');
-        itext(' allows you to run your own Docker container without having to care about scalability or reverse proxy or monitoring');
+        itext('This is a wrapper on AWS SQS, it also have a MemoryQueue for unit test.');
       ie_close('p');
       ie_open('p');
-        itext('As Webda allows you to deploy on Docker, we just extend the deployer to automate the call to your wedeploy shell');
+        itext('You can define a worker that is the method that will be called on each item of the queue, if the method fails the underlying implementation will retry it later.');
       ie_close('p');
+    ie_close('article');
+    ie_open('article', null, null,
+        'id', '2');
+      ie_open('h2');
+        itext('Worker');
+      ie_close('h2');
       ie_open('p');
         ie_open('em');
           itext('to be completed');
@@ -29267,11 +29277,11 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         'value', opt_data.site.title);
     ie_close('input');
   };
-  $templateAlias1(soy.$$assignDefaults({content: param575}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param723}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
-  $render.soyTemplateName = 'ZOYsY.render';
+  $render.soyTemplateName = 'crFPe.render';
 }
 
 exports.render.params = ["page","site"];
@@ -29281,22 +29291,14 @@ return exports;
 
 });
 
-class ZOYsY extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
-__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ZOYsY, templates);
+class crFPe extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(crFPe, templates);
 
 /* harmony default export */ __webpack_exports__["default"] = (templates);
 /* jshint ignore:end */
 
 
 /***/ }),
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
 /* 245 */,
 /* 246 */,
 /* 247 */,
@@ -29309,7 +29311,16 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(ZOYsY, templates);
 /* 254 */,
 /* 255 */,
 /* 256 */,
-/* 257 */
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29349,9 +29360,9 @@ __webpack_require__(138);
 
 __webpack_require__(139);
 
-var _wedeploySoy = __webpack_require__(236);
+var _queuesSoy = __webpack_require__(244);
 
-var _wedeploySoy2 = _interopRequireDefault(_wedeploySoy);
+var _queuesSoy2 = _interopRequireDefault(_queuesSoy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29361,23 +29372,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ZOYsY = function (_Component) {
-  _inherits(ZOYsY, _Component);
+var crFPe = function (_Component) {
+  _inherits(crFPe, _Component);
 
-  function ZOYsY() {
-    _classCallCheck(this, ZOYsY);
+  function crFPe() {
+    _classCallCheck(this, crFPe);
 
-    return _possibleConstructorReturn(this, (ZOYsY.__proto__ || Object.getPrototypeOf(ZOYsY)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (crFPe.__proto__ || Object.getPrototypeOf(crFPe)).apply(this, arguments));
   }
 
-  return ZOYsY;
+  return crFPe;
 }(_metalComponent2.default);
 
 ;
 
-_metalSoy2.default.register(ZOYsY, _wedeploySoy2.default);
+_metalSoy2.default.register(crFPe, _queuesSoy2.default);
 
-exports.default = ZOYsY;
+exports.default = crFPe;
 
 /***/ })
-],[257]);
+],[266]);
