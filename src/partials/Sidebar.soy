@@ -41,7 +41,7 @@
 {deltemplate ElectricNavigation.anchor variant="'sidebar'"}
 	{@param page: ?}
 
-	<a class="sidebar-link {$page.active ? 'sidebar-link-selected' : ''}" href="{$page.url}">
+	<a class="sidebar-link {$page.active ? 'sidebar-link-selected' : ''}" href="{$page.url}{$page.index}">
 		{if $page.icon}
 			<span class="sidebar-icon icon-16-{$page.icon}"></span>
 		{/if}

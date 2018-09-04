@@ -3,6 +3,7 @@ title: "Configuration Resolution"
 description: "How Webda resolve service parameters."
 layout: "guide"
 weight: 2
+index: ""
 ---
 
 ###### {$page.description}

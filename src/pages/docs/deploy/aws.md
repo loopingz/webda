@@ -3,6 +3,7 @@ title: "AWS"
 description: "Deploy on Lambda and API Gateway for true serveless experience."
 layout: "guide"
 weight: 1
+index: ""
 ---
 
 <article id="1">

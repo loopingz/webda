@@ -5,7 +5,7 @@ layout: "guide"
 icon: "flash"
 weight: 1
 class: blue
-url: "/docs/create/index.html"
+index: "index.html"
 ---
 
 ###### {$page.description}
