@@ -365,7 +365,8 @@ class Authentication extends Executor {
     } else {
       await this._identsStore.save({
         uuid: `${ctx.body.email}_email`,
-        _lastValidationEmail: Date.now()
+        _lastValidationEmail: Date.now(),
+        type: "email"
       });
     }
     await this.sendValidationEmail(ctx, ctx.body.email);
@@ -548,14 +549,20 @@ class Authentication extends Executor {
     }
     let validation = ctx._params.token;
     if (
-      validation !== this.generateEmailValidationToken(ctx, ctx._params.email)
+      validation !==
+      this.generateEmailValidationToken(ctx._params.user, ctx._params.email)
     ) {
-      let reason = "badToken";
-      if (ctx.getCurrentUserId() !== ctx._params.user) {
-        reason = "badUser";
-      }
       ctx.writeHead(302, {
-        Location: this._params.failureRedirect + "?reason=" + reason
+        Location: this._params.failureRedirect + "?reason=badToken"
+      });
+      return;
+    }
+    if (
+      ctx._params.user !== ctx.getCurrentUserId() &&
+      ctx.getCurrentUserId() !== ""
+    ) {
+      ctx.writeHead(302, {
+        Location: this._params.failureRedirect + "?reason=badUser"
       });
       return;
     }
@@ -564,15 +571,17 @@ class Authentication extends Executor {
     if (ident === undefined) {
       // Create the ident
       await this._identsStore.save({
-        uuid: `${ctx._params.email}_email`,
+        uuid,
         _validation: new Date(),
-        user: ctx._params.user
+        user: ctx._params.user,
+        type: "email"
       });
     } else {
       await this._identsStore.update(
         {
           _validation: new Date(),
-          user: ctx._params.user
+          user: ctx._params.user,
+          type: "email"
         },
         ident.uuid
       );
@@ -615,7 +624,7 @@ class Authentication extends Executor {
       "/auth/email/callback?email=" +
       email +
       "&token=" +
-      this.generateEmailValidationToken(ctx, email);
+      this.generateEmailValidationToken(ctx.getCurrentUserId(), email);
     let userId = ctx.getCurrentUserId();
     if (userId && userId.length > 0) {
       replacements.url += "&user=" + userId;
@@ -737,7 +746,10 @@ class Authentication extends Executor {
       var validation = undefined;
       // Need to check email before creation
       if (!mailConfig.postValidation) {
-        if (ctx.body.token == this.generateEmailValidationToken(ctx, email)) {
+        if (
+          ctx.body.token ==
+          this.generateEmailValidationToken(ctx.getCurrentUserId(), email)
+        ) {
           if (ctx.body.user !== ctx.getCurrentUserId()) {
             throw 412;
           }
@@ -777,10 +789,8 @@ class Authentication extends Executor {
     throw 404;
   }
 
-  generateEmailValidationToken(ctx, email) {
-    return this.hashPassword(
-      email + "_" + this._webda.getSecret() + ctx.getCurrentUserId()
-    );
+  generateEmailValidationToken(user: string, email: string) {
+    return this.hashPassword(email + "_" + this._webda.getSecret() + user);
   }
 
   _getProviderName(name: string) {
