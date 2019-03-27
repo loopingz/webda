@@ -557,9 +557,11 @@ class Authentication extends Executor {
       });
       return;
     }
+
     if (
       ctx._params.user !== ctx.getCurrentUserId() &&
-      ctx.getCurrentUserId() !== ""
+      ctx.getCurrentUserId() !== "" &&
+      ctx.getCurrentUserId() !== undefined
     ) {
       ctx.writeHead(302, {
         Location: this._params.failureRedirect + "?reason=badUser"
