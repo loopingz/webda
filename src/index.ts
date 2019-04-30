@@ -1,4 +1,4 @@
-import { Webda, _extend } from "./core";
+import { Webda, _extend, CSRFFilter, WebdaCSRFFilter } from "./core";
 import { Service } from "./services/service";
 import { Executor } from "./services/executor";
 import { AWSMixIn, GetAWS } from "./services/aws-mixin";
@@ -89,5 +89,7 @@ export {
   Logger,
   MemoryLogger,
   ConsoleLogger,
-  CloudWatchLogger
+  CloudWatchLogger,
+  CSRFFilter,
+  WebdaCSRFFilter
 };
