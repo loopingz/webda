@@ -15,7 +15,8 @@ class FileRouteHelper extends Executor {
   /**
    * @ignore
    */
-  execute(ctx: Context): Promise<any> {
+  async execute(ctx: Context): Promise<any> {
+    await this._webda.emitSync("Webda.Execute", this, ctx);
     if (typeof ctx._route.file === "string") {
       var include = ctx._route.file;
       if (include.startsWith("./")) {

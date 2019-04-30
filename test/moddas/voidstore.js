@@ -3,7 +3,6 @@
 const Webda = require("../../lib/index.js");
 
 class VoidStore extends Webda.Store {
-
   constructor(webda, name, params) {
     super(webda, name, params);
     if (this._params.brokenConstructor) throw Error();
@@ -15,9 +14,9 @@ class VoidStore extends Webda.Store {
   }
 
   _brokenRoute(ctx) {
-    if (ctx._params.type === '401') {
+    if (ctx._params.type === "401") {
       throw 401;
-    } else if (ctx._params.type === 'Error') {
+    } else if (ctx._params.type === "Error") {
       throw new Error();
     }
   }
@@ -46,6 +45,5 @@ class VoidStore extends Webda.Store {
     return Promise.resolve({});
   }
 }
-
 
 module.exports = VoidStore;

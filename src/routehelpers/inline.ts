@@ -13,6 +13,7 @@ import { Executor } from "../index";
 class InlineRouteHelper extends Executor {
   /** @ignore */
   async execute(ctx) {
+    await this._webda.emitSync("Webda.Execute", this, ctx);
     return this._webda.sandbox(ctx, "module.exports = " + ctx._route.callback);
   }
 }

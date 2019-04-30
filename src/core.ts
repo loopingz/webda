@@ -42,6 +42,55 @@ interface Configuration {
   [key: string]: any;
 }
 
+interface CSRFFilter {
+  checkCSRF(origin: string): boolean;
+}
+
+class WebdaCSRFFilter implements CSRFFilter {
+  _webda: Webda;
+
+  constructor(webda: Webda) {
+    this._webda = webda;
+  }
+
+  getGlobalParams() {
+    return this._webda.getGlobalParams();
+  }
+
+  checkCSRF(origin: string) {
+    let website = this.getGlobalParams().website || "";
+    if (!Array.isArray(website)) {
+      if (typeof website === "object") {
+        website = [website.url];
+      } else {
+        website = [website];
+      }
+    }
+    let parsed = url.parse(origin);
+    let origins = this.getGlobalParams().csrfOrigins || [];
+    for (let i in origins) {
+      if (!origins[i].endsWith("$")) {
+        origins[i] += "$";
+      }
+      if (!origins[i].startsWith("^")) {
+        origins[i] = "^" + origins[i];
+      }
+      if (parsed.host && parsed.host.match(new RegExp(origins[i]))) {
+        return true;
+      }
+    }
+    // Host match or complete match
+    if (
+      website.indexOf(parsed.host) >= 0 ||
+      website.indexOf(origin) >= 0 ||
+      website === "*"
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
 /**
  * This is the main class of the framework, it handles the routing, the services initialization and resolution
  *
@@ -63,6 +112,7 @@ class Webda extends events.EventEmitter {
   _loggers: Logger[] = [];
   _initTime: number;
   _logger: ConsoleLogger;
+  _csrfFilters: CSRFFilter[] = [];
 
   /**
    * @params {Object} config - The configuration Object, if undefined will load the configuration file
@@ -75,6 +125,9 @@ class Webda extends events.EventEmitter {
       logLevel: "WARN",
       logLevels: "ERROR,WARN,INFO,DEBUG,TRACE"
     });
+    // CSRF Filters
+    this._csrfFilters.push(new WebdaCSRFFilter(this));
+
     // We enforce this normalization
     this._logger.normalizeParams();
     this._loggers.push(this._logger);
@@ -158,6 +211,10 @@ class Webda extends events.EventEmitter {
       resolve();
     });
     return this._init;
+  }
+
+  registerCSRFFilter(filter: CSRFFilter) {
+    this._csrfFilters.push(filter);
   }
 
   /**
@@ -1052,39 +1109,13 @@ class Webda extends events.EventEmitter {
    * @param website @deprecated
    */
   checkCSRF(origin, website = undefined): boolean {
-    if (!website) {
-      website = this.getGlobalParams().website || "";
-    }
-    if (!Array.isArray(website)) {
-      if (typeof website === "object") {
-        website = [website.url];
-      } else {
-        website = [website];
-      }
-    }
-    let parsed = url.parse(origin);
-    let origins = this.getGlobalParams().csrfOrigins || [];
-    for (let i in origins) {
-      if (!origins[i].endsWith("$")) {
-        origins[i] += "$";
-      }
-      if (!origins[i].startsWith("^")) {
-        origins[i] = "^" + origins[i];
-      }
-      if (parsed.host.match(new RegExp(origins[i]))) {
+    for (let i in this._csrfFilters) {
+      if (this._csrfFilters[i].checkCSRF(origin)) {
         return true;
       }
-    }
-    // Host match or complete match
-    if (
-      website.indexOf(parsed.host) >= 0 ||
-      website.indexOf(origin) >= 0 ||
-      website === "*"
-    ) {
-      return true;
     }
     return false;
   }
 }
 
-export { Webda, _extend, Configuration };
+export { Webda, _extend, Configuration, CSRFFilter, WebdaCSRFFilter };

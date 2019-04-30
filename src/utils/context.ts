@@ -10,6 +10,7 @@ import {
   User,
   Service
 } from "../index";
+import { ConsoleLogger } from "../loggers/consolelogger";
 const acceptLanguage = require("accept-language");
 
 class ClientInfo extends Map<string, any> {
@@ -234,6 +235,16 @@ class Context extends Map<string, any> {
     if (this._route && this._route._http && this._route._http.headers) {
       this.headers = this._route._http.headers;
     }
+  }
+
+  /**
+   * Retrieve HTTP infos
+   */
+  getHttpRequest() {
+    if (!this._route) {
+      return {};
+    }
+    return this._route._http;
   }
 
   /**

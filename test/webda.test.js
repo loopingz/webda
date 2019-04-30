@@ -211,83 +211,86 @@ describe("Webda", function() {
       );
     });
     it("string", function() {
-      assert.equal(
-        webda.checkCSRF("http://localhost:18181", "http://localhost:18181"),
-        true
-      );
-      assert.equal(
-        webda.checkCSRF("http://localhost:18181", "https://localhost:18181"),
-        false
-      );
-      assert.equal(
-        webda.checkCSRF("http://localhost:18181", "localhost:18181"),
-        true
-      );
-      assert.equal(
-        webda.checkCSRF("http://localhost:18182", "localhost:18181"),
-        false
-      );
-      assert.equal(
-        webda.checkCSRF("http://localhost2:18181", "localhost:18181"),
-        false
-      );
+      webda._config.parameters.website = "http://localhost:18181";
+      assert.equal(webda.checkCSRF("http://localhost:18181"), true);
+      webda._config.parameters.website = "https://localhost:18181";
+      assert.equal(webda.checkCSRF("http://localhost:18181"), false);
+      webda._config.parameters.website = "localhost:18181";
+      assert.equal(webda.checkCSRF("http://localhost:18181"), true);
+      assert.equal(webda.checkCSRF("http://localhost:18182"), false);
+      assert.equal(webda.checkCSRF("http://localhost2:18181"), false);
     });
     it("array", function() {
-      assert.equal(
-        webda.checkCSRF("http://localhost:18181", [
-          "http://localhost2:18181",
-          "http://localhost:18181"
-        ]),
-        true
-      );
-      assert.equal(
-        webda.checkCSRF("http://localhost:18181", [
-          "localhost2:18181",
-          "localhost:18181"
-        ]),
-        true
-      );
-      assert.equal(
-        webda.checkCSRF("http://localhost2:18181", [
-          "localhost2:18181",
-          "localhost:18181"
-        ]),
-        true
-      );
-      assert.equal(
-        webda.checkCSRF("http://localhost:18182", [
-          "localhost2:18181",
-          "localhost:18181"
-        ]),
-        false
-      );
-      assert.equal(
-        webda.checkCSRF("http://localhost3:18181", [
-          "localhost2:18181",
-          "localhost:18181"
-        ]),
-        false
-      );
+      webda._config.parameters.website = [
+        "http://localhost2:18181",
+        "http://localhost:18181"
+      ];
+      assert.equal(webda.checkCSRF("http://localhost:18181"), true);
+      webda._config.parameters.website = [
+        "localhost2:18181",
+        "localhost:18181"
+      ];
+      assert.equal(webda.checkCSRF("http://localhost:18181"), true);
+      assert.equal(webda.checkCSRF("http://localhost2:18181"), true);
+      assert.equal(webda.checkCSRF("http://localhost:18182"), false);
+      assert.equal(webda.checkCSRF("http://localhost3:18181"), false);
+    });
+    it("filters", function() {
+      assert.equal(webda.checkCSRF("DebugMailer"), true);
     });
     it("object", function() {
-      assert.equal(
-        webda.checkCSRF("http://localhost:18181", {
-          url: "localhost:18181"
-        }),
-        true
+      webda._config.parameters.website = {
+        url: "localhost:18181"
+      };
+      assert.equal(webda.checkCSRF("http://localhost:18181"), true);
+      assert.equal(webda.checkCSRF("http://localhost2:18181"), false);
+      assert.equal(webda.checkCSRF("http://localhost:18182"), false);
+    });
+  });
+  describe("Webda.Execute hook", function() {
+    it("disallow route based on url and header on route", async function() {
+      executor = webda.getExecutor(
+        ctx,
+        "test.webda.io",
+        "GET",
+        "/route/unaccessible"
       );
-      assert.equal(
-        webda.checkCSRF("http://localhost2:18181", {
-          url: "localhost:18181"
-        }),
-        false
+      await Utils.throws(
+        executor.execute.bind(executor, ctx),
+        err => err === 403
       );
-      assert.equal(
-        webda.checkCSRF("http://localhost:18182", {
-          url: "localhost:18181"
-        }),
-        false
+      executor = webda.getExecutor(
+        ctx,
+        "test.webda.io",
+        "GET",
+        "/route/unaccessible",
+        "https",
+        80,
+        { "X-Api-Key": "yep" }
       );
+      await executor.execute(ctx);
+    });
+    it("disallow route based on url and header on Executor", async function() {
+      executor = webda.getExecutor(
+        ctx,
+        "test.webda.io",
+        "GET",
+        "/service/impossible"
+      );
+      await Utils.throws(
+        executor.execute.bind(executor, ctx),
+        err => err === 403
+      );
+      executor = webda.getExecutor(
+        ctx,
+        "test.webda.io",
+        "GET",
+        "/service/impossible",
+        "https",
+        80,
+        { "X-Api-Key": "yep" }
+      );
+      await executor.execute(ctx);
     });
   });
   describe("getModdas()", function() {

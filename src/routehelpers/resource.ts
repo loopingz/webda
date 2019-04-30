@@ -14,7 +14,8 @@ const fs = require("fs");
  */
 class ResourceRouteHelper extends Executor {
   /** @ignore */
-  execute(ctx: Context): Promise<any> {
+  async execute(ctx: Context): Promise<any> {
+    await this._webda.emitSync("Webda.Execute", this, ctx);
     return new Promise((resolve, reject) => {
       fs.readFile(this._params.file, "utf8", (err, data) => {
         if (err) {

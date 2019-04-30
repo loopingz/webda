@@ -55,6 +55,7 @@ class LambdaRouteHelper extends Executor {
   }
 
   async execute(ctx: Context): Promise<any> {
+    await this._webda.emitSync("Webda.Execute", this, ctx);
     var caller;
     try {
       caller = new LambdaCaller(ctx._params);

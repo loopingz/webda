@@ -318,6 +318,14 @@
       "executor": "inline",
       "callback": "function(ctx) { ctx.write('CodeCoverage'); }"
     },
+    "/route/unaccessible": {
+      "method": ["GET"],
+      "executor": "string",
+      "result": {
+        "title": "Should not be"
+      },
+      "mime": "application/json"
+    },
     "/webda": {
       "method": ["GET", "POST", "DELETE", "PUT"],
       "executor": "lambda",

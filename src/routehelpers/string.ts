@@ -16,7 +16,8 @@ import { Executor, Context } from "../index";
  */
 class StringRouteHelper extends Executor {
   /** @ignore */
-  execute(ctx: Context): Promise<any> {
+  async execute(ctx: Context): Promise<any> {
+    await this._webda.emitSync("Webda.Execute", this, ctx);
     if (this._params.mime) {
       ctx.writeHead(200, {
         "Content-Type": this._params.mime
@@ -28,7 +29,6 @@ class StringRouteHelper extends Executor {
       ctx.write(this._params.result);
     }
     ctx.end();
-    return Promise.resolve();
   }
 }
 

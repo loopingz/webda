@@ -41,13 +41,12 @@ class Executor extends Service {
   /**
    * Main method called by the webda framework if the route don't specify a _method
    */
-  execute(ctx: Context): Promise<any> {
+  async execute(ctx: Context): Promise<any> {
+    await this._webda.emitSync("Webda.Execute", this, ctx);
     if (typeof ctx._route._method === "function") {
-      return new Promise((resolve, reject) => {
-        resolve(this[ctx._route._method.name](ctx));
-      });
+      return this[ctx._route._method.name](ctx);
     }
-    return Promise.reject(Error("Not implemented"));
+    throw new Error("Not implemented");
   }
 
   /**
