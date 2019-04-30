@@ -3,11 +3,10 @@
   "other.webda.io": {},
   "test.webda.io": {
     "global": {
-      "locales": [
-        "es-ES",
-        "en-GB",
-        "fr-FR"
-      ],
+      "params": {
+        "sessionSecret": "zxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiop"
+      },
+      "locales": ["es-ES", "en-GB", "fr-FR"],
       "moddas": {
         "Test/Mailer": {
           "type": "local",
@@ -202,18 +201,14 @@
           "type": "FileBinary",
           "folder": "./test/data/binaries",
           "map": {
-            "users": [
-              "images"
-            ]
+            "users": ["images"]
           }
         },
         "s3binary": {
           "type": "S3Binary",
           "bucket": "webda-test",
           "map": {
-            "users": [
-              "s3images"
-            ]
+            "users": ["s3images"]
           }
         }
       }
@@ -235,10 +230,7 @@
       }
     },
     "/": {
-      "method": [
-        "GET",
-        "POST"
-      ],
+      "method": ["GET", "POST"],
       "executor": "debug",
       "params": {
         "accessKeyId": "LOCAL_ACCESS_KEY",
@@ -246,12 +238,7 @@
       }
     },
     "/webda": {
-      "method": [
-        "GET",
-        "POST",
-        "DELETE",
-        "PUT"
-      ],
+      "method": ["GET", "POST", "DELETE", "PUT"],
       "executor": "lambda",
       "params": {
         "region": "us-west-2",

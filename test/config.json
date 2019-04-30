@@ -1,18 +1,12 @@
 {
   "version": 1,
   "parameters": {
+    "sessionSecret": "0123456789abcdeffedcba9876543210123456789abcdeffedcba9876543210123456789abcdeffedcba9876543210123456789abcdeffedcba9876543210123456789abcdeffedcba9876543210123456789abcdeffedcba9876543210123456789abcdeffedcba9876543210123456789abcdeffedcba9876543210123456789abcdeffedcba9876543210123456789abcdeffedcba9876543210123456789abcdeffedcba987654321",
     "TEST": "Global",
     "region": "us-east-1",
-    "website": ["test.webda.io","test2.webda.io"],
-    "csrfOrigins": [
-      "^accounts\\.google\\.\\w{2,}$",
-      "www\\.facebook\\.com"
-    ],
-    "locales": [
-      "es-ES",
-      "en-GB",
-      "fr-FR"
-    ]
+    "website": ["test.webda.io", "test2.webda.io"],
+    "csrfOrigins": ["^accounts\\.google\\.\\w{2,}$", "www\\.facebook\\.com"],
+    "locales": ["es-ES", "en-GB", "fr-FR"]
   },
   "moddas": {
     "Test/Mailer": {
@@ -220,9 +214,7 @@
       "folder": "./test/data/idents",
       "validator": "IdentValidator"
     },
-    "AwsSecretsManager": {
-
-    },
+    "AwsSecretsManager": {},
     "Users": {
       "expose": {
         "url": "/users"
@@ -240,9 +232,7 @@
       "type": "FileBinary",
       "folder": "./test/data/binaries",
       "map": {
-        "users": [
-          "images"
-        ]
+        "users": ["images"]
       },
       "expose": {
         "url": "/binary"
@@ -252,9 +242,7 @@
       "type": "S3Binary",
       "bucket": "webda-test",
       "map": {
-        "users": [
-          "s3images"
-        ]
+        "users": ["s3images"]
       },
       "expose": {
         "url": "/s3binary"
@@ -285,10 +273,7 @@
       }
     },
     "/": {
-      "method": [
-        "GET",
-        "POST"
-      ],
+      "method": ["GET", "POST"],
       "executor": "debug",
       "params": {
         "accessKeyId": "LOCAL_ACCESS_KEY",
@@ -296,12 +281,12 @@
       }
     },
     "/route/string": {
-      "method": [ "GET" ],
+      "method": ["GET"],
       "executor": "string",
       "result": "CodeCoverage"
     },
     "/route/string/json": {
-      "method": [ "GET" ],
+      "method": ["GET"],
       "executor": "string",
       "result": {
         "title": "CodeCoverage"
@@ -309,37 +294,32 @@
       "mime": "application/json"
     },
     "/route/resource": {
-      "method": [ "GET" ],
+      "method": ["GET"],
       "executor": "resource",
       "file": "./test/Dockerfile.txt"
     },
     "/route/resource/notfound": {
-      "method": [ "GET" ],
+      "method": ["GET"],
       "executor": "resource",
       "file": "./test/Dockerfile.notfound.txt"
     },
     "/route/resource/nomime": {
-      "method": [ "GET" ],
+      "method": ["GET"],
       "executor": "resource",
       "file": "./test/Dockerfile"
     },
     "/route/file": {
-      "method": [ "GET" ],
+      "method": ["GET"],
       "executor": "file",
       "file": "./test/data/routehelper.js"
     },
     "/route/inline": {
-      "method": [ "GET" ],
+      "method": ["GET"],
       "executor": "inline",
       "callback": "function(ctx) { ctx.write('CodeCoverage'); }"
     },
     "/webda": {
-      "method": [
-        "GET",
-        "POST",
-        "DELETE",
-        "PUT"
-      ],
+      "method": ["GET", "POST", "DELETE", "PUT"],
       "executor": "lambda",
       "params": {
         "region": "us-west-2",

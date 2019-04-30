@@ -398,10 +398,13 @@ class Webda extends events.EventEmitter {
    *
    * @returns A new session
    */
-  getNewSession(data) {
+  getNewSession(data, secret) {
+    if (!secret) {
+      secret = this.getGlobalParams().sessionSecret;
+    }
     return new SecureCookie(
       {
-        secret: "WebdaSecret"
+        secret
       },
       data
     );
@@ -712,7 +715,7 @@ class Webda extends events.EventEmitter {
       domain: executor._route._http.host,
       httpOnly: true,
       secure: false,
-      maxAge: 86400 * 7
+      maxAge: this.getGlobalParams().sessionExpiration || 86400 * 7
     };
     if (executor._route._http.protocol == "https") {
       params.secure = true;

@@ -29,6 +29,9 @@ class SecureCookie {
     this._secret = options.secret;
     this._options = options;
     this._changed = false;
+    if (!this._secret || this._secret.length < 256) {
+      throw new Error("You need to define a secret of at least 256 characters");
+    }
     if (data === undefined || data === "") {
       return;
     }
@@ -46,7 +49,7 @@ class SecureCookie {
 
   getProxy() {
     // Should use Proxy if available
-    if (Proxy != undefined) {
+    if (Proxy !== undefined) {
       // Proxy implementation
       return new Proxy(this, {
         set: (obj, prop, value) => {
@@ -58,6 +61,7 @@ class SecureCookie {
         }
       });
     }
+    return this;
   }
 
   login(userId, identUsed) {

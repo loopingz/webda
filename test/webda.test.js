@@ -65,7 +65,7 @@ describe("Webda", function() {
   });
   describe("getVersion()", function() {
     it("current", function() {
-      assert.equal(webda.getVersion(), "0.10.9");
+      assert.equal(webda.getVersion(), "0.10.10");
     });
   });
   describe("utils", function() {
@@ -151,7 +151,10 @@ describe("Webda", function() {
       assert.equal(ctx._headers["X-Webda"], "HEAD");
       ctx.write(400);
       assert.equal(ctx._body, 400);
-      ctx.session = new Webda.SecureCookie({});
+      ctx.session = new Webda.SecureCookie({
+        secret:
+          "zxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiopzxcvbnmasdfghjklqwertyuiop"
+      });
       Object.observe = (obj, callback) => {
         callback([
           {

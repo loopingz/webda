@@ -157,7 +157,7 @@ class LambdaServer extends Webda {
     }
     var sessionCookie = new SecureCookie(
       {
-        secret: "webda-private-key"
+        secret: this.getGlobalParams().sessionSecret
       },
       cookies.webda
     ).getProxy();
