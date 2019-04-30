@@ -174,6 +174,8 @@ class Webda extends events.EventEmitter {
     // Models
     this._models["Webda/CoreModel"] = CoreModel;
     this._models["Webda/Ident"] = Ident;
+    this._models["Webda/Context"] = Context;
+    this._models["Webda/SecureCookie"] = SecureCookie;
     // Load the configuration
     this._config = this.loadConfiguration(config);
     if (!this._config.version) {
@@ -1050,6 +1052,22 @@ class Webda extends events.EventEmitter {
   }
 
   /**
+   * Return the cookie/session object
+   *
+   * @param cookies browser current cookie
+   */
+  newCookie(cookies: any) {
+    return new (this.getModel(
+      this.getGlobalParams().cookieModel || "Webda/SecureCookie"
+    ))(
+      {
+        secret: this.getGlobalParams().sessionSecret
+      },
+      cookies.webda
+    ).getProxy();
+  }
+
+  /**
    * Create a new context for a request
    *
    * @class Service
@@ -1061,7 +1079,9 @@ class Webda extends events.EventEmitter {
    * @return {Object} A new context object to pass along
    */
   newContext(body, session, stream = undefined, files = []) {
-    return new Context(this, body, session, stream, files);
+    return new (this.getModel(
+      this.getGlobalParams().contextModel || "Webda/Context"
+    ))(this, body, session, stream, files);
   }
 
   /**

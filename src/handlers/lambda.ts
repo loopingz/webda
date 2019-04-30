@@ -155,12 +155,7 @@ class LambdaServer extends Webda {
     if (rawCookie) {
       cookies = cookieParse(rawCookie);
     }
-    var sessionCookie = new SecureCookie(
-      {
-        secret: this.getGlobalParams().sessionSecret
-      },
-      cookies.webda
-    ).getProxy();
+    var sessionCookie = this.newCookie(cookies);
     var session = sessionCookie;
     var vhost;
     var i;
