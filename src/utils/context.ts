@@ -120,12 +120,55 @@ class Context extends Map<string, any> {
    * @todo Implement the serialization
    * Not yet handle by the Webda framework
    */
-  cookie(param, value) {
+  cookie(param, value, options) {
     /** @ignore */
     if (this._cookie === undefined) {
       this._cookie = new Map();
     }
-    this._cookie[param] = value;
+    if (!this._cookie[param]) {
+      this._cookie[param] = [{value, options}];  
+    }
+    this._cookie[param].push({value, options});
+  }
+
+  /**
+   * Encode the cookie into a header form
+   *
+   * @ignore
+   * @protected
+   */
+  getCookies(): string[] {
+    var params = {
+      path: "/",
+      domain: this._route._http.host,
+      httpOnly: true,
+      secure: false,
+      maxAge: this.getGlobalParams().sessionExpiration || 86400 * 7
+    };
+    if (this._route._http.protocol == "https") {
+      params.secure = true;
+    }
+    if (this._route._http.wildcard) {
+      params.domain = this._route._http.vhost;
+    }
+    if (this._params.cookie !== undefined) {
+      if (this._params.cookie.domain) {
+        params.domain = this._params.cookie.domain;
+      } else {
+        params.domain = this._route._http.host;
+      }
+      if (this._params.cookie.maxAge) {
+        params.maxAge = this._params.cookie.maxAge;
+      }
+    }
+    let sessionName = this.webda.getSessionName();
+    let sessionRaw = this.session.save();
+    let j = 0;
+    // Split session into several cookie
+    for (let i = 0; i < sessionRaw.length; i += 4000) {
+      this.cookie("webda" + (j++?j:""), sessionRaw.substr(i, i+4000), params));
+    }
+    return this._cookie;
   }
 
   addAsyncRequest(promise) {

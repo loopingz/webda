@@ -4,7 +4,6 @@ import * as vm from "vm";
 import * as Ajv from "ajv";
 import * as path from "path";
 import * as url from "url";
-import { serialize as cookieSerialize } from "cookie";
 import { Context } from "./utils/context";
 import * as events from "events";
 import {
@@ -761,42 +760,6 @@ class Webda extends events.EventEmitter {
     return this._config.parameters || {};
   }
 
-  /**
-   * Encode the cookie into a header form
-   *
-   * @ignore
-   * @protected
-   */
-  getCookieHeader(executor): string {
-    var session = executor.session;
-    var params = {
-      path: "/",
-      domain: executor._route._http.host,
-      httpOnly: true,
-      secure: false,
-      maxAge: this.getGlobalParams().sessionExpiration || 86400 * 7
-    };
-    if (executor._route._http.protocol == "https") {
-      params.secure = true;
-    }
-    if (executor._route._http.wildcard) {
-      params.domain = executor._route._http.vhost;
-    }
-    if (executor._params.cookie !== undefined) {
-      if (executor._params.cookie.domain) {
-        params.domain = executor._params.cookie.domain;
-      } else {
-        params.domain = executor._route._http.host;
-      }
-      if (executor._params.cookie.maxAge) {
-        params.maxAge = executor._params.cookie.maxAge;
-      }
-    }
-    // Expiracy at one week - should configure it
-    var res = cookieSerialize("webda", session.save(), params);
-    return res;
-  }
-
   async reinit(updates: Map<string, any>): Promise<void> {
     let configuration = JSON.parse(JSON.stringify(this._config.services));
     for (let service in updates) {
@@ -822,6 +785,10 @@ class Webda extends events.EventEmitter {
         this.log("TRACE", err.stack);
       }
     }
+  }
+
+  protected getSessionName() {
+    return this.getGlobalParams().sessionName || "webda";
   }
 
   getServiceParams(service: string): any {
@@ -1057,13 +1024,20 @@ class Webda extends events.EventEmitter {
    * @param cookies browser current cookie
    */
   newCookie(cookies: any) {
+    let sessionName = this.getSessionName();
+    let data = cookies[sessionName];
+    let i = 2;
+    while (cookies[`${sessionName}${i}`]) {
+      data += cookies[`${sessionName}${i}`];
+      i++;
+    }
     return new (this.getModel(
       this.getGlobalParams().cookieModel || "Webda/SecureCookie"
     ))(
       {
         secret: this.getGlobalParams().sessionSecret
       },
-      cookies.webda
+      data
     ).getProxy();
   }
 

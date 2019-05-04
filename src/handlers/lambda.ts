@@ -1,7 +1,7 @@
 "use strict";
 import { Core as Webda, SecureCookie, ClientInfo, Service } from "../index";
 import { Constructor, GetAWS } from "../services/aws-mixin";
-const cookieParse = require("cookie").parse;
+import { serialize as cookieSerialize, parse as cookieParse } from "cookie";
 
 function AWSEventHandlerMixIn<T extends Constructor<Service>>(Base: T) {
   return class extends Base {
@@ -33,11 +33,14 @@ class LambdaServer extends Webda {
    */
   flushHeaders(ctx) {
     var headers = ctx._headers;
+    this._result = {};
     // No route found probably coming from an OPTIONS
     if (ctx._route) {
-      headers["Set-Cookie"] = this.getCookieHeader(ctx);
+      // We do manage split of Set-Cookie
+      this._result.multiValueHeaders = {
+        "Set-Cookie": this.getCookieHeader(ctx)
+      };
     }
-    this._result = {};
     this._result.headers = headers;
     this._result.statusCode = ctx.statusCode;
   }
