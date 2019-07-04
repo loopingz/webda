@@ -17,7 +17,9 @@
     "test": "nyc mocha --recursive --exit --timeout=100000 -r ts-node/register test/**/*.test.js src/**/*.spec.ts",
     "run": "node core",
     "format": "node ./scripts/format.js",
-    "precommit": "npm run test"
+    "precommit": "npm run test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "accept-language": "3.0.18",
@@ -41,7 +43,8 @@
     "passport-oauth": "^1.0.0",
     "passport-twitter": ">=1.0.3",
     "uri-templates": ">=0.2.0",
-    "uuid": "^3.0.0"
+    "uuid": "^3.0.0",
+    "snyk": "^1.189.0"
   },
   "files": [
     "lib"
@@ -70,5 +73,6 @@
       "json"
     ]
   },
-  "homepage": "https://webda.io"
+  "homepage": "https://webda.io",
+  "snyk": true
 }
