@@ -219,6 +219,9 @@ class Webda extends events.EventEmitter {
       for (let j in beans[service].routes) {
         this.log("TRACE", "Adding route", j, "for bean", service);
         let route = beans[service].routes[j];
+        if (route.resolved) {
+          continue;
+        }
         this.addRoute(j, {
           method: route.methods, // HTTP methods
           _method: this._config._services[service][route.executor], // Link to service method
@@ -226,6 +229,7 @@ class Webda extends events.EventEmitter {
           swagger: route.swagger,
           executor: beans[service].constructor.name // Name of the service
         });
+        route.resolved = true;
       }
     }
   }
@@ -255,6 +259,9 @@ class Webda extends events.EventEmitter {
               for (let j in beans[service].routes) {
                 this.log("TRACE", "Adding route", j, "for bean", service);
                 let route = beans[service].routes[j];
+                if (route.resolved) {
+                  continue;
+                }
                 this.addRoute(j, {
                   method: route.methods, // HTTP methods
                   _method: this._config._services[service][route.executor], // Link to service method
@@ -262,6 +269,7 @@ class Webda extends events.EventEmitter {
                   swagger: route.swagger,
                   executor: beans[service].constructor.name // Name of the service
                 });
+                route.resolved = true;
               }
             }
             await this._config._services[service].init();
