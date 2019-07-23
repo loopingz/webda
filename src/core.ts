@@ -213,6 +213,22 @@ class Webda extends events.EventEmitter {
     this.initStatics();
   }
 
+  initBeanRoutes(serviceBean: Service) {
+    let service = serviceBean._name.toLowerCase();
+    if (beans[service] !== undefined && beans[service].routes) {
+      for (let j in beans[service].routes) {
+        this.log("TRACE", "Adding route", j, "for bean", service);
+        let route = beans[service].routes[j];
+        this.addRoute(j, {
+          method: route.methods, // HTTP methods
+          _method: this._config._services[service][route.executor], // Link to service method
+          allowPath: route.allowPath || false, // Allow / in parser
+          swagger: route.swagger,
+          executor: beans[service].constructor.name // Name of the service
+        });
+      }
+    }
+  }
   /**
    * Init Webda
    *
@@ -972,6 +988,7 @@ class Webda extends events.EventEmitter {
   protected autoConnectServices(): void {
     // TODO Leverage decorators instead of setter name
     for (let service in this._config._services) {
+      this.log("TRACE", "Auto-connect", service);
       let serviceBean = this._config._services[service];
       serviceBean.resolve();
       let setters = this._getSetters(serviceBean);
@@ -980,6 +997,7 @@ class Webda extends events.EventEmitter {
           setter.substr(3).toLowerCase()
         ];
         if (targetService) {
+          this.log("TRACE", "Auto-connecting", serviceBean._name, targetService._name);
           serviceBean[setter](targetService);
         }
       });
