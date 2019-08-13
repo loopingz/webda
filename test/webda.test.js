@@ -46,7 +46,23 @@ describe("Webda", function() {
   });
   describe("getVersion()", function() {
     it("current", function() {
-      assert.equal(webda.getVersion(), "0.11.4");
+      assert.equal(webda.getVersion(), "0.11.5");
+    });
+  });
+
+  describe("HttpContext", function() {
+    it("lowerCase header", function() {
+      let ctx = new Webda.HttpContext(
+        "test.webda.io",
+        "GET",
+        "/test",
+        "http",
+        80,
+        {},
+        { "X-Test": "weBda" }
+      );
+      assert.equal(ctx.getHeader("X-Test"), "weBda");
+      assert.equal(ctx.getHeader("X-Test"), ctx.getHeader("x-test"));
     });
   });
   describe("utils", function() {
