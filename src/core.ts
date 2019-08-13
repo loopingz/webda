@@ -156,6 +156,7 @@ class Webda extends events.EventEmitter {
   constructor(config = undefined) {
     /** @ignore */
     super();
+
     this._initTime = new Date().getTime();
     this._logger = new ConsoleLogger(this, "coreLogger", {
       logLevel: "WARN",
@@ -233,6 +234,17 @@ class Webda extends events.EventEmitter {
       }
     }
   }
+
+  reinitResolvedRoutes() {
+    for (let i in beans) {
+      if (beans[i].routes) {
+        for (let j in beans[i].routes) {
+          beans[i].routes[j].resolved = false;
+        }
+      }
+    }
+  }
+
   /**
    * Init Webda
    *
@@ -242,6 +254,7 @@ class Webda extends events.EventEmitter {
     if (this._init) {
       return this._init;
     }
+    this.reinitResolvedRoutes();
     this.log("TRACE", "Create Webda init promise");
     this._init = new Promise(async resolve => {
       // Init services
@@ -1005,7 +1018,12 @@ class Webda extends events.EventEmitter {
           setter.substr(3).toLowerCase()
         ];
         if (targetService) {
-          this.log("TRACE", "Auto-connecting", serviceBean._name, targetService._name);
+          this.log(
+            "TRACE",
+            "Auto-connecting",
+            serviceBean._name,
+            targetService._name
+          );
           serviceBean[setter](targetService);
         }
       });
