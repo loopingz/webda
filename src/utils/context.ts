@@ -123,7 +123,7 @@ class Cookie {
 
 class Context extends EventEmitter {
   clientInfo: ClientInfo;
-  private _body: any;
+  protected _body: any;
   private _outputHeaders: Map<string, string>;
   private _webda: Webda;
   statusCode: number;
@@ -330,20 +330,24 @@ class Context extends EventEmitter {
     if (this._ended) {
       return this._ended;
     }
-    this.emit("end");
-    await Promise.all(this._promises);
-    if (this._buffered && this._stream._body !== undefined) {
-      this._body = Buffer.concat(this._stream._body);
-    }
-    if (!this._flushHeaders) {
-      this._flushHeaders = true;
-      if (this._body !== undefined && this.statusCode == 204) {
-        this.statusCode = 200;
+    this._ended = new Promise(async resolve => {
+      this.emit("end");
+      await Promise.all(this._promises);
+      if (this._buffered && this._stream._body !== undefined) {
+        this._body = Buffer.concat(this._stream._body);
       }
-      this._webda.flushHeaders(this);
-    }
-    this._webda.flush(this);
-    this.emit("close");
+      if (!this._flushHeaders) {
+        this._flushHeaders = true;
+        if (this._body !== undefined && this.statusCode == 204) {
+          this.statusCode = 200;
+        }
+        console.log("Flushing headers", this._outputHeaders);
+        this._webda.flushHeaders(this);
+      }
+      this._webda.flush(this);
+      this.emit("close");
+      resolve();
+    });
     return this._ended;
   }
 
