@@ -341,7 +341,6 @@ class Context extends EventEmitter {
         if (this._body !== undefined && this.statusCode == 204) {
           this.statusCode = 200;
         }
-        console.log("Flushing headers", this._outputHeaders);
         this._webda.flushHeaders(this);
       }
       this._webda.flush(this);
