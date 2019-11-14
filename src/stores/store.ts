@@ -126,9 +126,7 @@ class Store<T extends CoreModel> extends Executor
       this._addRoute(expose.url + "/{uuid}", methods, this.httpRoute, {
         model: this._model.name,
         get: {
-          description: `Retrieve ${
-            this._model.name
-          } model if permissions allow`,
+          description: `Retrieve ${this._model.name} model if permissions allow`,
           summary: "Retrieve a " + this._model.name,
           operationId: `get${this._model.name}`,
           responses: {
@@ -1131,6 +1129,7 @@ class Store<T extends CoreModel> extends Executor
     }
     ctx.write(object);
     await this.emitSync("Store.WebUpdate", {
+      context: ctx,
       updates: body,
       object: object,
       store: this
@@ -1147,6 +1146,7 @@ class Store<T extends CoreModel> extends Executor
       await object.canAct(ctx, "get");
       ctx.write(object);
       await this.emitSync("Store.WebGet", {
+        context: ctx,
         object: object,
         store: this
       });
@@ -1170,6 +1170,7 @@ class Store<T extends CoreModel> extends Executor
       ctx.write({});
       await this.delete(uuid);
       await this.emitSync("Store.WebDelete", {
+        context: ctx,
         object_id: uuid,
         store: this
       });
