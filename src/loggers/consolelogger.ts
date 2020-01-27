@@ -13,11 +13,19 @@ class ConsoleLogger extends Logger {
 
   _log(level, ...args: any[]): void {
     this._count++;
-    if (level === "CONSOLE") {
-      console.log(...args);
-      return;
+    let allArgs = [...args];
+
+    // CONSOLE level won't prefix the level
+    if (level !== "CONSOLE") {
+      allArgs.unshift("[" + level + "]");
     }
-    console.log("[" + level + "]", ...args);
+
+    // WEBDA_LOG_PREFIX will add a custom prefix (set in environment variable)
+    if (process.env.WEBDA_LOG_PREFIX) {
+      allArgs.unshift("[" + process.env.WEBDA_LOG_PREFIX + "]");
+    }
+
+    console.log(...allArgs);
   }
 
   getCount() {
