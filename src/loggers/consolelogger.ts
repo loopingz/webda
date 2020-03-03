@@ -11,34 +11,32 @@ class ConsoleLogger extends Logger {
     }
   }
 
+  /**
+   * Prefixing with level and/or custom job prefix
+   * Using the appropriate level's console method
+   * @param {string} level - Criticity level of the log message
+   * @param {any[]} args - every data to log
+   */
   _log(level, ...args: any[]): void {
     this._count++;
     let allArgs = [...args],
-      method = console.log;
+      methods = {
+        ERROR: console.error,
+        WARN: console.warn,
+        STACK: console.trace,
+        INFO: console.info,
+        DEBUG: console.debug
+      },
+      method = methods[level] || console.log;
 
-    switch (level) {
-      case "ERROR":
-        method = console.error;
-        break;
-      case "WARN":
-        method = console.warn;
-        break;
-      case "STACK":
-        method = console.trace;
-        break;
-      case "INFO":
-        method = console.info;
-        break;
-      case "DEBUG":
-        method = console.debug;
-        break;
-      default:
-        allArgs.unshift("[" + level + "]");
+    // Do not log the level
+    if (!process.env.WEBDA_NO_LEVEL_PREFIX || !methods[level]) {
+      allArgs.unshift(`[${level}]`);
     }
 
     // WEBDA_LOG_PREFIX will add a custom prefix (set in environment variable)
     if (process.env.WEBDA_LOG_PREFIX) {
-      allArgs.unshift("[" + process.env.WEBDA_LOG_PREFIX + "]");
+      allArgs.unshift(`[${process.env.WEBDA_LOG_PREFIX}]`);
     }
 
     method.call(console, ...allArgs);
