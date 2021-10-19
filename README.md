@@ -2,4 +2,4 @@
 
 # webda
 
-DEPRECATED: Use (webda.io)[github.com/loopingz/webda.io/]
+DEPRECATED: Use [webda.io](github.com/loopingz/webda.io/)
